@@ -62,6 +62,7 @@
       justify-content: space-between;
       align-items: center;
       margin: 0 auto 20px;
+      padding: 0 10px;
       @include breakpoint(desktop) {
         max-width: 1200px;
         padding: 0 16px;
@@ -78,10 +79,7 @@
         text-transform: uppercase;
         margin: 0;
         color: #fff;
-        padding: 15px;
-        border-radius: 100px;
         @include breakpoint(desktop){
-          padding: 12px;
           font-size: 28px;
         }
         @include breakpoint(tablet){
@@ -89,7 +87,6 @@
         }
         @include breakpoint(mobile){
           font-size: 22px;
-          padding: 10px;
         }
       }
 

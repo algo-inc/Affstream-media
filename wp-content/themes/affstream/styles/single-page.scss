@@ -47,6 +47,26 @@
 
       }
 
+      .promo {
+        border-radius: 7.587px;
+        border: 1.5px solid #0C62FD;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 15px;
+        p{
+          color: #100F0F;
+          font-size: 15px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 99.836%; /* 14.975px */
+          letter-spacing: -0.075px;
+          margin-bottom: 5px;
+        }
+
+      }
+
     }
     .post-container{
       display: flex;
@@ -454,14 +474,4 @@
 }
 
 
-.promo-block{
-  border-radius: 7.587px;
-  border: 1.5px solid #0C62FD;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 15px;
-  background: #0c0c0c;
-}
 

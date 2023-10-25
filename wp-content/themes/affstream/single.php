@@ -57,20 +57,23 @@ update_post_meta( $post_id, 'popularity', $popularity );
 								<?php the_date() ?>
                             </div>
                         </div>
-	                    <?php
-	                    $promo = get_field('promo_code');
-	                    if ($promo){?>
-                            <div class="promo-block">
+						<?php
+						$promo = get_field( 'promo_code' );
+						if ( $promo ) {
+							?>
+                            <div class="promo">
                                 <p>PROMO CODE</p>
-			                    <?= $promo ?>
+                                <span>
+                                         <?= $promo ?>
+                                </span>
                             </div>
-		                    <?php
-	                    }
-	                    ?>
+							<?php
+						}
+						?>
                     </div>
-	                <?php
-	                custom_display_tags( get_the_ID(), null, true );
-	                ?>
+					<?php
+					custom_display_tags( get_the_ID(), null, true );
+					?>
 					<?php the_content(); ?>
                 </div>
                 <div class="share-post-container">
@@ -89,7 +92,7 @@ update_post_meta( $post_id, 'popularity', $popularity );
                         </div>
                     </div>
                     <div class="share-post">
-                        <p class="text"><?= pll__('Share post') ?></p>
+                        <p class="text"><?= pll__( 'Share post' ) ?></p>
                         <a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>" target="_blank"
                            rel="noopener noreferrer">
                             <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36"
@@ -152,7 +155,7 @@ update_post_meta( $post_id, 'popularity', $popularity );
                     <h2>SUBSCRIBE</h2>
                     <p class="label">ENTER YOUR EMAIL
                         TO GET WEEKLY NEWS</p>
-	                <?= do_shortcode( '[contact-form-7 id="150501e" title="Contact form 1"]' ) ?>
+					<?= do_shortcode( '[contact-form-7 id="150501e" title="Contact form 1"]' ) ?>
                 </div>
             </div>
         </div>

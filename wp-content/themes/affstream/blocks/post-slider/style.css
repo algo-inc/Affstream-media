@@ -43,6 +43,7 @@
   justify-content: space-between;
   align-items: center;
   margin: 0 auto 20px;
+  padding: 0 10px;
 }
 @media (max-width: 1599px) {
   .new-posts .container .title-container {
@@ -64,12 +65,9 @@
   text-transform: uppercase;
   margin: 0;
   color: #fff;
-  padding: 15px;
-  border-radius: 100px;
 }
 @media (max-width: 1599px) {
   .new-posts .container .title-container h2 {
-    padding: 12px;
     font-size: 28px;
   }
 }
@@ -81,7 +79,6 @@
 @media (max-width: 767px) {
   .new-posts .container .title-container h2 {
     font-size: 22px;
-    padding: 10px;
   }
 }
 .new-posts .container .title-container .archive-link {

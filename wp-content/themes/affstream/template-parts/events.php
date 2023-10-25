@@ -74,7 +74,7 @@
 									echo $excerpt_with_class;
 									?>
                                     <div class="links-container">
-                                        <a class="see-more" href="<?php the_field('event_link'); ?>"> <?= pll__('see more') ?>
+                                        <a class="see-more" aria-label="see more" href="<?php the_field('event_link'); ?>"> <?= pll__('see more') ?>
                                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M7.68137 18.0023L7.68477 18.0004L12.5742 15.2212L16.0826 13.2594L16.0858 13.2576C16.6633 12.9328 17.1465 12.4618 17.4838 11.8899C17.8212 11.3179 18 10.6662 18 10.0013C18 9.33643 17.8212 8.68482 17.4838 8.11274C17.1468 7.54131 16.6641 7.07064 16.0872 6.74585C16.0867 6.74559 16.0862 6.74533 16.0858 6.74507L7.68397 2.00081C7.68344 2.00051 7.68291 2.00021 7.68238 1.99991C5.20441 0.594941 2 2.31389 2 5.25466L2 14.748C2 17.6937 5.20914 19.399 7.68137 18.0023Z" stroke="#EDEDFF" stroke-width="3"/>
                                             </svg>

@@ -3,7 +3,7 @@
 }
 .popular-articles-block .popular-articles-title {
   display: flex;
-  max-width: 1600px;
+  max-width: 1300px;
   margin: 0 auto 20px;
 }
 @media (max-width: 1599px) {

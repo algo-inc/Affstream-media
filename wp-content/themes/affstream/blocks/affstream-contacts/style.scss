@@ -106,9 +106,10 @@
         font-weight: 500;
         line-height: normal;
         margin-bottom: 12px;
+        font-family: "SF Pro Display", sans-serif;
         @include breakpoint(desktop){
           margin-bottom: 15px;
-          font-size: 17px;
+          font-size: 18px;
         }
         @include breakpoint (tablet){
           font-size: 22px;
@@ -126,6 +127,7 @@
         font-weight: 500;
         line-height: normal;
         margin-bottom: 12px;
+        font-family: "SF Pro Display", sans-serif;
         @include breakpoint(desktop){
           font-size: 18px;
         }
@@ -139,14 +141,15 @@
       .position{
         color: #100F0F;
         text-align: center;
-        font-size: 17px;
+        font-size: 18px;
         font-style: normal;
         font-weight: 700;
         line-height: normal;
         text-transform: uppercase;
         margin-bottom: 10px;
+        max-width: 95%;
+        font-family: "SF Pro Display", sans-serif;
         @include breakpoint(desktop){
-          font-size: 16px;
           margin-bottom: 10px;
         }
         @include breakpoint(tablet){

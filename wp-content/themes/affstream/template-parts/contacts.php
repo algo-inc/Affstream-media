@@ -2,7 +2,7 @@
     <?php $user = get_sub_field('photo');
     if ($user):
     ?>
-	<img src="<?= $user?>" alt=" <?php the_sub_field('name');?>">
+	<img src="<?= $user?>" width="118px" height="118px" alt=" <?php the_sub_field('name');?>">
     <?php endif; ?>
 	<h3 class="position "><?php the_sub_field('for');?></h3>
 	<h4> <?php the_sub_field('name');?></h4>

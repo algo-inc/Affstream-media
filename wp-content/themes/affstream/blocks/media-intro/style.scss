@@ -38,7 +38,7 @@
     align-items: center;
     gap:45px;
     max-width: 1200px;
-
+    padding: 0 10px;
     @include breakpoint(desktop){
       max-width: 1200px;
       padding: 0 16px;

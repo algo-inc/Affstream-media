@@ -32,8 +32,9 @@
   padding-bottom: 70px;
   .popular-articles-title{
     display: flex;
-    max-width: 1600px;
+    max-width: 1300px;
     margin: 0 auto 20px;
+
     @include breakpoint(desktop){
       padding: 0 16px;
       max-width: 1200px;

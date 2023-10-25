@@ -1120,7 +1120,7 @@ img, video {
               }
             }
 
-            h5 {
+            h3 {
               color: inherit;
               margin: 0;
               font-style: normal;
@@ -1385,13 +1385,10 @@ img, video {
       }
 
       img {
-        max-width: 150px;
+        width: auto;
         margin: 20px auto 20px;
         border-radius: 150%;
         z-index: 2;
-        @include breakpoint(desktop) {
-          max-width: 130px;
-        }
       }
 
       &::after {

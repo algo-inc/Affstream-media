@@ -39,6 +39,7 @@
     max-width: 1600px;
     margin: 0 auto 30px;
     width: 100%;
+    padding: 0 10px;
     @include breakpoint(desktop){
       max-width: 1200px;
       padding: 0 16px;
@@ -86,6 +87,7 @@
     display: flex;
     gap: 75px;
     justify-content: space-between;
+    padding: 0 10px;
     @include breakpoint(desktop){
       max-width: 1200px;
       gap: 30px;

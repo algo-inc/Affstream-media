@@ -50,6 +50,17 @@
   display: flex;
   align-items: center;
 }
+.single-page .container .category-and-time .promo {
+  border-radius: 7.587px;
+  border: 1.5px solid #0C62FD;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 15px;
+  background: #0c0c0c;
+  display: none;
+}
 .single-page .container .post-container {
   display: flex;
   flex-direction: column;
@@ -444,17 +455,6 @@
 }
 .single-page .container .recent-posts img {
   border-radius: 9px;
-}
-
-.promo-block {
-  border-radius: 7.587px;
-  border: 1.5px solid #0C62FD;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 15px;
-  background: #0c0c0c;
 }
 
 /*# sourceMappingURL=single-page.css.map */

@@ -17,7 +17,7 @@
 		<?php endif; ?>
         <div class="brand-info">
             <div class="name-container">
-                <h5><?= $slide['brands'] ?></h5>
+                <h3><?= $slide['brands'] ?></h3>
 				<?php if (isset($slide['flags']) && is_array($slide['flags']) && count($slide['flags']) > 0) : ?>
                     <ul class="flags-list">
 						<?php foreach ($slide['flags'] as $flag) : ?>

@@ -130,7 +130,7 @@ function render_contacts_block( $block ): void {
                                     <a href="<?php echo $email; ?>" class="email"><?php echo $email; ?></a>
                                     <div class="social">
 										<?php if ( ! empty( $skype['url'] ) ): ?>
-                                            <a class="change-color" href="<?php echo $skype['url'] ?>">
+                                            <a class="change-color" aria-label="skype" href="<?php echo $skype['url'] ?>">
                                                 <svg width="41" height="41" viewBox="0 0 41 41" fill="none"
                                                      xmlns="http://www.w3.org/2000/svg">
                                                     <circle cx="20.1058" cy="20.1058" r="19.1559" stroke="#0C62FD"
@@ -143,7 +143,7 @@ function render_contacts_block( $block ): void {
 										<?php endif; ?>
 
 										<?php if ( ! empty( $telegram['url'] ) ): ?>
-                                            <a class="change-color" href="<?php echo $telegram['url']; ?>">
+                                            <a class="change-color" aria-label="telegram" href="<?php echo $telegram['url']; ?>">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="41" height="41"
                                                      viewBox="0 0 41 41"
                                                      fill="none">
@@ -156,7 +156,7 @@ function render_contacts_block( $block ): void {
 										<?php endif; ?>
 
 										<?php if ( ! empty( $linkedin['url'] ) ): ?>
-                                            <a class="change-color" href="<?php echo $linkedin['url']; ?>">
+                                            <a class="change-color" aria-label="linkedin"  href="<?php echo $linkedin['url']; ?>">
                                                 <svg width="41" height="41" viewBox="0 0 41 41" fill="none"
                                                      xmlns="http://www.w3.org/2000/svg">
                                                     <circle cx="20.1054" cy="20.1054" r="19.1554" stroke="#0C62FD"
@@ -169,7 +169,7 @@ function render_contacts_block( $block ): void {
 										<?php endif; ?>
 
 										<?php if ( ! empty( $whatsapp['url'] ) ): ?>
-                                            <a class="change-color" href="<?php echo $whatsapp['url']; ?>">
+                                            <a class="change-color" aria-label="whatsaap" href="<?php echo $whatsapp['url']; ?>">
                                                 <svg width="41" height="41" viewBox="0 0 41 41" fill="none"
                                                      xmlns="http://www.w3.org/2000/svg">
                                                     <circle cx="20.1058" cy="20.1058" r="19.1559" stroke="#0C62FD"
@@ -290,7 +290,7 @@ function render_contacts_block( $block ): void {
                                 <a href="<?php echo $email; ?>" class="email"><?php echo $email; ?></a>
                                 <div class="social">
 									<?php if ( ! empty( $skype['url'] ) ): ?>
-                                        <a class="change-color" href="<?php echo $skype['url'] ?>">
+                                        <a class="change-color" aria-label="skype" href="<?php echo $skype['url'] ?>">
                                             <svg width="41" height="41" viewBox="0 0 41 41" fill="none"
                                                  xmlns="http://www.w3.org/2000/svg">
                                                 <circle cx="20.1058" cy="20.1058" r="19.1559" stroke="#0C62FD"
@@ -303,7 +303,7 @@ function render_contacts_block( $block ): void {
 									<?php endif; ?>
 
 									<?php if ( ! empty( $telegram['url'] ) ): ?>
-                                        <a class="change-color" href="<?php echo $telegram['url']; ?>">
+                                        <a class="change-color" aria-label="telegram" href="<?php echo $telegram['url']; ?>">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="41" height="41"
                                                  viewBox="0 0 41 41"
                                                  fill="none">
@@ -316,7 +316,7 @@ function render_contacts_block( $block ): void {
 									<?php endif; ?>
 
 									<?php if ( ! empty( $linkedin['url'] ) ): ?>
-                                        <a class="change-color" href="<?php echo $linkedin['url']; ?>">
+                                        <a class="change-color" aria-label="linkedin" href="<?php echo $linkedin['url']; ?>">
                                             <svg width="41" height="41" viewBox="0 0 41 41" fill="none"
                                                  xmlns="http://www.w3.org/2000/svg">
                                                 <circle cx="20.1054" cy="20.1054" r="19.1554" stroke="#0C62FD"
@@ -329,7 +329,7 @@ function render_contacts_block( $block ): void {
 									<?php endif; ?>
 
 									<?php if ( ! empty( $whatsapp['url'] ) ): ?>
-                                        <a class="change-color" href="<?php echo $whatsapp['url']; ?>">
+                                        <a class="change-color" aria-label="whatsaap" href="<?php echo $whatsapp['url']; ?>">
                                             <svg width="41" height="41" viewBox="0 0 41 41" fill="none"
                                                  xmlns="http://www.w3.org/2000/svg">
                                                 <circle cx="20.1058" cy="20.1058" r="19.1559" stroke="#0C62FD"

@@ -92,11 +92,12 @@
   font-weight: 500;
   line-height: normal;
   margin-bottom: 12px;
+  font-family: "SF Pro Display", sans-serif;
 }
 @media (max-width: 1599px) {
   .media-contacts .container .contact-card .name {
     margin-bottom: 15px;
-    font-size: 17px;
+    font-size: 18px;
   }
 }
 @media (max-width: 1023px) {
@@ -118,6 +119,7 @@
   font-weight: 500;
   line-height: normal;
   margin-bottom: 12px;
+  font-family: "SF Pro Display", sans-serif;
 }
 @media (max-width: 1599px) {
   .media-contacts .container .contact-card .email {
@@ -135,16 +137,17 @@
 .media-contacts .container .contact-card .position {
   color: #100F0F;
   text-align: center;
-  font-size: 17px;
+  font-size: 18px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
   text-transform: uppercase;
   margin-bottom: 10px;
+  max-width: 95%;
+  font-family: "SF Pro Display", sans-serif;
 }
 @media (max-width: 1599px) {
   .media-contacts .container .contact-card .position {
-    font-size: 16px;
     margin-bottom: 10px;
   }
 }
