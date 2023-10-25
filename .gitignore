@@ -1,0 +1,30 @@
+# Ignore core WordPress files
+wp-admin/
+wp-includes/
+wp-config.php
+
+wp-content/plugins/*
+!wp-content/plugins/affstream-media
+wp-content/ai1wm-backups/
+wp-content/uploads/
+
+# Ignore backup files
+*.bak
+*.backup
+
+# Ignore log files and databases
+*.log
+*.sql
+*.sqlite
+
+# Ignore temporary files
+*.tmp
+*.swp
+
+# Ignore environment-specific configuration files
+.env
+.env.*
+config.php
+
+# Ignore composer dependencies (if not using Composer)
+vendor/

@@ -1,0 +1,20 @@
+#for-advertiser .intro .container h1 {
+  color: #EDEDFF;
+  font-size: 70px;
+  font-style: italic;
+  font-weight: 900;
+  line-height: 80px;
+  text-transform: uppercase;
+}
+@media (max-width: 767px) {
+  #for-advertiser .intro .container h1 {
+    font-size: 29.248px;
+  }
+}
+#for-advertiser .intro .container h1 .color-text {
+  background: linear-gradient(to right, #E0F01E, #00E291);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/*# sourceMappingURL=advertiser.css.map */

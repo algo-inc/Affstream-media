@@ -1,0 +1,409 @@
+@import "./breakpoints";
+
+header {
+  padding: 30px 16px;
+  background: #100F0F;
+  @include breakpoint(desktop){
+    padding: 25px 16px;
+  }
+  @include breakpoint(tablet) {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #100F0F;
+    z-index: 230;
+  }
+
+
+  .container.desktop-menu {
+    @include breakpoint(tablet) {
+      display: none;
+    }
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include breakpoint(desktop){
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .site-branding{
+      @include breakpoint(desktop){
+        max-width: 160px;
+      }
+    }
+    .main-navigation {
+      ul {
+        padding: 0;
+        display: flex;
+        @include breakpoint(tablet) {
+          display: none;
+        }
+        @include breakpoint(mobile) {
+          display: none;
+        }
+        li {
+          margin-inline-end: 40px;
+          margin-bottom: 0;
+          &:last-child{
+            margin-right: 0;
+          }
+          @include breakpoint(large-tablet){
+            margin-inline-end: 20px;
+          }
+          a {
+            font-style: normal;
+            font-size: 21px;
+            font-weight: 700;
+            color: #EDEDFF;
+            padding: 0;
+            transition: 0.3s linear;
+            text-transform: uppercase;
+            @include breakpoint(desktop) {
+              font-size: 18px;
+            }
+            @include breakpoint(large-tablet){
+              margin-inline-end: 0;
+            }
+            &:hover {
+              color: #00E291;
+            }
+
+            &:visited {
+              background: linear-gradient(97.48deg, #0C62FD 0%, #1035B8 100%);
+              -webkit-background-clip: text;
+              background-clip: text;
+            }
+          }
+        }
+
+      }
+    }
+    .buttons-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 40px;
+      @include breakpoint(large-tablet){
+        max-width: 230px;
+      }
+      @include breakpoint(tablet) {
+        display: none;
+      }
+      @include breakpoint(mobile) {
+        display: none;
+      }
+    }
+    .logout-container{
+      display: flex;
+      max-width: 30%;
+      width: 100%;
+      @include breakpoint(large-tablet){
+        max-width: 37%;
+      }
+      .dashboard{
+        margin-right: 20px;
+        padding: 17px 23px;
+        @include breakpoint(large-tablet){
+          font-size: 18px;
+          padding: 10px;
+        }
+      }
+      .user-email{
+        margin-right: 20px;
+        background:  linear-gradient(135deg, #00E291 0%, #E0F01E 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        leading-trim: both;
+        text-edge: cap;
+        font-family:  "SF Pro Display", sans-serif;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        text-transform: uppercase;
+      }
+      .logout-btn{
+        font-family: "SF Pro Display", sans-serif;
+        background:linear-gradient(135deg, #0C62FD 0%, #1035B8 100%);
+        color: #EDEDFF;
+        leading-trim: both;
+        text-edge: cap;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 91.182%;
+        text-transform: uppercase;
+        height: auto;
+        align-items: center;
+        width: 100%;
+        max-width: 180px;
+        transition: all 0.3s linear;
+        padding: 0 10px;
+        cursor: pointer;
+        @include breakpoint(large-tablet){
+          font-size: 18px;
+        }
+        &:hover{
+          background: #0C62FD;
+        }
+        @include breakpoint(desktop){
+          max-width: 140px;
+        }
+      }
+    }
+  }
+  .auth-button {
+    padding: 14px 27px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+    border-radius: 100px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    height: 42px;
+    box-sizing: border-box;
+    white-space: nowrap;
+    @include breakpoint(desktop){
+      padding: 11px 23px;
+      leading-trim: both;
+      text-edge: cap;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 700;
+      height: 37px;
+      line-height: 91.182%; /* 16.413px */
+      text-transform: uppercase;
+    }
+    @include breakpoint(large-tablet){
+      padding: 10px 22px;
+      font-size: 20px;
+    }
+    @include breakpoint(mobile) {
+      padding: 15px;
+      font-size: 23px;
+      max-width: 130px;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .button-login {
+    background: linear-gradient(97.48deg, #0C62FD 0%, #1035B8 100%);
+    transition: 0.3s linear;
+
+    &:hover {
+      background: #0C62FD;
+    }
+  }
+
+  .button-signin {
+    background: linear-gradient(97.82deg, #00E291 0%, #E0F01E 99.95%);
+    color: #100F0F;
+    transition: 0.3s linear;
+
+    &:hover {
+      background: #00E291;
+    }
+  }
+
+}
+
+
+.mobile-menu-container {
+  display: none;
+  @include breakpoint(tablet) {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 20px;
+    align-items: center;
+  }
+}
+
+.mobile-menu {
+  width: 100%;
+  height: auto;
+  .buttons-container-mobile{
+    display: flex;
+    justify-content: space-between;
+    max-width: 300px;
+    margin:70px  auto 0;
+    width: 100%;
+    @include breakpoint(tablet){
+      max-width: 320px;
+    }
+    a{
+      &:first-child{
+        margin-right: 50px;
+      }
+    }
+
+  }
+}
+
+
+.burger-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  transition: all 0.3s linear;
+  &.active{
+
+  }
+}
+
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #100F0F;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(-100%);
+  transition: opacity 0.3s, transform 0.3s;
+  z-index: -1;
+  /* ваші додаткові стилі, які вам можуть знадобитись */
+  &.show {
+    opacity: 1;
+    transform: translateY(0);
+    z-index: 300;
+  }
+  .menu-item{
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-bottom: 18px;
+    text-align: center;
+    a{
+      color: #EDEDFF;
+      text-transform: uppercase;
+      @include breakpoint(mobile){
+        font-size: 27px;
+      }
+    }
+  }
+  .buttons-container{
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 360px;
+    width: 100%;
+    .dashboard{
+      max-width: 200px;
+      font-size: 20px;
+      margin-right: 20px;
+    }
+  }
+}
+
+
+
+.mobile-menu ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.mobile-menu ul li {
+  margin-bottom: 10px;
+}
+
+.mobile-menu ul li a {
+  color: #333;
+  text-decoration: none;
+}
+
+
+.desktop-menu {
+  display: none;
+}
+
+.mobile-menu-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+  z-index: 310;
+  background: #0c0c0c;
+  @media (min-width: 1024px) {
+    display: none;
+  }
+}
+
+#header-media{
+  .current_page_item{
+    a{
+      color: #00E291;
+    }
+  }
+  .mobile-menu{
+    max-width: 50%;
+    right: 0;
+    left: auto;
+    nav{
+      justify-content: start;
+      width: 140px;
+
+    }
+
+    .menu-item{
+      text-align: start;
+      a {
+        padding: 0;
+        color: #EDEDFF;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        text-transform: uppercase;
+      }
+
+    }
+    .buttons-container{
+      flex-direction: column;
+      gap:20px;
+      max-width: 140px;
+      .dashboard{
+        font-size: 18px;
+        width: auto;
+        margin: 0 auto;
+      }
+      .logout-btn{
+        font-size: 18px;
+        padding: 15px;
+        width: 100%;
+        height: 37px;
+        color: #EDEDFF;
+        font-family: "SF Pro Display", sans-serif;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 91.182%; /* 16.413px */
+        text-transform: uppercase;
+      }
+    }
+  }
+}

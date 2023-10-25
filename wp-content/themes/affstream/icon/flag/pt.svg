@@ -1,0 +1,30 @@
+<svg width="31" height="21" viewBox="0 0 31 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Clip path group">
+<mask id="mask0_217_630" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="31" height="21">
+<g id="clip0_503_4163">
+<path id="Vector" d="M28.1 0H2.90005C1.74025 0 0.800049 0.940202 0.800049 2.1V18.9C0.800049 20.0598 1.74025 21 2.90005 21H28.1C29.2598 21 30.2001 20.0598 30.2001 18.9V2.1C30.2001 0.940202 29.2598 0 28.1 0Z" fill="white"/>
+</g>
+</mask>
+<g mask="url(#mask0_217_630)">
+<g id="Group">
+<path id="Vector_2" d="M28.1 0H2.90005C1.74025 0 0.800049 0.940202 0.800049 2.1V18.9C0.800049 20.0598 1.74025 21 2.90005 21H28.1C29.2598 21 30.2001 20.0598 30.2001 18.9V2.1C30.2001 0.940202 29.2598 0 28.1 0Z" fill="white"/>
+<g id="Mask group">
+<mask id="mask1_217_630" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="31" height="21">
+<g id="Group_2">
+<path id="Vector_3" d="M28.1 0H2.90005C1.74025 0 0.800049 0.940202 0.800049 2.1V18.9C0.800049 20.0598 1.74025 21 2.90005 21H28.1C29.2598 21 30.2001 20.0598 30.2001 18.9V2.1C30.2001 0.940202 29.2598 0 28.1 0Z" fill="white"/>
+</g>
+</mask>
+<g mask="url(#mask1_217_630)">
+<g id="Group_3">
+<path id="Vector_4" d="M30.2001 0H0.800049V21H30.2001V0Z" fill="#FF2936"/>
+<path id="Vector_5" fill-rule="evenodd" clip-rule="evenodd" d="M0.800049 21H12.0001V0H0.800049V21Z" fill="#128415"/>
+<path id="Vector_6" d="M12 14C13.933 14 15.5 12.433 15.5 10.5C15.5 8.56701 13.933 7 12 7C10.067 7 8.5 8.56701 8.5 10.5C8.5 12.433 10.067 14 12 14Z" stroke="#FAF94F" stroke-width="2.85714"/>
+<path id="Vector_7" fill-rule="evenodd" clip-rule="evenodd" d="M10.6001 8.75039C10.6001 8.55709 10.7568 8.40039 10.9501 8.40039H13.0501C13.2434 8.40039 13.4001 8.55709 13.4001 8.75039V11.2004C13.4001 11.9735 12.7733 12.6004 12.0001 12.6004C11.2269 12.6004 10.6001 11.9735 10.6001 11.2004V8.75039Z" fill="white"/>
+<path id="Vector_8" fill-rule="evenodd" clip-rule="evenodd" d="M12.0001 11.1996C12.3867 11.1996 12.7 10.1862 12.7 9.79961C12.7 9.41301 12.3867 9.09961 12.0001 9.09961C11.6135 9.09961 11.3 9.41301 11.3 9.79961C11.3 10.1862 11.6135 11.1996 12.0001 11.1996Z" fill="#1D50B5"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</svg>

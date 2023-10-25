@@ -1,0 +1,163 @@
+.popular-articles-block {
+  padding-bottom: 70px;
+}
+.popular-articles-block .popular-articles-title {
+  display: flex;
+  padding-bottom: 70px;
+  max-width: 1600px;
+  margin: 0 auto 20px;
+}
+@media (max-width: 1599px) {
+  .popular-articles-block .popular-articles-title {
+    padding: 0 16px;
+    max-width: 1200px;
+  }
+}
+.popular-articles-block .popular-articles-title h2 {
+  background: var(--3, linear-gradient(97deg, #0C62FD 0%, #1035B8 100%));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
+  font-size: 30px;
+  font-style: italic;
+  font-weight: 900;
+  line-height: normal;
+  text-transform: uppercase;
+}
+.popular-articles-block .container {
+  display: flex;
+  gap: 15px;
+}
+@media (max-width: 1599px) {
+  .popular-articles-block .container {
+    padding: 0 16px;
+  }
+}
+.popular-articles-block .container .post-card {
+  width: 100%;
+  max-width: 100%;
+  color: #100F0F;
+  border-radius: 10px;
+  background: #FFF;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+@media (max-width: 1599px) {
+  .popular-articles-block .container .post-card {
+    max-width: 350px;
+  }
+}
+@media (max-width: 767px) {
+  .popular-articles-block .container .post-card {
+    max-width: 100%;
+  }
+}
+.popular-articles-block .container .post-card h3 {
+  color: #100F0F;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.popular-articles-block .container .post-card a {
+  text-decoration: none;
+}
+.popular-articles-block .container .post-card p {
+  color: #100F0F;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+}
+.popular-articles-block .container .post-card .inner-content {
+  padding: 15px;
+}
+.popular-articles-block .container .post-card .inner-content .post-description p {
+  color: #7E7E7E;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+}
+.popular-articles-block .container .post-card .tags, .popular-articles-block .container .post-card .category {
+  display: flex;
+  margin-bottom: 30px;
+}
+@media (max-width: 1023px) {
+  .popular-articles-block .container .post-card .tags {
+    gap: 5px;
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 1023px) {
+  .popular-articles-block .container .post-card .tags .tag {
+    padding: 3px 6px;
+  }
+}
+.popular-articles-block .container .post-card .tags .hover-color-0:hover {
+  background: linear-gradient(97deg, #0C62FD 0%, #1035B8 100%);
+}
+.popular-articles-block .container .post-card .tags .hover-color-1:hover {
+  background: linear-gradient(97deg, #0C62FD 0%, #1035B8 100%);
+}
+.popular-articles-block .container .post-card .tags .hover-color-2:hover {
+  background: linear-gradient(97deg, #0C62FD 0%, #1035B8 100%);
+}
+.popular-articles-block .container .post-card .tags .hover-color-3:hover {
+  background: linear-gradient(97deg, #0C62FD 0%, #1035B8 100%);
+}
+.popular-articles-block .container .post-card .category {
+  margin-bottom: 20px;
+}
+.popular-articles-block .container .post-card .category .cat {
+  background: linear-gradient(135deg, #0C62FD 0%, #1035B8 100%);
+  padding: 5px 20px;
+  position: relative;
+  border-radius: 32px;
+  z-index: 100;
+  margin-right: 25px;
+}
+.popular-articles-block .container .post-card .category .cat:last-child {
+  margin-right: 0;
+}
+.popular-articles-block .container .post-card .category .cat:before {
+  content: "";
+  margin: auto;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  border-radius: 32px;
+  z-index: -1;
+  background: #EDEDFF;
+}
+.popular-articles-block .container .post-card .tags {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 13px;
+}
+.popular-articles-block .container .post-card .tags .tag {
+  border-radius: 32px;
+  background: #100F0F;
+  color: #FFFFFF;
+  padding: 4px 9px;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 118.8%;
+  letter-spacing: -0.06px;
+  border-bottom: none;
+}
+.popular-articles-block .container .post-card .tags .tag:last-child {
+  margin-right: 0;
+}
+.popular-articles-block .container .post-card img {
+  max-width: 100%;
+  object-fit: cover;
+  height: auto;
+  border-radius: 10px;
+}
+
+/*# sourceMappingURL=editor-style.css.map */

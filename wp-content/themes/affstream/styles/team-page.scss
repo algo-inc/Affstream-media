@@ -1,0 +1,717 @@
+@import "./breakpoints";
+
+.team {
+  box-sizing: border-box;
+  margin-top: 60px;
+  margin-bottom: 140px;
+  @include breakpoint(large-tablet) {
+    margin-top: 70px;
+    margin-bottom: 70px;
+  }
+  @include breakpoint(mobile){
+    margin-bottom: 60px;
+    margin-top: 140px;
+  }
+  .team-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 20px 50px;
+    @include breakpoint(large-tablet) {
+      padding: 0 20px;
+    }
+    @include breakpoint(mobile){
+      margin: 0 10px 30px;
+    }
+    svg {
+      height: auto;
+    }
+  }
+
+  h2 {
+    color: #EDEDFF;
+    font-size: 52.293px;
+    font-style: italic;
+    font-weight: 900;
+    line-height: 143.336%;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 50px;
+    @include breakpoint(mobile){
+      font-size: 31px;
+      line-height: normal;
+      margin-bottom: 20px;
+    }
+  }
+
+  .separator {
+    height: 7px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+    @include breakpoint(mobile){
+      margin-bottom: 70px;
+    }
+  }
+
+  .about-us {
+    position: relative;
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 40px;
+      padding: 0 20px;
+      @include breakpoint(mobile) {
+        flex-direction: column;
+        gap: 60px;
+      }
+
+      .title-image {
+        @include breakpoint(desktop) {
+          svg {
+            max-width: 80%;
+            height: auto;
+          }
+        }
+        @include breakpoint(mobile) {
+          display: flex;
+          justify-content: center;
+          svg {
+            margin: 0 auto;
+          }
+
+        }
+      }
+
+      .about-us-text {
+        color: #EDEDFF;
+        max-width: 690px;
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 130%;
+        @include breakpoint(tablet) {
+          max-width: 50%;
+        }
+        @include breakpoint(mobile) {
+          max-width: 100%;
+          font-size: 17px;
+          p{
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .about-us-blocks {
+    position: relative;
+    overflow: hidden;
+
+    .decoration-image {
+      position: absolute;
+      right: 0;
+      top: -130px;
+      z-index: 33;
+      max-width: 35%;
+
+      @include breakpoint(desktop) {
+        max-width: 40%;
+        top: 15px;
+      }
+      @include breakpoint(large-desktop) {
+        max-width: 35%;
+        top: 15px;
+      }
+      @include breakpoint(mobile) {
+        max-width: 100%;
+        top: 5%;
+        z-index: 100;
+        right: 0;
+      }
+    }
+
+    .about-us-container {
+      display: grid;
+      grid-template-columns: 1fr;
+      max-width: 1600px;
+      margin: 0 auto;
+      row-gap: 140px;
+      width: 100%;
+      padding: 140px 20px;
+      position: relative;
+      @include breakpoint(desktop) {
+        max-width: 1200px;
+        padding: 160px 0 127px;
+      }
+      @include breakpoint(large-tablet) {
+        row-gap: 70px;
+        padding: 70px 20px;
+      }
+      @include breakpoint(tablet) {
+        row-gap: 40px;
+        padding: 70px 20px;
+      }
+      @include breakpoint(mobile) {
+        gap: 60px;
+      }
+
+      .rotate-image {
+        position: absolute;
+      }
+
+      p {
+        color: #100F0F;
+        font-size: 29px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 130%;
+        margin: 0;
+        @include breakpoint(desktop) {
+          font-size: 25px;
+          max-width: 700px;
+        }
+        @include breakpoint(mobile) {
+          color: #100F0F;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: normal;
+          line-height: 130%;
+        }
+      }
+
+      .inner-container {
+        padding: 75px 100px;
+        box-sizing: border-box;
+        @include breakpoint(desktop){
+          padding: 65px 80px;
+        }
+        @include breakpoint(large-tablet) {
+          padding: 50px;
+        }
+        @include breakpoint(tablet) {
+          padding: 50px;
+          padding-left: 40px;
+        }
+        @include breakpoint(mobile) {
+          padding: 30px;
+        }
+        p{
+          color: #100F0F;
+          font-size: 30px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 130%;
+          @include breakpoint(large-tablet){
+            font-size: 26px;
+          }
+          @include breakpoint(mobile){
+            color: #100F0F;
+            font-size: 17px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 130%;
+          }
+        }
+
+      }
+
+      #about-block-1 {
+        max-width: 90%;
+        margin-left: auto;
+        width: 100%;
+        position: relative;
+        z-index: 30;
+        @include breakpoint(tablet) {
+          max-width: 100%;
+        }
+        @include breakpoint(mobile) {
+          max-width: 100%;
+        }
+
+        .inner-container {
+          border-radius: 30px;
+          background: linear-gradient(349deg, #00E291 0%, #EDEDFF 100%);
+          @include breakpoint(desktop){
+            max-width: 1200px;
+          }
+          p {
+            max-width: 830px;
+            @include breakpoint(desktop){
+              max-width: 715px;
+            }
+            @include breakpoint(large-tablet) {
+              max-width: 60%;
+            }
+            @include breakpoint(tablet) {
+              max-width: 70%;
+              margin-left: 20px;
+            }
+            @include breakpoint(mobile) {
+              max-width: 78%;
+              padding-bottom: 140px;
+              margin-left: 0;
+            }
+          }
+        }
+
+        .rotate-image {
+          left: -10%;
+          bottom: -105%;
+          z-index: -1;
+          @include breakpoint(desktop){
+            left: -16%;
+            bottom: -80%;
+          }
+          svg {
+            animation: rotate-advantages 23s linear infinite;
+          }
+
+          @include breakpoint(tablet) {
+            display: none;
+          }
+
+          &:before {
+            width: 52%;
+            height: 100%;
+            content: '';
+            background: #100f0f;
+            z-index: 20;
+            position: absolute;
+            right: -10px;
+          }
+        }
+      }
+
+      #about-block-2 {
+        margin-right: auto;
+        width: 100%;
+        z-index: 30;
+        position: relative;
+        max-width: 1450px;
+        @include breakpoint(desktop){
+          margin: 0 auto;
+          max-width: 1080px;
+        }
+        @include breakpoint(tablet) {
+          max-width: 100%;
+        }
+        @include breakpoint(mobile) {
+          max-width: 100%;
+          z-index: 50;
+        }
+
+        .rotate-image {
+          right: -110px;
+          bottom: -70%;
+          z-index: -1;
+          @include breakpoint(tablet) {
+            display: none;
+          }
+
+          svg {
+            animation: rotate 23s linear infinite;
+          }
+
+          &:before {
+            width: 52%;
+            height: 100%;
+            content: '';
+            background: #100f0f;
+            z-index: 20;
+            position: absolute;
+            left: -10px;
+          }
+        }
+
+        .inner-container {
+          border-radius: 30px;
+          background: linear-gradient(13deg, #E0F01E 0%, #EDEDFF 100%);
+          position: relative;
+          @include breakpoint(desktop){
+            padding-left: 200px;
+          }
+          @include breakpoint(large-tablet) {
+            padding-right: 40px;
+            padding-left: 35%;
+          }
+          @include breakpoint(mobile){
+            padding-left: 30px;
+            padding-bottom: 140px;
+          }
+          .block-image {
+            position: absolute;
+            left: -6%;
+            top: -30%;
+            max-width: 500px;
+            @include breakpoint(desktop) {
+              max-width: 400px;
+              top: -16%;
+              left: -20%;
+            }
+            @include breakpoint(large-tablet) {
+              top: -5%;
+              left: 0;
+              max-width: 340px;
+            }
+            @include breakpoint(tablet) {
+              max-width: 280px;
+              top: 10%;
+              left: 1%;
+            }
+            @include breakpoint(mobile) {
+              max-width: 75%;
+              bottom: -30%;
+              left: 0;
+              right: 0;
+              top: auto;
+              margin: auto;
+              z-index: 33;
+
+            }
+          }
+
+          p {
+            max-width: 800px;
+            margin-left: auto;
+            @include breakpoint(mobile){
+              max-width: 91%;
+              margin-left: 0;
+            }
+          }
+        }
+      }
+
+      #about-block-3 {
+        position: relative;
+        z-index: 40;
+        .rotate-image {
+          left: 0;
+          top: 60%;
+          z-index: -1;
+          @include breakpoint(large-desktop) {
+            left: -10px;
+            top: 60%;
+          }
+          @include breakpoint(desktop){
+            left: -12%;
+          }
+          @include breakpoint(tablet) {
+            display: none;
+          }
+
+          svg {
+            animation: rotate-advantages 23s linear infinite;
+          }
+
+          &:before {
+            width: 52%;
+            height: 100%;
+            content: '';
+            background: #100f0f;
+            z-index: 20;
+            position: absolute;
+            right: -10px;
+          }
+        }
+
+        .inner-container {
+          border-radius: 26px;
+          background: linear-gradient(135deg, #1035B8 0%, #0C62FD 100%);
+          position: relative;
+          z-index: 30;
+          @include breakpoint(mobile) {
+            padding-top: 90px;
+            padding-bottom: 280px;
+          }
+
+          .block-image {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            max-width: 630px;
+            @include breakpoint(desktop) {
+              max-width: 430px;
+            }
+            @include breakpoint(tablet) {
+              max-width: 370px;
+            }
+            @include breakpoint(large-tablet) {
+              max-width: 360px;
+            }
+          }
+        }
+
+        p {
+          max-width: 700px;
+          color: #EDEDFF;
+          @include breakpoint(desktop){
+            max-width: 600px;
+          }
+          @include breakpoint(tablet) {
+            max-width: 60%;
+          }
+          @include breakpoint(large-tablet) {
+            max-width: 60%;
+          }
+          @include breakpoint(mobile){
+            margin: 0;
+            font-weight: 500;
+            max-width: 96%;
+          }
+        }
+      }
+
+      #about-block-4 {
+        max-width: 90%;
+        margin-left: auto;
+        width: 100%;
+        z-index: 40;
+        @include breakpoint(desktop){
+          max-width: 100%;
+        }
+        @include breakpoint(tablet) {
+          max-width: 100%;
+
+        }
+        @include breakpoint(mobile) {
+          max-width: 100%;
+
+        }
+
+        .inner-container {
+          border-radius: 30px;
+          background: linear-gradient(135deg, #00E291 0%, #E0F01E 100%);
+          position: relative;
+          @include breakpoint(tablet) {
+            padding-right: 40px;
+          }
+          @include breakpoint(mobile) {
+            padding: 30px 25px 230px 25px;
+
+          }
+
+          .block-image {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            max-width: 630px;
+            @include breakpoint(desktop) {
+              max-width: 600px;
+            }
+            @include breakpoint(tablet) {
+              max-width: 360px;
+              width: 120%;
+            }
+          }
+
+          p {
+            max-width: 630px;
+            margin-left: auto;
+            @include breakpoint(desktop){
+              max-width: 540px;
+            }
+            @include breakpoint(tablet) {
+              max-width: 60%;
+            }
+            @include breakpoint(large-tablet) {
+              max-width: 60%;
+            }
+            @include breakpoint(mobile){
+              max-width: 100%;
+
+            }
+          }
+        }
+      }
+    }
+  }
+  .map-block {
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 100px;
+    svg {
+      max-width: 100%;
+      width: 100%;
+      height: auto;
+      padding: 0 10px;
+    }
+    .map-text {
+      position: absolute;
+      top: 0;
+      left: 28%;
+      color: #EDEDFF;
+      text-align: center;
+      font-size: 25px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 130%;
+      max-width: 22%;
+      @include breakpoint(large-desktop){
+        max-width: 28%;
+        left: 24%;
+      }
+      @include breakpoint(desktop) {
+        max-width: 32%;
+        left: 20%;
+        font-size: 20px;
+      }
+
+      @include breakpoint(tablet) {
+        position: relative;
+        max-width: 100%;
+        left: 0;
+        top: 0;
+        padding: 0 20px;
+        color: #EDEDFF;
+        text-align: center;
+        font-size: 17px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 130%;
+      }
+      @include breakpoint(mobile){
+        margin-bottom: 20px;
+      }
+    }
+  }
+  .looking {
+    overflow: hidden;
+    h2 {
+      color: #EDEDFF;
+      text-align: center;
+      font-size: 70.258px;
+      font-style: italic;
+      font-weight: 900;
+      line-height: normal;
+      text-transform: none;
+      max-width: 920px;
+      margin: 0 auto 70px;
+      @include breakpoint(mobile){
+        color: #EDEDFF;
+        text-align: center;
+        font-size: 27.881px;
+        font-style: italic;
+        font-weight: 900;
+        line-height: normal;
+        margin-bottom: 60px;
+        padding: 0 24px;
+      }
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      max-width: 1600px;
+      @include breakpoint(desktop){
+        max-width: 1200px;
+        padding: 0 20px;
+      }
+
+      @include breakpoint(mobile){
+        display: block;
+      }
+      .looking-button-next, .looking-button-prev{
+        height: 40px;
+        position: relative;
+        margin-top: 7%;
+        @include breakpoint(tablet){
+          display: none;
+        }
+      }
+      .we-looking{
+        overflow: hidden;
+        position: relative;
+        display: flex;
+        align-items: center;
+        padding-bottom: 40px;
+        max-width: 1400px;
+        width: 100%;
+        @include breakpoint(desktop){
+          max-width: 1000px;
+        }
+        @include breakpoint(large-tablet){
+          max-width: 80%;
+        }
+        .swiper-pagination{
+          bottom: 0;
+          .swiper-pagination-bullet{
+            background: #00E291;
+          }
+        }
+        .swiper-wrapper{
+          height: auto;
+        }
+      }
+      .looking-card {
+        background: linear-gradient(315deg, #00E291 0%, #E0F01E 100%);
+        position: relative;
+        //max-width: 390px;
+        border-radius: 25px;
+        padding: 40px 70px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 270px;
+        @include breakpoint(desktop) {
+          //max-width: 320px;
+        }
+
+        &:before {
+          content: "";
+          position: absolute;
+          top: 4px;
+          left: 4px;
+          right: 4px;
+          bottom: 4px;
+          margin: auto;
+          background: #0c0c0c;
+          border-radius: 25px;
+          z-index: 1;
+        }
+
+        .title {
+          color: #EDEDFF;
+          text-align: center;
+          font-size: 34.42px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+          z-index: 20;
+          position: relative;
+          margin-bottom: 20px;
+          @include breakpoint(desktop){
+            font-size: 28px;
+          }
+          @include breakpoint(mobile){
+            font-size: 27.02px;
+          }
+        }
+
+        .button {
+          border-radius: 86.05px;
+          background: linear-gradient(315deg, #00E291 0%, #E0F01E 100%);
+          color: #100F0F;
+          font-size: 21.512px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 91.182%;
+          padding: 15px 25px;
+          z-index: 20;
+          position: relative;
+          @include breakpoint(mobile){
+            font-size: 16.887px;
+            font-style: normal;
+            line-height: 91.182%;
+            padding: 9px 18px;
+          }
+        }
+      }
+    }
+  }
+}

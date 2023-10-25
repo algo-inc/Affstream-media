@@ -1,0 +1,124 @@
+@mixin breakpoint($breakpoint) {
+  @if $breakpoint == mobile {
+    @media (max-width: 767px) {
+      @content;
+    }
+  } @else if $breakpoint == tablet {
+    @media (max-width: 1023px) {
+      @content;
+    }
+  } @else if $breakpoint == large-tablet {
+    @media (min-width: 1024px) and (max-width: 1300px) {
+      @content;
+    }
+  } @else if $breakpoint == desktop {
+    @media (max-width: 1599px) {
+      @content;
+    }
+  } @else if $breakpoint == large-desktop {
+    @media (max-width: 1919px) {
+      @content;
+    }
+  } @else if $breakpoint == extra-large-desktop {
+    @media (min-width: 1920px) {
+      @content;
+    }
+  } @else {
+    @error "Invalid breakpoint provided. Please use 'mobile', 'tablet', 'large-tablet', 'desktop', 'large-desktop', or 'extra-large-desktop'.";
+  }
+}
+
+.media-recent-posts-by-category{
+  padding-bottom: 50px;
+  overflow: hidden;
+  .recent-posts-title{
+    display: flex;
+    max-width: 1300px;
+    margin: 0 auto 20px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px;
+    @include breakpoint(desktop){
+
+      max-width: 1200px;
+    }
+    .term-link{
+      border-radius: 78.979px;
+      background: #100F0F;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #FFFFFF;
+      padding: 10px 15px;
+      text-transform: uppercase;
+      transition: all 0.3s ease-in;
+      &:hover{
+        background: rgba(16, 15, 15, 0.50);
+      }
+      @include breakpoint(mobile){
+        padding: 9px 15px;
+        font-size: 12px;
+      }
+    }
+    h2{
+      color: #100F0F;
+      font-size: 30px;
+      font-style: italic;
+      font-weight: 900;
+      line-height: normal;
+      text-transform: uppercase;
+      margin: 0;
+      @include breakpoint(mobile){
+        color: #100F0F;
+        font-size: 25px;
+        font-style: italic;
+        font-weight: 900;
+        line-height: normal;
+        text-transform: uppercase;
+      }
+    }
+  }
+  .category-slider-container{
+    max-width: 1300px;
+    margin: 0 auto;
+    @include breakpoint(desktop){
+      max-width: 1200px;
+      padding: 0 16px;
+    }
+    .glossary-slider-card{
+      padding: 30px 47px;
+      border-radius: 10px;
+      background: #FFF;
+      box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+      width: 100%;
+      max-width: 100%;
+      @include breakpoint(desktop){
+        padding: 25px;
+      }
+      h3{
+        color: #100F0F;
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+      }
+      p{
+        color: #100F0F;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
+    }
+  }
+  .swiper-pagination-bullets{
+    display: flex;
+    justify-content: center;
+    margin-top: 12px;
+    .swiper-pagination-bullet{
+      background: black;
+    }
+  }
+}

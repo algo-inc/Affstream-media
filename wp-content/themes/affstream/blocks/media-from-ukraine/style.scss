@@ -1,0 +1,167 @@
+@mixin breakpoint($breakpoint) {
+  @if $breakpoint == mobile {
+    @media (max-width: 767px) {
+      @content;
+    }
+  } @else if $breakpoint == tablet {
+    @media (max-width: 1023px) {
+      @content;
+    }
+  } @else if $breakpoint == large-tablet {
+    @media (min-width: 1024px) and (max-width: 1300px) {
+      @content;
+    }
+  } @else if $breakpoint == desktop {
+    @media (max-width: 1599px) {
+      @content;
+    }
+  } @else if $breakpoint == large-desktop {
+    @media (max-width: 1919px) {
+      @content;
+    }
+  } @else if $breakpoint == extra-large-desktop {
+    @media (min-width: 1920px) {
+      @content;
+    }
+  } @else {
+    @error "Invalid breakpoint provided. Please use 'mobile', 'tablet', 'large-tablet', 'desktop', 'large-desktop', or 'extra-large-desktop'.";
+  }
+}
+
+
+.video-section {
+  padding-bottom: 50px;
+  padding-top: 50px;
+  background: black;
+  border-radius: 25px;
+  margin: 0 25px 50px;
+  @include breakpoint(desktop){
+    margin: 0 16px 50px;
+  }
+  @include breakpoint(tablet){
+    margin: 0 0 50px;
+    background: #FFFFFF;
+    padding: 0;
+  }
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    @include breakpoint(desktop) {
+      max-width: 1200px;
+      padding: 0 16px;
+    }
+
+    @include breakpoint(mobile){
+      flex-direction: column;
+      gap: 40px;
+    }
+    .video-slider-container {
+      padding: 20px;
+      border-radius: 10px;
+      background: #FFF;
+      box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+      max-width: 65%;
+      position: relative;
+      .block-logo{
+        position: absolute;
+        bottom: -7%;
+        right: -7%;
+        max-width: 132px;
+        z-index: 2;
+        @include breakpoint(mobile){
+          max-width: 70px;
+          right: -4%;
+          bottom: -4%;
+        }
+      }
+      @include breakpoint(mobile){
+        max-width: 100%;
+        padding: 0;
+        background: transparent;
+        box-shadow: none;
+      }
+      .slider-title{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        h2{
+          margin: 0;
+          color: #100F0F;
+          font-size: 30px;
+          font-style: italic;
+          font-weight: 900;
+          line-height: normal;
+          text-transform: uppercase;
+          @include breakpoint(tablet){
+            font-size: 24px;
+          }
+          @include breakpoint(mobile){
+            margin: 0 auto;
+            text-align: center;
+            font-size: 25px;
+          }
+
+        }
+        .navigation{
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap:20px;
+          height: 30px;
+          @include breakpoint(mobile){
+            display: none;
+          }
+          .prev, .next{
+            cursor: pointer;
+            display: flex;
+          }
+        }
+      }
+    }
+
+    .video-slider {
+      width: 100%;
+      margin-left: 0;
+      padding-bottom: 20px;
+      .video-preview {
+        position: relative;
+
+        img {
+          width: 100%;
+          height: auto;
+          border-radius: 10px;
+        }
+
+        .play-icon {
+          position: absolute;
+          margin: auto;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          right: 0;
+        }
+
+      }
+      .swiper-pagination{
+        bottom: -5px;
+        .swiper-pagination-bullet{
+          background: #100F0F;
+        }
+      }
+    }
+
+    .banner {
+      max-width: 30%;
+      img{
+        border-radius: 10px;
+      }
+      @include breakpoint(mobile){
+        max-width: 100%;
+        width: 100%;
+      }
+    }
+  }
+}

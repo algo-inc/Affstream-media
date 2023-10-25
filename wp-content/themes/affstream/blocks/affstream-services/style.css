@@ -1,0 +1,233 @@
+.affstream-services {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+@media (max-width: 1599px) {
+  .affstream-services {
+    max-width: 1200px;
+  }
+}
+.affstream-services .affstream-services-title h2 {
+  color: #100F0F;
+  leading-trim: both;
+  text-edge: cap;
+  font-size: 30px;
+  font-style: italic;
+  font-weight: 900;
+  line-height: normal;
+  text-transform: uppercase;
+}
+@media (max-width: 767px) {
+  .affstream-services .affstream-services-title h2 {
+    color: #100F0F;
+    leading-trim: both;
+    text-edge: cap;
+    font-size: 20px;
+    font-style: italic;
+    font-weight: 900;
+    line-height: normal;
+    text-transform: uppercase;
+  }
+}
+.affstream-services .field-title {
+  grid-template-columns: 200px repeat(2, 1fr);
+  display: grid;
+  padding: 10px 40px;
+}
+@media (max-width: 767px) {
+  .affstream-services .field-title {
+    display: none;
+  }
+}
+.affstream-services .field-title .column-name {
+  color: #100F0F;
+  leading-trim: both;
+  text-edge: cap;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.affstream-services .affstream-services-container {
+  padding-bottom: 30px;
+}
+.affstream-services .affstream-services-container .service-card {
+  border-radius: 10px;
+  background: #FFF;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  background: #FFF;
+}
+@media (max-width: 767px) {
+  .affstream-services .affstream-services-container .service-card {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+.affstream-services .affstream-services-container .service-card .card-container {
+  display: grid;
+  grid-template-columns: 200px 40% auto auto;
+  grid-column-gap: 40px;
+  position: relative;
+  background: #FFFFFF;
+  z-index: 22;
+  align-items: center;
+  padding: 40px;
+  box-shadow: 0px 0px 7.89547px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  overflow: hidden;
+}
+@media (max-width: 1599px) {
+  .affstream-services .affstream-services-container .service-card .card-container {
+    padding: 25px;
+    grid-template-columns: 200px 45% auto 120px;
+    grid-column-gap: 20px;
+  }
+}
+@media (max-width: 1400px) {
+  .affstream-services .affstream-services-container .service-card .card-container {
+    grid-template-columns: 200px 38% auto 70px auto;
+  }
+}
+@media (max-width: 1023px) {
+  .affstream-services .affstream-services-container .service-card .card-container {
+    grid-template-columns: 1fr 1fr;
+    grid-row-gap: 20px;
+  }
+}
+@media (max-width: 767px) {
+  .affstream-services .affstream-services-container .service-card .card-container {
+    grid-template-columns: 1fr;
+    padding: 20px 15px;
+  }
+}
+@media (max-width: 767px) {
+  .affstream-services .affstream-services-container .service-card .card-container .service-icon {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+.affstream-services .affstream-services-container .service-card .card-container .service-icon img {
+  width: fit-content;
+}
+.affstream-services .affstream-services-container .service-card .card-container .service-icon .is-top-mobile {
+  display: none;
+}
+@media (max-width: 767px) {
+  .affstream-services .affstream-services-container .service-card .card-container .service-icon .is-top-mobile {
+    display: block;
+    font-size: 18px;
+    padding: 7px;
+  }
+}
+@media (min-width: 1400px) {
+  .affstream-services .affstream-services-container .service-card .card-container .is-top-inner {
+    display: none;
+  }
+}
+@media (max-width: 1023px) {
+  .affstream-services .affstream-services-container .service-card .card-container .is-top-inner {
+    display: none;
+  }
+}
+.affstream-services .affstream-services-container .service-card .card-container .service-description p {
+  color: #100F0F;
+  leading-trim: both;
+  text-edge: cap;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 0;
+}
+@media (max-width: 1599px) {
+  .affstream-services .affstream-services-container .service-card .card-container .service-description p {
+    font-size: 18px;
+  }
+}
+.affstream-services .affstream-services-container .service-card .card-container .monthly-price p {
+  color: #0C62FD;
+  leading-trim: both;
+  text-edge: cap;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 0;
+}
+.affstream-services .affstream-services-container .service-card .card-container .links {
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+}
+@media (max-width: 1023px) {
+  .affstream-services .affstream-services-container .service-card .card-container .links {
+    flex-direction: row;
+  }
+}
+@media (max-width: 767px) {
+  .affstream-services .affstream-services-container .service-card .card-container .links {
+    flex-direction: row;
+    gap: 20px;
+  }
+}
+.affstream-services .affstream-services-container .service-card .card-container .links .page-link {
+  width: fit-content;
+  display: flex;
+  gap: 5.5px;
+  font-size: 13.751px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 91.182%;
+  text-transform: uppercase;
+  padding: 8px 10px;
+  border-radius: 55.004px;
+  color: #0C62FD;
+  border: 1.5px solid #0C62FD;
+  transition: all 0.2s ease-in;
+}
+.affstream-services .affstream-services-container .service-card .card-container .links .page-link svg {
+  transition: all 0.2s ease-in;
+}
+.affstream-services .affstream-services-container .service-card .card-container .links .page-link:hover {
+  background: #0C62FD;
+  color: #fff;
+}
+.affstream-services .affstream-services-container .service-card .card-container .links .page-link:hover svg path {
+  fill: #fff;
+}
+@media (max-width: 767px) {
+  .affstream-services .affstream-services-container .service-card .card-container .links .page-link {
+    width: fit-content;
+  }
+}
+.affstream-services .affstream-services-container .term-archive-link {
+  width: fit-content;
+  padding: 15px 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100px;
+  background: #100F0F;
+  color: #FFF;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 91.182%;
+  /* 18.236px */
+  text-transform: uppercase;
+  margin: 0 auto;
+}
+@media (max-width: 1599px) {
+  .affstream-services .affstream-services-container .term-archive-link {
+    padding: 10px 15px;
+    font-size: 18px;
+  }
+}
+.affstream-services .affstream-services-container .term-archive-link:hover {
+  background: rgba(16, 15, 15, 0.5);
+}
+
+/*# sourceMappingURL=style.css.map */

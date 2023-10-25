@@ -1,0 +1,118 @@
+@import "breakpoints";
+.glossary {
+  max-width: 1300px;
+  margin: 0 auto;
+  @include breakpoint(desktop) {
+    max-width: 1200px;
+  }
+  @media (max-width: 1220px) {
+    padding: 0 16px;
+  }
+
+  .alphabet-list {
+    display: flex;
+    border-radius: 10px;
+    gap: 26px;
+    background: #100F0F;
+    padding: 45px;
+    margin-bottom: 30px;
+    @include breakpoint(mobile){
+      padding: 10px;
+      gap: 18px;
+    }
+    li {
+      color: #FFF;
+      font-size: 26px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      text-transform: uppercase;
+      &:first-child{
+        margin-left: 20px;
+      }
+      a{
+        @include breakpoint(mobile){
+          color: #FFF;
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+          text-transform: uppercase;
+        }
+      }
+      .active{
+        color: #00E291;
+      }
+    }
+  }
+
+  #selected-letter {
+    background: linear-gradient(97deg, #0C62FD 0%, #1035B8 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 30px;
+    font-style: italic;
+    font-weight: 900;
+    line-height: normal;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+    @include breakpoint(mobile) {
+      font-size: 25px;
+      font-style: italic;
+      font-weight: 900;
+    }
+  }
+
+  #post-list {
+    .letter-heading{
+      background: var(--3, linear-gradient(97deg, #0C62FD 0%, #1035B8 100%));
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 30px;
+      font-style: italic;
+      font-weight: 900;
+      line-height: normal;
+      text-transform: uppercase;
+      @include breakpoint(mobile){
+        font-size: 25px;
+        margin-bottom: 25px;
+      }
+    }
+    .glossary-card {
+      padding: 30px 47px;
+      border-radius: 10px;
+      background: #FFF;
+      box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+      margin-bottom: 25px;
+      @include breakpoint(mobile) {
+        padding: 25px 20px;
+      }
+
+      h2 {
+        font-size: 30px;
+        font-style: italic;
+        font-weight: 900;
+        line-height: normal;
+        text-transform: uppercase;
+        color: #0C62FD;
+        @include breakpoint(mobile) {
+          font-size: 20px;
+          margin-bottom: 30px;
+        }
+      }
+
+      p {
+        color: #100F0F;
+        leading-trim: both;
+        text-edge: cap;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        margin-bottom: 0;
+      }
+    }
+  }
+}

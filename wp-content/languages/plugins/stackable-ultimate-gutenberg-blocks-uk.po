@@ -1,0 +1,1204 @@
+# Translation of Plugins - Stackable &#8211; Page Builder Gutenberg Blocks - Stable (latest release) in Ukrainian
+# This file is distributed under the same license as the Plugins - Stackable &#8211; Page Builder Gutenberg Blocks - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2022-09-03 11:57:03+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n % 10 == 1 && n % 100 != 11) ? 0 : ((n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14)) ? 1 : 2);\n"
+"X-Generator: GlotPress/4.0.0-alpha.4\n"
+"Language: uk_UA\n"
+"Project-Id-Version: Plugins - Stackable &#8211; Page Builder Gutenberg Blocks - Stable (latest release)\n"
+
+#: dist/translation-strings.php:1499 dist/translation-strings.js:340
+msgid "Thumbnail"
+msgstr "Мініатюра"
+
+#: dist/translation-strings.php:335 dist/editor_blocks.js:2
+msgid "Silver"
+msgstr "Срібний"
+
+#: dist/translation-strings.php:835 dist/stk.js:2
+msgid "Select"
+msgstr "Обрати"
+
+#: dist/translation-strings.php:836 dist/stk.js:2
+msgid "Deselect All"
+msgstr "Зняти Все"
+
+#: dist/translation-strings.php:488 dist/editor_blocks.js:2
+#: dist/translation-strings.js:540
+msgid "Table of Contents"
+msgstr "Зміст"
+
+#: dist/translation-strings.php:660 dist/stk.js:2
+msgid "Navigation"
+msgstr "Навігація"
+
+#: dist/translation-strings.php:1647
+msgid "Media"
+msgstr "Медіафайли"
+
+#: dist/translation-strings.php:1636
+msgid "Author"
+msgstr "Автор"
+
+#: dist/translation-strings.php:1650
+msgid "Site Tagline"
+msgstr "Ключова фраза сайту"
+
+#. translators: first %s is an ordinal number (e.g. 1st, 2nd), second %s is the
+#. name of the entity (e.g. Post, Page)
+#: dist/translation-strings.php:1615
+msgid "Post"
+msgstr "Запис"
+
+#: dist/translation-strings.php:1649
+msgid "Site"
+msgstr "Сайт"
+
+#: dist/translation-strings.php:1644
+msgid "Comment"
+msgstr "Коментар"
+
+#: dist/translation-strings.php:1651
+msgid "Site Title"
+msgstr "Заголовок сайту"
+
+#: dist/translation-strings.php:1625
+msgid "Post Title"
+msgstr "Заголовок запису"
+
+#: dist/translation-strings.php:1630
+msgid "Post Date"
+msgstr "Дата запису"
+
+#: dist/translation-strings.php:1635
+msgid "Author Name"
+msgstr "Ім’я автора"
+
+#: dist/translation-strings.php:1533 dist/translation-strings.js:311
+msgid "Date"
+msgstr "Дата"
+
+#: dist/translation-strings.php:1393 dist/translation-strings.js:132
+msgid "Page %s"
+msgstr "Сторінка %s"
+
+#: dist/translation-strings.php:1534 dist/translation-strings.js:312
+msgid "Time"
+msgstr "Час"
+
+#: dist/translation-strings.php:1488 dist/translation-strings.js:327
+msgid "Date Format"
+msgstr "Формат дати"
+
+#: dist/translation-strings.php:1328 dist/translation-strings.js:66
+msgid "Sunday"
+msgstr "Неділя"
+
+#: dist/translation-strings.php:1329 dist/translation-strings.js:67
+msgid "Monday"
+msgstr "Понеділок"
+
+#: dist/translation-strings.php:1330 dist/translation-strings.js:68
+msgid "Tuesday"
+msgstr "Вівторок"
+
+#: dist/translation-strings.php:1331 dist/translation-strings.js:69
+msgid "Wednesday"
+msgstr "Середа"
+
+#: dist/translation-strings.php:1332 dist/translation-strings.js:70
+msgid "Thursday"
+msgstr "Четвер"
+
+#: dist/translation-strings.php:1333 dist/translation-strings.js:71
+msgid "Friday"
+msgstr "П’ятниця"
+
+#: dist/translation-strings.php:1334 dist/translation-strings.js:72
+msgid "Saturday"
+msgstr "Субота"
+
+#: dist/translation-strings.php:1394 dist/translation-strings.js:133
+msgid "Next page"
+msgstr "Наступна сторінка"
+
+#: dist/translation-strings.php:1392 dist/translation-strings.js:131
+msgid "Previous page"
+msgstr "Попередня сторінка"
+
+#: dist/translation-strings.php:1529 dist/translation-strings.js:305
+msgid "Link title"
+msgstr "Заголовок посилання"
+
+#: dist/translation-strings.php:1552 dist/translation-strings.js:298
+msgid "Remove the selected block(s)."
+msgstr "Видалити вибрані блоки."
+
+#: dist/translation-strings.php:1405 dist/translation-strings.js:186
+msgid "Rotate"
+msgstr "Повернути"
+
+#: dist/translation-strings.php:1436 dist/translation-strings.js:234
+msgid "Linear"
+msgstr "Лінійний"
+
+#: dist/translation-strings.php:1475 dist/translation-strings.js:167
+msgid "Visibility"
+msgstr "Видимість"
+
+#: dist/translation-strings.php:1425 dist/translation-strings.js:208
+msgid "Skew X"
+msgstr "Нахил X"
+
+#: dist/translation-strings.php:1426 dist/translation-strings.js:209
+msgid "Skew Y"
+msgstr "Нахил Y"
+
+#: dist/translation-strings.php:1325 dist/translation-strings.js:63
+msgid "Never"
+msgstr "Ніколи"
+
+#: dist/translation-strings.php:1390 dist/translation-strings.js:128
+msgid "Next"
+msgstr "Наступна"
+
+#: dist/translation-strings.php:1412 dist/translation-strings.js:194
+msgid "Fast"
+msgstr "Швидко"
+
+#: dist/translation-strings.php:1411 dist/translation-strings.js:192
+msgid "Slow"
+msgstr "Повільно"
+
+#: dist/translation-strings.php:1291 dist/translation-strings.js:26
+msgid "Preview"
+msgstr "Переглянути"
+
+#: dist/translation-strings.php:1302 dist/translation-strings.js:37
+msgid "Trackback"
+msgstr "Зворотнє посилання"
+
+#: dist/translation-strings.php:1286 dist/translation-strings.js:21
+msgid "Home"
+msgstr "Головна"
+
+#: dist/translation-strings.php:1290 dist/translation-strings.js:25
+msgid "Attachment"
+msgstr "Вкладений файл"
+
+#: src/block/heading/block.json
+msgctxt "block title"
+msgid "Heading"
+msgstr "Заголовок"
+
+#: src/block/image/block.json
+msgctxt "block title"
+msgid "Image"
+msgstr "Зображення"
+
+#: dist/translation-strings.php:714 dist/stk.js:2
+msgid "Italic"
+msgstr "Курсив"
+
+#: dist/translation-strings.php:257 dist/editor_blocks.js:2 dist/stk.js:2
+msgid "Content"
+msgstr "Вміст"
+
+#: dist/translation-strings.php:298 dist/editor_blocks.js:2
+#: dist/translation-strings.js:135
+msgid "Offset"
+msgstr "Зміщення"
+
+#: dist/translation-strings.php:573 dist/stk.js:2
+msgid "Styles"
+msgstr "Стилі"
+
+#: dist/translation-strings.php:446 dist/editor_blocks.js:2
+msgid "Margin"
+msgstr "Відступ"
+
+#: dist/translation-strings.php:318 dist/editor_blocks.js:2 dist/stk.js:2
+msgid "Zoom"
+msgstr "Збільшити"
+
+#: dist/translation-strings.php:996 dist/stk.js:2
+msgid "Link rel"
+msgstr "Link rel"
+
+#: dist/translation-strings.php:994 dist/stk.js:2
+#: dist/translation-strings.js:347
+msgid "Open in new tab"
+msgstr "Відкрити в новій вкладці"
+
+#: dist/translation-strings.php:203 dist/editor_blocks.js:2
+msgid "100"
+msgstr "100"
+
+#: dist/translation-strings.php:204 dist/editor_blocks.js:2
+msgid "One column"
+msgstr "Одна колонка"
+
+#: dist/translation-strings.php:205 dist/editor_blocks.js:2
+msgid "50 / 50"
+msgstr "50 / 50"
+
+#: dist/translation-strings.php:206 dist/editor_blocks.js:2
+msgid "Two columns; equal split"
+msgstr "Дві колонки; рівне розділення"
+
+#: dist/translation-strings.php:207 dist/editor_blocks.js:2
+msgid "30 / 70"
+msgstr "30 / 70"
+
+#: dist/translation-strings.php:208 dist/editor_blocks.js:2
+msgid "Two columns; one-third, two-thirds split"
+msgstr "Дві колонки; одна третина, дві третини поділ"
+
+#: dist/translation-strings.php:209 dist/editor_blocks.js:2
+msgid "70 / 30"
+msgstr "70 / 30"
+
+#: dist/translation-strings.php:210 dist/editor_blocks.js:2
+msgid "Two columns; two-thirds, one-third split"
+msgstr "Дві колонки; дві третини, одна третина поділ"
+
+#: dist/translation-strings.php:211 dist/editor_blocks.js:2
+msgid "33 / 33 / 33"
+msgstr "33 / 33 / 33"
+
+#: dist/translation-strings.php:212 dist/editor_blocks.js:2
+msgid "Three columns; equal split"
+msgstr "Три колонки; рівне розділення"
+
+#: dist/translation-strings.php:213 dist/editor_blocks.js:2
+msgid "25 / 50 / 25"
+msgstr "25 / 50 / 25"
+
+#: dist/translation-strings.php:214 dist/editor_blocks.js:2
+msgid "Three columns; wide center column"
+msgstr "Три колонки; широка центральна колонка"
+
+#: dist/translation-strings.php:358 dist/editor_blocks.js:2
+msgid "Query"
+msgstr "Запит"
+
+#: dist/translation-strings.php:476 dist/editor_blocks.js:2
+msgid "Unordered"
+msgstr "Неупорядковані"
+
+#: dist/translation-strings.php:528 dist/stk.js:2
+msgid "Scroll"
+msgstr "Прокрутка"
+
+#: dist/translation-strings.php:715 dist/stk.js:2
+msgid "Oblique"
+msgstr "Похилий"
+
+#: dist/translation-strings.php:648 dist/stk.js:2
+msgid "Fill"
+msgstr "Заповнити"
+
+#: dist/translation-strings.php:990 dist/stk.js:2
+msgid "Margins"
+msgstr "Межі"
+
+#: dist/translation-strings.php:1012 dist/deprecated/admin_welcome_v2.js:2
+#: src/block/columns/block.json
+msgctxt "block title"
+msgid "Columns"
+msgstr "Колонки"
+
+#: dist/translation-strings.php:552 dist/stk.js:2
+#: dist/translation-strings.js:403
+msgid "Column"
+msgstr "Колонка"
+
+#: dist/translation-strings.php:74 dist/admin_welcome.js:2
+#: dist/translation-strings.js:130
+msgid "Previous"
+msgstr "Попередній"
+
+#: dist/translation-strings.php:76 dist/admin_welcome.js:2
+msgid "Finish"
+msgstr "Завершити"
+
+#: dist/translation-strings.php:100 dist/admin_welcome.js:2
+msgid "Welcome"
+msgstr "Ласкаво просимо"
+
+#: dist/translation-strings.php:102 dist/admin_welcome.js:2
+msgid "Icons"
+msgstr "Іконки"
+
+#: dist/translation-strings.php:814 dist/stk.js:2
+#: dist/translation-strings.js:207
+msgid "Blur"
+msgstr "Розмиття"
+
+#: dist/translation-strings.php:1009 dist/deprecated/admin_welcome_v2.js:2
+#: src/block/button/block.json src/deprecated/v2/block/button/block.json
+msgctxt "block title"
+msgid "Button"
+msgstr "Кнопка"
+
+#: dist/translation-strings.php:1027 dist/deprecated/admin_welcome_v2.js:2
+#: src/block/separator/block.json src/deprecated/v2/block/separator/block.json
+msgctxt "block title"
+msgid "Separator"
+msgstr "Роздільник"
+
+#: dist/translation-strings.php:1028 dist/deprecated/admin_welcome_v2.js:2
+#: src/block/spacer/block.json src/deprecated/v2/block/spacer/block.json
+msgctxt "block title"
+msgid "Spacer"
+msgstr "Роздільник"
+
+#: dist/translation-strings.php:1104
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2
+#: dist/translation-strings.js:385
+msgid "Pagination"
+msgstr "Нумерація сторінок"
+
+#: dist/translation-strings.php:797 dist/stk.js:2
+#: dist/translation-strings.js:553
+msgid "Paragraph"
+msgstr "Параграф"
+
+#: dist/translation-strings.php:182 dist/editor_blocks.js:2 dist/stk.js:2
+msgid "Solid"
+msgstr "Суцільний"
+
+#: dist/translation-strings.php:123
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2 dist/editor_blocks.js:2
+msgid "Huge"
+msgstr "Великий"
+
+#: dist/translation-strings.php:1212
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2 dist/stk.js:2
+msgid "Select a variation to start with."
+msgstr "Виберіть варіант для початку."
+
+#: dist/translation-strings.php:1215
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2 dist/stk.js:2
+msgid "Skip"
+msgstr "Пропустити"
+
+#: dist/translation-strings.php:256
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2 dist/editor_blocks.js:2
+#: dist/stk.js:2
+msgid "Vertical"
+msgstr "Вертикально"
+
+#: dist/translation-strings.php:142
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2 dist/editor_blocks.js:2
+#: dist/stk.js:2
+msgid "Horizontal"
+msgstr "Горизонтально"
+
+#: dist/translation-strings.php:767 dist/stk.js:2
+msgid "Dashed"
+msgstr "Лінії"
+
+#: dist/translation-strings.php:768 dist/stk.js:2
+msgid "Dotted"
+msgstr "Крапки"
+
+#: dist/translation-strings.php:155
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2 dist/editor_blocks.js:2
+msgid "Fade"
+msgstr "Зникання"
+
+#: src/global-settings.php:275
+msgid "Black"
+msgstr "Чорний"
+
+#: src/global-settings.php:285
+msgid "White"
+msgstr "Білий"
+
+#: dist/translation-strings.php:1068 dist/editor_blocks.js:2
+#: dist/translation-strings.js:165
+msgid "Cancel"
+msgstr "Скасувати"
+
+#: src/global-settings.php:280
+msgid "Cyan bluish gray"
+msgstr "Блакитний блакитно-сірий"
+
+#: src/global-settings.php:290
+msgid "Pale pink"
+msgstr "Блідо-рожевий"
+
+#: src/global-settings.php:295
+msgid "Vivid red"
+msgstr "Яскраво червоний"
+
+#: src/global-settings.php:300
+msgid "Luminous vivid orange"
+msgstr "Яскраво світлий помаранчевий"
+
+#: src/global-settings.php:305
+msgid "Luminous vivid amber"
+msgstr "Яскравий світлий бурштин"
+
+#: src/global-settings.php:310
+msgid "Light green cyan"
+msgstr "Світлий зелено-блакитний"
+
+#: src/global-settings.php:315
+msgid "Vivid green cyan"
+msgstr "Яскравий зелено-блакитний"
+
+#: src/global-settings.php:320
+msgid "Pale cyan blue"
+msgstr "Блідо синьо-блакитний"
+
+#: src/global-settings.php:325
+msgid "Vivid cyan blue"
+msgstr "Яскравий синьо-блакитний"
+
+#: src/global-settings.php:330
+msgid "Vivid purple"
+msgstr "Яскравий фіолетовий"
+
+#: dist/translation-strings.php:1080 dist/editor_blocks.js:2
+msgid "Heading %d"
+msgstr "Заголовок %d"
+
+#: dist/translation-strings.php:1067 dist/editor_blocks.js:2
+#: dist/translation-strings.js:164
+msgid "Delete"
+msgstr "Видалити"
+
+#: dist/translation-strings.php:75 src/welcome/index.php:40
+#: src/welcome/index.php:41 dist/admin_welcome.js:2
+msgid "Get Started"
+msgstr "Почнемо"
+
+#: dist/translation-strings.php:919 dist/stk.js:2
+msgid "Search or type url"
+msgstr "Введіть пошуковий запит або URL"
+
+#: dist/translation-strings.php:530 dist/stk.js:2
+msgid "Clear"
+msgstr "Очистити"
+
+#: dist/translation-strings.php:1231
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2
+msgid "Max Width"
+msgstr "Макс. ширина"
+
+#: dist/translation-strings.php:1208
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2
+msgid "Vertical Align"
+msgstr "Вертикальне вирівнювання"
+
+#: src/welcome/index.php:109
+msgid "Account"
+msgstr "Обліковий запис"
+
+#: dist/translation-strings.php:337 dist/editor_blocks.js:2
+msgid "Dark"
+msgstr "Темний"
+
+#: dist/translation-strings.php:28 src/welcome/index.php:201
+#: src/welcome/index.php:204 dist/admin_welcome.js:2 dist/stk.js:2
+#: dist/translation-strings.js:223
+msgid "Learn more"
+msgstr "Дізнатися більше"
+
+#: dist/translation-strings.php:706 dist/stk.js:2
+msgid "Font weight"
+msgstr "Товщина шрифту"
+
+#: dist/translation-strings.php:627 dist/stk.js:2
+msgid "Image width"
+msgstr "Ширина зображення"
+
+#: dist/translation-strings.php:722 dist/stk.js:2
+msgid "Font size"
+msgstr "Розмір шрифту"
+
+#: dist/translation-strings.php:717 dist/stk.js:2
+msgid "Line height"
+msgstr "Висота рядка"
+
+#: dist/translation-strings.php:1223
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2
+msgid "Align center"
+msgstr "Вирівняти по центру"
+
+#: dist/translation-strings.php:541
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2 dist/stk.js:2
+msgid "Background"
+msgstr "Фон"
+
+#: dist/translation-strings.php:524
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2 dist/stk.js:2
+msgid "Block"
+msgstr "Блок"
+
+#: dist/translation-strings.php:372
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2 dist/editor_blocks.js:2
+msgid "Excerpt"
+msgstr "Уривок"
+
+#: dist/translation-strings.php:373
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2 dist/editor_blocks.js:2
+msgid "Meta"
+msgstr "Мета"
+
+#: dist/translation-strings.php:443
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2 dist/editor_blocks.js:2
+#: dist/translation-strings.js:309
+msgid "Text"
+msgstr "Текст"
+
+#: dist/translation-strings.php:910 dist/stk.js:2
+#: dist/translation-strings.js:18
+msgid "Post Type"
+msgstr "Тип запису"
+
+#: dist/translation-strings.php:359
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2 dist/editor_blocks.js:2
+#: dist/translation-strings.js:393
+msgid "Number of items"
+msgstr "Кількість елементів"
+
+#: dist/translation-strings.php:1125
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2
+msgid "Padding"
+msgstr "Внутрішній відступ"
+
+#: dist/translation-strings.php:1224
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2
+msgid "Wide width"
+msgstr "По ширині вмісту"
+
+#: dist/translation-strings.php:396
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2 dist/editor_blocks.js:2
+msgid "List"
+msgstr "Список"
+
+#: dist/translation-strings.php:1225
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2
+msgid "Full width"
+msgstr "На всю ширину"
+
+#: dist/translation-strings.php:385
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2 dist/editor_blocks.js:2
+msgid "Comma"
+msgstr "Кома"
+
+#: dist/translation-strings.php:360
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2 dist/editor_blocks.js:2
+msgid "Order by"
+msgstr "Сортувати за"
+
+#: dist/translation-strings.php:363
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2 dist/editor_blocks.js:2
+msgid "A → Z"
+msgstr "А → Я"
+
+#: dist/translation-strings.php:364
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2 dist/editor_blocks.js:2
+msgid "Z → A"
+msgstr "Я \t А"
+
+#: dist/translation-strings.php:371
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2 dist/editor_blocks.js:2
+msgid "Category"
+msgstr "Категорія"
+
+#: dist/translation-strings.php:440
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2 dist/editor_blocks.js:2
+msgid "Label"
+msgstr "Мітка"
+
+#: dist/translation-strings.php:827
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2 dist/stk.js:2
+msgid "All"
+msgstr "Всі"
+
+#: dist/translation-strings.php:1107
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2
+msgid "Hover Color"
+msgstr "Колір при наведенні"
+
+#: dist/translation-strings.php:463
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2 dist/editor_blocks.js:2
+#: dist/stk.js:2
+msgid "Full Width"
+msgstr "Повна ширина"
+
+#: dist/translation-strings.php:614
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2 dist/stk.js:2
+msgid "Content Width"
+msgstr "Ширина вмісту"
+
+#: dist/translation-strings.php:367
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2 dist/editor_blocks.js:2
+msgid "Menu Order"
+msgstr "Порядок меню"
+
+#: dist/translation-strings.php:368
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2 dist/editor_blocks.js:2
+msgid "Random"
+msgstr "Випадково"
+
+#: dist/translation-strings.php:1130
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2
+msgid "Link Color"
+msgstr "Колір посилання"
+
+#: dist/translation-strings.php:1131
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2
+msgid "Link Hover Color"
+msgstr "Колір посилання при наведенні"
+
+#: dist/translation-strings.php:1094
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2
+msgid "Spread"
+msgstr "Поширення"
+
+#: dist/translation-strings.php:119
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2 dist/editor_blocks.js:2
+#: dist/stk.js:2 dist/translation-strings.js:229
+msgid "Default"
+msgstr "За замовчуванням"
+
+#: dist/translation-strings.php:961
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2 dist/stk.js:2
+msgid "Image Position"
+msgstr "Позиція зображення"
+
+#: dist/translation-strings.php:125
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2 dist/editor_blocks.js:2
+#: dist/stk.js:2 dist/translation-strings.js:123
+msgid "General"
+msgstr "Загальне"
+
+#: dist/translation-strings.php:765 dist/editor_blocks.js:2 dist/stk.js:2
+msgid "Edit"
+msgstr "Редагувати"
+
+#: dist/translation-strings.php:657
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2 dist/stk.js:2
+#: dist/translation-strings.js:398
+msgid "Image"
+msgstr "Зображення"
+
+#: dist/translation-strings.php:962
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2 dist/stk.js:2
+#: dist/translation-strings.js:246
+msgid "Top Left"
+msgstr "Вгорі ліворуч"
+
+#: dist/translation-strings.php:964
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2 dist/stk.js:2
+#: dist/translation-strings.js:248
+msgid "Top Right"
+msgstr "Вгорі праворуч"
+
+#: dist/translation-strings.php:968
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2 dist/stk.js:2
+#: dist/translation-strings.js:252
+msgid "Bottom Left"
+msgstr "Внизу ліворуч"
+
+#: dist/translation-strings.php:970
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2 dist/stk.js:2
+#: dist/translation-strings.js:254
+msgid "Bottom Right"
+msgstr "Внизу праворуч"
+
+#: dist/translation-strings.php:222
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2 dist/editor_blocks.js:2
+#: dist/stk.js:2 dist/translation-strings.js:151
+msgid "Color"
+msgstr "Колір"
+
+#: dist/translation-strings.php:701 dist/stk.js:2
+msgid "Font Family"
+msgstr "Сімейство шрифтів"
+
+#: dist/translation-strings.php:447
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2 dist/editor_blocks.js:2
+#: dist/stk.js:2 dist/translation-strings.js:391
+msgid "Align"
+msgstr "Вирівняти"
+
+#: dist/translation-strings.php:979
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2 dist/stk.js:2
+msgid "Custom Size"
+msgstr "Користувацький розмір"
+
+#: dist/translation-strings.php:742
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2 dist/stk.js:2
+msgid "Overlay"
+msgstr "Накладення"
+
+#: dist/translation-strings.php:906 dist/stk.js:2
+msgid "Desktop"
+msgstr "Десктоп"
+
+#: dist/translation-strings.php:177
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2 dist/editor_blocks.js:2
+#: dist/stk.js:2 dist/translation-strings.js:155
+msgid "Opacity"
+msgstr "Прозорість"
+
+#: dist/translation-strings.php:907
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2 dist/stk.js:2
+msgid "Tablet"
+msgstr "Планшет"
+
+#: dist/translation-strings.php:908
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2 dist/stk.js:2
+msgid "Mobile"
+msgstr "Мобільний"
+
+#: dist/translation-strings.php:471 dist/editor_blocks.js:2 dist/stk.js:2
+msgid "Typography"
+msgstr "Типографія"
+
+#: dist/translation-strings.php:491
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2 dist/editor_blocks.js:2
+#: dist/stk.js:2 dist/translation-strings.js:480
+msgid "Heading"
+msgstr "Заголовок"
+
+#: dist/translation-strings.php:709 dist/stk.js:2
+msgid "Uppercase"
+msgstr "Верхній регістр"
+
+#: dist/translation-strings.php:710 dist/stk.js:2
+msgid "Lowercase"
+msgstr "Нижній регістр"
+
+#: dist/translation-strings.php:711 dist/stk.js:2
+msgid "Capitalize"
+msgstr "Заголовні букви"
+
+#: dist/translation-strings.php:526
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2 dist/stk.js:2
+msgid "Auto"
+msgstr "Авто"
+
+#: dist/translation-strings.php:494
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2 dist/editor_blocks.js:2
+#: dist/stk.js:2
+msgid "Cover"
+msgstr "Обкладинка"
+
+#: dist/translation-strings.php:800 dist/stk.js:2
+msgid "Describe the purpose of the image"
+msgstr "Опишіть призначення зображення"
+
+#: dist/translation-strings.php:801 dist/stk.js:2
+msgid "Leave empty if the image is purely decorative."
+msgstr "Залишити порожнім, якщо зображення є суто декоративним."
+
+#: dist/translation-strings.php:963
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2 dist/stk.js:2
+#: dist/translation-strings.js:247
+msgid "Top Center"
+msgstr "Зверху по центру"
+
+#: dist/translation-strings.php:965
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2 dist/stk.js:2
+#: dist/translation-strings.js:249
+msgid "Center Left"
+msgstr "Центр ліворуч"
+
+#: dist/translation-strings.php:966
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2 dist/stk.js:2
+#: dist/translation-strings.js:250
+msgid "Center Center"
+msgstr "По центру в центрі"
+
+#: dist/translation-strings.php:967
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2 dist/stk.js:2
+#: dist/translation-strings.js:251
+msgid "Center Right"
+msgstr "Посередині справа"
+
+#: dist/translation-strings.php:969
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2 dist/stk.js:2
+#: dist/translation-strings.js:253
+msgid "Bottom Center"
+msgstr "Знизу по центру"
+
+#: dist/translation-strings.php:576
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2 dist/stk.js:2
+#: dist/translation-strings.js:185
+msgid "Scale"
+msgstr "Масштаб"
+
+#: dist/translation-strings.php:464
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2 dist/editor_blocks.js:2
+#: dist/stk.js:2
+msgid "Icon Position"
+msgstr "Позиція іконки"
+
+#: dist/translation-strings.php:369
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2 dist/editor_blocks.js:2
+#: dist/stk.js:2
+msgid "Spacing"
+msgstr "Відступи"
+
+#: dist/translation-strings.php:902
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2 dist/stk.js:2
+#: dist/translation-strings.js:326
+msgid "Custom"
+msgstr "Користувацький"
+
+#: dist/translation-strings.php:920 dist/stk.js:2
+msgid "URL"
+msgstr "URL-адреса"
+
+#: dist/translation-strings.php:951 dist/stk.js:2
+msgid "Email"
+msgstr "Електронна пошта"
+
+#: dist/translation-strings.php:353 dist/editor_blocks.js:2 dist/stk.js:2
+#: dist/translation-strings.js:211
+msgid "Shape"
+msgstr "Форма"
+
+#: dist/translation-strings.php:708 dist/stk.js:2
+#: dist/translation-strings.js:244
+msgid "Transform"
+msgstr "Трансформувати"
+
+#: dist/translation-strings.php:703 dist/stk.js:2
+msgid "Weight"
+msgstr "Вага"
+
+#: dist/translation-strings.php:974
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2 dist/stk.js:2
+msgid "Repeat"
+msgstr "Повторити"
+
+#: dist/translation-strings.php:726 dist/translation-strings.js:335
+msgid "Remove"
+msgstr "Видалити"
+
+#: dist/translation-strings.php:731
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2 dist/editor_blocks.js:2
+#: dist/stk.js:2 dist/translation-strings.js:59
+msgid "Reset"
+msgstr "Скинути"
+
+#: dist/translation-strings.php:50 src/welcome/index.php:121
+#: dist/admin_welcome.js:2
+msgid "Documentation"
+msgstr "Документація"
+
+#: dist/translation-strings.php:599 src/welcome/index.php:103
+#: src/welcome/index.php:319 dist/stk.js:2
+msgid "Settings"
+msgstr "Налаштування"
+
+#: dist/translation-strings.php:849 dist/stk.js:2
+msgid "Advanced"
+msgstr "Додатково"
+
+#: dist/translation-strings.php:847 dist/stk.js:2
+msgid "Style"
+msgstr "Стиль"
+
+#: dist/translation-strings.php:455 dist/editor_blocks.js:2 dist/stk.js:2
+msgid "Top"
+msgstr "Верх"
+
+#: dist/translation-strings.php:456 dist/editor_blocks.js:2 dist/stk.js:2
+msgid "Bottom"
+msgstr "Низ"
+
+#: dist/translation-strings.php:219
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2 dist/editor_blocks.js:2
+#: dist/translation-strings.js:529
+msgid "Separator"
+msgstr "Роздільник"
+
+#: dist/translation-strings.php:780
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2 dist/stk.js:2
+msgid "Layout"
+msgstr "Компонування"
+
+#: dist/translation-strings.php:617
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2 dist/stk.js:2
+#: dist/translation-strings.js:180
+msgid "Custom CSS"
+msgstr "Користувацькі CSS"
+
+#: dist/translation-strings.php:585
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2 dist/stk.js:2
+#: dist/translation-strings.js:220
+msgid "Gradient"
+msgstr "Градієнт"
+
+#: dist/translation-strings.php:453
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2 dist/editor_blocks.js:2
+#: dist/stk.js:2 dist/translation-strings.js:410
+msgid "Left"
+msgstr "Ліворуч"
+
+#: dist/translation-strings.php:454
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2 dist/editor_blocks.js:2
+#: dist/stk.js:2 dist/translation-strings.js:411
+msgid "Right"
+msgstr "Праворуч"
+
+#: dist/translation-strings.php:225
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2 dist/editor_blocks.js:2
+#: dist/stk.js:2 dist/translation-strings.js:73
+msgid "None"
+msgstr "Немає"
+
+#: dist/translation-strings.php:1157
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2
+msgid "Full Height"
+msgstr "Повна висота"
+
+#: dist/translation-strings.php:1117
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2
+#: dist/translation-strings.js:317
+msgid "Description"
+msgstr "Опис"
+
+#: dist/translation-strings.php:1127
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2
+msgid "Border"
+msgstr "Межа"
+
+#: dist/translation-strings.php:705 dist/stk.js:2
+msgid "Bold"
+msgstr "Жирний"
+
+#: dist/translation-strings.php:139
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2 dist/editor_blocks.js:2
+#: dist/stk.js:2
+msgid "Button text"
+msgstr "Текст кнопки"
+
+#: dist/translation-strings.php:17 dist/admin_welcome.js:2
+#: dist/deprecated/admin_welcome_v2.js:2 dist/stk.js:2
+#: dist/translation-strings.js:103
+msgid "Enabled"
+msgstr "Увімкнено"
+
+#: dist/translation-strings.php:16 dist/admin_welcome.js:2
+#: dist/deprecated/admin_welcome_v2.js:2 dist/stk.js:2
+#: dist/translation-strings.js:104
+msgid "Disabled"
+msgstr "Вимкнено"
+
+#: dist/translation-strings.php:138
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2 dist/editor_blocks.js:2
+#: dist/stk.js:2 dist/translation-strings.js:442
+msgid "Link"
+msgstr "Посилання"
+
+#: dist/translation-strings.php:689
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2 dist/stk.js:2
+msgid "Design"
+msgstr "Дизайн"
+
+#: dist/translation-strings.php:673
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2 dist/stk.js:2
+msgid "Background Color"
+msgstr "Фоновий колір"
+
+#: dist/translation-strings.php:955
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2 dist/stk.js:2
+msgid "Background Image"
+msgstr "Фонове зображення"
+
+#: dist/translation-strings.php:390
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2 dist/editor_blocks.js:2
+#: dist/stk.js:2 dist/translation-strings.js:345
+msgid "Image Size"
+msgstr "Розмір зображення"
+
+#: dist/translation-strings.php:1265
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2
+#: dist/translation-strings.js:341
+msgid "Medium"
+msgstr "Середній"
+
+#: dist/translation-strings.php:1266
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2
+#: dist/translation-strings.js:342
+msgid "Large"
+msgstr "Великий"
+
+#: dist/translation-strings.php:296
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2 dist/editor_blocks.js:2
+#: dist/stk.js:2 dist/translation-strings.js:119
+msgid "Title"
+msgstr "Заголовок"
+
+#: dist/translation-strings.php:355
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2 dist/editor_blocks.js:2
+#: dist/stk.js:2 dist/translation-strings.js:458
+msgid "Columns"
+msgstr "Колонки"
+
+#: dist/translation-strings.php:284
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2 dist/editor_blocks.js:2
+#: dist/stk.js:2
+msgid "Height"
+msgstr "Висота"
+
+#: dist/translation-strings.php:251
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2 dist/editor_blocks.js:2
+#: dist/stk.js:2
+msgid "Width"
+msgstr "Ширина"
+
+#: dist/translation-strings.php:1495 dist/translation-strings.js:334
+msgid "Apply"
+msgstr "Застосувати"
+
+#: dist/translation-strings.php:492
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2 dist/editor_blocks.js:2
+#: dist/translation-strings.js:160
+msgid "Name"
+msgstr "Ім'я"
+
+#: dist/translation-strings.php:375
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2 dist/editor_blocks.js:2
+#: dist/translation-strings.js:512
+msgid "Posts"
+msgstr "Записи"
+
+#: dist/translation-strings.php:376
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2 dist/editor_blocks.js:2
+msgid "No posts found."
+msgstr "Записів не знайдено."
+
+#: dist/translation-strings.php:220
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2 dist/editor_blocks.js:2
+#: dist/stk.js:2
+msgid "Size"
+msgstr "Розмір"
+
+#: dist/translation-strings.php:1264
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2
+msgid "Small"
+msgstr "Маленький"
+
+#: dist/translation-strings.php:704
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2 dist/editor_blocks.js:2
+#: dist/stk.js:2 dist/translation-strings.js:193
+msgid "Normal"
+msgstr "Звичайний"
+
+#: dist/translation-strings.php:114
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2 dist/editor_blocks.js:2
+#: dist/stk.js:2
+msgid "Square"
+msgstr "Квадрат"
+
+#: dist/translation-strings.php:172
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2 dist/editor_blocks.js:2
+#: dist/stk.js:2 dist/translation-strings.js:417
+msgid "Icon"
+msgstr "Іконка"
+
+#: dist/translation-strings.php:141
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2 dist/editor_blocks.js:2
+#: dist/translation-strings.js:444
+msgid "Button"
+msgstr "Кнопка"
+
+#: dist/translation-strings.php:637
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2 dist/stk.js:2
+msgid "Overlay Color"
+msgstr "Накладення Кольору"
+
+#: dist/translation-strings.php:1093
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2
+msgid "Basic"
+msgstr "Базовий"
+
+#: dist/translation-strings.php:469
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2 dist/editor_blocks.js:2
+#: dist/stk.js:2
+msgid "Text Color"
+msgstr "Колір тексту"
+
+#: dist/translation-strings.php:812
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2 dist/stk.js:2
+msgid "Circle"
+msgstr "Коло"
+
+#: dist/translation-strings.php:892 src/welcome/index.php:258
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2 dist/stk.js:2
+msgid "Learn More"
+msgstr "Дізнатись більше"
+
+#: dist/translation-strings.php:1129
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2
+msgid "Heading Color"
+msgstr "Колір заголовку"
+
+#: dist/translation-strings.php:493
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2 dist/editor_blocks.js:2
+#: dist/stk.js:2 dist/translation-strings.js:161
+msgid "Position"
+msgstr "Розташування"
+
+#: src/block/posts/index.php:511
+#: src/deprecated/v2/block/blog-posts/index.php:261
+#: src/deprecated/v2/block/blog-posts/index.php:551
+msgid ", "
+msgstr ", "
+
+#: src/block/posts/index.php:278
+#: src/deprecated/v2/block/blog-posts/index.php:466
+msgid "Number of comments"
+msgstr "Кількість коментарів"
+
+#: src/block/posts/index.php:103 src/block/posts/index.php:555
+#: src/deprecated/v2/block/blog-posts/index.php:285
+#: src/deprecated/v2/block/blog-posts/index.php:540
+msgid "%d comment"
+msgid_plural "%d comments"
+msgstr[0] "%d коментар"
+msgstr[1] "%d коментарі"
+msgstr[2] "%d коментарів"
+
+#: dist/translation-strings.php:1110
+#: src/deprecated/v2/block/blog-posts/index.php:312
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2
+msgid "Continue reading"
+msgstr "Продовжити читання"
+
+#: dist/translation-strings.php:395 src/block/posts/index.php:70
+#: src/deprecated/v2/block/blog-posts/index.php:247
+#: dist/deprecated/editor_blocks_deprecated_v2.js:2 dist/editor_blocks.js:2
+msgid "(Untitled)"
+msgstr "(Без назви)"
+
+#. Plugin Name of the plugin
+msgid "Stackable - Gutenberg Blocks"
+msgstr "Stackable - Gutenberg Blocks"
+
+#. Plugin URI of the plugin
+msgid "https://wpstackable.com"
+msgstr "https://wpstackable.com"
+
+#. Author URI of the plugin
+msgid "http://gambit.ph"
+msgstr "http://gambit.ph"
+
+#. Author of the plugin
+msgid "Gambit Technologies, Inc"
+msgstr "Gambit Technologies, Inc"

@@ -1,0 +1,79 @@
+@import url('https://fonts.cdnfonts.com/css/sf-pro-display');
+button {
+  /* Resetting padding and margin */
+  padding: 0;
+  margin: 0;
+  font-family: 'SF Pro Display', sans-serif;
+  /* Resetting border */
+  border: none;
+
+  /* Resetting background */
+  background-color: transparent;
+
+  /* Resetting font styles */
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+
+  /* Resetting text styles */
+  color: inherit;
+  text-align: inherit;
+  text-decoration: none;
+
+  /* Resetting box shadow and outline */
+  box-shadow: none;
+  outline: none;
+
+  /* Resetting cursor */
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul li {
+  margin-bottom: 10px;
+}
+
+ul li a {
+  text-decoration: none;
+  color: #FFFFFF;
+  list-style: none;
+}
+
+ul li a:hover {
+  text-decoration: none;
+}
+div{
+  box-sizing: border-box;
+}
+img{
+  max-width: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+h1,h2,h3,h4,h5,h6{
+  color: #FFFFFF;
+  a{
+    color: #00E291;
+  }
+}
+body{
+  color: #FFFFFF;
+  box-sizing: border-box;
+}
+
+a{
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6, p, span, a  {
+  font-family: 'SF Pro Display',  sans-serif;
+  margin-block-start: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  letter-spacing: normal;
+}

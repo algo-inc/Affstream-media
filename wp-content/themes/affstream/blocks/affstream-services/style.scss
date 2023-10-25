@@ -1,0 +1,254 @@
+@mixin breakpoint($breakpoint) {
+  @if $breakpoint == mobile {
+    @media (max-width: 767px) {
+      @content;
+    }
+  } @else if $breakpoint == tablet {
+    @media (max-width: 1023px) {
+      @content;
+    }
+  } @else if $breakpoint == large-tablet {
+    @media (min-width: 1024px) and (max-width: 1300px) {
+      @content;
+    }
+  } @else if $breakpoint == desktop {
+    @media (max-width: 1599px) {
+      @content;
+    }
+  } @else if $breakpoint == large-desktop {
+    @media (max-width: 1919px) {
+      @content;
+    }
+  } @else if $breakpoint == extra-large-desktop {
+    @media (min-width: 1920px) {
+      @content;
+    }
+  } @else {
+    @error "Invalid breakpoint provided. Please use 'mobile', 'tablet', 'large-tablet', 'desktop', 'large-desktop', or 'extra-large-desktop'.";
+  }
+}
+
+.affstream-services {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 16px;
+  @include breakpoint(desktop) {
+    max-width: 1200px;
+
+  }
+
+  .affstream-services-title {
+    h2 {
+      color: #100F0F;
+      leading-trim: both;
+      text-edge: cap;
+      font-size: 30px;
+      font-style: italic;
+      font-weight: 900;
+      line-height: normal;
+      text-transform: uppercase;
+      @include breakpoint(mobile) {
+        color: #100F0F;
+        leading-trim: both;
+        text-edge: cap;
+        font-size: 20px;
+        font-style: italic;
+        font-weight: 900;
+        line-height: normal;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  .field-title {
+    grid-template-columns: 200px repeat(2, 1fr);
+    display: grid;
+    padding: 10px 40px;
+    @include breakpoint(mobile) {
+      display: none;
+    }
+
+    .column-name {
+      color: #100F0F;
+      leading-trim: both;
+      text-edge: cap;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+    }
+  }
+
+  .affstream-services-container {
+    padding-bottom: 30px;
+
+    .service-card {
+      border-radius: 10px;
+      background: #FFF;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      background: #FFF;
+      @include breakpoint(mobile) {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .card-container {
+        display: grid;
+        grid-template-columns: 200px 40% auto auto;
+        grid-column-gap: 40px;
+        position: relative;
+        background: #FFFFFF;
+        z-index: 22;
+        align-items: center;
+        padding: 40px;
+        box-shadow: 0px 0px 7.89547px 0px rgba(0, 0, 0, 0.25);
+        border-radius: 10px;
+        overflow: hidden;
+        @include breakpoint(desktop) {
+          padding: 25px;
+          grid-template-columns: 200px 45% auto 120px;
+          grid-column-gap: 20px;
+        }
+        @media (max-width: 1400px) {
+          grid-template-columns: 200px 38% auto 70px auto;
+        }
+        @include breakpoint(tablet) {
+          grid-template-columns: 1fr 1fr;
+          grid-row-gap: 20px;
+        }
+        @include breakpoint(mobile) {
+          grid-template-columns: 1fr;
+          padding: 20px 15px;
+        }
+
+        .service-icon {
+          @include breakpoint(mobile){
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+          }
+          img {
+            width: fit-content;
+          }
+          .is-top-mobile{
+            display: none;
+            @include breakpoint(mobile){
+              display: block;
+              font-size: 18px;
+              padding: 7px;
+            }
+          }
+        }
+
+        .is-top-inner{
+          @media (min-width: 1400px) {
+            display: none;
+          }
+          @include breakpoint(tablet){
+            display: none;
+          }
+        }
+
+        .service-description {
+          p {
+            color: #100F0F;
+            leading-trim: both;
+            text-edge: cap;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            margin-bottom: 0;
+            @include breakpoint(desktop) {
+              font-size: 18px;
+            }
+          }
+        }
+
+        .monthly-price {
+          p {
+            color: #0C62FD;
+            leading-trim: both;
+            text-edge: cap;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            margin-bottom: 0;
+          }
+        }
+
+        .links {
+          gap: 10px;
+          display: flex;
+          flex-direction: column;
+          @include breakpoint(tablet){
+            flex-direction: row;
+          }
+          @include breakpoint(mobile){
+            flex-direction: row;
+            gap:20px;
+          }
+          .page-link {
+            width: fit-content;
+            display: flex;
+            gap: 5.5px;
+            font-size: 13.751px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 91.182%;
+            text-transform: uppercase;
+            padding: 8px 10px;
+            border-radius: 55.004px;
+            color: #0C62FD;
+            border: 1.5px solid #0C62FD;
+            transition: all 0.2s ease-in;
+            svg{
+              transition: all 0.2s ease-in;
+            }
+            &:hover{
+              background: #0C62FD;
+              color: #fff;
+              svg{
+                path{
+                  fill: #fff;
+                }
+              }
+            }
+            @include breakpoint(mobile) {
+              width: fit-content;
+            }
+          }
+        }
+
+
+      }
+    }
+
+    .term-archive-link {
+      width: fit-content;
+      padding: 15px 25px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 100px;
+      background: #100F0F;
+      color: #FFF;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 91.182%; /* 18.236px */
+      text-transform: uppercase;
+      margin: 0 auto;
+      @include breakpoint(desktop) {
+        padding: 10px 15px;
+        font-size: 18px;
+      }
+
+      &:hover {
+        background: rgba(16, 15, 15, 0.50);
+      }
+    }
+  }
+}

@@ -1,0 +1,127 @@
+@mixin breakpoint($breakpoint) {
+  @if $breakpoint == mobile {
+    @media (max-width: 767px) {
+      @content;
+    }
+  } @else if $breakpoint == tablet {
+    @media (max-width: 1023px) {
+      @content;
+    }
+  } @else if $breakpoint == large-tablet {
+    @media (min-width: 1024px) and (max-width: 1300px) {
+      @content;
+    }
+  } @else if $breakpoint == desktop {
+    @media (max-width: 1599px) {
+      @content;
+    }
+  } @else if $breakpoint == large-desktop {
+    @media (max-width: 1919px) {
+      @content;
+    }
+  } @else if $breakpoint == extra-large-desktop {
+    @media (min-width: 1920px) {
+      @content;
+    }
+  } @else {
+    @error "Invalid breakpoint provided. Please use 'mobile', 'tablet', 'large-tablet', 'desktop', 'large-desktop', or 'extra-large-desktop'.";
+  }
+}
+
+
+.new-posts {
+  margin-bottom: 50px;
+  @include breakpoint(mobile){
+    margin-bottom: 50px;
+  }
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    @include breakpoint(desktop) {
+      max-width: 1200px;
+    }
+    .swiper-blog{
+      overflow: visible;
+      padding:  10px 10px 32px;
+      @include breakpoint(tablet){
+        overflow: hidden;
+      }
+      @include breakpoint(tablet){
+        padding: 10px 16px 32px;
+      }
+      @include breakpoint(mobile){
+        padding: 10px 16px 32px;
+      }
+      .swiper-pagination-bullet{
+        background: black;
+      }
+    }
+    .title-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0 auto 20px;
+      @include breakpoint(desktop) {
+        max-width: 1200px;
+        padding: 0 16px;
+        margin: 0 auto 15px;
+      }
+      @media (max-width: 1220px) {
+      padding: 0 16px;
+    }
+      h2 {
+        font-size: 30px;
+        font-style: italic;
+        font-weight: 900;
+        line-height: normal;
+        text-transform: uppercase;
+        margin: 0;
+        color: #fff;
+        padding: 15px;
+        border-radius: 100px;
+        @include breakpoint(desktop){
+          padding: 12px;
+          font-size: 28px;
+        }
+        @include breakpoint(tablet){
+          font-size: 24px;
+        }
+        @include breakpoint(mobile){
+          font-size: 22px;
+          padding: 10px;
+        }
+      }
+
+      .archive-link {
+        border-radius: 78.979px;
+        background: #100F0F;
+        display: flex;
+        padding: 10px 15px;
+        justify-content: center;
+        align-items: center;
+        gap: 7.898px;
+        color: #FFFFFF;
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 1;
+        text-transform: uppercase;
+        transition: all 0.3s ease-in;
+        &:hover{
+          background: rgba(16, 15, 15, 0.50);
+        }
+        @include breakpoint(mobile){
+          font-size: 14px;
+        }
+      }
+    }
+    .swiper-pagination{
+      bottom: 0;
+    }
+  }
+
+  .swiper-slide {
+    //padding: 15px;
+  }
+}

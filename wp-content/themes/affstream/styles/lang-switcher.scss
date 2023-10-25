@@ -1,0 +1,80 @@
+@import "breakpoints";
+.language-switcher .language-item {
+  display: none;
+}
+.language-switcher{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.lang-container{
+  position: relative;
+  width: 84px;
+  height: 42px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.language-switcher .language-item.active,
+.language-switcher .language-item:hover {
+  display: flex; /* Відобразити активну мову та мови при наведенні */
+}
+.language-item{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 200px;
+  //border: 2px solid #E0F01E;
+  height: 42px;
+  background: #100f0f;
+  a{
+    margin: 5px;
+  }
+  &:hover{
+    background: #E0F01E;
+    a{
+      color: #100f0f;
+    }
+  }
+}
+.lang-link{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 18px;
+  img{
+    width: 22px;
+    height: auto;
+    margin-right: 10px;
+    @include breakpoint(large-tablet){
+      max-width: 18px;
+    }
+  }
+}
+
+
+.language-switcher-mobile{
+  display: flex;
+  margin-bottom: 50px;
+  .language-item{
+    margin-right: 25px;
+    @include breakpoint(mobile){
+      height: 45px;
+      width: 80px;
+    }
+    a{
+      color: #FFFFFF;
+      margin: 10px;
+    }
+    &:last-child{
+      margin-right: 0;
+    }
+  }
+  .language-item.active{
+      background: #E0F01E;
+      a{
+        color: #0c0c0c;
+      }
+  }
+}

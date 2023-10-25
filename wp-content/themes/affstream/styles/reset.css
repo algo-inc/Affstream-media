@@ -1,0 +1,25 @@
+button {
+  /* Resetting padding and margin */
+  padding: 0;
+  margin: 0;
+  /* Resetting border */
+  border: none;
+  /* Resetting background */
+  background-color: transparent;
+  /* Resetting font styles */
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  /* Resetting text styles */
+  color: inherit;
+  text-align: inherit;
+  text-decoration: none;
+  /* Resetting box shadow and outline */
+  box-shadow: none;
+  outline: none;
+  /* Resetting cursor */
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=reset.css.map */

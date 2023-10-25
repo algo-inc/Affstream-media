@@ -1,0 +1,237 @@
+@mixin breakpoint($breakpoint) {
+  @if $breakpoint == mobile {
+    @media (max-width: 767px) {
+      @content;
+    }
+  } @else if $breakpoint == tablet {
+    @media (max-width: 1023px) {
+      @content;
+    }
+  } @else if $breakpoint == large-tablet {
+    @media (min-width: 1024px) and (max-width: 1300px) {
+      @content;
+    }
+  } @else if $breakpoint == desktop {
+    @media (max-width: 1599px) {
+      @content;
+    }
+  } @else if $breakpoint == large-desktop {
+    @media (max-width: 1919px) {
+      @content;
+    }
+  } @else if $breakpoint == extra-large-desktop {
+    @media (min-width: 1920px) {
+      @content;
+    }
+  } @else {
+    @error "Invalid breakpoint provided. Please use 'mobile', 'tablet', 'large-tablet', 'desktop', 'large-desktop', or 'extra-large-desktop'.";
+  }
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.media-contacts{
+  padding: 0 16px;
+  margin-bottom: 50px;
+  @include breakpoint(desktop){
+
+  }
+  @include breakpoint(tablet){
+    padding: 0;
+    background: black;
+  }
+  @include breakpoint(mobile){
+    overflow: hidden;
+    margin-bottom: 50px;
+  }
+
+  .container{
+    gap: 50px;
+    padding: 50px 0;
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    @include breakpoint(desktop){
+      max-width: 1200px;
+    }
+    @include breakpoint(mobile){
+      gap: 30px;
+      padding-top: 35px;
+    }
+    @include breakpoint(mobile){
+      padding: 32px 0;
+    }
+    .contact-card{
+      border-radius: 40px;
+      background: #FFF;
+      max-width: 350px;
+      padding: 25px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+      z-index: 2;
+      @include breakpoint(desktop){
+        padding: 25px 10px 25px;
+        height: fit-content;
+      }
+      @include breakpoint(tablet){
+
+        padding: 10px;
+      }
+      @include breakpoint(mobile){
+        padding: 20px;
+        margin: 0 auto;
+        max-width: 100%;
+      }
+      img{
+        max-width: 110px;
+        height: auto;
+        margin:0  auto 20px;
+        @include breakpoint(mobile){
+          margin-bottom: 0;
+        }
+      }
+      .name{
+        color: #0C62FD;
+        text-align: center;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        margin-bottom: 12px;
+        @include breakpoint(desktop){
+          margin-bottom: 15px;
+          font-size: 17px;
+        }
+        @include breakpoint (tablet){
+          font-size: 22px;
+          margin-bottom: 10px;
+        }
+        @include breakpoint(mobile){
+          font-size: 20px;
+        }
+      }
+      .email{
+        color: #100F0F;
+        text-align: center;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        margin-bottom: 12px;
+        @include breakpoint(desktop){
+          font-size: 18px;
+        }
+        &:hover{
+          color: #100F0F;
+        }
+        @include breakpoint(mobile){
+          font-size: 20px;
+        }
+      }
+      .position{
+        color: #100F0F;
+        text-align: center;
+        font-size: 17px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        @include breakpoint(desktop){
+          font-size: 16px;
+          margin-bottom: 10px;
+        }
+        @include breakpoint(tablet){
+          font-size: 18px;
+          max-width: 85%;
+          margin: 0 auto 10px;
+        }
+        @include breakpoint(mobile){
+          font-size: 16px;
+        }
+      }
+      .social{
+        display: flex;
+        gap: 15px;
+        .change-color{
+          transition: all 0.3s linear;
+          svg{
+            @include breakpoint(desktop){
+              max-width: 30px;
+              height: 30px;
+            }
+          }
+          &:hover{
+            circle{
+              stroke: black;
+            }
+            path{
+              fill: black;
+            }
+          }
+
+        }
+      }
+    }
+    .desktop-container{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+      border-radius: 25px;
+      background: black;
+      padding: 50px 0;
+      .decoration{
+        position: absolute;
+        left: 12%;
+        animation: rotate 10s linear infinite;
+      }
+      .contact-card{
+        max-width: 300px;
+        width: 100%;
+        font-family: "SF Pro Display", sans-serif;
+      }
+    }
+    .affstream-media-contacts{
+      position: relative;
+      .decoration{
+        position: absolute;
+        height: fit-content;
+        left: -20%;
+        top: 0;
+        bottom: 0;
+        max-height: 340px;
+        margin: auto;
+        @include breakpoint(mobile){
+          left: -28%;
+        }
+        svg{
+          animation: rotate 10s linear infinite;
+          @include breakpoint(mobile){
+            max-width: 140px;
+            height: 140px;
+          }
+        }
+      }
+    }
+    .affstream-media-contacts-pagination{
+      .swiper-pagination-bullet{
+        background: #FFFFFF;
+        &.swiper-pagination-bullet-active{
+          background: #00E291;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,115 @@
+.new-posts {
+  margin-bottom: 50px;
+}
+@media (max-width: 767px) {
+  .new-posts {
+    margin-bottom: 50px;
+  }
+}
+.new-posts .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+@media (max-width: 1599px) {
+  .new-posts .container {
+    max-width: 1200px;
+  }
+}
+.new-posts .container .swiper-blog {
+  overflow: visible;
+  padding: 10px 10px 32px;
+}
+@media (max-width: 1023px) {
+  .new-posts .container .swiper-blog {
+    overflow: hidden;
+  }
+}
+@media (max-width: 1023px) {
+  .new-posts .container .swiper-blog {
+    padding: 10px 16px 32px;
+  }
+}
+@media (max-width: 767px) {
+  .new-posts .container .swiper-blog {
+    padding: 10px 16px 32px;
+  }
+}
+.new-posts .container .swiper-blog .swiper-pagination-bullet {
+  background: black;
+}
+.new-posts .container .title-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto 20px;
+}
+@media (max-width: 1599px) {
+  .new-posts .container .title-container {
+    max-width: 1200px;
+    padding: 0 16px;
+    margin: 0 auto 15px;
+  }
+}
+@media (max-width: 1220px) {
+  .new-posts .container .title-container {
+    padding: 0 16px;
+  }
+}
+.new-posts .container .title-container h2 {
+  font-size: 30px;
+  font-style: italic;
+  font-weight: 900;
+  line-height: normal;
+  text-transform: uppercase;
+  margin: 0;
+  color: #fff;
+  padding: 15px;
+  border-radius: 100px;
+}
+@media (max-width: 1599px) {
+  .new-posts .container .title-container h2 {
+    padding: 12px;
+    font-size: 28px;
+  }
+}
+@media (max-width: 1023px) {
+  .new-posts .container .title-container h2 {
+    font-size: 24px;
+  }
+}
+@media (max-width: 767px) {
+  .new-posts .container .title-container h2 {
+    font-size: 22px;
+    padding: 10px;
+  }
+}
+.new-posts .container .title-container .archive-link {
+  border-radius: 78.979px;
+  background: #100F0F;
+  display: flex;
+  padding: 10px 15px;
+  justify-content: center;
+  align-items: center;
+  gap: 7.898px;
+  color: #FFFFFF;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase;
+  transition: all 0.3s ease-in;
+}
+.new-posts .container .title-container .archive-link:hover {
+  background: rgba(16, 15, 15, 0.5);
+}
+@media (max-width: 767px) {
+  .new-posts .container .title-container .archive-link {
+    font-size: 14px;
+  }
+}
+.new-posts .container .swiper-pagination {
+  bottom: 0;
+}
+
+/*# sourceMappingURL=style.css.map */
