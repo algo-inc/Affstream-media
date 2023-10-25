@@ -61,7 +61,9 @@ function render_intro_block( $block ): void {
 								setup_postdata( $post );
 								?>
                                 <div class="swiper-slide">
-                                    <?= get_the_post_thumbnail( $post, 'large' ); ?>
+                                    <a href="<?php the_permalink( $post) ?>">
+	                                    <?= get_the_post_thumbnail( $post, 'large' ); ?>
+                                    </a>
                                 </div>
 								<?php
 							}
@@ -80,8 +82,12 @@ function render_intro_block( $block ): void {
                 <div class="swiper-pagination" id="<?= $introMediaSliderPagination ?>"></div>
                 <script>
                   new Swiper('#<?= $introMediaSlider ?>', {
-                    loop: true,
                     slidesPerView: 1,
+                    speed: 300,
+                    loop: true,
+                    // autoplay: {
+                    //   delay: 2000,
+                    // },
                     navigation: {
                       nextEl: '#<?= $introMediaSliderNext ?>',
                       prevEl: '#<?= $introMediaSliderPrev ?>',

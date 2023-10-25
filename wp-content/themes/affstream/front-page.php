@@ -317,7 +317,7 @@ get_header();
         </section>
 		<?php get_template_part('template-parts/traffic-sources') ?>
 		<?php get_template_part( 'template-parts/events' ) ?>
-        <!--		--><?php //get_template_part( 'template-parts/blog' ) ?>
+<!--        		--><?php //get_template_part( 'template-parts/blog' ) ?>
         <section class="home-contacts">
             <h2 id="contacts" class="wow animate__animated  animate__fadeInLeft ">contact us</h2>
             <div class="container">

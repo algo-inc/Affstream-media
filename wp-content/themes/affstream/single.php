@@ -57,6 +57,16 @@ update_post_meta( $post_id, 'popularity', $popularity );
 								<?php the_date() ?>
                             </div>
                         </div>
+	                    <?php
+	                    $promo = get_field('promo_code');
+	                    if ($promo){?>
+                            <div class="promo-block">
+                                <p>PROMO CODE</p>
+			                    <?= $promo ?>
+                            </div>
+		                    <?php
+	                    }
+	                    ?>
                     </div>
 	                <?php
 	                custom_display_tags( get_the_ID(), null, true );

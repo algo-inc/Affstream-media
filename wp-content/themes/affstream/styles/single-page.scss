@@ -14,14 +14,14 @@
       padding: 0 16px;
       gap: 70px;
     }
+
     @include breakpoint(tablet){
       gap: 35px;
     }
     @include breakpoint(mobile){
       flex-direction: column;
     }
-    .category-and-time
-    {
+    .category-and-time {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -46,6 +46,7 @@
         }
 
       }
+
     }
     .post-container{
       display: flex;
@@ -452,4 +453,15 @@
   }
 }
 
+
+.promo-block{
+  border-radius: 7.587px;
+  border: 1.5px solid #0C62FD;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 15px;
+  background: #0c0c0c;
+}
 

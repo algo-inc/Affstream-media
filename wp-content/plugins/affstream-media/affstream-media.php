@@ -449,12 +449,11 @@ function custom_display_tags( $post_id, $count = 4, $all_tags = false ) {
 }
 
 function renderPostsByCategory(): void {
-	$category_id = isset($_REQUEST['category_id']) ? intval($_REQUEST['category_id']) : null; // Отримати ID, якщо він переданий у GET-параметрі.
-	$category_slug = isset($_REQUEST['category']) ? sanitize_text_field($_REQUEST['category']) : ''; // Отримати слаг, якщо він переданий у GET-параметрі.
+	$category_id = isset($_REQUEST['category_id']) ? intval($_REQUEST['category_id']) : null;
+	$category_slug = isset($_REQUEST['category']) ? sanitize_text_field($_REQUEST['category']) : '';
 	$paged = isset($_REQUEST['paged']) ? intval($_REQUEST['paged']) : 1;
 
 	if (empty($category_id) && !empty($category_slug)) {
-		// Якщо ID відсутній, але є слаг, спробувати отримати ID за допомогою слагу.
 		$category = get_term_by('slug', $category_slug, 'university-category');
 		if ($category) {
 			$category_id = $category->term_id;
@@ -552,14 +551,14 @@ add_action( 'wp_ajax_nopriv_load_glossary_template', 'load_glossary_template' );
 if ( function_exists( 'acf_add_local_field_group' ) ):
 	acf_add_local_field_group( array(
 		'key'      => 'group_60c1234567890',
-		'title'    => 'GIF-image',
+		'title'    => 'Promo',
 		'fields'   => array(
 			array(
 				'key'               => 'field_60c1234567891',
-				'label'             => __( 'GIF image' ),
+				'label'             => __( 'Post Banner' ),
 				'name'              => 'global_gif_image',
-				'type'              => 'image', // Тип поля - Зображення
-				'instructions'      => 'Додайте глобальне GIF-зображення для кількох типів постів',
+				'type'              => 'image',
+				'instructions'      => 'GIF-зображення',
 				'required'          => 0,
 				'conditional_logic' => 0,
 				'wrapper'           => array(
@@ -570,6 +569,15 @@ if ( function_exists( 'acf_add_local_field_group' ) ):
 				'return_format'     => 'url',
 				'preview_size'      => 'thumbnail',
 				'library'           => 'all',
+			),
+			array(
+				'key'     => '',
+				'label'   => 'Promo Code',
+				'name'    => 'promo_code',
+				'type'    => 'text',
+				'wrapper' => array(
+					'width' => '50%',
+				),
 			),
 		),
 		'location' => array(

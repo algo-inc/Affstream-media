@@ -4,7 +4,7 @@ import {create, test, enforce} from 'vest';
 import {validator} from '@felte/validator-vest';
 import 'vest/enforce/email';
 import {AutoInit} from 'materialize-css'
-import {test1} from './functions/function1';
+
 
 document.addEventListener('DOMContentLoaded', () => {
   AutoInit(document.body);
