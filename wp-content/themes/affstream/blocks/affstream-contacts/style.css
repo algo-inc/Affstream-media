@@ -98,6 +98,7 @@
   .media-contacts .container .contact-card .name {
     margin-bottom: 15px;
     font-size: 18px;
+    font-weight: normal;
   }
 }
 @media (max-width: 1023px) {
