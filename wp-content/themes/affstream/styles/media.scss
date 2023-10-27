@@ -1,10 +1,10 @@
 @import "../styles/breakpoints.scss";
 
 .archive-media {
-  margin-top: 80px;
   background-repeat: no-repeat;
   background-size: cover;
   overflow: hidden;
+  margin-top: 120px;
 }
 
 
@@ -41,7 +41,9 @@ body.page-template-media.custom-background {
       padding: 0 16px;
       margin: 30px auto;
     }
-
+    @include breakpoint(mobile){
+      margin-top: 70px;
+    }
     .description {
       max-width: 800px;
       margin: auto;
@@ -205,8 +207,12 @@ body.page-template-media.custom-background {
       @include breakpoint(desktop) {
         margin: 50px auto 70px;
       }
+      @include breakpoint(tablet){
+        margin-top: 100px;
+        margin-bottom: 50px;
+      }
       @include breakpoint(mobile) {
-        margin: 80px auto 60px;
+        margin: 80px auto 50px;
       }
 
       h2 {
@@ -217,7 +223,7 @@ body.page-template-media.custom-background {
         font-weight: 900;
         line-height: normal;
         text-transform: uppercase;
-        @include breakpoint(desktop) {
+        @include breakpoint(tablet) {
           font-size: 48px;
         }
         @include breakpoint(mobile) {
@@ -581,7 +587,7 @@ body.page-template-media.custom-background {
     .title-container {
       align-items: center;
       max-width: 1300px;
-      margin: 80px auto 50px;
+      margin: 50px auto 50px;
       @include breakpoint(desktop){
         max-width: 1200px;
         padding: 0 16px;
@@ -590,8 +596,8 @@ body.page-template-media.custom-background {
         align-items: start;
         gap: 25px;
         margin-bottom: 30px;
+        margin-top: 100px;
       }
-
       h1, h2  {
         color: #100F0F;
         font-size: 60px;
@@ -601,7 +607,7 @@ body.page-template-media.custom-background {
         text-transform: uppercase;
         margin: 0;
         text-align: center;
-        @include breakpoint(desktop) {
+        @include breakpoint(tablet) {
           font-size: 48px;
         }
         @include breakpoint(mobile) {
@@ -721,7 +727,7 @@ body.page-template-media.custom-background {
       grid-column-gap: 20px;
     }
     @media (max-width: 1400px) {
-      grid-template-columns: 200px 40% auto 70px auto;
+      grid-template-columns: 200px 40% auto 70px 10%;
     }
     @include breakpoint(tablet) {
       grid-template-columns: 1fr 1fr;

@@ -149,6 +149,7 @@
 @media (max-width: 1599px) {
   .media-contacts .container .contact-card .position {
     margin-bottom: 10px;
+    max-width: 85%;
   }
 }
 @media (max-width: 1023px) {

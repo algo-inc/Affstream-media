@@ -45,32 +45,45 @@ get_header();
                     </a>
                 </div>
                 <div class="intro-animation">
-					<?php
-					$video_or_image_mobile = get_field('video_or_image_mobile');
-					$video_or_image = get_field('video_or_image');
-					function is_mobile_device() {
-						return wp_is_mobile();
-					}
-					if (is_mobile_device() && !empty($video_or_image_mobile)) {
-						$mobile_url = $video_or_image_mobile['url'];
+	                <?php
+	                $video_or_image_mobile = get_field('video_or_image_mobile');
+	                $video_or_image = get_field('video_or_image');
 
-						if ($video_or_image_mobile['mime_type'] === 'video/mp4') {
-							echo '<video playsinline loop autoplay muted  src="' . esc_url($mobile_url) . '"></video>';
-						} else {
-							echo '<img src="' . esc_url($mobile_url) . '" alt="">';
-						}
-					} elseif (!empty($video_or_image)) {
-						$desktop_url = $video_or_image['url'];
+	                function is_mobile_device() {
+		                return wp_is_mobile();
+	                }
 
-						if ($video_or_image['mime_type'] === 'video/mp4') {
-							echo '<video playsinline loop autoplay muted src="' . esc_url($desktop_url) . '"></video>';
-						} else {
-							echo '<img src="' . esc_url($desktop_url) . '" alt="' . esc_attr($video_or_image['alt']) . '">';
-						}
-					}
-					?>
+	                if (is_mobile_device() && !empty($video_or_image_mobile)) {
+		                $mobile_url = $video_or_image_mobile['url'];
+		                if ($video_or_image_mobile['mime_type'] === 'video/mp4') {
+			                ?>
+                            <video width="394px" height="394px" playsinline loop autoplay muted  src="<?php echo esc_url($mobile_url); ?>">
+                                <source src="<?php echo esc_url($mobile_url); ?>" type="video/mp4">
+                                Ваш браузер не підтримує відео.
+                            </video>
+			                <?php
+		                } else {
+			                ?>
+                            <img src="<?php echo esc_url($mobile_url); ?>" alt="">
+			                <?php
+		                }
+	                } elseif (!empty($video_or_image)) {
+		                $desktop_url = $video_or_image['url'];
 
-
+		                if ($video_or_image['mime_type'] === 'video/mp4') {
+			                ?>
+                            <video width="460px" height="460px"  playsinline loop autoplay muted src="<?php echo esc_url($desktop_url); ?>">
+                                <source src="<?php echo esc_url($desktop_url); ?>" type="video/mp4">
+                                Ваш браузер не підтримує відео.
+                            </video>
+			                <?php
+		                } else {
+			                ?>
+                            <img src="<?php echo esc_url($desktop_url); ?>" alt="<?php echo esc_attr($video_or_image['alt']); ?>">
+			                <?php
+		                }
+	                }
+	                ?>
                 </div>
             </div>
         </section>

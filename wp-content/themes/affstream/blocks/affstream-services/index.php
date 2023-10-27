@@ -107,11 +107,9 @@ function render_affstream_services_block( $block ): void {
 	                            <?php } ?>
                             </div>
                             <div class="service-description">
-                                <p>
-									<?php $excerpt = custom_trim_excerpt( get_the_excerpt( $service ), 100, '...' );
-									echo $excerpt;
-									?>
-                                </p>
+
+                                    <?php the_excerpt(); ?>
+
                             </div>
                             <div class="monthly-price">
 								<?php if ( ! empty( $monthly_price ) ) {

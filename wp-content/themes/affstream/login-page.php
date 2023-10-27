@@ -13,7 +13,6 @@ if (!empty($video_url) && !wp_is_mobile()) {
 }
 
 ?>
-<link rel="stylesheet" href="<?= get_template_directory_uri() . '/styles/registration/registration.css' ?>">
 <?php get_header() ?>
 <style>
     .autofilled {
@@ -79,7 +78,6 @@ if (!empty($video_url) && !wp_is_mobile()) {
       });
     </script>
 </section>
-
 <?php get_footer() ?>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <script>

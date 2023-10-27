@@ -153,6 +153,7 @@
         font-family: "SF Pro Display", sans-serif;
         @include breakpoint(desktop){
           margin-bottom: 10px;
+          max-width: 85%;
         }
         @include breakpoint(tablet){
           font-size: 18px;

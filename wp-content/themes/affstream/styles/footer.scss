@@ -337,8 +337,11 @@ footer {
     font-family: "SF Pro Display", sans-serif;
     font-style: normal;
     font-weight: 500;
-    line-height: normal;
     margin: 0;
+    line-height: 150%;
+    @include breakpoint(desktop){
+      line-height: normal;
+    }
     @include breakpoint(mobile) {
       display: none;
     }

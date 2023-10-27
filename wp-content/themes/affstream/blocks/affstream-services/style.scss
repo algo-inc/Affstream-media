@@ -111,7 +111,7 @@
           grid-column-gap: 20px;
         }
         @media (max-width: 1400px) {
-          grid-template-columns: 200px 38% auto 70px auto;
+          grid-template-columns: 200px 40% auto 70px 10%;
         }
         @include breakpoint(tablet) {
           grid-template-columns: 1fr 1fr;

@@ -124,6 +124,9 @@ input:not([type]), input[type=text]:not(.browser-default), input[type=password]:
         @include breakpoint(desktop) {
           margin-bottom: 20px !important;
         }
+        a{
+          color: #00E291;
+        }
       }
 
       .row {

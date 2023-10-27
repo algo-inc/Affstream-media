@@ -87,7 +87,7 @@
 }
 @media (max-width: 1400px) {
   .affstream-services .affstream-services-container .service-card .card-container {
-    grid-template-columns: 200px 38% auto 70px auto;
+    grid-template-columns: 200px 40% auto 70px 10%;
   }
 }
 @media (max-width: 1023px) {

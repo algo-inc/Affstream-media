@@ -49,8 +49,7 @@
 						?>
                         <div class="swiper-slide">
                             <div class="slide-container">
-								<?php
-                                the_post_thumbnail('full'); ?>
+                                <img class="swiper-lazy" data-src="<?php the_post_thumbnail_url('full');?>" alt="">
                                 <div class="event-details">
                                     <div class="title-container">
                                         <p ><?= get_field('event_location') ?></p>
@@ -143,6 +142,7 @@
   var eventsContent = new Swiper('.events-content', {
     slidesPerView: 1,
     spaceBetween: 30,
+    lazy: true,
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',

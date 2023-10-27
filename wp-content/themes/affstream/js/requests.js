@@ -77,6 +77,14 @@ function isExternalApiAuthorized() {
   });
 }
 
+isExternalApiAuthorized()
+  .then(result => {
+    console.log('Авторизація успішна:', result);
+  })
+  .catch(error => {
+    console.error('Помилка авторизації:', error);
+  });
+
 function authDesignUpdate(isAuthenticated) {
   if (isAuthenticated) {
     jQuery('.buttons-container').hide();

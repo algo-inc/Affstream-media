@@ -253,7 +253,7 @@ h2 {
 
 .intro {
   @include breakpoint(desktop){
-    height: 100vh;
+    margin-bottom: 70px;
   }
   @include breakpoint(tablet) {
     margin-top: 82px;

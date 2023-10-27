@@ -11,31 +11,55 @@ input[type=password]:focus:not([readonly]),
 input[type=email]:focus:not([readonly]),
 select:focus:not([readonly]),
 textarea:focus:not([readonly]) {
-  border-bottom: 1px solid #00E291 !important;
+  border-bottom: 1.5px solid #00E291 !important;
   box-shadow: 0 1px 0 0 #00E291 !important;
   color: #FFFFFF;
+}
+
+input[aria-invalid=true] {
+  border-bottom: 1.5px solid red !important;
+}
+
+input:not([type]), input[type=text]:not(.browser-default), input[type=password]:not(.browser-default), input[type=email]:not(.browser-default), input[type=url]:not(.browser-default), input[type=time]:not(.browser-default), input[type=date]:not(.browser-default), input[type=datetime]:not(.browser-default), input[type=datetime-local]:not(.browser-default), input[type=tel]:not(.browser-default), input[type=number]:not(.browser-default), input[type=search]:not(.browser-default), textarea.materialize-textarea {
+  border-bottom: 1.5px solid #00E291;
 }
 
 input:not([type]), input[type=text]:not(.browser-default), input[type=password]:not(.browser-default), input[type=email]:not(.browser-default), input[type=url]:not(.browser-default), input[type=time]:not(.browser-default), input[type=date]:not(.browser-default), input[type=datetime]:not(.browser-default), input[type=datetime-local]:not(.browser-default), input[type=tel]:not(.browser-default), input[type=number]:not(.browser-default), input[type=search]:not(.browser-default), textarea.materialize-textarea {
   color: #FFF;
 }
 
-@media (max-width: 840px) {
+@media (max-width: 767px) {
   .register-form .register-form-container form {
     flex-direction: column;
   }
 }
 
 .register-form {
-  background: black;
-  padding-top: 200px;
-  padding-bottom: 200px;
+  background: #100F0F;
+  padding-top: 100px;
+  padding-bottom: 100px;
   background-size: cover;
+}
+@media (max-width: 1599px) {
+  .register-form {
+    padding-top: 40px;
+    padding-bottom: 100px;
+    background-size: 115% 110%;
+  }
+}
+@media (max-width: 1200px) {
+  .register-form {
+    background-image: none !important;
+  }
 }
 @media (max-width: 840px) {
   .register-form {
     height: auto;
   }
+}
+.register-form .input-field {
+  margin-top: auto;
+  margin-bottom: auto;
 }
 .register-form .register-form-title {
   margin-top: 0;
@@ -47,8 +71,19 @@ input:not([type]), input[type=text]:not(.browser-default), input[type=password]:
   font-size: 70px;
   line-height: 84px;
   text-align: center;
-  margin-bottom: 70px;
+  margin-bottom: 210px;
   text-transform: uppercase;
+}
+@media (max-width: 1919px) {
+  .register-form .register-form-title {
+    margin-bottom: 85px;
+  }
+}
+@media (max-width: 1599px) {
+  .register-form .register-form-title {
+    margin-bottom: 60px;
+    font-size: 60px;
+  }
 }
 @media (max-width: 840px) {
   .register-form .register-form-title {
@@ -59,44 +94,129 @@ input:not([type]), input[type=text]:not(.browser-default), input[type=password]:
 }
 @media (max-width: 768px) {
   .register-form .register-form-title {
-    max-width: 380px;
+    font-size: 31px;
+    font-style: italic;
+    font-weight: 900;
     line-height: normal;
-    font-size: 48px;
+    text-transform: uppercase;
+    margin-bottom: 58px;
   }
 }
 .register-form .register-form-container {
   max-width: 1600px;
   margin: 0 auto;
 }
-.register-form .register-form-container form {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-}
-@media screen and (max-width: 840px) {
-  .register-form .register-form-container form {
-    flex-direction: column;
-    align-items: center;
+@media (max-width: 1599px) {
+  .register-form .register-form-container {
+    max-width: 1200px;
+    padding: 0 10px;
   }
 }
-.register-form .register-form-container form .select-wrapper + label {
-  top: -36px;
+@media (max-width: 767px) {
+  .register-form .register-form-container {
+    padding: 0 24px;
+  }
+}
+.register-form .register-form-container form {
+  display: flex;
+  justify-content: space-between;
+}
+@media (max-width: 1599px) {
+  .register-form .register-form-container form {
+    justify-content: start;
+  }
+}
+@media (max-width: 1919px) {
+  .register-form .register-form-container form {
+    justify-content: space-around;
+  }
+}
+@media (max-width: 1599px) {
+  .register-form .register-form-container form .check-box {
+    margin-bottom: 20px !important;
+  }
+}
+.register-form .register-form-container form .check-box a {
+  color: #00E291;
 }
 .register-form .register-form-container form .row {
   margin-bottom: 45px;
 }
-.register-form .register-form-container form .row label {
-  font-style: normal;
-  font-weight: 700;
+.register-form .register-form-container form .row .error-form-message {
+  color: #F63349;
+}
+.register-form .register-form-container form .row.register-checkbox-container {
+  margin-bottom: 30px;
+}
+.register-form .register-form-container form .row:last-child {
+  margin-bottom: 0;
+}
+@media (max-width: 767px) {
+  .register-form .register-form-container form .row:last-child {
+    margin-bottom: 45px;
+  }
+}
+.register-form .register-form-container form .row.have-account {
+  margin-bottom: 25px;
+}
+.register-form .register-form-container form .row.have-account p {
+  margin: 0;
+  color: #EDEDFF;
   font-size: 18px;
-  line-height: 0.5;
-  letter-spacing: -0.005em;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 91.182%;
+}
+.register-form .register-form-container form .row.have-account p a {
+  color: #00E291;
+}
+@media (max-width: 1599px) {
+  .register-form .register-form-container form .row.have-account p {
+    font-size: 16px;
+  }
+}
+@media (max-width: 767px) {
+  .register-form .register-form-container form .row.have-account p {
+    line-height: normal;
+    font-size: 20px;
+    text-align: center;
+    max-width: 70%;
+    margin: 0 auto;
+  }
+}
+.register-form .register-form-container form .row .checkbox-name {
+  color: white;
+}
+.register-form .register-form-container form .row .checkbox-name a {
+  color: #00E291;
+}
+.register-form .register-form-container form .row [type=checkbox] + span:not(.lever) {
+  position: relative;
+  padding-left: 49px;
+}
+.register-form .register-form-container form .select-wrapper + label {
+  font-size: 0.9rem;
+  top: -30px;
+}
+.register-form .register-form-container form .input-field > label {
   color: #00E291;
 }
 .register-form .register-form-container form label.active {
   color: #00E291 !important;
-  font-size: 22px;
   text-transform: uppercase;
+  white-space: nowrap;
+  font-weight: 700;
+}
+@media (max-width: 1599px) {
+  .register-form .register-form-container form label.active {
+    font-size: 20px;
+    line-height: normal;
+  }
+}
+@media (max-width: 1023px) {
+  .register-form .register-form-container form label.active {
+    font-size: 18px;
+  }
 }
 .register-form .register-form-container form .first-column {
   margin-right: 25px;
@@ -118,9 +238,27 @@ input:not([type]), input[type=text]:not(.browser-default), input[type=password]:
   width: 100%;
   margin-right: 20px;
 }
-@media (max-width: 840px) {
+.register-form .register-form-container form .form-column:first-child {
+  margin-right: 70px;
+}
+@media (min-width: 1024px) and (max-width: 1300px) {
   .register-form .register-form-container form .form-column {
-    padding: 0 20px;
+    margin-right: 10px;
+  }
+  .register-form .register-form-container form .form-column:last-child {
+    margin-right: 0;
+  }
+}
+@media (max-width: 1023px) {
+  .register-form .register-form-container form .form-column {
+    margin-right: 0;
+    max-width: 45%;
+    width: 100%;
+  }
+}
+@media (max-width: 767px) {
+  .register-form .register-form-container form .form-column {
+    max-width: 100%;
   }
 }
 .register-form .register-form-container form .form-submit-button button {
@@ -134,6 +272,19 @@ input:not([type]), input[type=text]:not(.browser-default), input[type=password]:
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: all 0.3s linear;
+  margin: 0 auto;
+}
+@media (max-width: 1599px) {
+  .register-form .register-form-container form .form-submit-button button {
+    padding: 25px;
+  }
+}
+.register-form .register-form-container form .form-submit-button button svg {
+  margin-left: 10px;
+}
+.register-form .register-form-container form .form-submit-button button:hover {
+  background: #00E291;
 }
 .register-form .register-form-container form .register-checkbox {
   display: flex;
@@ -143,6 +294,11 @@ input:not([type]), input[type=text]:not(.browser-default), input[type=password]:
   border: 1px solid #00E291;
   border-radius: 5px;
   margin-bottom: 50px;
+}
+@media (max-width: 767px) {
+  .register-form .register-form-container form .register-checkbox {
+    margin-bottom: 28px;
+  }
 }
 .register-form .register-form-container form .register-checkbox [type=checkbox] + span:not(.lever) {
   padding-left: 50px;
@@ -158,15 +314,33 @@ input:not([type]), input[type=text]:not(.browser-default), input[type=password]:
   border: 2.00499px solid #00E291;
   color: #00E291;
 }
+@media (max-width: 1599px) {
+  .register-form .register-form-container form [type=checkbox].filled-in:checked + span:not(.lever):after {
+    width: 25px;
+    height: 25px;
+  }
+}
 .register-form .register-form-container form [type=checkbox].filled-in:checked + span:not(.lever):before {
   left: 5px;
   top: 5px;
   width: 10px;
 }
+@media (max-width: 1599px) {
+  .register-form .register-form-container form [type=checkbox].filled-in:checked + span:not(.lever):before {
+    top: 1px;
+    left: 2px;
+  }
+}
 .register-form .register-form-container form [type=checkbox].filled-in:not(:checked) + span:not(.lever):after {
   border: 2.00499px solid #00E291;
   width: 30px;
   height: 30px;
+}
+@media (max-width: 1599px) {
+  .register-form .register-form-container form [type=checkbox].filled-in:not(:checked) + span:not(.lever):after {
+    width: 25px;
+    height: 25px;
+  }
 }
 
 .forms-button {
@@ -182,10 +356,21 @@ input:not([type]), input[type=text]:not(.browser-default), input[type=password]:
   font-weight: 700;
   font-size: 24px;
   padding: 20px;
-  margin-top: 30px;
   height: 62px;
   position: relative;
   transition: 0.6s linear;
+  margin-top: 0;
+}
+@media (max-width: 1599px) {
+  .forms-button {
+    height: 50px;
+  }
+}
+@media (max-width: 767px) {
+  .forms-button {
+    width: 160px;
+    padding: 10px 15px;
+  }
 }
 .forms-button:hover {
   background: #E0F01E;
@@ -206,6 +391,17 @@ input:not([type]), input[type=text]:not(.browser-default), input[type=password]:
   margin-left: 7px;
 }
 
+.restore-password .form-links {
+  color: #EDEDFF;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 91.182%;
+}
+.restore-password .form-links svg {
+  margin-left: 5px;
+}
+
 .login-page {
   height: 100vh;
   display: flex;
@@ -213,24 +409,35 @@ input:not([type]), input[type=text]:not(.browser-default), input[type=password]:
   align-items: center;
   background-size: cover;
 }
+@media (max-width: 767px) {
+  .login-page {
+    background-image: none !important;
+  }
+}
 .login-page h2 {
   background: linear-gradient(90.51deg, #00E291 0%, #E0F01E 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
+  width: 100%;
+  font-size: 36px;
+  font-style: italic;
   font-weight: 900;
-  font-size: 35px;
-  line-height: 42px;
-  text-align: center;
-  margin-bottom: 77px;
+  line-height: normal;
   text-transform: uppercase;
+  margin-bottom: 74px;
+}
+@media (max-width: 1599px) {
+  .login-page h2 {
+    margin-bottom: 37px;
+  }
 }
 .login-page form {
   border-radius: 55px;
-  padding: 67px;
+  padding: 63px;
   position: relative;
-  max-width: 580px;
+  max-width: 550px;
   width: 100%;
   z-index: 2;
   margin: 0 10px;
@@ -240,14 +447,21 @@ input:not([type]), input[type=text]:not(.browser-default), input[type=password]:
   width: 100%;
   background: linear-gradient(154.13deg, #00E291 0%, #E0F01E 100.03%);
 }
-@media (max-width: 768px) {
+@media (max-width: 1599px) {
   .login-page form {
-    padding: 25px 40px 70px;
+    padding: 40px;
+    max-width: 400px;
+  }
+}
+@media (max-width: 767px) {
+  .login-page form {
+    padding: 40px 20px;
     border-radius: 30px;
+    margin: 0 15px;
   }
 }
 .login-page form:before {
-  background: black;
+  background: #100F0F;
   content: "";
   width: 99%;
   height: 99%;
@@ -265,30 +479,18 @@ input:not([type]), input[type=text]:not(.browser-default), input[type=password]:
     border-radius: 30px;
   }
 }
-.login-page form .form-links {
-  font-style: normal;
-  font-weight: 400;
-  font-size: 23px;
-  line-height: normal;
-  text-align: center;
-  color: #EDEDFF;
-  margin-bottom: 20px;
-  transition: 0.3s linear;
-}
-.login-page form .form-links:hover {
-  background: linear-gradient(97.82deg, #00E291 0%, #E0F01E 99.95%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.login-page form .form-links:hover path {
-  stroke: #E0F01E;
-}
-.login-page form .form-links:last-child {
-  margin-bottom: 0;
+.login-page form input:-webkit-autofill, .login-page form input.autofilled {
+  color: black !important;
+  background-color: #4CAF50;
 }
 .login-page form .input-field {
   width: 100%;
+  margin-bottom: 37px;
+}
+@media (max-width: 1599px) {
+  .login-page form .input-field {
+    margin-bottom: 35px;
+  }
 }
 .login-page form .input-field label {
   text-transform: uppercase;
@@ -298,9 +500,40 @@ input:not([type]), input[type=text]:not(.browser-default), input[type=password]:
   font-size: 25px;
   line-height: 0.5;
 }
+@media (max-width: 1599px) {
+  .login-page form .input-field label {
+    font-size: 22px;
+  }
+}
+@media (max-width: 767px) {
+  .login-page form .input-field label {
+    font-size: 18px;
+  }
+}
 .login-page form .input-field input {
-  border-bottom: 1px #EDEDFF solid;
+  border-bottom: 1.5px #EDEDFF solid;
   color: #FFFFFF;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 118.8%;
+  letter-spacing: -0.095px;
+  box-sizing: border-box;
+  background: #100F0F !important;
+}
+@media (max-width: 1599px) {
+  .login-page form .input-field input {
+    font-size: 18px;
+    height: 40px;
+  }
+}
+@media (max-width: 767px) {
+  .login-page form .input-field input {
+    font-size: 15px;
+  }
+}
+.login-page form .input-field .forms-button {
+  margin-top: 0;
 }
 .login-page form .form-links-container {
   width: 100%;
@@ -309,6 +542,39 @@ input:not([type]), input[type=text]:not(.browser-default), input[type=password]:
   align-items: center;
   flex-direction: column;
   margin-top: 40px;
+}
+@media (max-width: 1599px) {
+  .login-page form .form-links-container {
+    margin-top: 25px;
+  }
+}
+.login-page form .form-links-container .form-links {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: normal;
+  text-align: center;
+  color: #EDEDFF;
+  margin-bottom: 20px;
+  transition: 0.3s linear;
+}
+@media (max-width: 1599px) {
+  .login-page form .form-links-container .form-links {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+}
+.login-page form .form-links-container .form-links:hover {
+  background: linear-gradient(97.82deg, #00E291 0%, #E0F01E 99.95%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.login-page form .form-links-container .form-links:hover path {
+  stroke: #E0F01E;
+}
+.login-page form .form-links-container .form-links:last-child {
+  margin-bottom: 0;
 }
 .login-page form .flex-container {
   display: flex;
@@ -326,12 +592,22 @@ input:not([type]), input[type=text]:not(.browser-default), input[type=password]:
   fill: #ffffff;
 }
 
+.material-icons {
+  display: none;
+}
+
+.custom-icon {
+  width: 15px;
+  height: 14px;
+  background-image: url("./icon/flag/en.svg");
+}
+
 .select-wrapper input.select-dropdown:focus {
   border-bottom-color: #00E291;
 }
 
 .dropdown-content li span {
-  color: #00E291;
+  color: #0c0c0c;
 }
 
 .input-field input[type=email]:focus,
@@ -340,14 +616,98 @@ input:not([type]), input[type=text]:not(.browser-default), input[type=password]:
   box-shadow: 0 1px 0 0 var(--primary-color) !important;
 }
 
-.input-field input[type=email] + label,
-.input-field input[type=password] + label {
-  color: var(--primary-color) !important;
-}
-
 .input-field input[type=email]:focus + label,
 .input-field input[type=password]:focus + label {
   color: var(--primary-color) !important;
+}
+
+#login-form .message {
+  margin-top: 20px;
+  font-size: 14px;
+}
+#login-form .forms-button {
+  margin-top: 40px;
+}
+
+#resetPasswordForm .input-field {
+  margin-bottom: 0;
+}
+#resetPasswordForm .message {
+  margin-top: 20px;
+  font-size: 14px;
+}
+#resetPasswordForm .forms-button {
+  margin-top: 40px;
+}
+
+#changePasswordForm .message {
+  margin-top: 20px;
+}
+#changePasswordForm .forms-button {
+  margin-top: 40px;
+}
+
+.restore-password h2 {
+  font-size: 30px;
+  font-style: italic;
+  font-weight: 900;
+  line-height: normal;
+  text-transform: uppercase;
+  text-align: center;
+}
+@media (max-width: 767px) {
+  .restore-password h2 {
+    font-size: 26px;
+    text-transform: uppercase;
+  }
+}
+
+.change-password h2 {
+  font-size: 28px;
+  font-style: italic;
+  font-weight: 900;
+  line-height: normal;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+@media (max-width: 1599px) {
+  .select-wrapper input.select-dropdown {
+    height: 40px;
+  }
+}
+
+.dropdown-content li {
+  min-height: 40px;
+  margin-bottom: 0;
+}
+.dropdown-content li span {
+  padding: 10px;
+}
+
+input:not([type]), input[type=text]:not(.browser-default), input[type=password]:not(.browser-default), input[type=email]:not(.browser-default), input[type=url]:not(.browser-default), input[type=time]:not(.browser-default), input[type=date]:not(.browser-default), input[type=datetime]:not(.browser-default), input[type=datetime-local]:not(.browser-default), input[type=tel]:not(.browser-default), input[type=number]:not(.browser-default), input[type=search]:not(.browser-default), textarea.materialize-textarea {
+  margin: 0;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus {
+  background-color: #0c0c0c !important;
+}
+
+.input-field > input[type]:-webkit-autofill:not(.browser-default):not([type=search]) + label, .input-field > input[type=date]:not(.browser-default) + label, .input-field > input[type=time]:not(.browser-default) + label {
+  transform: translateY(-28px) scale(0.9);
+}
+
+.g-recaptcha {
+  margin-bottom: 30px;
+}
+
+.restore-password input {
+  margin-bottom: 20px;
 }
 
 /*# sourceMappingURL=registration.css.map */

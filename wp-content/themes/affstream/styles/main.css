@@ -181,11 +181,6 @@ header .container .buttons-container {
   align-items: center;
   gap: 40px;
 }
-@media (min-width: 1024px) and (max-width: 1300px) {
-  header .container .buttons-container {
-    max-width: 230px;
-  }
-}
 @media (max-width: 1023px) {
   header .container .buttons-container {
     display: none;
@@ -1680,8 +1675,13 @@ footer .container .social .social-links .mail-link {
   font-family: "SF Pro Display", sans-serif;
   font-style: normal;
   font-weight: 500;
-  line-height: normal;
   margin: 0;
+  line-height: 150%;
+}
+@media (max-width: 1599px) {
+  #footer-media .footer-media-text-desktop {
+    line-height: normal;
+  }
 }
 @media (max-width: 767px) {
   #footer-media .footer-media-text-desktop {
@@ -4062,10 +4062,14 @@ footer .container .social .social-links .mail-link {
   -webkit-transform: rotate(45deg);
 }
 
+.single.custom-background {
+  background: #FFFFFF !important;
+}
+
 .single-page {
   background: #fff;
-  padding-top: 100px;
   padding-bottom: 25px;
+  margin-top: 100px;
 }
 .single-page .container {
   display: flex;
@@ -4096,10 +4100,16 @@ footer .container .social .social-links .mail-link {
   align-items: center;
   margin-bottom: 27px;
 }
+@media (max-width: 767px) {
+  .single-page .container .category-and-time {
+    align-items: self-start;
+  }
+}
 .single-page .container .category-and-time .time-and-date {
   display: flex;
   align-items: center;
   gap: 30px;
+  font-family: "SF Pro Display", sans-serif;
 }
 .single-page .container .category-and-time .time-and-date .read-time {
   gap: 6px;
@@ -4109,7 +4119,6 @@ footer .container .social .social-links .mail-link {
   font-size: 15px;
   font-style: normal;
   font-weight: 500;
-  line-height: 118.836%;
   letter-spacing: -0.075px;
   display: flex;
   align-items: center;
@@ -4162,6 +4171,7 @@ footer .container .social .social-links .mail-link {
   display: flex;
   align-items: center;
   gap: 13px;
+  flex-wrap: wrap;
 }
 .single-page .container .this-post .category .post-type-name {
   border-radius: 29.982px;
@@ -4197,6 +4207,7 @@ footer .container .social .social-links .mail-link {
   gap: 13px;
   row-gap: 10px;
   margin-bottom: 30px;
+  flex-wrap: wrap;
 }
 .single-page .container .this-post .tags .tag {
   border-radius: 88px;
@@ -4209,6 +4220,9 @@ footer .container .social .social-links .mail-link {
   .single-page .container .this-post .tags .tag {
     font-size: 14px;
   }
+}
+.single-page .container .this-post .tags .tag:hover {
+  background: linear-gradient(97deg, #0C62FD 0%, #1035B8 100%);
 }
 .single-page .container .share-post-container {
   display: flex;
@@ -4223,7 +4237,8 @@ footer .container .social .social-links .mail-link {
 }
 @media (max-width: 767px) {
   .single-page .container .share-post-container {
-    padding: 10px 16px;
+    padding: 10px 20px;
+    gap: 40px;
   }
 }
 .single-page .container .share-post-container .popularity-container {
@@ -4232,8 +4247,15 @@ footer .container .social .social-links .mail-link {
 }
 @media (max-width: 767px) {
   .single-page .container .share-post-container .popularity-container {
-    gap: 30px;
+    gap: 20px;
+    justify-content: space-between;
   }
+}
+.single-page .container .share-post-container .popularity-container .wpulike {
+  padding: 0;
+}
+.single-page .container .share-post-container .popularity-container .wpulike .wp_ulike_general_class {
+  box-shadow: none;
 }
 .single-page .container .share-post-container .popularity-container .wpulike .wp_ulike_general_class.wp_ulike_is_liked {
   box-shadow: none;
@@ -4787,7 +4809,7 @@ h2 {
 
 @media (max-width: 1599px) {
   .intro {
-    height: 100vh;
+    margin-bottom: 70px;
   }
 }
 @media (max-width: 1023px) {

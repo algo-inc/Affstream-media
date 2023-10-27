@@ -1,8 +1,11 @@
 @import "./breakpoints";
+.single.custom-background{
+  background: #FFFFFF!important;
+}
 .single-page {
   background: #fff;
-  padding-top: 100px;
   padding-bottom: 25px;
+  margin-top: 100px;
 
   .container {
     display: flex;
@@ -26,11 +29,14 @@
       justify-content: space-between;
       align-items: center;
       margin-bottom: 27px;
-
+      @include breakpoint(mobile){
+        align-items: self-start;
+      }
       .time-and-date {
         display: flex;
         align-items: center;
         gap: 30px;
+        font-family: "SF Pro Display", sans-serif;
         .read-time{
           gap: 6px;
         }
@@ -39,7 +45,6 @@
           font-size: 15px;
           font-style: normal;
           font-weight: 500;
-          line-height: 118.836%;
           letter-spacing: -0.075px;
           display: flex;
           align-items: center;
@@ -92,6 +97,7 @@
         display: flex;
         align-items: center;
         gap: 13px;
+        flex-wrap: wrap;
         .post-type-name{
           border-radius: 29.982px;
           border: 2px solid #0C62FD;
@@ -124,6 +130,7 @@
         gap: 13px;
         row-gap: 10px;
         margin-bottom: 30px;
+        flex-wrap: wrap;
         .tag {
           border-radius: 88px;
           background: #100F0F;
@@ -132,6 +139,9 @@
           font-size: 15px;
           @include breakpoint(mobile){
             font-size: 14px;
+          }
+          &:hover{
+            background: linear-gradient(97deg, #0C62FD 0%, #1035B8 100%);
           }
         }
       }
@@ -147,16 +157,20 @@
       justify-content: space-between;
       gap: 40px;
       @include breakpoint(mobile){
-        padding: 10px 16px;
+        padding: 10px 20px;
+        gap: 40px;
       }
       .popularity-container{
         display: flex;
         gap: 40px;
         @include breakpoint(mobile){
-          gap:30px;
+          gap:20px;
+          justify-content: space-between;
         }
         .wpulike{
+          padding: 0;
           .wp_ulike_general_class {
+            box-shadow: none;
             &.wp_ulike_is_liked{
               box-shadow: none;
               .wp_ulike_put_image:after{

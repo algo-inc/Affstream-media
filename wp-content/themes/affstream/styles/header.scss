@@ -91,9 +91,7 @@ header {
       justify-content: space-between;
       align-items: center;
       gap: 40px;
-      @include breakpoint(large-tablet){
-        max-width: 230px;
-      }
+
       @include breakpoint(tablet) {
         display: none;
       }
