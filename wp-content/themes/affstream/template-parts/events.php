@@ -139,6 +139,8 @@
     },
 
   });
+
+
   var eventsContent = new Swiper('.events-content', {
     slidesPerView: 1,
     spaceBetween: 30,

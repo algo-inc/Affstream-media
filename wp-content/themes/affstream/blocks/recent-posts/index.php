@@ -67,7 +67,7 @@ function render_recent_posts_block( $block ): void {
                             <a href="<?= get_permalink( $slide_id ) ?>">
 	                            <?php
 	                            $post_title = get_the_title($slide_id);
-	                            $trimTitle = media_trim_title($post_title, 40);
+	                            $trimTitle = media_trim_title($post_title, 60);
 	                            ?>
                                 <h3><?= $trimTitle ?></h3>
                             </a>

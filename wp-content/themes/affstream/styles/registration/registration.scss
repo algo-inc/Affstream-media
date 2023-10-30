@@ -735,3 +735,25 @@ textarea:-webkit-autofill:focus {
     margin-bottom: 20px;
   }
 }
+
+.form-bottom-tex{
+
+  p{
+    margin: 0;
+    color: #EDEDFF;
+    font-family: "SF Pro Display", sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 118.8%;
+    letter-spacing: -0.1px;
+    &:first-child{
+      margin-bottom: 20px;
+    }
+    a{
+      color: #00E291;
+      margin-left: 5px;
+    }
+
+  }
+}

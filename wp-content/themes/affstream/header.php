@@ -12,7 +12,7 @@
 ?>
 
 <!doctype html>
-<html <?php language_attributes(); ?>>
+<html <?php language_attributes(); ?> >
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -30,6 +30,8 @@
 <body <?php body_class(); ?>>
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5MNTRNS5" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <?php wp_body_open(); ?>
+
+
 <div id="page" class="site">
     <header id="masthead" class="site-header">
         <div class="container desktop-menu">

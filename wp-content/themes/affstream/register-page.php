@@ -106,6 +106,10 @@ get_header()
                             <button id="submit-button" class="btn waves-effect waves-light" type="submit" name="action"><?php echo esc_html( pll__( 'sign up' ) ); ?></button>
                         </div>
                     </div>
+                    <div class="row form-bottom-tex">
+                        <p class="">* — All fields are mandatory to fill out</p>
+                        <p>Already have an account?<a href="/login">Login to your account</a> </p>
+                    </div>
                 </div>
                 <div class="three-column form-column"></div>
             </form>

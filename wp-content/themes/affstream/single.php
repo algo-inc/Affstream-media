@@ -74,6 +74,13 @@ update_post_meta( $post_id, 'popularity', $popularity );
 					<?php
 					custom_display_tags( get_the_ID(), null, true );
 					?>
+                    <?php
+                    $title = get_the_title();
+                    if ($title): ?>
+                    <h1 class="main-title">
+                        <?= $title?>
+                    </h1>
+                    <?php endif;?>
 					<?php the_content(); ?>
                 </div>
                 <div class="share-post-container">

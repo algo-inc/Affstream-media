@@ -41,7 +41,7 @@ if (!empty($video_url) && !wp_is_mobile()) {
             </svg>
         </button>
         <div class="form-links-container">
-            <a class="form-links"  href="/registration">Sign up
+            <a class="form-links"  href="/registration"> Sign up
                 <svg xmlns="http://www.w3.org/2000/svg" width="10" height="11" viewBox="0 0 10 11" fill="none">
                     <path d="M8.52272 6.54193C9.11679 6.19894 9.11679 5.34148 8.52272 4.99849L2.17361 1.33283C1.57954 0.989847 0.836956 1.41858 0.836956 2.10455L0.836956 9.43587C0.836956 10.1218 1.57954 10.5506 2.17361 10.2076L8.52272 6.54193Z"
                           stroke="#EDEDFF" stroke-width="0.938587"/>
@@ -78,8 +78,9 @@ if (!empty($video_url) && !wp_is_mobile()) {
       });
     </script>
 </section>
+
 <?php get_footer() ?>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
 <script>
   M.AutoInit();
 </script>
