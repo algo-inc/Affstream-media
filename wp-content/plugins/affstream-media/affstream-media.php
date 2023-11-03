@@ -526,7 +526,7 @@ function filter_glossary() {
 			if ( $first_letter === $selectedLetter ) { ?>
                 <div class="glossary-card">
                     <h2><?php the_title(); ?></h2>
-                    <p><?php the_excerpt(); ?></p>
+                    <p><?php the_content(); ?></p>
                 </div>
 			<?php }
 		}
@@ -566,7 +566,7 @@ if ( function_exists( 'acf_add_local_field_group' ) ):
 					'class' => '',
 					'id'    => '',
 				),
-				'return_format'     => 'url',
+				'return_format'     => 'array',
 				'preview_size'      => 'thumbnail',
 				'library'           => 'all',
 			),

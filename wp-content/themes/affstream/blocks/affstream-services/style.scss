@@ -31,13 +31,13 @@
 .affstream-services {
   max-width: 1300px;
   margin: 0 auto;
-  padding: 0 16px;
   @include breakpoint(desktop) {
     max-width: 1200px;
 
   }
 
   .affstream-services-title {
+    padding: 0 16px;
     h2 {
       color: #100F0F;
       leading-trim: both;
@@ -88,6 +88,7 @@
       margin-bottom: 20px;
       border-radius: 10px;
       background: #FFF;
+      padding: 0 16px;
       @include breakpoint(mobile) {
         grid-template-columns: 1fr;
         gap: 20px;

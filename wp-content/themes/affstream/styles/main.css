@@ -536,7 +536,7 @@ header .button-signin:hover {
   .events {
     background-image: none !important;
     padding-top: 100px;
-    padding-bottom: 150px;
+    padding-bottom: 50px;
   }
 }
 .events .container {
@@ -1051,6 +1051,16 @@ header .button-signin:hover {
   background: #FFFFFF;
   font-family: "SF Pro Display", sans-serif;
   overflow: hidden;
+  max-width: 98%;
+  margin: 0 auto;
+  border-radius: 20px;
+}
+@media (max-width: 1599px) {
+  .blog {
+    border-radius: 0;
+    margin: auto;
+    max-width: 100%;
+  }
 }
 .blog .home-blog-title {
   color: #100F0F;
@@ -1072,6 +1082,7 @@ header .button-signin:hover {
   box-sizing: border-box;
   max-width: 1500px;
   margin: 0 auto;
+  position: relative;
 }
 @media (max-width: 1599px) {
   .blog .container {
@@ -1082,6 +1093,26 @@ header .button-signin:hover {
 @media (max-width: 1023px) {
   .blog .container {
     padding: 0;
+  }
+}
+.blog .container .decoration {
+  position: absolute;
+  right: 0;
+  top: -25%;
+  animation: rotate 10s linear infinite;
+}
+@media (max-width: 1599px) {
+  .blog .container .decoration {
+    top: -30%;
+    max-width: 100px;
+  }
+  .blog .container .decoration svg {
+    max-width: 100%;
+  }
+}
+@media (max-width: 767px) {
+  .blog .container .decoration {
+    display: none;
   }
 }
 .blog .top-blog {
@@ -1107,6 +1138,11 @@ header .button-signin:hover {
   .blog .top-blog .blog-post {
     flex-direction: column;
     gap: 40px;
+  }
+}
+@media (max-width: 767px) {
+  .blog .top-blog .blog-post {
+    gap: 20px;
   }
 }
 .blog .top-blog .blog-post img {
@@ -4223,7 +4259,7 @@ footer .container .social .social-links .mail-link {
 }
 @media (max-width: 1599px) {
   .single-page .container .this-post {
-    padding: 16px;
+    padding: 25px;
   }
 }
 @media (max-width: 767px) {
@@ -4246,15 +4282,17 @@ footer .container .social .social-links .mail-link {
     font-size: 28px;
   }
 }
-.single-page .container .this-post h2, .single-page .container .this-post h3 {
+.single-page .container .this-post h2, .single-page .container .this-post h3, .single-page .container .this-post h4, .single-page .container .this-post h5, .single-page .container .this-post h6 {
   color: #100F0F;
   font-size: 30px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  text-decoration: none;
+  text-transform: none;
 }
 @media (max-width: 767px) {
-  .single-page .container .this-post h2, .single-page .container .this-post h3 {
+  .single-page .container .this-post h2, .single-page .container .this-post h3, .single-page .container .this-post h4, .single-page .container .this-post h5, .single-page .container .this-post h6 {
     font-size: 24px;
   }
 }

@@ -25,6 +25,16 @@ body.page-template-media.custom-background {
   position: relative;
   overflow: hidden;
 }
+.page-template-archive-news .stk-block-image, .page-template-archive-interviews .stk-block-image, .page-template-archive-university .stk-block-image, .page-template-archive-services .stk-block-image {
+  max-width: 1300px;
+  margin: 50px auto;
+  padding: 0 16px;
+}
+@media (max-width: 1599px) {
+  .page-template-archive-news .stk-block-image, .page-template-archive-interviews .stk-block-image, .page-template-archive-university .stk-block-image, .page-template-archive-services .stk-block-image {
+    max-width: 1200px;
+  }
+}
 .page-template-archive-news .description-container, .page-template-archive-interviews .description-container, .page-template-archive-university .description-container, .page-template-archive-services .description-container {
   display: flex;
   justify-content: center;
@@ -466,6 +476,7 @@ body.page-template-media.custom-background {
   display: flex;
   gap: 13px;
   margin-bottom: 13px;
+  flex-wrap: wrap;
 }
 .post-card .tags .tag {
   border-radius: 32px;
@@ -591,7 +602,6 @@ body.page-template-media.custom-background {
   line-height: normal;
   text-transform: uppercase;
   margin: 0;
-  text-align: center;
 }
 @media (max-width: 1023px) {
   .page-template-archive-services .posts-section .title-container h1, .page-template-archive-services .posts-section .title-container h2, .tax-service-category .posts-section .title-container h1, .tax-service-category .posts-section .title-container h2, .page-template-archive-reviews .posts-section .title-container h1, .page-template-archive-reviews .posts-section .title-container h2, .page-template-archive-university .posts-section .title-container h1, .page-template-archive-university .posts-section .title-container h2, .page-template-archive-interviews .posts-section .title-container h1, .page-template-archive-interviews .posts-section .title-container h2, .page-template-archive-news .posts-section .title-container h1, .page-template-archive-news .posts-section .title-container h2, .tax-reviews-categories .posts-section .title-container h1, .tax-reviews-categories .posts-section .title-container h2 {
@@ -602,7 +612,6 @@ body.page-template-media.custom-background {
   .page-template-archive-services .posts-section .title-container h1, .page-template-archive-services .posts-section .title-container h2, .tax-service-category .posts-section .title-container h1, .tax-service-category .posts-section .title-container h2, .page-template-archive-reviews .posts-section .title-container h1, .page-template-archive-reviews .posts-section .title-container h2, .page-template-archive-university .posts-section .title-container h1, .page-template-archive-university .posts-section .title-container h2, .page-template-archive-interviews .posts-section .title-container h1, .page-template-archive-interviews .posts-section .title-container h2, .page-template-archive-news .posts-section .title-container h1, .page-template-archive-news .posts-section .title-container h2, .tax-reviews-categories .posts-section .title-container h1, .tax-reviews-categories .posts-section .title-container h2 {
     font-size: 33px;
     margin-bottom: 0;
-    text-align: center;
     margin: 0 auto;
   }
 }
@@ -635,18 +644,6 @@ body.page-template-media.custom-background {
 @media (max-width: 767px) {
   .page-template-archive-services .posts-section .title-container .description p, .tax-service-category .posts-section .title-container .description p, .page-template-archive-reviews .posts-section .title-container .description p, .page-template-archive-university .posts-section .title-container .description p, .page-template-archive-interviews .posts-section .title-container .description p, .page-template-archive-news .posts-section .title-container .description p, .tax-reviews-categories .posts-section .title-container .description p {
     font-size: 16px;
-  }
-}
-
-.affstream-services {
-  max-width: 1300px;
-  margin: 0 auto;
-  padding-bottom: 70px;
-}
-@media (max-width: 1599px) {
-  .affstream-services {
-    max-width: 1200px;
-    padding: 0 16px 50px;
   }
 }
 
@@ -1019,6 +1016,7 @@ body.page-template-media.custom-background {
   .category-navigation .category-link, .category-navigation .glossary-link {
     font-size: 12px;
     padding: 5px 10px;
+    border: 1.5px solid #100F0F;
   }
 }
 .category-navigation .category-link.active, .category-navigation .glossary-link.active {
@@ -1027,7 +1025,6 @@ body.page-template-media.custom-background {
 }
 
 .university .title-container {
-  justify-content: center;
   margin-bottom: 50px;
   margin-top: 50px;
 }
@@ -1044,13 +1041,11 @@ body.page-template-media.custom-background {
   font-weight: 900;
   line-height: normal;
   text-transform: uppercase;
-  text-align: center;
   margin-bottom: 0;
 }
 @media (max-width: 767px) {
   .university .title-container h2 {
     font-size: 33px;
-    padding: 0 16px;
     margin: 0;
     text-align: start;
   }

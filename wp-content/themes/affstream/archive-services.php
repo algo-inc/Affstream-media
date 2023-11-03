@@ -20,7 +20,6 @@ $content = get_post( $page_id );
 	<?php
 	if ($content->post_excerpt):?>
     <div class="description-container">
-
         <div class="description">
             <div class="decoration-variant-services">
                 <svg width="162" height="161" viewBox="0 0 162 161" fill="none" xmlns="http://www.w3.org/2000/svg">

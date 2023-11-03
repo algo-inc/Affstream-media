@@ -17,8 +17,6 @@
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="profile" href="https://gmpg.org/xfn/11">
-    <link href="https://fonts.cdnfonts.com/css/sf-pro-display" rel="stylesheet">
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 	<?php wp_head(); ?>
 </head>
  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XM7DHS7E6M"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-XM7DHS7E6M'); </script>

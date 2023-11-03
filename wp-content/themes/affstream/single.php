@@ -74,13 +74,13 @@ update_post_meta( $post_id, 'popularity', $popularity );
 					<?php
 					custom_display_tags( get_the_ID(), null, true );
 					?>
-                    <?php
-                    $title = get_the_title();
-                    if ($title): ?>
-                    <h1 class="main-title">
-                        <?= $title?>
-                    </h1>
-                    <?php endif;?>
+					<?php
+					$title = get_the_title();
+					if ( $title ): ?>
+                        <h1 class="main-title">
+							<?= $title ?>
+                        </h1>
+					<?php endif; ?>
 					<?php the_content(); ?>
                 </div>
                 <div class="share-post-container">
@@ -164,6 +164,14 @@ update_post_meta( $post_id, 'popularity', $popularity );
                         TO GET WEEKLY NEWS</p>
 					<?= do_shortcode( '[contact-form-7 id="150501e" title="Contact form 1"]' ) ?>
                 </div>
+				<?php $banner = get_field( 'global_gif_image' );
+				if ( $banner ):
+					?>
+                    <div class="banner">
+                        <img src="<?= $banner['url'] ?>" alt="<?= $banner['alt'] ?>">
+                    </div>
+				<?php
+				endif; ?>
             </div>
         </div>
     </div>

@@ -52,15 +52,19 @@ get_header();
 	                function is_mobile_device() {
 		                return wp_is_mobile();
 	                }
-
 	                if (is_mobile_device() && !empty($video_or_image_mobile)) {
 		                $mobile_url = $video_or_image_mobile['url'];
 		                if ($video_or_image_mobile['mime_type'] === 'video/mp4') {
 			                ?>
-                            <video width="394px" height="394px" playsinline loop autoplay muted  src="<?php echo esc_url($mobile_url); ?>">
-                                <source src="<?php echo esc_url($mobile_url); ?>" type="video/mp4">
-                                Ваш браузер не підтримує відео.
-                            </video>
+                            <div id="video-container">
+                                <img  width="394px"  height="394px" src="<?= get_template_directory_uri() . '/img/Affstream.webp' ?>" id="placeholder-image" alt="Image Placeholder">
+                                <video width="394px" id="video" height="394px" playsinline loop autoplay muted  src="<?php echo esc_url($mobile_url); ?>">
+                                    <source src="<?php echo esc_url($mobile_url); ?>" type="video/mp4">
+                                    Ваш браузер не підтримує відео.
+                                </video
+
+                            </div>
+
 			                <?php
 		                } else {
 			                ?>
@@ -69,7 +73,6 @@ get_header();
 		                }
 	                } elseif (!empty($video_or_image)) {
 		                $desktop_url = $video_or_image['url'];
-
 		                if ($video_or_image['mime_type'] === 'video/mp4') {
 			                ?>
                             <video width="460px" height="460px"  playsinline loop autoplay muted src="<?php echo esc_url($desktop_url); ?>">
@@ -85,6 +88,25 @@ get_header();
 	                }
 	                ?>
                 </div>
+                <style>
+                    #video {
+                        display: none;
+                    }
+                    #placeholder-image {
+                        display: block;
+                    }
+                </style>
+                <script>
+                  window.addEventListener("load", function () {
+                    var video = document.getElementById("video");
+                    var placeholderImage = document.getElementById("placeholder-image");
+
+                    setTimeout(function () {
+                      video.style.display = "block";
+                      placeholderImage.style.display = "none";
+                    }, 3000);
+                  });
+                </script>
             </div>
         </section>
         <section class="advantages">

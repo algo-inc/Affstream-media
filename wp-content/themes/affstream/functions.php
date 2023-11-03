@@ -131,10 +131,9 @@ function registration_pages() {
 add_action( 'widgets_init', 'affstream_widgets_init' );
 function affstream_scripts() {
 	if ( registration_pages() || is_page_template('for-advartiser-page.php') ) {
-		wp_enqueue_style( 'affstream-materialize', get_template_directory_uri() . '/styles/materialize.css', array(),
-			_S_VERSION );
-		wp_enqueue_style( 'affstream-register', get_template_directory_uri() . '/styles/registration/registration.css',
-			array(), _S_VERSION );
+		wp_enqueue_style( 'affstream-materialize', get_template_directory_uri() . '/styles/materialize.css', array(), _S_VERSION );
+		wp_enqueue_style( 'affstream-register', get_template_directory_uri() . '/styles/registration/registration.css', array(), _S_VERSION );
+		wp_enqueue_style( 'google-recaptcha',  'https://www.google.com/recaptcha/api.js', array(), _S_VERSION );
 	}
 
 	wp_enqueue_style( 'affstream-main', get_template_directory_uri() . '/styles/main.css', null, _S_VERSION );
@@ -143,13 +142,13 @@ function affstream_scripts() {
 	wp_enqueue_style( 'affstream-wow-style', 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css',
 		_S_VERSION );
 	wp_enqueue_script( 'affstream-wow-js', get_template_directory_uri() . '/js/wow.js', _S_VERSION, );
-	wp_enqueue_script( 'affstream-swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js',
-		_S_VERSION );
+
+	wp_enqueue_script( 'affstream-swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js', _S_VERSION );
 
 	wp_enqueue_script( 'affstream-requests', get_stylesheet_directory_uri() . '/js/requests.js', array( 'jquery' ),
 		_S_VERSION, false );
 
-	if ( ! is_front_page() && ! registration_pages() ) {
+	if ( !is_front_page() && !registration_pages() ) {
 		wp_enqueue_style( 'affstream-media', get_template_directory_uri() . '/styles/media.css', null, _S_VERSION );
 	}
 
@@ -172,6 +171,7 @@ function disable_specific_scripts() {
 
 		wp_dequeue_script( 'editor' );
 		wp_deregister_script( 'editor' );
+
 	}
 }
 
@@ -237,6 +237,15 @@ function add_event_logo_field() {
 				'allow_null'     => true, // Чи може поле бути порожнім
 				'allow_archives' => false, // Чи можна посилатися на архівні сторінки
 			),
+			array(
+				'key'           => 'field_post_article',
+				'label'         => 'Post Article',
+				'name'          => 'post_articles',
+				'type'          => 'post_object',
+				'post_type'     => array( 'reviews', 'university', 'interviews', 'news' ),
+				'allow_null'    => true,
+				'multiple'      => false,
+			),
 		),
 		'location' => array(
 			array(
@@ -276,7 +285,7 @@ function estimated_reading_time() {
 	$content          = get_post_field( 'post_content', get_the_ID() );
 	$word_count       = str_word_count( strip_tags( $content ) );
 	$words_per_minute = 200;
-	$reading_time     = ceil( $word_count / $words_per_minute ); // Час читання в хвилинах, округлений до ближчого цілого
+	$reading_time     = ceil( $word_count / $words_per_minute );
 
 	return $reading_time;
 }

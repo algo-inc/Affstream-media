@@ -1,12 +1,14 @@
 .affstream-services {
   max-width: 1300px;
   margin: 0 auto;
-  padding: 0 16px;
 }
 @media (max-width: 1599px) {
   .affstream-services {
     max-width: 1200px;
   }
+}
+.affstream-services .affstream-services-title {
+  padding: 0 16px;
 }
 .affstream-services .affstream-services-title h2 {
   color: #100F0F;
@@ -58,6 +60,7 @@
   margin-bottom: 20px;
   border-radius: 10px;
   background: #FFF;
+  padding: 0 16px;
 }
 @media (max-width: 767px) {
   .affstream-services .affstream-services-container .service-card {

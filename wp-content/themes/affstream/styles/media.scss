@@ -31,7 +31,14 @@ body.page-template-media.custom-background {
     position: relative;
     overflow: hidden;
   }
-
+  .stk-block-image{
+    max-width: 1300px;
+    margin: 50px auto;
+    padding: 0 16px;
+    @include breakpoint(desktop){
+      max-width: 1200px;
+    }
+  }
   .description-container {
     display: flex;
     justify-content: center;
@@ -468,8 +475,7 @@ body.page-template-media.custom-background {
     display: flex;
     gap: 13px;
     margin-bottom: 13px;
-
-
+    flex-wrap: wrap;
     .tag {
       border-radius: 32px;
       background: #100F0F;
@@ -606,14 +612,13 @@ body.page-template-media.custom-background {
         line-height: normal;
         text-transform: uppercase;
         margin: 0;
-        text-align: center;
+
         @include breakpoint(tablet) {
           font-size: 48px;
         }
         @include breakpoint(mobile) {
           font-size: 33px;
           margin-bottom: 0;
-          text-align: center;
           margin: 0 auto;
         }
       }
@@ -648,16 +653,7 @@ body.page-template-media.custom-background {
   }
 }
 
-.affstream-services {
-  max-width: 1300px;
-  margin: 0 auto;
-  padding-bottom: 70px;
-  @include breakpoint(desktop) {
-    max-width: 1200px;
-    padding: 0 16px 50px;
-  }
 
-}
 
 .service-card {
   border-radius: 10px;
@@ -1029,8 +1025,8 @@ body.page-template-media.custom-background {
     @include breakpoint(mobile) {
       font-size: 12px;
       padding: 5px 10px;
+      border: 1.5px solid #100F0F;
     }
-
     &.active {
       background: #100F0F;
       color: #fff;
@@ -1040,12 +1036,10 @@ body.page-template-media.custom-background {
 
 .university {
   .title-container {
-    justify-content: center;
     margin-bottom: 50px;
     margin-top: 50px;
     @include breakpoint(mobile) {
       margin-bottom: 25px;
-
       align-items: start;
     }
 
@@ -1056,12 +1050,10 @@ body.page-template-media.custom-background {
       font-weight: 900;
       line-height: normal;
       text-transform: uppercase;
-      text-align: center;
       margin-bottom: 0;
 
       @include breakpoint(mobile) {
         font-size: 33px;
-        padding: 0 16px;
         margin: 0;
         text-align: start;
       }
