@@ -8,10 +8,10 @@
   margin: 0 auto 20px;
   justify-content: space-between;
   align-items: center;
-  padding: 0 16px;
 }
 @media (max-width: 1599px) {
   .media-recent-posts-by-category .recent-posts-title {
+    padding: 0 16px;
     max-width: 1200px;
   }
 }

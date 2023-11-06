@@ -63,30 +63,7 @@ function render_custom_block( $block ): void {
 							setup_postdata( $post );
 							?>
                             <div class="swiper-slide">
-                                <div class="post-card">
-									<?php $slide_id = $post->ID;
-									?>
-                                    <a href="<?= get_permalink( $slide_id ) ?>">
-										<?=
-										get_the_post_thumbnail( $slide_id, '' );
-										?>
-                                    </a>
-                                    <div class="inner-content">
-	                                    <?php
-	                                    custom_display_tags($slide_id);
-	                                    ?>
-                                        <a href="<?= get_permalink( $slide_id ) ?>">
-                                            <h3><?= get_the_title( $slide_id ); ?></h3>
-                                        </a>
-                                        <div class="post-description">
-	                                        <?php
-                                            $text = get_the_excerpt();
-                                            $except = custom_trim_excerpt ($text, 60, '...'  );
-	                                        echo $except;
-	                                        ?>
-                                        </div>
-                                    </div>
-                                </div>
+	                            <?php get_template_part('template-parts/media', 'card') ?>
                             </div>
 							<?php
 						}
@@ -105,7 +82,7 @@ function render_custom_block( $block ): void {
 							while ( $recent_posts->have_posts() ) : $recent_posts->the_post();
 								?>
                                 <div class="swiper-slide">
-                                    <?= get_template_part('blocks/components/post-card'); ?>
+	                                <?php get_template_part('template-parts/media', 'card') ?>
                                 </div>
 							<?php
 							endwhile;

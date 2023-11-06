@@ -11,7 +11,7 @@ update_post_meta( $post_id, 'popularity', $popularity );
         <div class="container">
             <div class="post-container">
                 <div class="this-post">
-					<?php the_post_thumbnail( 'large' ) ?>
+					<?php the_post_thumbnail( 'full' ) ?>
                     <div class="category-and-time">
                         <div class="category">
 							<?php $post_type  = get_post_type();
@@ -143,7 +143,7 @@ update_post_meta( $post_id, 'popularity', $popularity );
                             </a>
                             <div class="inner-content">
 								<?php
-								custom_display_tags( $post_id, 4, );
+								custom_display_tags( $post_id, 3, );
 								?>
                                 <a href="<?php the_permalink(); ?>">
                                     <h3><?php the_title(); ?></h3>
@@ -167,9 +167,9 @@ update_post_meta( $post_id, 'popularity', $popularity );
 				<?php $banner = get_field( 'global_gif_image' );
 				if ( $banner ):
 					?>
-                    <div class="banner">
+                    <a href="<?php the_field('banner_link'); ?>" class="banner">
                         <img src="<?= $banner['url'] ?>" alt="<?= $banner['alt'] ?>">
-                    </div>
+                    </a>
 				<?php
 				endif; ?>
             </div>

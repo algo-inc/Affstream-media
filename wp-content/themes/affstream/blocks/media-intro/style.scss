@@ -71,6 +71,8 @@
         .swiper-slide{
           img{
             height: auto;
+            border-radius: 15px;
+            overflow: hidden;
           }
         }
         .prev,.next{

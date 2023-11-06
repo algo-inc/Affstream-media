@@ -146,30 +146,8 @@ function render_recent_posts_by_category_block( $block ): void {
 						while ( $recent_posts->have_posts() ) {
 							$recent_posts->the_post();
 							?>
-                            <div class="post-card swiper-slide">
-								<?php $slide_id = get_the_ID(); ?>
-                                <a href="<?= get_permalink( $slide_id ) ?>">
-									<?php the_post_thumbnail( 'media-card' ); ?>
-                                </a>
-                                <div class="inner-content">
-									<?php
-									custom_display_tags( $slide_id );
-									?>
-                                    <a href="<?= get_permalink( $slide_id ) ?>">
-										<?php
-										$post_title = get_the_title();
-										$trimTitle  = media_trim_title( $post_title, 60 );
-										?>
-                                        <h3><?= $trimTitle ?></h3>
-                                    </a>
-                                    <div class="post-description">
-                                        <p>
-											<?php $except = custom_trim_excerpt( get_the_excerpt(), 100, '...' );
-											echo $except
-											?>
-                                        </p>
-                                    </div>
-                                </div>
+                            <div class=" swiper-slide">
+	                            <?php get_template_part('template-parts/media', 'card') ?>
                             </div>
 							<?php
 						}

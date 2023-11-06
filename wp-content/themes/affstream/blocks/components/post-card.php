@@ -8,7 +8,7 @@
 	</a>
 	<div class="inner-content">
 		<?php
-		custom_display_tags($slide_id);
+		custom_display_tags($slide_id, 3);
 		?>
 		<a href="<?= get_permalink( $slide_id ) ?>">
 			<?php

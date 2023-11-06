@@ -548,28 +548,12 @@ add_action( 'wp_ajax_load_glossary_template', 'load_glossary_template' );
 add_action( 'wp_ajax_nopriv_load_glossary_template', 'load_glossary_template' );
 
 
-if ( function_exists( 'acf_add_local_field_group' ) ):
+
+if (function_exists('acf_add_local_field_group')) {
 	acf_add_local_field_group( array(
 		'key'      => 'group_60c1234567890',
 		'title'    => 'Promo',
 		'fields'   => array(
-			array(
-				'key'               => 'field_60c1234567891',
-				'label'             => __( 'Post Banner' ),
-				'name'              => 'global_gif_image',
-				'type'              => 'image',
-				'instructions'      => 'GIF-зображення',
-				'required'          => 0,
-				'conditional_logic' => 0,
-				'wrapper'           => array(
-					'width' => '',
-					'class' => '',
-					'id'    => '',
-				),
-				'return_format'     => 'array',
-				'preview_size'      => 'thumbnail',
-				'library'           => 'all',
-			),
 			array(
 				'key'     => '',
 				'label'   => 'Promo Code',
@@ -613,4 +597,71 @@ if ( function_exists( 'acf_add_local_field_group' ) ):
 		),
 		'position' => 'side',
 	) );
-endif;
+
+
+	acf_add_local_field_group(
+            array(
+		'key'      => 'group_banner_link',
+		'title'    => 'Banner & Link',
+		'fields'   => array(
+			array(
+				'key'               => 'field_60c1234567891',
+				'label'             => __( 'Post Banner' ),
+				'name'              => 'global_gif_image',
+				'type'              => 'image',
+				'instructions'      => 'GIF-зображення',
+				'required'          => 0,
+				'conditional_logic' => 0,
+				'wrapper'           => array(
+					'width' => '',
+					'class' => '',
+					'id'    => '',
+				),
+				'return_format'     => 'array',
+				'preview_size'      => 'thumbnail',
+				'library'           => 'all',
+			),
+			array(
+				'key'     => 'field_banner_link',
+				'label'   => 'Banner Link',
+				'name'    => 'banner_link',
+				'type'    => 'url',
+				'instructions' => 'Посилання на баннер',
+				'wrapper' => array(
+					'width' => '50%',
+				),
+			),
+		),
+		'location' => array(
+			array(
+				array(
+					'param'    => 'post_type',
+					'operator' => '==',
+					'value'    => 'reviews',
+				),
+			),
+			array(
+				array(
+					'param'    => 'post_type',
+					'operator' => '==',
+					'value'    => 'news',
+				),
+			),
+			array(
+				array(
+					'param'    => 'post_type',
+					'operator' => '==',
+					'value'    => 'interview',
+				),
+			),
+			array(
+				array(
+					'param'    => 'post_type',
+					'operator' => '==',
+					'value'    => 'university',
+				),
+			),
+		),
+		'position' => 'side',
+	));
+}
