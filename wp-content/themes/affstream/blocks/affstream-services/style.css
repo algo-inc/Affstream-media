@@ -33,9 +33,10 @@
   }
 }
 .affstream-services .field-title {
-  grid-template-columns: 200px repeat(2, 1fr);
+  grid-template-columns: 200px 40% auto 70px 10%;
   display: grid;
   padding: 10px 40px;
+  grid-column-gap: 20px;
 }
 @media (max-width: 767px) {
   .affstream-services .field-title {
@@ -84,6 +85,11 @@
     height: 50px;
   }
 }
+@media (max-width: 767px) {
+  .affstream-services .affstream-services-container .service-card .single-page-link {
+    display: none;
+  }
+}
 .affstream-services .affstream-services-container .service-card:last-child {
   margin-bottom: 0;
 }
@@ -101,6 +107,16 @@
   text-transform: uppercase;
   padding: 10px;
   height: fit-content;
+}
+.affstream-services .affstream-services-container .service-card .from-ukraine {
+  height: 80px;
+  border: 3px solid #FFD700;
+  border-radius: 8px;
+  display: flex;
+  width: 100%;
+  max-width: 100%;
+  padding: 10px;
+  justify-content: space-between;
 }
 .affstream-services .affstream-services-container .service-card .is-top {
   position: absolute;
@@ -195,6 +211,12 @@
 }
 .affstream-services .affstream-services-container .service-card .card-container .service-icon img {
   width: fit-content;
+}
+.affstream-services .affstream-services-container .service-card .card-container .service-icon .container {
+  display: flex;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 .affstream-services .affstream-services-container .service-card .card-container .service-icon .is-top-mobile {
   display: none;

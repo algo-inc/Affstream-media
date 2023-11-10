@@ -130,10 +130,12 @@ function registration_pages() {
 
 add_action( 'widgets_init', 'affstream_widgets_init' );
 function affstream_scripts() {
-	if ( registration_pages() || is_page_template('for-advartiser-page.php') ) {
-		wp_enqueue_style( 'affstream-materialize', get_template_directory_uri() . '/styles/materialize.css', array(), _S_VERSION );
-		wp_enqueue_style( 'affstream-register', get_template_directory_uri() . '/styles/registration/registration.css', array(), _S_VERSION );
-		wp_enqueue_style( 'google-recaptcha',  'https://www.google.com/recaptcha/api.js', array(), _S_VERSION );
+	if ( registration_pages() || is_page_template( 'for-advartiser-page.php' ) ) {
+		wp_enqueue_style( 'affstream-materialize', get_template_directory_uri() . '/styles/materialize.css', array(),
+			_S_VERSION );
+		wp_enqueue_style( 'affstream-register', get_template_directory_uri() . '/styles/registration/registration.css',
+			array(), _S_VERSION );
+		wp_enqueue_style( 'google-recaptcha', 'https://www.google.com/recaptcha/api.js', array(), _S_VERSION );
 	}
 
 	wp_enqueue_style( 'affstream-main', get_template_directory_uri() . '/styles/main.css', null, _S_VERSION );
@@ -143,12 +145,13 @@ function affstream_scripts() {
 		_S_VERSION );
 	wp_enqueue_script( 'affstream-wow-js', get_template_directory_uri() . '/js/wow.js', _S_VERSION, );
 
-	wp_enqueue_script( 'affstream-swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js', _S_VERSION );
+	wp_enqueue_script( 'affstream-swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js',
+		_S_VERSION );
 
 	wp_enqueue_script( 'affstream-requests', get_stylesheet_directory_uri() . '/js/requests.js', array( 'jquery' ),
 		_S_VERSION, false );
 
-	if ( !is_front_page() && !registration_pages() ) {
+	if ( ! is_front_page() && ! registration_pages() ) {
 		wp_enqueue_style( 'affstream-media', get_template_directory_uri() . '/styles/media.css', null, _S_VERSION );
 	}
 
@@ -238,13 +241,13 @@ function add_event_logo_field() {
 				'allow_archives' => false, // Чи можна посилатися на архівні сторінки
 			),
 			array(
-				'key'           => 'field_post_article',
-				'label'         => 'Post Article',
-				'name'          => 'post_articles',
-				'type'          => 'post_object',
-				'post_type'     => array( 'reviews', 'university', 'interviews', 'news' ),
-				'allow_null'    => true,
-				'multiple'      => false,
+				'key'        => 'field_post_article',
+				'label'      => 'Post Article',
+				'name'       => 'post_articles',
+				'type'       => 'post_object',
+				'post_type'  => array( 'reviews', 'university', 'interviews', 'news' ),
+				'allow_null' => true,
+				'multiple'   => false,
 			),
 		),
 		'location' => array(
@@ -326,26 +329,126 @@ function custom_trim_excerpt( $text, $length = 80, $ellipsis = '...' ) {
 }
 
 
-function add_meta_key_to_services_posts() {
-	$args = array(
-		'post_type'      => 'services',
-		'posts_per_page' => - 1,
-	);
-
-	$services_query = new WP_Query( $args );
-
-	if ( $services_query->have_posts() ) {
-		while ( $services_query->have_posts() ) {
-			$services_query->the_post();
-			$service_id = get_the_ID();
-			$is_top     = get_field( 'field_is_top' );
-			if ( $is_top === true ) {
-				update_post_meta( $service_id, 'top_service', 'true' );
-			}
-		}
+// Додати поля рейтингів до коментарів
+function add_custom_comment_fields( $comment_id ) {
+	if ( isset( $_POST['support'] ) ) {
+		$support_rating = intval( $_POST['support'] );
+		add_comment_meta( $comment_id, 'support', $support_rating );
 	}
-	wp_reset_postdata();
+
+	if ( isset( $_POST['quality'] ) ) {
+		$quality_rating = intval( $_POST['quality'] );
+		add_comment_meta( $comment_id, 'quality', $quality_rating );
+	}
+
+	if ( isset( $_POST['interface'] ) ) {
+		$interface_rating = intval( $_POST['interface'] );
+		add_comment_meta( $comment_id, 'interface', $interface_rating );
+	}
+
+	if ( isset( $_POST['price'] ) ) {
+		$price_rating = intval( $_POST['price'] );
+		add_comment_meta( $comment_id, 'price', $price_rating );
+	}
 }
 
-add_action( 'wp_enqueue_scripts', 'add_meta_key_to_services_posts' );
+add_action( 'comment_post', 'add_custom_comment_fields' );
 
+function render_rating_block( $rating_title, $rating_value, $rating_average ) {
+	?>
+    <div class="rating-container">
+        <span class="rating-title"><?php echo esc_html( $rating_title ); ?>:</span>
+        <?php
+        if ($rating_value):
+        ?>
+        <div class="rating">
+            <input type="number" name="<?php echo esc_attr( strtolower( $rating_title ) ); ?>" hidden>
+			<?php
+			for ( $i = 0; $i < 5; $i ++ ) {
+				$active_class = ( $i < $rating_value ) ? ' active' : '';
+				$star_class   = ( $i < $rating_value ) ? 'bxs-star' : 'bx-star';
+				echo '<i class="bx ' . $star_class . ' star' . $active_class . '" style="--i: 1;"></i>';
+			}
+			?>
+        </div>
+		<?php
+        endif;
+		if ( $rating_average ) {
+			?>
+            <div class="rating-number"><?= $rating_average ?>
+            </div>        <?php
+		}
+		?>
+    </div>
+	<?php
+}
+
+
+function get_ratings_for_post( $post_id ) {
+	$comments = get_comments( array( 'post_id' => $post_id ) );
+
+	$total_rating   = 0;
+	$total_comments = count( $comments );
+
+	$field_ratings = array(
+		'support'   => 0,
+		'quality'   => 0,
+		'interface' => 0,
+		'price'     => 0,
+	);
+
+	foreach ( $comments as $comment ) {
+		$support_rating   = (float) get_comment_meta( $comment->comment_ID, 'support', true );
+		$quality_rating   = (float) get_comment_meta( $comment->comment_ID, 'quality', true );
+		$interface_rating = (float) get_comment_meta( $comment->comment_ID, 'interface', true );
+		$price_rating     = (float) get_comment_meta( $comment->comment_ID, 'price', true );
+
+		if ( is_numeric( $support_rating ) && is_numeric( $quality_rating ) && is_numeric( $interface_rating ) && is_numeric( $price_rating ) ) {
+			$average_rating = ( $support_rating + $quality_rating + $interface_rating + $price_rating ) / 4;
+			$total_rating   += $average_rating;
+			$field_ratings['support']   += $support_rating;
+			$field_ratings['quality']   += $quality_rating;
+			$field_ratings['interface'] += $interface_rating;
+			$field_ratings['price']     += $price_rating;
+		}
+	}
+
+	$result = array(
+		'total_rating'   => $total_rating,
+		'total_comments' => $total_comments,
+		'average_rating' => ( $total_comments > 0 ) ? ( $total_rating / $total_comments ) : 0,
+		'field_ratings'  => $field_ratings,
+	);
+
+	return $result;
+}
+
+function get_average_ratings_for_post($post_id) {
+	$ratings = get_ratings_for_post($post_id);
+	$total_comments = $ratings['total_comments'];
+
+	// Перевірка, чи total_comments не є нульовим
+	if ($total_comments > 0) {
+		$average_support = ($ratings['field_ratings']['support'] / $total_comments);
+		$average_quality = ($ratings['field_ratings']['quality'] / $total_comments);
+		$average_interface = ($ratings['field_ratings']['interface'] / $total_comments);
+		$average_price = ($ratings['field_ratings']['price'] / $total_comments);
+
+		$average_ratings = array(
+			'support' => $average_support,
+			'quality' => $average_quality,
+			'interface' => $average_interface,
+			'price' => $average_price,
+		);
+
+		return $average_ratings;
+	} else {
+		// Повернути значення за замовчуванням, якщо total_comments є нульовим
+		return array(
+			'support' => 0,
+			'quality' => 0,
+			'interface' => 0,
+			'price' => 0,
+		);
+	}
+}

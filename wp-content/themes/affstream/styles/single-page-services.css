@@ -1,0 +1,286 @@
+.this-post {
+  transition: all 0.3s linear;
+}
+.this-post .flex-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+.this-post .flex-container .name-container {
+  display: flex;
+  flex-direction: column;
+}
+.this-post .flex-container .name-container .main-title {
+  margin-bottom: 30px;
+}
+.this-post .flex-container .name-container .link-container {
+  display: flex;
+  gap: 23px;
+}
+@media (max-width: 767px) {
+  .this-post .flex-container .name-container .link-container {
+    flex-direction: column;
+    width: fit-content;
+    gap: 10px;
+  }
+}
+.this-post .flex-container .name-container .link-container .link {
+  border-radius: 55.004px;
+  border: 1.5px solid #0C62FD;
+  padding: 8px 14px;
+  color: #0C62FD;
+  font-size: 13.751px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 91.182%;
+  gap: 5px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.this-post .flex-container .service-logo-container {
+  border-radius: 10px;
+  background: #FFF;
+  height: fit-content;
+  padding: 28px 25px;
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.25);
+}
+
+@media (max-width: 1285px) {
+  .single-services .single-page .container .recent-posts {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+@media (max-width: 1285px) {
+  .single-services .single-page .container .about-company {
+    max-width: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+  }
+}
+@media (max-width: 767px) {
+  .single-services .single-page .container .about-company {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+.recent-posts {
+  width: 100%;
+  transition: all 0.3s linear;
+}
+.recent-posts .about-company .company-information-block, .recent-posts .about-company .paid-information-block {
+  border-radius: 20px;
+  background: #FFF;
+  margin-bottom: 25px;
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  padding: 25px;
+}
+@media (max-width: 1599px) {
+  .recent-posts .about-company .company-information-block, .recent-posts .about-company .paid-information-block {
+    padding: 15px;
+  }
+}
+@media (max-width: 767px) {
+  .recent-posts .about-company .company-information-block, .recent-posts .about-company .paid-information-block {
+    margin-bottom: 0;
+    padding: 20px;
+  }
+}
+.recent-posts .about-company .company-information-block h2, .recent-posts .about-company .paid-information-block h2 {
+  color: #100F0F;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+@media (max-width: 1599px) {
+  .recent-posts .about-company .company-information-block h2, .recent-posts .about-company .paid-information-block h2 {
+    font-size: 20px;
+  }
+}
+.recent-posts .about-company .company-information-block p, .recent-posts .about-company .paid-information-block p {
+  color: #0C62FD;
+  font-family: "SF Pro Display", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+@media (max-width: 1599px) {
+  .recent-posts .about-company .company-information-block p, .recent-posts .about-company .paid-information-block p {
+    font-size: 18px;
+  }
+}
+.recent-posts .about-company .company-information-block p strong, .recent-posts .about-company .paid-information-block p strong {
+  color: #100F0F;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+@media (max-width: 1599px) {
+  .recent-posts .about-company .company-information-block p strong, .recent-posts .about-company .paid-information-block p strong {
+    font-size: 20px;
+  }
+}
+.recent-posts .total-rating {
+  border-radius: 20px;
+  background: #FFF;
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  font-family: "SF Pro Display", sans-serif;
+  margin-bottom: 25px;
+}
+@media (max-width: 1599px) {
+  .recent-posts .total-rating {
+    padding: 20px;
+  }
+}
+@media (max-width: 767px) {
+  .recent-posts .total-rating {
+    margin-bottom: 0;
+  }
+}
+.recent-posts .total-rating span {
+  color: #100F0F;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.recent-posts .total-rating .company-rating {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.recent-posts .total-rating .company-rating p {
+  color: #100F0F;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 0;
+}
+.recent-posts .total-rating .company-rating .count-company-rating {
+  border-radius: 500px;
+  background: #00E291;
+  color: #100F0F;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  padding: 3px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 1599px) {
+  .recent-posts .total-rating .company-rating .count-company-rating {
+    font-size: 20px;
+  }
+}
+.recent-posts .total-rating .rating-container {
+  display: flex;
+  gap: 20px;
+  transition: all 0.3s linear;
+}
+.recent-posts .total-rating .rating-container .rating-title {
+  color: #100F0F;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+@media (max-width: 1599px) {
+  .recent-posts .total-rating .rating-container .rating-title {
+    font-size: 18px;
+  }
+}
+.recent-posts .total-rating .rating-container .rating-number {
+  color: #100F0F;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+@media (max-width: 1599px) {
+  .recent-posts .total-rating .rating-container .rating-number {
+    font-size: 18px;
+  }
+}
+.recent-posts .total-rating .rating-container .rating {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-gap: 3px;
+  width: fit-content;
+}
+.recent-posts .total-rating .rating-container .rating .star {
+  color: #00E291;
+  cursor: pointer;
+  font-size: 17px;
+}
+.recent-posts .total-rating .rating-container .rating .star.active {
+  opacity: 0;
+  animation: animate 0.5s calc(var(--i) * .1s) ease-in-out forwards;
+}
+.recent-posts .total-rating .rating-container .rating .star.active:before {
+  color: #00E291;
+}
+.recent-posts .company-social {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  border-radius: 20px;
+  background: #FFF;
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.25);
+  padding: 25px;
+  margin-bottom: 25px;
+}
+@media (max-width: 767px) {
+  .recent-posts .company-social {
+    padding: 20px;
+  }
+}
+.recent-posts .company-social h2 {
+  color: #100F0F;
+  font-family: "SF Pro Display", sans-serif;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 0;
+}
+@media (max-width: 1599px) {
+  .recent-posts .company-social h2 {
+    font-size: 20px;
+  }
+}
+.recent-posts .company-social .site-link {
+  border-radius: 55.004px;
+  border: 2px solid #0C62FD;
+  padding: 5px 15px;
+  width: fit-content;
+  color: #0C62FD;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 91.182%;
+  /* 17.325px */
+}
+.recent-posts .company-social .social-list {
+  display: flex;
+  gap: 15px;
+}
+
+/*# sourceMappingURL=single-page-services.css.map */

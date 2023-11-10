@@ -67,28 +67,21 @@ function custom_register_services_acf_fields(): void {
 					),
 				),
 				array(
-					'key'   => 'field_service_link',
-					'label' => 'Service Link',
-					'name'  => 'service_link',
-					'type'  => 'link',
-					'wrapper' => array(
-						'width' => '25%',
-					),
-				),
-				array(
 					'key'     => 'field_is_top',
 					'label'   => 'Is Top',
 					'name'    => 'is_top',
 					'type'    => 'true_false',
 					'message' => 'Mark as Top Service',
 					'wrapper' => array(
-						'width' => '25%',
+						'width' => '15%',
 					),
 				),
+
+
 				array(
-					'key' => 'field_related_post_1',
-					'label' => 'Related Post 1',
-					'name' => 'related_post_1',
+					'key' => 'field_related_post_review',
+					'label' => 'Review Link',
+					'name' => 'related_post_review',
 					'type' => 'post_object',
 					'post_type' => array('reviews'),
 					'return_format' => 'id',
@@ -99,10 +92,11 @@ function custom_register_services_acf_fields(): void {
 						'width' => '25%',
 					),
 				),
+
 				array(
-					'key' => 'field_related_post_2',
-					'label' => 'Related Post 2',
-					'name' => 'related_post_2',
+					'key' => 'field_related_post_guide',
+					'label' => 'Guide Link',
+					'name' => 'related_post_guide',
 					'type' => 'post_object',
 					'post_type' => array('university'),
 					'return_format' => 'id',
@@ -111,6 +105,17 @@ function custom_register_services_acf_fields(): void {
 					),
 					'wrapper' => array(
 						'width' => '25%',
+					),
+				),
+
+				array(
+					'key'     => 'field_from_ukraine',
+					'label'   => 'From Ukraine',
+					'name'    => 'from_ukraine',
+					'type'    => 'true_false',
+					'message' => 'Mark as Top Service',
+					'wrapper' => array(
+						'width' => '15%',
 					),
 				),
 				array(
@@ -137,6 +142,232 @@ function custom_register_services_acf_fields(): void {
 		acf_add_local_field_group( $field_group );
 	}
 }
+function custom_register_about_company_acf_fields(): void {
+	if (function_exists('acf_add_local_field_group')) {
+		$field_group = array(
+			'key'      => 'group_about_company_fields',
+			'title'    => 'About Company',
+			'fields'   => array(
+				array(
+					'key'     => 'field_category',
+					'label'   => 'Category',
+					'name'    => 'category',
+					'type'    => 'text',
+					'wrapper' => array(
+						'width' => '25%',
+					),
+				),
+				array(
+					'key'     => 'field_founded_year',
+					'label'   => 'Founded Year',
+					'name'    => 'founded_year',
+					'type'    => 'text',
+					'wrapper' => array(
+						'width' => '25%',
+					),
+				),
+				array(
+					'key'     => 'field_made_in',
+					'label'   => 'Made in',
+					'name'    => 'made_in',
+					'type'    => 'text',
+					'wrapper' => array(
+						'width' => '25%',
+					),
+				),
+				array(
+					'key'     => 'field_country',
+					'label'   => 'Country',
+					'name'    => 'country',
+					'type'    => 'text',
+					'wrapper' => array(
+						'width' => '25%',
+					),
+				),
+			),
+			'location' => array(
+				array(
+					array(
+						'param'    => 'post_type',
+						'operator' => '==',
+						'value'    => 'services',  // Змініть на ваш тип посту, який ви використовуєте
+					),
+				),
+			),
+			'position' => 'side',
+		);
+		acf_add_local_field_group($field_group);
+	}
+}
+
+function custom_register_social_media_acf_fields(): void {
+	if (function_exists('acf_add_local_field_group')) {
+		$field_group = array(
+			'key'      => 'group_social_media_fields',
+			'title'    => 'Social Media',
+			'fields'   => array(
+				array(
+					'key'   => 'field_site_link',
+					'label' => 'Site Link',
+					'name'  => 'site_link',
+					'type'  => 'url',
+				),
+				array(
+					'key'   => 'field_telegram',
+					'label' => 'Telegram',
+					'name'  => 'telegram',
+					'type'  => 'url',
+				),
+				array(
+					'key'   => 'field_facebook',
+					'label' => 'Facebook',
+					'name'  => 'facebook',
+					'type'  => 'url',
+				),
+				array(
+					'key'   => 'field_instagram',
+					'label' => 'Instagram',
+					'name'  => 'instagram',
+					'type'  => 'url',
+				),
+				array(
+					'key'   => 'field_linkedin',
+					'label' => 'LinkedIn',
+					'name'  => 'linkedin',
+					'type'  => 'url',
+				),
+				array(
+					'key'   => 'field_email',
+					'label' => 'Email',
+					'name'  => 'email',
+					'type'  => 'email',
+				),
+				array(
+					'key'   => 'field_youtube',
+					'label' => 'YouTube',
+					'name'  => 'youtube',
+					'type'  => 'url',
+				),
+			),
+			'location' => array(
+				array(
+					array(
+						'param'    => 'post_type',
+						'operator' => '==',
+						'value'    => 'services', // Змініть на ваш тип посту
+					),
+				),
+			),
+			'position' => 'side',
+		);
+		acf_add_local_field_group($field_group);
+	}
+}
+
+add_action('acf/init', 'custom_register_social_media_acf_fields');
+
+
+// Block for Company Information
+function company_information_block() {
+	$post_id = get_the_ID();
+	$category = get_field('category', $post_id);
+	$founded_year = get_field('founded_year', $post_id);
+	$made_in = get_field('made_in', $post_id);
+	$country = get_field('country', $post_id);
+	?>
+    <div class="company-information-block">
+        <h2>Company Information</h2>
+        <p><strong>Category:</strong> <?php echo esc_html($category); ?></p>
+        <p><strong>Founded Year:</strong> <?php echo esc_html($founded_year); ?></p>
+        <p><strong>Made in:</strong> <?php echo esc_html($made_in); ?></p>
+        <p><strong>Country:</strong> <?php echo esc_html($country); ?></p>
+    </div>
+	<?php
+}
+register_block_type('custom/company-information', array('render_callback' => 'company_information_block'));
+
+// Block for Paid Information
+function paid_information_block(): void {
+	$post_id = get_the_ID();
+	$trial = get_field('trial', $post_id);
+	$standart = get_field('standart', $post_id);
+	$advanced = get_field('advanced', $post_id);
+	$professional = get_field('professional', $post_id);
+	?>
+    <div class="paid-information-block">
+        <h2>Paid Information</h2>
+        <p><strong>Trial:</strong> <?php echo esc_html($trial); ?></p>
+        <p><strong>Standart:</strong> <?php echo esc_html($standart); ?></p>
+        <p><strong>Advanced:</strong> <?php echo esc_html($advanced); ?></p>
+        <p><strong>Professional:</strong> <?php echo esc_html($professional); ?></p>
+    </div>
+	<?php
+}
+register_block_type('custom/paid-information', array('render_callback' => 'paid_information_block'));
+
+function custom_register_paid_acf_fields(): void {
+	if (function_exists('acf_add_local_field_group')) {
+		$field_group = array(
+			'key'      => 'group_paid_fields',
+			'title'    => 'Paid Fields',
+			'fields'   => array(
+				array(
+					'key'     => 'field_trial',
+					'label'   => 'Trial',
+					'name'    => 'trial',
+					'type'    => 'text',
+					'wrapper' => array(
+						'width' => '25%',
+					),
+				),
+				array(
+					'key'     => 'field_standart',
+					'label'   => 'Standart',
+					'name'    => 'standart',
+					'type'    => 'text',
+					'wrapper' => array(
+						'width' => '25%',
+					),
+				),
+				array(
+					'key'     => 'field_advanced',
+					'label'   => 'Advanced',
+					'name'    => 'advanced',
+					'type'    => 'text',
+					'wrapper' => array(
+						'width' => '25%',
+					),
+				),
+				array(
+					'key'     => 'field_professional',
+					'label'   => 'Professional',
+					'name'    => 'professional',
+					'type'    => 'text',
+					'wrapper' => array(
+						'width' => '25%',
+					),
+				),
+			),
+			'location' => array(
+				array(
+					array(
+						'param'    => 'post_type',
+						'operator' => '==',
+						'value'    => 'services',  // Змініть на ваш тип посту, який ви використовуєте
+					),
+				),
+			),
+			'position' => 'side',
+		);
+		acf_add_local_field_group($field_group);
+	}
+}
+
+add_action('acf/init', 'custom_register_paid_acf_fields');
+
+
+add_action('acf/init', 'custom_register_about_company_acf_fields');
+
 
 add_action( 'acf/init', 'custom_register_services_acf_fields' );
 
@@ -170,6 +401,8 @@ function custom_register_services_post_type(): void {
 			'excerpt',
 			'custom-fields',
 			'page-attributes',
+			'comments',
+			'revisions',
 		),
 	);
 	register_post_type( 'services', $args );

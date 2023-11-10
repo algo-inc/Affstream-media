@@ -1,0 +1,274 @@
+@import "breakpoints";
+.this-post {
+  transition: all 0.3s linear;
+  .flex-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+
+    .name-container {
+      display: flex;
+      flex-direction: column;
+
+      .main-title {
+        margin-bottom: 30px;
+      }
+
+      .link-container {
+        display: flex;
+        gap: 23px;
+        @include breakpoint(mobile){
+          flex-direction: column;
+          width: fit-content;
+          gap: 10px
+        }
+        .link {
+          border-radius: 55.004px;
+          border: 1.5px solid #0C62FD;
+          padding: 8px 14px;
+          color: #0C62FD;
+          font-size: 13.751px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 91.182%;
+          gap: 5px;
+          text-transform: uppercase;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+
+    .service-logo-container {
+      border-radius: 10px;
+      background: #FFF;
+      height: fit-content;
+      padding: 28px 25px;
+      box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.25);
+    }
+  }
+}
+
+.single-services{
+  .single-page{
+    .container{
+      .recent-posts{
+        @media (max-width: 1285px) {
+          max-width: 100%;
+          width: 100%;
+        }
+      }
+      .about-company{
+        @media (max-width: 1285px) {
+          max-width: 100%;
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          gap: 30px;
+        }
+        @include breakpoint(mobile){
+          flex-direction: column;
+          gap: 20px;
+        }
+      }
+    }
+  }
+}
+
+
+.recent-posts {
+  width: 100%;
+  transition: all 0.3s linear;
+  .about-company {
+    .company-information-block, .paid-information-block{
+      border-radius: 20px;
+      background: #FFF;
+      margin-bottom: 25px;
+      box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.25);
+      width: 100%;
+      padding: 25px;
+      @include breakpoint(desktop){
+        padding: 15px;
+      }
+      @include breakpoint(mobile){
+        margin-bottom: 0;
+        padding: 20px;
+      }
+      h2 {
+        color: #100F0F;
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        @include breakpoint(desktop){
+          font-size: 20px;
+        }
+      }
+
+      p {
+        color: #0C62FD;
+        font-family: "SF Pro Display", sans-serif;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        @include breakpoint(desktop){
+          font-size: 18px;
+        }
+        strong {
+          color: #100F0F;
+          font-size: 22px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: normal;
+          @include breakpoint(desktop){
+            font-size: 20px;
+          }
+        }
+      }
+    }
+
+  }
+  .total-rating{
+    border-radius: 20px;
+    background: #FFF;
+    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.25);
+    width: 100%;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    font-family: "SF Pro Display", sans-serif;
+    margin-bottom: 25px;
+    @include breakpoint(desktop){
+      padding: 20px;
+    }
+    @include breakpoint(mobile){
+      margin-bottom: 0;
+    }
+    span{
+      color: #100F0F;
+      font-size: 22px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+
+    }
+    .company-rating{
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      p{
+        color: #100F0F;
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin-bottom: 0;
+      }
+      .count-company-rating{
+        border-radius: 500px;
+        background: #00E291;
+        color: #100F0F;
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        padding: 3px 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @include breakpoint(desktop){
+          font-size: 20px;
+        }
+      }
+    }
+    .rating-container{
+      display: flex;
+      gap: 20px;
+      transition: all 0.3s linear;
+      .rating-title{
+        color: #100F0F;
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        @include breakpoint(desktop){
+          font-size: 18px;
+        }
+      }
+      .rating-number{
+        color: #100F0F;
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        @include breakpoint(desktop){
+          font-size: 18px;
+        }
+      }
+      .rating {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        grid-gap: 3px;
+        width: fit-content;
+        .star{
+          color: #00E291;
+          cursor: pointer;
+          font-size: 17px;
+          &.active{
+            opacity: 0;
+            animation: animate .5s calc(var(--i) * .1s) ease-in-out forwards;
+            &:before{
+              color: #00E291;
+            }
+          }
+        }
+
+      }
+    }
+
+  }
+  .company-social{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border-radius: 20px;
+    background: #FFF;
+    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.25);
+    padding: 25px;
+    margin-bottom: 25px;
+    @include breakpoint(mobile){
+      padding: 20px;
+    }
+    h2{
+      color: #100F0F;
+      font-family: "SF Pro Display", sans-serif;
+      font-size: 22px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      margin-bottom: 0;
+      @include breakpoint(desktop){
+        font-size: 20px;
+      }
+    }
+    .site-link{
+      border-radius: 55.004px;
+      border: 2px solid #0C62FD;
+      padding: 5px 15px;
+      width: fit-content;
+      color: #0C62FD;
+      font-size: 19px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 91.182%; /* 17.325px */
+    }
+    .social-list{
+      display: flex;
+      gap: 15px;
+    }
+  }
+}

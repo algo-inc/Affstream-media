@@ -69,18 +69,19 @@ function render_affstream_services_block( $block ): void {
             <h4 class="column-name"><?= __( 'Description' ) ?></h4>
             <h4 class="column-name"><?= __( 'Price' ) ?></h4>
         </div>
-
         <div class="affstream-services-container">
 			<?php
 			if ( count( $services ) ) {
 				foreach ( $services as $service ) {
 					setup_postdata( $service );
-					$service_id            = $service->ID;
-					$service_icon          = get_field( 'service_icon', $service_id );
-					$monthly_price         = get_field( 'monthly_price', $service_id );
-					$is_top                = get_field( 'field_is_top', $service_id );
+					$service_id    = $service->ID;
+					$service_icon  = get_field( 'service_icon', $service_id );
+					$monthly_price = get_field( 'monthly_price', $service_id );
+					$is_top        = get_field( 'field_is_top', $service_id );
+					$from_ukraine  = get_field( 'field_from_ukraine', $service_id );
 					?>
-                    <a href="<?php the_permalink( $service_id); ?>" class="service-card <?php if ($is_top): echo 'top_card'; endif;  ?>">
+                    <a href="<?php the_permalink( $service_id ); ?>"
+                       class="service-card <?php if ( $is_top ): echo 'top_card'; endif; ?>">
 						<?php if ( $is_top ) { ?>
                             <div class="is-top top-style"
                                  style="border-radius: 5px;background: linear-gradient(108deg, #FF2F7A 0%, #0C62FD 100%); ">
@@ -89,21 +90,32 @@ function render_affstream_services_block( $block ): void {
 						<?php } ?>
                         <div class="card-container">
                             <div class="service-icon">
-								<?php if ( $service_icon ) {
-									echo '<img src="' . esc_url( $service_icon['url'] ) . '" alt="' . esc_attr( $service_icon['alt'] ) . '" />';
-								} ?>
-								<?php if ( $is_top ) { ?>
-                                    <div class="is-top-mobile top-style"
-                                         style="border-radius: 5px;background: linear-gradient(108deg, #FF2F7A 0%, #0C62FD 100%); ">
-                                        TOP
+                                <div class="container">
+                                    <div class="border" style="<?php if ( $from_ukraine ): echo 'border: 3px solid #0C62FD; border-radius: 10px; width: fit-content;'; endif; ?>">
+                                        <div class="from-ukraine"  style="<?php if ( ! $from_ukraine ): echo 'border: none;'; endif; ?>">
+		                                    <?php if ( $service_icon ) { ?>
+                                                <img src="<?= $service_icon['url'] ?>" alt="<?= $service_icon['alt'] ?>">
+			                                    <?php
+		                                    }
+		                                    ?>
+                                        </div>
                                     </div>
-								<?php }
-                                else{?>
-                                        <div class="block"></div>
-                                    <?php
-                                }
 
-                                ?>
+
+
+	                                <?php if ( $is_top ) { ?>
+                                        <div class="is-top-mobile top-style"
+                                             style="border-radius: 5px;background: linear-gradient(108deg, #FF2F7A 0%, #0C62FD 100%); ">
+                                            TOP
+                                        </div>
+
+	                                <?php } else { ?>
+                                        <div class="block"></div>
+		                                <?php
+	                                }
+	                                ?>
+                                </div>
+
                             </div>
                             <div class="service-description">
 
@@ -132,8 +144,6 @@ function render_affstream_services_block( $block ): void {
                             </div>
                         </div>
                     </a>
-
-
 					<?php
 				}
 				wp_reset_postdata();
