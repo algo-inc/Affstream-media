@@ -92,10 +92,6 @@ $review_link  = get_field( 'field_related_post_review' );
 
 					if ( comments_open() || get_comments_number() ) {
 						comments_template();
-						echo "<pre>";
-						print_r(get_comment());
-						echo "</pre>";
-
 					}
 					?>
                 </div>
@@ -234,13 +230,39 @@ $review_link  = get_field( 'field_related_post_review' );
 
 		        if ( comments_open() || get_comments_number() ) {
 			        comments_template();
-
 		        }
 		        ?>
             </div>
         </div>
     </div>
 
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var ratingContainers = document.querySelectorAll('.form-rating-item');
+
+        ratingContainers.forEach(function (container) {
+
+          var stars = container.querySelectorAll('.star');
+
+          stars.forEach(function (star) {
+            star.addEventListener('click', function () {
+              var value = star.getAttribute('data-value');
+              container.setAttribute('data-rating', value);
+              var hiddenInputId = container.id.replace('rating_', '');
+              var hiddenInput = document.getElementById('hidden_rating_' + hiddenInputId);
+              hiddenInput.value = value;
+              stars.forEach(function (innerStar) {
+                innerStar.classList.remove('active');
+              });
+
+              for (var i = 1; i <= value; i++) {
+                stars[i - 1].classList.add('active');
+              }
+            });
+          });
+        });
+      });
+    </script>
 
 <?php
 get_footer( 'media' );

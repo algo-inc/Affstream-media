@@ -329,17 +329,16 @@ function custom_trim_excerpt( $text, $length = 80, $ellipsis = '...' ) {
 }
 
 
-
-
 function render_rating_block( $rating_title, $rating_value, $rating_average ) {
-	?>
+    echo "<pre>";
+    print_r($rating_value);
+    echo "</pre>";?>
     <div class="rating-container">
         <span class="rating-title"><?php echo esc_html( $rating_title ); ?>:</span>
         <?php
         if ($rating_value):
         ?>
         <div class="rating">
-            <input type="number" name="<?php echo esc_attr( strtolower( $rating_title ) ); ?>" hidden>
 			<?php
 			for ( $i = 0; $i < 5; $i ++ ) {
 				$active_class = ( $i < $rating_value ) ? ' active' : '';
@@ -360,7 +359,6 @@ function render_rating_block( $rating_title, $rating_value, $rating_average ) {
 	<?php
 }
 
-
 function get_ratings_for_post( $post_id ) {
 	$comments = get_comments( array( 'post_id' => $post_id ) );
 
@@ -375,10 +373,10 @@ function get_ratings_for_post( $post_id ) {
 	);
 
 	foreach ( $comments as $comment ) {
-		$support_rating   = (float) get_comment_meta( $comment->comment_ID, 'rating_1', true );
-		$quality_rating   = (float) get_comment_meta( $comment->comment_ID, 'rating_2', true );
-		$interface_rating = (float) get_comment_meta( $comment->comment_ID, 'rating_3', true );
-		$price_rating     = (float) get_comment_meta( $comment->comment_ID, 'rating_4', true );
+		$support_rating   = (float) get_comment_meta( $comment->comment_ID, 'support', true );
+		$quality_rating   = (float) get_comment_meta( $comment->comment_ID, 'quality', true );
+		$interface_rating = (float) get_comment_meta( $comment->comment_ID, 'interface', true );
+		$price_rating     = (float) get_comment_meta( $comment->comment_ID, 'price', true );
 
 		if ( is_numeric( $support_rating ) && is_numeric( $quality_rating ) && is_numeric( $interface_rating ) && is_numeric( $price_rating ) ) {
 			$average_rating = ( $support_rating + $quality_rating + $interface_rating + $price_rating ) / 4;
@@ -429,38 +427,38 @@ function get_average_ratings_for_post($post_id) {
 
 
 
-function add_comment_rating_fields() {
-	$rating_titles = ['Support', 'Quality', 'Interface', 'Price'];
 
-	foreach ($rating_titles as $index => $title) {
-		echo '<div class="rating-container" data-rating-index="' . ($index + 1) . '">
-                <h3 class="rating-title">' . esc_html($title) . '*</h3>
-                <div class="rating" data-rating="0">';
-
-		for ($j = 1; $j <= 5; $j++) {
-			echo '<i class="bx bx-star star" data-index="' . $j . '" style="--i: ' . ($j - 1) . ';"></i>';
-		}
-
-		echo '<input type="hidden" name="rating_' . ($index + 1) . '" value="0">
-              </div>
-              </div>';
-	}
-}
-
-
-add_action('comment_form_before', 'add_comment_rating_fields');
-
-function save_comment_rating($comment_id) {
-	$rating_titles = ['Support', 'Quality', 'Interface', 'Price'];
-
-	foreach ($rating_titles as $index => $title) {
-		$rating_key = 'rating_' . ($index + 1);
+function save_comment_rating_meta($comment_id) {
+	for ($i = 1; $i <= 4; $i++) {
+		$rating_key = 'rating_container-' . $i;
 		if (isset($_POST[$rating_key])) {
-			$rating_value = intval($_POST[$rating_key]);
-			add_comment_meta($comment_id, $rating_key, $rating_value);
+			$rating_value = absint($_POST[$rating_key]);
+			update_comment_meta($comment_id, $rating_key, $rating_value);
 		}
 	}
 }
-add_action('comment_post', 'save_comment_rating');
+
+add_action('comment_post', 'save_comment_rating_meta');
+
+
+
+function add_rating_fields_to_comment_form() {
+	for ($i = 1; $i <= 4; $i++) {
+		echo '<p class="comment-form-rating">
+            <label for="rating_' . $i . '">Rating ' . $i . '</label>
+            <div class="form-rating-item" data-rating="0" id="rating_' . $i . '">
+                <span class="bx bx-star star" data-value="1"></span>
+                <span class="bx bx-star star" data-value="2"></span>
+                <span class="bx bx-star star" data-value="3"></span>
+                <span class="bx bx-star star" data-value="4"></span>
+                <span class="bx bx-star star" data-value="5"></span>
+            </div>
+            <input type="hidden"  name="rating_container-' . $i . '" id="hidden_rating_' . $i . '" value="0">
+        </p>';
+	}
+}
+
+add_action( 'comment_form_logged_in_after', 'add_rating_fields_to_comment_form' );
+add_action( 'comment_form_after_fields', 'add_rating_fields_to_comment_form' );
 
 
