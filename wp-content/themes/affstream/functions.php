@@ -329,30 +329,7 @@ function custom_trim_excerpt( $text, $length = 80, $ellipsis = '...' ) {
 }
 
 
-// Додати поля рейтингів до коментарів
-function add_custom_comment_fields( $comment_id ) {
-	if ( isset( $_POST['support'] ) ) {
-		$support_rating = intval( $_POST['support'] );
-		add_comment_meta( $comment_id, 'support', $support_rating );
-	}
 
-	if ( isset( $_POST['quality'] ) ) {
-		$quality_rating = intval( $_POST['quality'] );
-		add_comment_meta( $comment_id, 'quality', $quality_rating );
-	}
-
-	if ( isset( $_POST['interface'] ) ) {
-		$interface_rating = intval( $_POST['interface'] );
-		add_comment_meta( $comment_id, 'interface', $interface_rating );
-	}
-
-	if ( isset( $_POST['price'] ) ) {
-		$price_rating = intval( $_POST['price'] );
-		add_comment_meta( $comment_id, 'price', $price_rating );
-	}
-}
-
-add_action( 'comment_post', 'add_custom_comment_fields' );
 
 function render_rating_block( $rating_title, $rating_value, $rating_average ) {
 	?>
@@ -398,10 +375,10 @@ function get_ratings_for_post( $post_id ) {
 	);
 
 	foreach ( $comments as $comment ) {
-		$support_rating   = (float) get_comment_meta( $comment->comment_ID, 'support', true );
-		$quality_rating   = (float) get_comment_meta( $comment->comment_ID, 'quality', true );
-		$interface_rating = (float) get_comment_meta( $comment->comment_ID, 'interface', true );
-		$price_rating     = (float) get_comment_meta( $comment->comment_ID, 'price', true );
+		$support_rating   = (float) get_comment_meta( $comment->comment_ID, 'rating_1', true );
+		$quality_rating   = (float) get_comment_meta( $comment->comment_ID, 'rating_2', true );
+		$interface_rating = (float) get_comment_meta( $comment->comment_ID, 'rating_3', true );
+		$price_rating     = (float) get_comment_meta( $comment->comment_ID, 'rating_4', true );
 
 		if ( is_numeric( $support_rating ) && is_numeric( $quality_rating ) && is_numeric( $interface_rating ) && is_numeric( $price_rating ) ) {
 			$average_rating = ( $support_rating + $quality_rating + $interface_rating + $price_rating ) / 4;
@@ -426,8 +403,6 @@ function get_ratings_for_post( $post_id ) {
 function get_average_ratings_for_post($post_id) {
 	$ratings = get_ratings_for_post($post_id);
 	$total_comments = $ratings['total_comments'];
-
-	// Перевірка, чи total_comments не є нульовим
 	if ($total_comments > 0) {
 		$average_support = ($ratings['field_ratings']['support'] / $total_comments);
 		$average_quality = ($ratings['field_ratings']['quality'] / $total_comments);
@@ -443,7 +418,6 @@ function get_average_ratings_for_post($post_id) {
 
 		return $average_ratings;
 	} else {
-		// Повернути значення за замовчуванням, якщо total_comments є нульовим
 		return array(
 			'support' => 0,
 			'quality' => 0,
@@ -452,3 +426,41 @@ function get_average_ratings_for_post($post_id) {
 		);
 	}
 }
+
+
+
+function add_comment_rating_fields() {
+	$rating_titles = ['Support', 'Quality', 'Interface', 'Price'];
+
+	foreach ($rating_titles as $index => $title) {
+		echo '<div class="rating-container" data-rating-index="' . ($index + 1) . '">
+                <h3 class="rating-title">' . esc_html($title) . '*</h3>
+                <div class="rating" data-rating="0">';
+
+		for ($j = 1; $j <= 5; $j++) {
+			echo '<i class="bx bx-star star" data-index="' . $j . '" style="--i: ' . ($j - 1) . ';"></i>';
+		}
+
+		echo '<input type="hidden" name="rating_' . ($index + 1) . '" value="0">
+              </div>
+              </div>';
+	}
+}
+
+
+add_action('comment_form_before', 'add_comment_rating_fields');
+
+function save_comment_rating($comment_id) {
+	$rating_titles = ['Support', 'Quality', 'Interface', 'Price'];
+
+	foreach ($rating_titles as $index => $title) {
+		$rating_key = 'rating_' . ($index + 1);
+		if (isset($_POST[$rating_key])) {
+			$rating_value = intval($_POST[$rating_key]);
+			add_comment_meta($comment_id, $rating_key, $rating_value);
+		}
+	}
+}
+add_action('comment_post', 'save_comment_rating');
+
+

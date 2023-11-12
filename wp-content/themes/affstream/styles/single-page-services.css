@@ -62,9 +62,16 @@
     gap: 30px;
   }
 }
+@media (max-width: 1200px) {
+  .single-services .single-page .container .about-company {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+}
 @media (max-width: 767px) {
   .single-services .single-page .container .about-company {
-    flex-direction: column;
+    grid-template-columns: 1fr;
     gap: 20px;
   }
 }
@@ -281,6 +288,7 @@
 .recent-posts .company-social .social-list {
   display: flex;
   gap: 15px;
+  flex-wrap: wrap;
 }
 
 /*# sourceMappingURL=single-page-services.css.map */

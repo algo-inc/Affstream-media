@@ -67,8 +67,13 @@
           justify-content: space-between;
           gap: 30px;
         }
+        @media (max-width: 1200px) {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 30px;
+        }
         @include breakpoint(mobile){
-          flex-direction: column;
+          grid-template-columns: 1fr;
           gap: 20px;
         }
       }
@@ -269,6 +274,7 @@
     .social-list{
       display: flex;
       gap: 15px;
+      flex-wrap: wrap;
     }
   }
 }

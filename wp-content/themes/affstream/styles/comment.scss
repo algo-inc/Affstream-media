@@ -83,10 +83,10 @@
         .star{
           cursor: pointer;
           font-size: 19px;
+          color: #0C62FD;
           &.active{
-            opacity: 0;
-            animation: animate .5s calc(var(--i) * .1s) ease-in-out forwards;
             color: #0C62FD;
+            animation: animate .5s calc(var(--i) * .1s) ease-in-out forwards;
             &:before{
               color: #0C62FD;
             }
@@ -94,6 +94,7 @@
         }
         .bx-star{
           & .active{
+
             &:before{
               color: #0C62FD;
             }

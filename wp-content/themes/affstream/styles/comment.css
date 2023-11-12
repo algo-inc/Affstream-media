@@ -92,11 +92,11 @@
 .comments .comment-rating .rating-container .rating .star {
   cursor: pointer;
   font-size: 19px;
+  color: #0C62FD;
 }
 .comments .comment-rating .rating-container .rating .star.active {
-  opacity: 0;
-  animation: animate 0.5s calc(var(--i) * .1s) ease-in-out forwards;
   color: #0C62FD;
+  animation: animate 0.5s calc(var(--i) * .1s) ease-in-out forwards;
 }
 .comments .comment-rating .rating-container .rating .star.active:before {
   color: #0C62FD;

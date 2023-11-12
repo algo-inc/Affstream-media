@@ -1,5 +1,6 @@
 <?php
 get_header( 'media' );
+
 $post_id    = get_the_ID();
 $popularity = 0;
 add_post_meta( $post_id, 'popularity', $popularity, true );
@@ -91,6 +92,10 @@ $review_link  = get_field( 'field_related_post_review' );
 
 					if ( comments_open() || get_comments_number() ) {
 						comments_template();
+						echo "<pre>";
+						print_r(get_comment());
+						echo "</pre>";
+
 					}
 					?>
                 </div>
@@ -229,10 +234,13 @@ $review_link  = get_field( 'field_related_post_review' );
 
 		        if ( comments_open() || get_comments_number() ) {
 			        comments_template();
+
 		        }
 		        ?>
             </div>
         </div>
     </div>
+
+
 <?php
 get_footer( 'media' );

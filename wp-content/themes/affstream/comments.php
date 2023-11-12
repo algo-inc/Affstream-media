@@ -5,12 +5,11 @@ if ( post_password_required() ) {
 ?>
 <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
 
-<div id="comments " class="comments-area ">
+<div id="comments" class="comments-area">
     <div id="respond" class="comment-respond">
         <h3 id="reply-title" class="comment-reply-title">Writing a company review</h3>
-        <form action="<?php echo site_url( '/wp-comments-post.php' ); ?>" method="post" id="commentform"
-              class="comment-form">
-			<?php if ( ! is_user_logged_in() ) : ?>
+        <form action="<?php echo esc_url( site_url( '/wp-comments-post.php' ) ); ?>" method="post" id="commentform" class="comment-form">
+		    <?php if (!is_user_logged_in()) : ?>
                 <div class="form-flex-container">
                     <p class="comment-form">
                         <input type="text" name="author" id="author" placeholder="Your name*" required>
@@ -19,62 +18,69 @@ if ( post_password_required() ) {
                         <input type="email" name="email" id="email" placeholder="Your email*" required>
                     </p>
                 </div>
-			<?php endif; ?>
+		    <?php endif; ?>
             <p class="comment-form-comment">
                 <textarea placeholder="Feedback" name="comment" id="comment" required></textarea>
             </p>
-            <div class="comment-rating">
-                <div class="rating-container">
-                    <h3 class="rating-title">Support*</h3>
-                    <div class="rating">
-                        <input type="number" name="support" hidden required>
-                        <i class='bx bx-star star' style="--i: 0;"></i>
-                        <i class='bx bx-star star' style="--i: 1;"></i>
-                        <i class='bx bx-star star' style="--i: 2;"></i>
-                        <i class='bx bx-star star' style="--i: 3;"></i>
-                        <i class='bx bx-star star' style="--i: 4;"></i>
-                    </div>
-                </div>
-                <div class="rating-container">
-                    <h3 class="rating-title">Quality*</h3>
-                    <div class="rating">
-                        <input type="number" name="quality" hidden required>
-                        <i class='bx bx-star star' style="--i: 0;"></i>
-                        <i class='bx bx-star star' style="--i: 1;"></i>
-                        <i class='bx bx-star star' style="--i: 2;"></i>
-                        <i class='bx bx-star star' style="--i: 3;"></i>
-                        <i class='bx bx-star star' style="--i: 4;"></i>
-                    </div>
-                </div>
-                <div class="rating-container">
-                    <h3 class="rating-title">Interface*</h3>
-                    <div class="rating">
-                        <input type="number" name="interface" hidden required>
-                        <i class='bx bx-star star' style="--i: 0;"></i>
-                        <i class='bx bx-star star' style="--i: 1;"></i>
-                        <i class='bx bx-star star' style="--i: 2;"></i>
-                        <i class='bx bx-star star' style="--i: 3;"></i>
-                        <i class='bx bx-star star' style="--i: 4;"></i>
-                    </div>
-                </div>
-                <div class="rating-container">
-                    <h3 class="rating-title">Price*</h3>
-                    <div class="rating">
-                        <input type="number" name="price" hidden required>
-                        <i class='bx bx-star star' style="--i: 0;"></i>
-                        <i class='bx bx-star star' style="--i: 1;"></i>
-                        <i class='bx bx-star star' style="--i: 2;"></i>
-                        <i class='bx bx-star star' style="--i: 3;"></i>
-                        <i class='bx bx-star star' style="--i: 4;"></i>
-                    </div>
-                </div>
-            </div>
+	        <?php if (!is_user_logged_in()) : ?>
+	        <?php endif; ?>
             <p class="form-submit">
-                <input type="submit" name="submit" id="submit" value="Post Comment" disabled>
+                <input type="submit" name="submit" id="submit" value="Send feedback" >
             </p>
+	        <?php wp_nonce_field( 'comment_nonce', 'comment_post_nonce' ); ?>
         </form>
     </div>
 </div>
+<!--<script>-->
+<!--  document.addEventListener("DOMContentLoaded", function () {-->
+<!--    const form = document.getElementById('commentform');-->
+<!--    const ratingContainers = form.querySelectorAll('.rating-container');-->
+<!--    const submitButton = document.getElementById('submit');-->
+<!--    const ratings = {};-->
+<!---->
+<!--    ratingContainers.forEach(container => {-->
+<!--      const stars = container.querySelectorAll('.rating .star');-->
+<!--      const hiddenInput = container.querySelector('input[type="hidden"]');-->
+<!--      const ratingIndex = container.getAttribute('data-rating-index');-->
+<!---->
+<!--      stars.forEach(star => {-->
+<!--        star.addEventListener('click', () => {-->
+<!--          const selectedRating = star.getAttribute('data-index');-->
+<!--          ratings[`rating_${ratingIndex}`] = selectedRating;-->
+<!--          hiddenInput.value = selectedRating;-->
+<!--          updateStars(stars, selectedRating);-->
+<!--          checkIfAllRatingsSelected();-->
+<!--        });-->
+<!--      });-->
+<!--    });-->
+<!---->
+<!--    function updateStars(stars, selectedRating) {-->
+<!--      stars.forEach(s => {-->
+<!--        const index = s.getAttribute('data-index');-->
+<!--        const isActive = index <= selectedRating;-->
+<!--        s.classList.toggle('bxs-star', isActive);-->
+<!--        s.classList.toggle('bx-star', !isActive);-->
+<!--        s.classList.toggle('active', isActive);-->
+<!--      });-->
+<!--    }-->
+<!---->
+<!--    function checkIfAllRatingsSelected() {-->
+<!--      const allFieldsFilled = Array.from(ratingContainers).every(container => {-->
+<!--        const ratingIndex = container.getAttribute('data-rating-index');-->
+<!--        return ratings[`rating_${ratingIndex}`] > 0;-->
+<!--      });-->
+<!---->
+<!--      if (allFieldsFilled) {-->
+<!--        submitButton.removeAttribute('disabled');-->
+<!--      } else {-->
+<!--        submitButton.setAttribute('disabled', 'disabled');-->
+<!--      }-->
+<!---->
+<!--      return allFieldsFilled;-->
+<!--    }-->
+<!--  });-->
+<!---->
+<!--</script>-->
 
 <?php if ( have_comments() ) : ?>
     <h2 class="comments-title">
@@ -146,49 +152,5 @@ if ( post_password_required() ) {
 		}
 		?>
     </div>
-
 <?php endif; ?>
-
-
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const ratingContainers = document.querySelectorAll('.rating-container');
-    const submitButton = document.getElementById('submit');
-
-    ratingContainers.forEach((container) => {
-      const stars = container.querySelectorAll('.rating .star');
-      const ratingValue = container.querySelector('.rating input');
-
-      stars.forEach((star, idx) => {
-        star.addEventListener('click', function () {
-          ratingValue.value = idx + 1;
-
-          stars.forEach((s, i) => {
-            s.classList.replace('bxs-star', 'bx-star');
-            s.classList.remove('active');
-          });
-
-          for (let i = 0; i <= idx; i++) {
-            stars[i].classList.replace('bx-star', 'bxs-star');
-            stars[i].classList.add('active');
-          }
-
-          checkIfAllRatingsSelected();
-        });
-      });
-    });
-
-    function checkIfAllRatingsSelected() {
-      const allContainers = Array.from(ratingContainers);
-      const allRatingsSelected = allContainers.every(container => {
-        return container.querySelector('.rating .star.active') !== null;
-      });
-      submitButton.disabled = !allRatingsSelected;
-    }
-
-    checkIfAllRatingsSelected();
-  });
-
-</script>
-
-
+<?php the_comments_navigation(); ?>
