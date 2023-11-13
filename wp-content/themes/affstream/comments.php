@@ -12,31 +12,30 @@ $comment_form_args = array(
 );
 comment_form($comment_form_args);
 ?>
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    document.getElementById("commentform").addEventListener("submit", function (event) {
-      for (var i = 1; i <= 4; i++) {
-        var ratingField = document.getElementById("rating_" + i);
-        var ratingValue = ratingField.value;
-        var newInput = document.createElement("input");
-        newInput.type = "hidden";
-        newInput.name = "rating_" + i;
-        newInput.value = ratingValue;
-        this.appendChild(newInput);
-      }
-    });
-  });
-</script>
-<script>
 
+<?php
+// Отримати ID поточного поста
+$post_id = get_the_ID();
 
+// Отримати коментарі для даного поста
+$comments = get_comments( array(
+	'post_id' => $post_id,
+	'status'  => 'approve', // Опціонально: вибрати тільки схвалені коментарі
+) );
 
+// Перевірка, чи є коментарі
+if ( $comments ) :
+	foreach ( $comments as $comment ) :
+		// Ваш код для виведення інформації про коментар
+		$comment_content = $comment->comment_content;
+		$comment_author = $comment->comment_author;
+		// І так далі...
+	endforeach;
+else :
+	echo 'Немає коментарів для цього поста.';
+endif;
+?>
 
-
-
-
-
-</script>
 <?php if ( have_comments() ) : ?>
     <h2 class="comments-title">
 		<?php
@@ -48,7 +47,6 @@ comment_form($comment_form_args);
 		}
 		?>
     </h2>
-
     <div class="custom-comments">
 		<?php
 		$comments = get_comments( array( 'post_id' => get_the_ID() ) );
@@ -112,6 +110,6 @@ comment_form($comment_form_args);
 		}
 		?>
     </div>
-
 <?php endif; ?>
+
 

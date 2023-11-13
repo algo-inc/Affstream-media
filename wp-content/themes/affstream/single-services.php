@@ -112,8 +112,6 @@ $review_link  = get_field( 'field_related_post_review' );
                     ?>
                     <div class="total-rating">
 		                <?php
-
-
 		                $average_ratings = get_average_ratings_for_post($post_id);
 		                $average_rating = round($ratings['average_rating'], 1);
 		                $average_support_rating = round($average_ratings['support'], 1);
@@ -224,31 +222,23 @@ $review_link  = get_field( 'field_related_post_review' );
 
                 </div>
             </div>
-            <div class="comments mobile">
-		        <?php
-
-		        if ( comments_open() || get_comments_number() ) {
-			        comments_template();
-		        }
-		        ?>
-            </div>
         </div>
     </div>
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         var ratingContainers = document.querySelectorAll('.form-rating-item');
+        var submitButton = document.getElementById('submit');
 
         ratingContainers.forEach(function (container) {
-
           var stars = container.querySelectorAll('.star');
+          var hiddenInputId = container.id.replace('rating_', '');
+          var hiddenInput = document.getElementById('hidden_rating_' + hiddenInputId);
 
           stars.forEach(function (star) {
             star.addEventListener('click', function () {
               var value = star.getAttribute('data-value');
               container.setAttribute('data-rating', value);
-              var hiddenInputId = container.id.replace('rating_', '');
-              var hiddenInput = document.getElementById('hidden_rating_' + hiddenInputId);
               hiddenInput.value = value;
               stars.forEach(function (innerStar) {
                 innerStar.classList.remove('active');
@@ -257,11 +247,19 @@ $review_link  = get_field( 'field_related_post_review' );
               for (var i = 1; i <= value; i++) {
                 stars[i - 1].classList.add('active');
               }
+
+              localStorage.setItem('lastRating', value);
+              var allRatingsFilled = Array.from(ratingContainers).every(function (ratingContainer) {
+                return parseInt(ratingContainer.getAttribute('data-rating')) > 0;
+              });
+              submitButton.disabled = !allRatingsFilled;
             });
           });
         });
       });
     </script>
 
+
 <?php
+
 get_footer( 'media' );
