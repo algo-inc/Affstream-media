@@ -139,7 +139,6 @@ $review_link  = get_field( 'field_related_post_review' );
                             </div>
                         </div>
 		                <?php
-
 		                render_rating_block('Support', $average_support_rating, $average_support_rating);
 		                render_rating_block('Quality', $average_quality_rating, $average_quality_rating);
 		                render_rating_block('Interface', $average_interface_rating, $average_interface_rating);

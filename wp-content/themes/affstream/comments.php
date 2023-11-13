@@ -4,13 +4,13 @@ if ( post_password_required() ) {
 }
 ?>
 <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
-
-<div id="comments " class="comments-area ">
-    <div id="respond" class="comment-respond">
-        <h3 id="reply-title" class="comment-reply-title">Writing a company review</h3>
-		<?php comment_form(); ?>
-    </div>
-</div>
+<?php
+$comment_form_args = array(
+	'title_reply' => 'Writing a company review',
+	'comment_field' => '<textarea id="comment" name="comment" cols="45" rows="8" placeholder="' . esc_attr__( 'Your Comment', 'domain' ) . '" aria-required="true"></textarea></p>'
+);
+comment_form($comment_form_args);
+?>
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("commentform").addEventListener("submit", function (event) {
@@ -76,26 +76,26 @@ if ( post_password_required() ) {
                             <div class="comment-date"><?php echo get_comment_date() . ' ' . get_comment_time(); ?></div>
                         </div>
                         <div class="comment-text"><?php comment_text(); ?></div>
+	                    <?php if ( ! empty( $support_rating ) || ! empty( $quality_rating ) || ! empty( $interface_rating ) || ! empty( $price_rating ) ) : ?>
+                            <div class="comment-rating">
+			                    <?php if ( ! empty( $support_rating ) ) : ?>
+				                    <?php render_rating_block( 'Support', $support_rating, null ); ?>
+			                    <?php endif; ?>
+
+			                    <?php if ( ! empty( $quality_rating ) ) : ?>
+				                    <?php render_rating_block( 'Quality', $quality_rating, null ); ?>
+			                    <?php endif; ?>
+
+			                    <?php if ( ! empty( $interface_rating ) ) : ?>
+				                    <?php render_rating_block( 'Interface', $interface_rating, null ); ?>
+			                    <?php endif; ?>
+
+			                    <?php if ( ! empty( $price_rating ) ) : ?>
+				                    <?php render_rating_block( 'Price', $price_rating, null ); ?>
+			                    <?php endif; ?>
+                            </div>
+	                    <?php endif; ?>
                     </div>
-	                <?php if ( ! empty( $support_rating ) || ! empty( $quality_rating ) || ! empty( $interface_rating ) || ! empty( $price_rating ) ) : ?>
-                        <div class="comment-rating">
-			                <?php if ( ! empty( $support_rating ) ) : ?>
-				                <?php render_rating_block( 'Support', $support_rating, null ); ?>
-			                <?php endif; ?>
-
-			                <?php if ( ! empty( $quality_rating ) ) : ?>
-				                <?php render_rating_block( 'Quality', $quality_rating, null ); ?>
-			                <?php endif; ?>
-
-			                <?php if ( ! empty( $interface_rating ) ) : ?>
-				                <?php render_rating_block( 'Interface', $interface_rating, null ); ?>
-			                <?php endif; ?>
-
-			                <?php if ( ! empty( $price_rating ) ) : ?>
-				                <?php render_rating_block( 'Price', $price_rating, null ); ?>
-			                <?php endif; ?>
-                        </div>
-	                <?php endif; ?>
                 </div>
             </div>
 			<?php

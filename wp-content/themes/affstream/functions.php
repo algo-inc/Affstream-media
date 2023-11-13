@@ -329,10 +329,7 @@ function custom_trim_excerpt( $text, $length = 80, $ellipsis = '...' ) {
 }
 
 
-function render_rating_block( $rating_title, $rating_value, $rating_average ) {
-    echo "<pre>";
-    print_r($rating_value);
-    echo "</pre>";?>
+function render_rating_block( $rating_title, $rating_value, $rating_average ) {?>
     <div class="rating-container">
         <span class="rating-title"><?php echo esc_html( $rating_title ); ?>:</span>
         <?php
@@ -373,10 +370,11 @@ function get_ratings_for_post( $post_id ) {
 	);
 
 	foreach ( $comments as $comment ) {
-		$support_rating   = (float) get_comment_meta( $comment->comment_ID, 'support', true );
-		$quality_rating   = (float) get_comment_meta( $comment->comment_ID, 'quality', true );
-		$interface_rating = (float) get_comment_meta( $comment->comment_ID, 'interface', true );
-		$price_rating     = (float) get_comment_meta( $comment->comment_ID, 'price', true );
+
+		$support_rating   = (float) get_comment_meta($comment->comment_ID, 'rating_1', true);
+		$quality_rating   = (float) get_comment_meta($comment->comment_ID, 'rating_2', true);
+		$interface_rating = (float) get_comment_meta($comment->comment_ID, 'rating_3', true);
+		$price_rating     = (float) get_comment_meta($comment->comment_ID, 'rating_4', true);
 
 		if ( is_numeric( $support_rating ) && is_numeric( $quality_rating ) && is_numeric( $interface_rating ) && is_numeric( $price_rating ) ) {
 			$average_rating = ( $support_rating + $quality_rating + $interface_rating + $price_rating ) / 4;
@@ -402,10 +400,10 @@ function get_average_ratings_for_post($post_id) {
 	$ratings = get_ratings_for_post($post_id);
 	$total_comments = $ratings['total_comments'];
 	if ($total_comments > 0) {
-		$average_support = ($ratings['field_ratings']['support'] / $total_comments);
-		$average_quality = ($ratings['field_ratings']['quality'] / $total_comments);
-		$average_interface = ($ratings['field_ratings']['interface'] / $total_comments);
-		$average_price = ($ratings['field_ratings']['price'] / $total_comments);
+		$average_support = ($ratings['field_ratings']['rating_1'] / $total_comments);
+		$average_quality = ($ratings['field_ratings']['rating_2'] / $total_comments);
+		$average_interface = ($ratings['field_ratings']['rating_3'] / $total_comments);
+		$average_price = ($ratings['field_ratings']['rating_4'] / $total_comments);
 
 		$average_ratings = array(
 			'support' => $average_support,
@@ -440,25 +438,80 @@ function save_comment_rating_meta($comment_id) {
 
 add_action('comment_post', 'save_comment_rating_meta');
 
+function add_rating_fields_to_comment_form(): string {
+	ob_start();
+	$rating_names = array('Support', 'Quality', 'Interface', 'Price');
+	?>
+    <div class="rating-container" id="rating-container">
+		<?php for ($i = 1; $i <= 4; $i++) : ?>
+            <div class="comment-form-rating">
+                <p class="rating-name"> <?= $rating_names[$i - 1] ?> </p>
+                <div class="form-rating-item" data-rating="0" id="<?= 'rating_' . $i ?>">
+                    <span class="bx  star" data-value="1">
+                        <svg  xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M8.86314 2.6879C9.08754 2.18444 9.19979 1.93272 9.35605 1.8552C9.49176 1.78785 9.65112 1.78785 9.78682 1.8552C9.94308 1.93272 10.0553 2.18444 10.2797 2.6879L12.0672 6.69798C12.1336 6.84681 12.1667 6.92123 12.2181 6.97822C12.2635 7.02864 12.319 7.06897 12.381 7.09658C12.451 7.12779 12.5321 7.13634 12.6942 7.15344L17.0603 7.61428C17.6085 7.67213 17.8825 7.70105 18.0046 7.8257C18.1105 7.93396 18.1598 8.08557 18.1377 8.23547C18.1123 8.40801 17.9075 8.59247 17.4981 8.9615L14.2366 11.9007C14.1156 12.0098 14.055 12.0643 14.0167 12.1307C13.9828 12.1896 13.9616 12.2548 13.9545 12.3223C13.9464 12.3986 13.9633 12.4783 13.9971 12.6377L14.9081 16.9326C15.0225 17.4718 15.0797 17.7414 14.9989 17.8959C14.9286 18.0302 14.7997 18.1239 14.6503 18.1492C14.4783 18.1783 14.2396 18.0406 13.7621 17.7652L9.95888 15.5716C9.81775 15.4902 9.74718 15.4496 9.67215 15.4336C9.60575 15.4195 9.53712 15.4195 9.47072 15.4336C9.3957 15.4496 9.32513 15.4902 9.18399 15.5716L5.38082 17.7652C4.90334 18.0406 4.6646 18.1783 4.49263 18.1492C4.34325 18.1239 4.21429 18.0302 4.14407 17.8959C4.06324 17.7414 4.12042 17.4718 4.23479 16.9326L5.14573 12.6377C5.17954 12.4783 5.19645 12.3986 5.18842 12.3223C5.18132 12.2548 5.16012 12.1896 5.12619 12.1307C5.08785 12.0643 5.02733 12.0098 4.90629 11.9007L1.64484 8.9615C1.23538 8.59247 1.03064 8.40801 1.00519 8.23547C0.983089 8.08557 1.03234 7.93396 1.13833 7.8257C1.26035 7.70105 1.53443 7.67213 2.08259 7.61428L6.44877 7.15344C6.61082 7.13634 6.69184 7.12779 6.7619 7.09658C6.82389 7.06897 6.87939 7.02864 6.92482 6.97822C6.97614 6.92123 7.00931 6.84681 7.07567 6.69798L8.86314 2.6879Z" stroke="#0C62FD" stroke-width="1.81372" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </span>
 
-
-function add_rating_fields_to_comment_form() {
-	for ($i = 1; $i <= 4; $i++) {
-		echo '<p class="comment-form-rating">
-            <label for="rating_' . $i . '">Rating ' . $i . '</label>
-            <div class="form-rating-item" data-rating="0" id="rating_' . $i . '">
-                <span class="bx bx-star star" data-value="1"></span>
-                <span class="bx bx-star star" data-value="2"></span>
-                <span class="bx bx-star star" data-value="3"></span>
-                <span class="bx bx-star star" data-value="4"></span>
-                <span class="bx bx-star star" data-value="5"></span>
+                    <span class="bx  star" data-value="2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M8.86314 2.6879C9.08754 2.18444 9.19979 1.93272 9.35605 1.8552C9.49176 1.78785 9.65112 1.78785 9.78682 1.8552C9.94308 1.93272 10.0553 2.18444 10.2797 2.6879L12.0672 6.69798C12.1336 6.84681 12.1667 6.92123 12.2181 6.97822C12.2635 7.02864 12.319 7.06897 12.381 7.09658C12.451 7.12779 12.5321 7.13634 12.6942 7.15344L17.0603 7.61428C17.6085 7.67213 17.8825 7.70105 18.0046 7.8257C18.1105 7.93396 18.1598 8.08557 18.1377 8.23547C18.1123 8.40801 17.9075 8.59247 17.4981 8.9615L14.2366 11.9007C14.1156 12.0098 14.055 12.0643 14.0167 12.1307C13.9828 12.1896 13.9616 12.2548 13.9545 12.3223C13.9464 12.3986 13.9633 12.4783 13.9971 12.6377L14.9081 16.9326C15.0225 17.4718 15.0797 17.7414 14.9989 17.8959C14.9286 18.0302 14.7997 18.1239 14.6503 18.1492C14.4783 18.1783 14.2396 18.0406 13.7621 17.7652L9.95888 15.5716C9.81775 15.4902 9.74718 15.4496 9.67215 15.4336C9.60575 15.4195 9.53712 15.4195 9.47072 15.4336C9.3957 15.4496 9.32513 15.4902 9.18399 15.5716L5.38082 17.7652C4.90334 18.0406 4.6646 18.1783 4.49263 18.1492C4.34325 18.1239 4.21429 18.0302 4.14407 17.8959C4.06324 17.7414 4.12042 17.4718 4.23479 16.9326L5.14573 12.6377C5.17954 12.4783 5.19645 12.3986 5.18842 12.3223C5.18132 12.2548 5.16012 12.1896 5.12619 12.1307C5.08785 12.0643 5.02733 12.0098 4.90629 11.9007L1.64484 8.9615C1.23538 8.59247 1.03064 8.40801 1.00519 8.23547C0.983089 8.08557 1.03234 7.93396 1.13833 7.8257C1.26035 7.70105 1.53443 7.67213 2.08259 7.61428L6.44877 7.15344C6.61082 7.13634 6.69184 7.12779 6.7619 7.09658C6.82389 7.06897 6.87939 7.02864 6.92482 6.97822C6.97614 6.92123 7.00931 6.84681 7.07567 6.69798L8.86314 2.6879Z" stroke="#0C62FD" stroke-width="1.81372" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </span>
+                    <span class="bx  star" data-value="3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M8.86314 2.6879C9.08754 2.18444 9.19979 1.93272 9.35605 1.8552C9.49176 1.78785 9.65112 1.78785 9.78682 1.8552C9.94308 1.93272 10.0553 2.18444 10.2797 2.6879L12.0672 6.69798C12.1336 6.84681 12.1667 6.92123 12.2181 6.97822C12.2635 7.02864 12.319 7.06897 12.381 7.09658C12.451 7.12779 12.5321 7.13634 12.6942 7.15344L17.0603 7.61428C17.6085 7.67213 17.8825 7.70105 18.0046 7.8257C18.1105 7.93396 18.1598 8.08557 18.1377 8.23547C18.1123 8.40801 17.9075 8.59247 17.4981 8.9615L14.2366 11.9007C14.1156 12.0098 14.055 12.0643 14.0167 12.1307C13.9828 12.1896 13.9616 12.2548 13.9545 12.3223C13.9464 12.3986 13.9633 12.4783 13.9971 12.6377L14.9081 16.9326C15.0225 17.4718 15.0797 17.7414 14.9989 17.8959C14.9286 18.0302 14.7997 18.1239 14.6503 18.1492C14.4783 18.1783 14.2396 18.0406 13.7621 17.7652L9.95888 15.5716C9.81775 15.4902 9.74718 15.4496 9.67215 15.4336C9.60575 15.4195 9.53712 15.4195 9.47072 15.4336C9.3957 15.4496 9.32513 15.4902 9.18399 15.5716L5.38082 17.7652C4.90334 18.0406 4.6646 18.1783 4.49263 18.1492C4.34325 18.1239 4.21429 18.0302 4.14407 17.8959C4.06324 17.7414 4.12042 17.4718 4.23479 16.9326L5.14573 12.6377C5.17954 12.4783 5.19645 12.3986 5.18842 12.3223C5.18132 12.2548 5.16012 12.1896 5.12619 12.1307C5.08785 12.0643 5.02733 12.0098 4.90629 11.9007L1.64484 8.9615C1.23538 8.59247 1.03064 8.40801 1.00519 8.23547C0.983089 8.08557 1.03234 7.93396 1.13833 7.8257C1.26035 7.70105 1.53443 7.67213 2.08259 7.61428L6.44877 7.15344C6.61082 7.13634 6.69184 7.12779 6.7619 7.09658C6.82389 7.06897 6.87939 7.02864 6.92482 6.97822C6.97614 6.92123 7.00931 6.84681 7.07567 6.69798L8.86314 2.6879Z" stroke="#0C62FD" stroke-width="1.81372" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </span>
+                    <span class="bx  star" data-value="4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M8.86314 2.6879C9.08754 2.18444 9.19979 1.93272 9.35605 1.8552C9.49176 1.78785 9.65112 1.78785 9.78682 1.8552C9.94308 1.93272 10.0553 2.18444 10.2797 2.6879L12.0672 6.69798C12.1336 6.84681 12.1667 6.92123 12.2181 6.97822C12.2635 7.02864 12.319 7.06897 12.381 7.09658C12.451 7.12779 12.5321 7.13634 12.6942 7.15344L17.0603 7.61428C17.6085 7.67213 17.8825 7.70105 18.0046 7.8257C18.1105 7.93396 18.1598 8.08557 18.1377 8.23547C18.1123 8.40801 17.9075 8.59247 17.4981 8.9615L14.2366 11.9007C14.1156 12.0098 14.055 12.0643 14.0167 12.1307C13.9828 12.1896 13.9616 12.2548 13.9545 12.3223C13.9464 12.3986 13.9633 12.4783 13.9971 12.6377L14.9081 16.9326C15.0225 17.4718 15.0797 17.7414 14.9989 17.8959C14.9286 18.0302 14.7997 18.1239 14.6503 18.1492C14.4783 18.1783 14.2396 18.0406 13.7621 17.7652L9.95888 15.5716C9.81775 15.4902 9.74718 15.4496 9.67215 15.4336C9.60575 15.4195 9.53712 15.4195 9.47072 15.4336C9.3957 15.4496 9.32513 15.4902 9.18399 15.5716L5.38082 17.7652C4.90334 18.0406 4.6646 18.1783 4.49263 18.1492C4.34325 18.1239 4.21429 18.0302 4.14407 17.8959C4.06324 17.7414 4.12042 17.4718 4.23479 16.9326L5.14573 12.6377C5.17954 12.4783 5.19645 12.3986 5.18842 12.3223C5.18132 12.2548 5.16012 12.1896 5.12619 12.1307C5.08785 12.0643 5.02733 12.0098 4.90629 11.9007L1.64484 8.9615C1.23538 8.59247 1.03064 8.40801 1.00519 8.23547C0.983089 8.08557 1.03234 7.93396 1.13833 7.8257C1.26035 7.70105 1.53443 7.67213 2.08259 7.61428L6.44877 7.15344C6.61082 7.13634 6.69184 7.12779 6.7619 7.09658C6.82389 7.06897 6.87939 7.02864 6.92482 6.97822C6.97614 6.92123 7.00931 6.84681 7.07567 6.69798L8.86314 2.6879Z" stroke="#0C62FD" stroke-width="1.81372" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </span>
+                    <span class="bx  star" data-value="5">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                         <path d="M8.86314 2.6879C9.08754 2.18444 9.19979 1.93272 9.35605 1.8552C9.49176 1.78785 9.65112 1.78785 9.78682 1.8552C9.94308 1.93272 10.0553 2.18444 10.2797 2.6879L12.0672 6.69798C12.1336 6.84681 12.1667 6.92123 12.2181 6.97822C12.2635 7.02864 12.319 7.06897 12.381 7.09658C12.451 7.12779 12.5321 7.13634 12.6942 7.15344L17.0603 7.61428C17.6085 7.67213 17.8825 7.70105 18.0046 7.8257C18.1105 7.93396 18.1598 8.08557 18.1377 8.23547C18.1123 8.40801 17.9075 8.59247 17.4981 8.9615L14.2366 11.9007C14.1156 12.0098 14.055 12.0643 14.0167 12.1307C13.9828 12.1896 13.9616 12.2548 13.9545 12.3223C13.9464 12.3986 13.9633 12.4783 13.9971 12.6377L14.9081 16.9326C15.0225 17.4718 15.0797 17.7414 14.9989 17.8959C14.9286 18.0302 14.7997 18.1239 14.6503 18.1492C14.4783 18.1783 14.2396 18.0406 13.7621 17.7652L9.95888 15.5716C9.81775 15.4902 9.74718 15.4496 9.67215 15.4336C9.60575 15.4195 9.53712 15.4195 9.47072 15.4336C9.3957 15.4496 9.32513 15.4902 9.18399 15.5716L5.38082 17.7652C4.90334 18.0406 4.6646 18.1783 4.49263 18.1492C4.34325 18.1239 4.21429 18.0302 4.14407 17.8959C4.06324 17.7414 4.12042 17.4718 4.23479 16.9326L5.14573 12.6377C5.17954 12.4783 5.19645 12.3986 5.18842 12.3223C5.18132 12.2548 5.16012 12.1896 5.12619 12.1307C5.08785 12.0643 5.02733 12.0098 4.90629 11.9007L1.64484 8.9615C1.23538 8.59247 1.03064 8.40801 1.00519 8.23547C0.983089 8.08557 1.03234 7.93396 1.13833 7.8257C1.26035 7.70105 1.53443 7.67213 2.08259 7.61428L6.44877 7.15344C6.61082 7.13634 6.69184 7.12779 6.7619 7.09658C6.82389 7.06897 6.87939 7.02864 6.92482 6.97822C6.97614 6.92123 7.00931 6.84681 7.07567 6.69798L8.86314 2.6879Z" stroke="#0C62FD" stroke-width="1.81372" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </span>
+                </div>
+                <input type="hidden" name="rating_container-<?= $i ?>" id="hidden_rating_<?= $i ?>" value="0">
             </div>
-            <input type="hidden"  name="rating_container-' . $i . '" id="hidden_rating_' . $i . '" value="0">
-        </p>';
-	}
+		<?php endfor; ?>
+    </div>
+	<?php
+	return ob_get_clean();
 }
 
-add_action( 'comment_form_logged_in_after', 'add_rating_fields_to_comment_form' );
-add_action( 'comment_form_after_fields', 'add_rating_fields_to_comment_form' );
 
+
+
+
+function custom_comment_form_fields($fields) {
+	$fields['comment_notes_before'] = '';
+
+	$fields['author'] = '<p class="comment-form-author">' .
+	                    '<input id="author" name="author" type="text" placeholder="' . esc_attr__( 'Your Name', 'domain' ) . '" ' . $aria_req . ' /></p>';
+
+	$fields['email'] = '<p class="comment-form-email">' .
+	                   '<input id="email" name="email" type="text" placeholder="' . esc_attr__( 'Your Email', 'domain' ) . '" ' . $aria_req . ' /></p>';
+
+	$fields['comment'] = '<p class="comment-form-comment">' .
+	                     '<textarea id="comment" name="comment" cols="45" rows="8" placeholder="' . esc_attr__( 'Your Comment', 'domain' ) . '" aria-required="true"></textarea></p>';
+
+	return $fields;
+}
+
+add_filter('comment_form_default_fields', 'custom_comment_form_fields');
+
+function custom_comment_fields_order($fields) {
+	$output_fields = array();
+
+	$output_fields['author_email'] = '<div class="comment-form-author-email">' . $fields['author'] . $fields['email'] . '</div>';
+	$output_fields['comment'] = '<div class="comment-form-comment">' . $fields['comment'] . '</div>';
+	$output_fields['rating'] = add_rating_fields_to_comment_form();
+
+	return $output_fields;
+}
+
+add_filter('comment_form_fields', 'custom_comment_fields_order');
 

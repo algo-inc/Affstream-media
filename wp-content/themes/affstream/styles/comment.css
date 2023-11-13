@@ -130,21 +130,36 @@
     line-height: normal;
   }
 }
-.comments .form-flex-container {
+.comments .comment-form {
+  width: 100%;
+}
+.comments .comment-form .comment-form-author-email {
   display: flex;
-  gap: 10px;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 20px;
 }
 @media (max-width: 767px) {
-  .comments .form-flex-container {
+  .comments .comment-form .comment-form-author-email {
     flex-direction: column;
+    margin-bottom: 20px;
   }
 }
-.comments .form-flex-container .comment-form {
+.comments .comment-form .comment-form-author-email .comment-form-author, .comments .comment-form .comment-form-author-email .comment-form-email {
+  max-width: 50%;
   width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0;
 }
-.comments .form-flex-container .comment-form input {
-  width: 100%;
-  max-width: 93%;
+@media (max-width: 767px) {
+  .comments .comment-form .comment-form-author-email .comment-form-author, .comments .comment-form .comment-form-author-email .comment-form-email {
+    max-width: 100%;
+  }
+}
+.comments .comment-form .comment-form-author-email .comment-form-author input, .comments .comment-form .comment-form-author-email .comment-form-email input {
+  max-width: 100%;
   display: block;
   border-radius: 6.712px;
   border: 1px solid #CAC9CD;
@@ -155,6 +170,41 @@
   font-weight: 400;
   line-height: normal;
   padding: 12px;
+}
+@media (max-width: 767px) {
+  .comments .comment-form .comment-form-author-email .comment-form-author input, .comments .comment-form .comment-form-author-email .comment-form-email input {
+    margin-bottom: 0;
+  }
+}
+.comments .comment-form .rating-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-row-gap: 20px;
+  grid-column-gap: 20px;
+  margin-bottom: 25px;
+}
+.comments .comment-form .rating-container .comment-form-rating {
+  display: flex;
+  align-items: start;
+  gap: 20px;
+  width: fit-content;
+}
+@media (max-width: 767px) {
+  .comments .comment-form .rating-container .comment-form-rating {
+    flex-direction: column;
+    gap: 9px;
+  }
+}
+.comments .comment-form .rating-container .comment-form-rating .rating-name {
+  color: #100F0F;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 0;
+}
+.comments .comment-form .rating-container .comment-form-rating .form-rating-item .star.active svg path {
+  fill: #0C62FD;
 }
 .comments .comment-form-comment {
   width: 100%;
