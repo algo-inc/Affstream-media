@@ -7,7 +7,8 @@ if ( post_password_required() ) {
 <?php
 $comment_form_args = array(
 	'title_reply' => 'Writing a company review',
-	'comment_field' => '<textarea id="comment" name="comment" cols="45" rows="8" placeholder="' . esc_attr__( 'Your Comment', 'domain' ) . '" aria-required="true"></textarea></p>'
+	'comment_field' => '<textarea id="comment" name="comment" cols="45" rows="8" placeholder="' . esc_attr__( 'Your Comment', 'domain' ) . '" aria-required="true"></textarea></p>',
+    'submit_button' => '<input name="submit" type="submit" id="submit" class="submit" value="Post Comment" disabled>',
 );
 comment_form($comment_form_args);
 ?>
@@ -26,7 +27,16 @@ comment_form($comment_form_args);
     });
   });
 </script>
+<script>
 
+
+
+
+
+
+
+
+</script>
 <?php if ( have_comments() ) : ?>
     <h2 class="comments-title">
 		<?php
