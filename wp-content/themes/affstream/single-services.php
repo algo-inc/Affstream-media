@@ -27,24 +27,36 @@ $review_link  = get_field( 'field_related_post_review' );
                                 </h1>
 							<?php endif; ?>
                             <div class="link-container">
-                                <a class="link" href="<?= $review_link ?>">Review
+                                <?php
+                                if ($review_link):
+                                ?>
+                                <a class="link" href="<?= get_permalink($review_link)?>">Review
                                     <svg xmlns="http://www.w3.org/2000/svg" width="10" height="11" viewBox="0 0 10 11"
                                          fill="none">
                                         <path d="M2.62331 10.6019L6.35154 8.48278L9.0278 6.98627C9.29383 6.83666 9.51494 6.62055 9.66872 6.35983C9.8225 6.09911 9.90349 5.80305 9.90349 5.50164C9.90349 5.20022 9.8225 4.90416 9.66872 4.64344C9.51494 4.38272 9.29383 4.16661 9.0278 4.017L2.62331 0.400567C1.46155 -0.258846 0 0.561399 0 1.88559L0 9.11769C0 10.4411 1.46155 11.2583 2.62331 10.6019Z"
                                               fill="#0C62FD"/>
                                     </svg>
                                 </a>
-                                <a class="link" href="<?= $guide_link ?>">Guide
+                                <?php
+                                endif;
+                                if ($guide_link):
+                                ?>
+                                <a class="link" href="<?= get_permalink( $guide_link) ?>">Guide
                                     <svg xmlns="http://www.w3.org/2000/svg" width="10" height="11" viewBox="0 0 10 11"
                                          fill="none">
                                         <path d="M2.62331 10.6019L6.35154 8.48278L9.0278 6.98627C9.29383 6.83666 9.51494 6.62055 9.66872 6.35983C9.8225 6.09911 9.90349 5.80305 9.90349 5.50164C9.90349 5.20022 9.8225 4.90416 9.66872 4.64344C9.51494 4.38272 9.29383 4.16661 9.0278 4.017L2.62331 0.400567C1.46155 -0.258846 0 0.561399 0 1.88559L0 9.11769C0 10.4411 1.46155 11.2583 2.62331 10.6019Z"
                                               fill="#0C62FD"/>
                                     </svg>
                                 </a>
+                                <?php
+                                endif;
+                                ?>
                             </div>
                         </div>
                         <div class="service-logo-container">
+                            <?php if ($service_icon['url']):?>
                             <img src="<?= $service_icon['url'] ?>" alt="<?= $service_icon['alt'] ?>">
+                            <?php endif; ?>
                         </div>
                     </div>
 					<?php the_content(); ?>
@@ -76,7 +88,7 @@ $review_link  = get_field( 'field_related_post_review' );
                                       fill="white"/>
                             </svg>
                         </a>
-                        <a href="https://t.me/share/url?url=<?php the_permalink(); ?>&text=<?php the_title(); ?>"
+                        <a href="tg://msg_url?url=<?php the_permalink();?>&text=<?php the_title(); ?>"
                            target="_blank" rel="noopener noreferrer">
                             <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36"
                                  fill="none">
@@ -89,24 +101,24 @@ $review_link  = get_field( 'field_related_post_review' );
                 </div>
                 <div class="comments desktop">
 					<?php
-
-					if ( comments_open() || get_comments_number() ) {
-						comments_template();
-					}
+                    if (!wp_is_mobile()){
+	                    if ( comments_open() || get_comments_number() ) {
+		                    comments_template();
+	                    }
+                    }
 					?>
                 </div>
             </div>
             <div class="recent-posts">
                 <div class="about-company">
+
 					<?php
-
+					$post_id = get_the_ID();
 					company_information_block();
-
-					// Block for Paid Information
 					paid_information_block();
 					?>
                     <?php
-                    $post_id = get_the_ID();
+
                     $ratings = get_ratings_for_post($post_id);
                     if ($ratings):
                     ?>
@@ -167,8 +179,6 @@ $review_link  = get_field( 'field_related_post_review' );
 	                    <?php endif; ?>
 
                         <div class="social-list">
-
-
 	                        <?php if ($telegram) : ?>
                                 <a href="<?php echo esc_url($telegram); ?>" target="_blank">
                                     <img src="<?= get_template_directory_uri() . '/icon/social/teleg.svg' ?>" alt="telegram">
@@ -222,8 +232,18 @@ $review_link  = get_field( 'field_related_post_review' );
 
                 </div>
             </div>
+            <div class="comments mobile">
+	            <?php
+	            if (wp_is_mobile()){
+		            if ( comments_open() || get_comments_number() ) {
+			            comments_template();
+		            }
+	            }
+	            ?>
+            </div>
         </div>
     </div>
+
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {

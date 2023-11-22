@@ -28,102 +28,105 @@
   }
 }
 
-.intro-media-section{
-  @include breakpoint(mobile){
+.intro-media-section {
+  @include breakpoint(mobile) {
     padding-bottom: 25px;
   }
-  .container{
+
+  .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap:45px;
+    gap: 45px;
     max-width: 1200px;
     padding: 0 10px;
-    @include breakpoint(desktop){
+    @include breakpoint(desktop) {
       max-width: 1200px;
       padding: 0 16px;
     }
+    @include breakpoint(tablet) {
+      flex-direction: column;
+    }
+    @include breakpoint(mobile) {
+      flex-direction: column;
+    }
 
-    @include breakpoint(tablet){
-      flex-direction: column;
-    }
-    @include breakpoint(mobile){
-      flex-direction: column;
-    }
-    .inner-slider{
+    .inner-slider {
       max-width: 65%;
       height: auto;
       position: relative;
-      @include breakpoint(tablet){
+      @include breakpoint(tablet) {
         max-width: 100%;
       }
-      @include breakpoint(mobile){
+      @include breakpoint(mobile) {
         max-width: 100%;
       }
-      .intro-media-slider{
+
+      .intro-media-slider {
         display: flex;
         align-items: center;
         gap: 12px;
         border-radius: 10px;
         height: auto;
-        @include breakpoint(desktop){
-        }
-        .swiper-slide{
-          img{
+
+        .swiper-slide {
+          img {
             height: auto;
             border-radius: 15px;
             overflow: hidden;
           }
         }
-        .prev,.next{
-          @include breakpoint(mobile){
+
+        .prev, .next {
+          @include breakpoint(mobile) {
             display: none;
           }
         }
       }
 
-      .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
+      .swiper-horizontal > .swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
         bottom: -20px;
         left: 0;
         width: 100%;
       }
-      .swiper-pagination-bullet{
+
+      .swiper-pagination-bullet {
         background-color: #100F0F;
       }
     }
-    @media (max-width: 800px) {
-    .inner-container{
-      display: none;
-    }
-  }
-    .inner-container{
-      max-width: 35%;
-      border-radius: 10px;
-      width: 100%;
-      @include breakpoint(tablet){
-        max-width: 88%;
-        margin: 0 auto;
-      }
-      @include breakpoint(mobile){
-        max-width: 100%;
-        padding: 15px;
-      }
 
-      p{
-        color: #100F0F;
-        font-size: 22px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
-        margin-bottom: 0;
-        @include breakpoint(desktop){
-          font-size: 18px;
-        }
-        @include breakpoint(mobile){
-          font-size: 15px;
-        }
+  }
+
+  .inner-container {
+    max-width: 35%;
+    width: 100%;
+    @include breakpoint(tablet) {
+      max-width: 88%;
+      margin: 0 auto;
+    }
+    @include breakpoint(mobile) {
+      max-width: 100%;
+      padding: 15px;
+    }
+    img{
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    p {
+      color: #100F0F;
+      font-size: 22px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      margin-bottom: 0;
+      @include breakpoint(desktop) {
+        font-size: 18px;
+      }
+      @include breakpoint(mobile) {
+        font-size: 15px;
       }
     }
   }
 }
+
 

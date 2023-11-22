@@ -13,28 +13,6 @@ $comment_form_args = array(
 comment_form($comment_form_args);
 ?>
 
-<?php
-// Отримати ID поточного поста
-$post_id = get_the_ID();
-
-// Отримати коментарі для даного поста
-$comments = get_comments( array(
-	'post_id' => $post_id,
-	'status'  => 'approve', // Опціонально: вибрати тільки схвалені коментарі
-) );
-
-// Перевірка, чи є коментарі
-if ( $comments ) :
-	foreach ( $comments as $comment ) :
-		// Ваш код для виведення інформації про коментар
-		$comment_content = $comment->comment_content;
-		$comment_author = $comment->comment_author;
-		// І так далі...
-	endforeach;
-else :
-	echo 'Немає коментарів для цього поста.';
-endif;
-?>
 
 <?php if ( have_comments() ) : ?>
     <h2 class="comments-title">

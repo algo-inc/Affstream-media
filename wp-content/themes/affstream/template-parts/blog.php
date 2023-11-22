@@ -142,6 +142,7 @@
   document.addEventListener('DOMContentLoaded', function () {
     var blogSliderTop = new Swiper('.blog-slider-top', {
       spaceBetween: 10,
+      allowTouchMove: false,
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',

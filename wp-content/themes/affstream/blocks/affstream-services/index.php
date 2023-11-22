@@ -75,10 +75,10 @@ function render_affstream_services_block( $block ): void {
 				foreach ( $services as $service ) {
 					setup_postdata( $service );
 					$service_id    = $service->ID;
-					$service_icon  = get_field( 'service_icon', $service_id );
-					$monthly_price = get_field( 'monthly_price', $service_id );
-					$is_top        = get_field( 'field_is_top', $service_id );
 					$from_ukraine  = get_field( 'field_from_ukraine', $service_id );
+					$service_icon          = get_field( 'service_icon', $service_id );
+					$monthly_price         = get_field( 'monthly_price', $service_id );
+					$is_top                = get_field( 'field_is_top', $service_id );
 					?>
                     <a href="<?php the_permalink( $service_id ); ?>"
                        class="service-card <?php if ( $is_top ): echo 'top_card'; endif; ?>">
@@ -100,9 +100,6 @@ function render_affstream_services_block( $block ): void {
 		                                    ?>
                                         </div>
                                     </div>
-
-
-
 	                                <?php if ( $is_top ) { ?>
                                         <div class="is-top-mobile top-style"
                                              style="border-radius: 5px;background: linear-gradient(108deg, #FF2F7A 0%, #0C62FD 100%); ">
@@ -118,8 +115,9 @@ function render_affstream_services_block( $block ): void {
 
                             </div>
                             <div class="service-description">
-
-								<?php the_excerpt(); ?>
+                                <p>
+	                                <?= get_the_excerpt($service_id); ?>
+                                </p>
 
                             </div>
                             <div class="monthly-price">

@@ -296,7 +296,7 @@ header .auth-button {
 }
 @media (max-width: 767px) {
   header .auth-button {
-    padding: 15px;
+    padding: 10px 15px;
     font-size: 23px;
     max-width: 130px;
     width: 100%;
@@ -4182,6 +4182,7 @@ footer .container .social .social-links .mail-link {
   .single-page .container {
     padding: 0 16px;
     gap: 50px;
+    max-width: 1200px;
   }
 }
 @media (max-width: 1285px) {

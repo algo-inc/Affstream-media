@@ -15,6 +15,7 @@
     @include breakpoint(desktop){
       padding: 0 16px;
       gap: 50px;
+      max-width: 1200px;
     }
     @media (max-width: 1285px) {
       flex-wrap: wrap;

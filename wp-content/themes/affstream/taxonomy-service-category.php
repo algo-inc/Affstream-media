@@ -6,54 +6,66 @@ $content = get_post( $page_id );
 
 <div class="posts-section reviews">
     <div class="title-container">
-        <h2 class="section-title">catalog services</h2>
-    </div>
-    <div class="affstream-services">
-		<?php
-		$category_slug = get_query_var('service-category');
-		$category = get_term_by('slug', $category_slug, 'service-category');
-		$category_id = $category->term_id;
+        <h2 class="section-title"><?php
 
-		$args = array(
-			'post_type' => 'services',
-			'tax_query' => array(
+	        $current_taxonomy = get_queried_object();
+	        if ($current_taxonomy) {
+		        // Виведення заголовка поточної таксономії
+		        echo '<h1>' . $current_taxonomy->name . '</h1>';
+	        }
+			?>
+        </h2>
+
+    </div>
+
+    <div class="affstream-services">
+        <div class="field-title">
+            <h4 class="column-name"><?= __( 'Service' ) ?></h4>
+            <h4 class="column-name"><?= __( 'Description' ) ?></h4>
+            <h4 class="column-name"><?= __( 'Price' ) ?></h4>
+        </div>
+		<?php
+		$category_slug = get_query_var( 'service-category' );
+		$category      = get_term_by( 'slug', $category_slug, 'service-category' );
+		$category_id   = $category->term_id;
+		$args          = array(
+			'post_type'  => 'services',
+			'tax_query'  => array(
 				array(
 					'taxonomy' => 'service-category',
-					'field' => 'term_id',
-					'terms' => $category_id,
+					'field'    => 'term_id',
+					'terms'    => $category_id,
 				),
 			),
 			'meta_query' => array(
 				'relation' => 'OR',
 				array(
-					'key' => 'top_service',
-					'value' => 'true',
+					'key'     => 'top_service',
+					'value'   => 'true',
 					'compare' => '='
 				),
 				array(
-					'key' => 'top_service',
+					'key'     => 'top_service',
 					'compare' => 'NOT EXISTS'
 				)
 			),
-			'orderby' => array(
+			'orderby'    => array(
 				'meta_value' => 'DESC',
-				'post_date' => 'DESC'
+				'post_date'  => 'DESC'
 			)
 		);
 
-		$query = new WP_Query($args);
+		$query = new WP_Query( $args );
 
-		if ($query->have_posts()) {
-			while ($query->have_posts()) : $query->the_post();?>
+		if ( $query->have_posts() ) {
+			while ( $query->have_posts() ) : $query->the_post(); ?>
                 <div class="service-card">
 					<?php $service_id = get_the_ID(); ?>
-
 					<?php
-					$service_icon          = get_field( 'service_icon', $service_id );
-					$monthly_price         = get_field( 'monthly_price', $service_id );
-					$page_university_gude  = get_field( 'related_post_1', $service_id );
-					$page_reviews_services = get_field( 'related_post_2', $service_id );
-					$is_top                = get_field( 'field_is_top', $service_id );
+					$service_icon  = get_field( 'service_icon', $service_id );
+					$monthly_price = get_field( 'monthly_price', $service_id );
+					$is_top        = get_field( 'field_is_top', $service_id );
+					$from_ukraine  = get_field( 'field_from_ukraine', $service_id );
 					?>
 					<?php if ( $is_top ) { ?>
                         <div class="is-top top-style"
@@ -61,83 +73,72 @@ $content = get_post( $page_id );
                             TOP
                         </div>
 					<?php } ?>
-                    <div class="card-container">
-                        <div class="service-icon">
-							<?php
-							if ( $service_icon ) {
-								echo '<img src="' . esc_url( $service_icon['url'] ) . '" alt="' . esc_attr( $service_icon['alt'] ) . '" />';
-							}
-							?>
-	                        <?php if ( $is_top ) { ?>
-                                <div class="is-top-mobile top-style"
-                                     style="border-radius: 5px;background: linear-gradient(108deg, #FF2F7A 0%, #0C62FD 100%); ">
-                                    TOP
-                                </div>
-	                        <?php } ?>
-                        </div>
-                        <div class="service-description">
-                            <p>
-								<?php $excerpt = custom_trim_excerpt( get_the_excerpt(), 100, '...' );
-								echo $excerpt;
-								?>
-                            </p>
-                        </div>
-                        <div class="monthly-price">
-							<?php
-							if ( ! empty( $monthly_price ) ) {
-								echo '<p>' . esc_html( $monthly_price ) . '</p>';
-							}
-							?>
-                        </div>
-	                    <?php if ( $is_top ) { ?>
-                            <div class="is-top-inner top-style"
+                    <a href="<?php the_permalink( $service_id ); ?>"
+                       class="service-card <?php if ( $is_top ): echo 'top_card'; endif; ?>">
+						<?php if ( $is_top ) { ?>
+                            <div class="is-top top-style"
                                  style="border-radius: 5px;background: linear-gradient(108deg, #FF2F7A 0%, #0C62FD 100%); ">
                                 TOP
                             </div>
-	                    <?php } ?>
-                        <div class="links">
-							<?php if ( ! empty( $page_university_gude ) ) {
-								$page_university_gude_link = get_permalink( $page_university_gude );
-								?>
-                                <a class="page-link" href="<?= $page_university_gude_link ?>"> Guide
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="11" height="12"
-                                         viewBox="0 0 11 12" fill="none">
-                                        <path d="M2.79518 11.1918L6.52341 9.07263L9.19967 7.57612C9.46571 7.42651 9.68681 7.21039 9.84059 6.94968C9.99438 6.68896 10.0754 6.3929 10.0754 6.09148C10.0754 5.79006 9.99438 5.494 9.84059 5.23328C9.68681 4.97257 9.46571 4.75646 9.19967 4.60684L2.79518 0.990411C1.63342 0.330998 0.171875 1.15124 0.171875 2.47543L0.171875 9.70753C0.171875 11.031 1.63342 11.8481 2.79518 11.1918Z"
-                                              fill="url(#paint0_linear_3795_4832)"></path>
-                                        <defs>
-                                            <linearGradient id="paint0_linear_3795_4832" x1="0.171875" y1="0.757812"
-                                                            x2="11.2114" y2="2.10351"
-                                                            gradientUnits="userSpaceOnUse">
-                                                <stop stop-color="#0C62FD"/>
-                                                <stop offset="1" stop-color="#1035B8"/>
-                                            </linearGradient>
-                                        </defs>
-                                    </svg>
-                                </a>
-								<?php
-							}
-							if ( ! empty( $page_reviews_services ) ) {
-								$page_reviews_services_link = get_permalink( $page_reviews_services );
-								?>
-                                <a class="page-link" href="<?= $page_reviews_services_link ?>"> Reviews
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="11" height="12"
-                                         viewBox="0 0 11 12" fill="none">
-                                        <path d="M2.79518 11.1918L6.52341 9.07263L9.19967 7.57612C9.46571 7.42651 9.68681 7.21039 9.84059 6.94968C9.99438 6.68896 10.0754 6.3929 10.0754 6.09148C10.0754 5.79006 9.99438 5.494 9.84059 5.23328C9.68681 4.97257 9.46571 4.75646 9.19967 4.60684L2.79518 0.990411C1.63342 0.330998 0.171875 1.15124 0.171875 2.47543L0.171875 9.70753C0.171875 11.031 1.63342 11.8481 2.79518 11.1918Z"
-                                              fill="url(#paint0_linear_3795_4832)"></path>
-                                        <defs>
-                                            <linearGradient id="paint0_linear_3795_4832" x1="0.171875" y1="0.757812"
-                                                            x2="11.2114" y2="2.10351"
-                                                            gradientUnits="userSpaceOnUse">
-                                                <stop stop-color="#0C62FD"/>
-                                                <stop offset="1" stop-color="#1035B8"/>
-                                            </linearGradient>
-                                        </defs>
-                                    </svg>
-                                </a>
-								<?php
-							} ?>
+						<?php } ?>
+                        <div class="card-container">
+                            <div class="service-icon">
+                                <div class="container">
+                                    <div class="border"
+                                         style="<?php if ( $from_ukraine ): echo 'border: 3px solid #0C62FD; border-radius: 10px; width: fit-content;'; endif; ?>">
+                                        <div class="from-ukraine"
+                                             style="<?php if ( ! $from_ukraine ): echo 'border: none;'; endif; ?>">
+											<?php if ( $service_icon ) { ?>
+                                                <img src="<?= $service_icon['url'] ?>"
+                                                     alt="<?= $service_icon['alt'] ?>">
+												<?php
+											}
+											?>
+                                        </div>
+                                    </div>
+
+
+									<?php if ( $is_top ) { ?>
+                                        <div class="is-top-mobile top-style"
+                                             style="border-radius: 5px;background: linear-gradient(108deg, #FF2F7A 0%, #0C62FD 100%); ">
+                                            TOP
+                                        </div>
+
+									<?php } else { ?>
+                                        <div class="block"></div>
+										<?php
+									}
+									?>
+                                </div>
+
+                            </div>
+                            <div class="service-description">
+
+								<?php the_excerpt(); ?>
+
+                            </div>
+                            <div class="monthly-price">
+								<?php if ( ! empty( $monthly_price ) ) {
+									echo '<p>' . esc_html( $monthly_price ) . '</p>';
+								} ?>
+                            </div>
+							<?php if ( $is_top ) { ?>
+                                <div class="is-top-inner top-style"
+                                     style="border-radius: 5px;background: linear-gradient(108deg, #FF2F7A 0%, #0C62FD 100%); ">
+                                    TOP
+                                </div>
+							<?php } ?>
+                            <div class="single-page-link">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="60" height="61" viewBox="0 0 60 61"
+                                     fill="none">
+                                    <circle cx="30" cy="30.1201" r="30" transform="rotate(-90 30 30.1201)"
+                                            fill="#0C62FD"/>
+                                    <path d="M16.3203 28.6201C15.4919 28.6201 14.8203 29.2917 14.8203 30.1201C14.8203 30.9485 15.4919 31.6201 16.3203 31.6201L16.3203 28.6201ZM44.7335 31.1808C45.3193 30.595 45.3193 29.6452 44.7335 29.0595L35.1876 19.5135C34.6018 18.9277 33.652 18.9277 33.0662 19.5135C32.4805 20.0993 32.4805 21.049 33.0662 21.6348L41.5515 30.1201L33.0662 38.6054C32.4805 39.1912 32.4805 40.1409 33.0662 40.7267C33.652 41.3125 34.6018 41.3125 35.1876 40.7267L44.7335 31.1808ZM16.3203 31.6201L43.6728 31.6201L43.6728 28.6201L16.3203 28.6201L16.3203 31.6201Z"
+                                          fill="#EDEDFF"/>
+                                </svg>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
 			<?php
 			endwhile;

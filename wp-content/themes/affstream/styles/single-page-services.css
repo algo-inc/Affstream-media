@@ -6,6 +6,11 @@
   justify-content: space-between;
   margin-bottom: 40px;
 }
+@media (max-width: 767px) {
+  .this-post .flex-container {
+    gap: 20px;
+  }
+}
 .this-post .flex-container .name-container {
   display: flex;
   flex-direction: column;
@@ -111,6 +116,9 @@
     font-size: 20px;
   }
 }
+.recent-posts .about-company .company-information-block:last-child, .recent-posts .about-company .paid-information-block:last-child {
+  margin-bottom: 0;
+}
 .recent-posts .about-company .company-information-block p, .recent-posts .about-company .paid-information-block p {
   color: #0C62FD;
   font-family: "SF Pro Display", sans-serif;
@@ -118,11 +126,15 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  margin-bottom: 15px;
 }
 @media (max-width: 1599px) {
   .recent-posts .about-company .company-information-block p, .recent-posts .about-company .paid-information-block p {
     font-size: 18px;
   }
+}
+.recent-posts .about-company .company-information-block p:last-child, .recent-posts .about-company .paid-information-block p:last-child {
+  margin-bottom: 0;
 }
 .recent-posts .about-company .company-information-block p strong, .recent-posts .about-company .paid-information-block p strong {
   color: #100F0F;

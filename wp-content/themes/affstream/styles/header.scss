@@ -190,7 +190,7 @@ header {
       font-size: 20px;
     }
     @include breakpoint(mobile) {
-      padding: 15px;
+      padding: 10px 15px;
       font-size: 23px;
       max-width: 130px;
       width: 100%;
