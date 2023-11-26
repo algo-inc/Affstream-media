@@ -1790,6 +1790,10 @@ footer .container .social .social-links .mail-link {
   }
 }
 
+.wp-block-stackable-icon {
+  max-width: fit-content;
+}
+
 .language-switcher .language-item {
   display: none;
 }

@@ -3,16 +3,7 @@
 Template Name: Login
 */
 ?>
-<?php
-$video_url = get_field('video_loader', 'option');
-$server = $_SERVER['HTTP_HOST'];
-if (!empty($video_url) && !wp_is_mobile()) {
-	if (strpos($server, 'localhost') === false) {
-		echo '<video class="video-loader" src="' . esc_url($video_url) . '" autoplay muted></video>';
-	}
-}
 
-?>
 <?php get_header() ?>
 <style>
     .autofilled {

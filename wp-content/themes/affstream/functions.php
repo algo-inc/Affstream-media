@@ -133,9 +133,8 @@ function affstream_scripts() {
 	if ( registration_pages() || is_page_template( 'for-advartiser-page.php' ) ) {
 		wp_enqueue_style( 'affstream-materialize', get_template_directory_uri() . '/styles/materialize.css', array(),
 			_S_VERSION );
-		wp_enqueue_style( 'affstream-register', get_template_directory_uri() . '/styles/registration/registration.css',
-			array(), _S_VERSION );
-		wp_enqueue_style( 'google-recaptcha', 'https://www.google.com/recaptcha/api.js', array(), _S_VERSION );
+		wp_enqueue_style( 'affstream-register', get_template_directory_uri() . '/styles/registration/registration.css', array(), _S_VERSION );
+
 	}
 
 	wp_enqueue_style( 'affstream-main', get_template_directory_uri() . '/styles/main.css', null, _S_VERSION );
@@ -144,6 +143,8 @@ function affstream_scripts() {
 	wp_enqueue_style( 'affstream-wow-style', 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css',
 		_S_VERSION );
 	wp_enqueue_script( 'affstream-wow-js', get_template_directory_uri() . '/js/wow.js', _S_VERSION, );
+	wp_enqueue_script( 'affstream-utm', get_template_directory_uri() . '/js/utm-parameters.js', _S_VERSION, );
+	wp_enqueue_script( 'affstream-recaptcha', 'https://www.google.com/recaptcha/api.js', _S_VERSION, );
 
 	wp_enqueue_script( 'affstream-swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js',
 		_S_VERSION );
@@ -273,6 +274,7 @@ include_once( get_template_directory() . '/blocks/recent-posts/index.php' );
 include_once( get_template_directory() . '/blocks/posts-by-category/index.php' );
 include_once( get_template_directory() . '/blocks/popular-post/index.php' );
 include_once( get_template_directory() . '/blocks/affstream-services/index.php' );
+//include_once( get_template_directory() . '/blocks/affstream-quote/index.php' );
 
 
 function get_custom_categories( $post_id, $tax_name ) {
@@ -356,6 +358,19 @@ function render_rating_block( $rating_title, $rating_value, $rating_average ) {
     </div>
 	<?php
 }
+
+
+
+function my_first_block_enqueue() {
+	wp_enqueue_script(
+		'my-first-block',
+		get_template_directory_uri() . '/blocks/affstream-quote/scripts.js',
+		array('wp-blocks', 'wp-i18n', 'wp-element'),
+		true
+	);
+}
+add_action('enqueue_block_editor_assets', 'my_first_block_enqueue');
+
 
 
 function get_ratings_for_post( $post_id ) {
@@ -520,4 +535,5 @@ function custom_comment_fields_order( $fields ) {
 }
 
 add_filter( 'comment_form_fields', 'custom_comment_fields_order' );
+
 

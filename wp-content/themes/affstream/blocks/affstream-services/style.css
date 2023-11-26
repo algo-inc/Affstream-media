@@ -7,6 +7,11 @@
     max-width: 1200px;
   }
 }
+@media (max-width: 767px) {
+  .affstream-services {
+    margin-bottom: 30px;
+  }
+}
 .affstream-services .affstream-services-title {
   padding: 0 16px;
 }
@@ -180,7 +185,7 @@
 }
 .affstream-services .affstream-services-container .service-card .card-container {
   display: grid;
-  grid-template-columns: 200px 40% auto auto;
+  grid-template-columns: 200px 40% 200px auto;
   grid-column-gap: 40px;
   position: relative;
   background: #FFFFFF;

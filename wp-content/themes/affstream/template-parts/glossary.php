@@ -13,14 +13,18 @@
 			while ($query->have_posts()) : $query->the_post();
 				$post_title = get_the_title();
 				$first_letter = mb_strtoupper(mb_substr($post_title, 0, 1, 'UTF-8'));
-
 				if (!in_array($first_letter, $unique_letters)) {
 					$unique_letters[] = $first_letter;
 				}
 			endwhile;
 			sort($unique_letters);
-			foreach ($unique_letters as $letter) {
-				echo '<li><a href="#" data-letter="' . $letter . '">' . $letter . '</a></li>';
+			$all_letters = range('A', 'Z');
+			foreach ($all_letters as $letter) {
+				if (in_array($letter, $unique_letters)) {
+					echo '<li><a href="#" data-letter="' . $letter . '">' . $letter . '</a></li>';
+				} else {
+					echo '<li>' . $letter . '</li>';
+				}
 			}
 		endif;
 		wp_reset_postdata();

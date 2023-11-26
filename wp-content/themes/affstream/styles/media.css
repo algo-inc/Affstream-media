@@ -21,54 +21,54 @@ body.page-template-media.custom-background {
   background: #fff;
 }
 
-.page-template-archive-news .posts-section, .page-template-archive-interviews .posts-section, .page-template-archive-university .posts-section, .page-template-archive-services .posts-section {
+.page-template-archive-news .posts-section, .page-template-archive-interviews .posts-section, .page-template-archive-university .posts-section, .page-template-archive-services .posts-section, .page-template-archive-reviews .posts-section {
   position: relative;
   overflow: hidden;
 }
-.page-template-archive-news .stk-block-image, .page-template-archive-interviews .stk-block-image, .page-template-archive-university .stk-block-image, .page-template-archive-services .stk-block-image {
+.page-template-archive-news .stk-block-image, .page-template-archive-interviews .stk-block-image, .page-template-archive-university .stk-block-image, .page-template-archive-services .stk-block-image, .page-template-archive-reviews .stk-block-image {
   max-width: 1300px;
   margin: 50px auto;
   padding: 0 16px;
 }
 @media (max-width: 1599px) {
-  .page-template-archive-news .stk-block-image, .page-template-archive-interviews .stk-block-image, .page-template-archive-university .stk-block-image, .page-template-archive-services .stk-block-image {
+  .page-template-archive-news .stk-block-image, .page-template-archive-interviews .stk-block-image, .page-template-archive-university .stk-block-image, .page-template-archive-services .stk-block-image, .page-template-archive-reviews .stk-block-image {
     max-width: 1200px;
   }
 }
-.page-template-archive-news .description-container, .page-template-archive-interviews .description-container, .page-template-archive-university .description-container, .page-template-archive-services .description-container {
+.page-template-archive-news .description-container, .page-template-archive-interviews .description-container, .page-template-archive-university .description-container, .page-template-archive-services .description-container, .page-template-archive-reviews .description-container {
   display: flex;
   justify-content: center;
   margin: 50px auto;
   position: relative;
 }
 @media (max-width: 1599px) {
-  .page-template-archive-news .description-container, .page-template-archive-interviews .description-container, .page-template-archive-university .description-container, .page-template-archive-services .description-container {
+  .page-template-archive-news .description-container, .page-template-archive-interviews .description-container, .page-template-archive-university .description-container, .page-template-archive-services .description-container, .page-template-archive-reviews .description-container {
     padding: 0 16px;
     margin: 30px auto;
   }
 }
 @media (max-width: 767px) {
-  .page-template-archive-news .description-container, .page-template-archive-interviews .description-container, .page-template-archive-university .description-container, .page-template-archive-services .description-container {
+  .page-template-archive-news .description-container, .page-template-archive-interviews .description-container, .page-template-archive-university .description-container, .page-template-archive-services .description-container, .page-template-archive-reviews .description-container {
     margin-top: 70px;
   }
 }
-.page-template-archive-news .description-container .description, .page-template-archive-interviews .description-container .description, .page-template-archive-university .description-container .description, .page-template-archive-services .description-container .description {
+.page-template-archive-news .description-container .description, .page-template-archive-interviews .description-container .description, .page-template-archive-university .description-container .description, .page-template-archive-services .description-container .description, .page-template-archive-reviews .description-container .description {
   max-width: 800px;
   margin: auto;
   position: relative;
 }
 @media (max-width: 1023px) {
-  .page-template-archive-news .description-container .description, .page-template-archive-interviews .description-container .description, .page-template-archive-university .description-container .description, .page-template-archive-services .description-container .description {
+  .page-template-archive-news .description-container .description, .page-template-archive-interviews .description-container .description, .page-template-archive-university .description-container .description, .page-template-archive-services .description-container .description, .page-template-archive-reviews .description-container .description {
     max-width: 70%;
   }
 }
 @media (max-width: 767px) {
-  .page-template-archive-news .description-container .description, .page-template-archive-interviews .description-container .description, .page-template-archive-university .description-container .description, .page-template-archive-services .description-container .description {
+  .page-template-archive-news .description-container .description, .page-template-archive-interviews .description-container .description, .page-template-archive-university .description-container .description, .page-template-archive-services .description-container .description, .page-template-archive-reviews .description-container .description {
     max-width: 100%;
     padding: 0;
   }
 }
-.page-template-archive-news .description-container .description .decoration-variant-a, .page-template-archive-interviews .description-container .description .decoration-variant-a, .page-template-archive-university .description-container .description .decoration-variant-a, .page-template-archive-services .description-container .description .decoration-variant-a {
+.page-template-archive-news .description-container .description .decoration-variant-a, .page-template-archive-interviews .description-container .description .decoration-variant-a, .page-template-archive-university .description-container .description .decoration-variant-a, .page-template-archive-services .description-container .description .decoration-variant-a, .page-template-archive-reviews .description-container .description .decoration-variant-a {
   position: absolute;
   right: -10%;
   top: -30%;
@@ -76,96 +76,96 @@ body.page-template-media.custom-background {
   max-width: 150px;
 }
 @media (max-width: 1023px) {
-  .page-template-archive-news .description-container .description .decoration-variant-a, .page-template-archive-interviews .description-container .description .decoration-variant-a, .page-template-archive-university .description-container .description .decoration-variant-a, .page-template-archive-services .description-container .description .decoration-variant-a {
+  .page-template-archive-news .description-container .description .decoration-variant-a, .page-template-archive-interviews .description-container .description .decoration-variant-a, .page-template-archive-university .description-container .description .decoration-variant-a, .page-template-archive-services .description-container .description .decoration-variant-a, .page-template-archive-reviews .description-container .description .decoration-variant-a {
     max-width: 130px;
     top: -40%;
   }
 }
 @media (max-width: 767px) {
-  .page-template-archive-news .description-container .description .decoration-variant-a, .page-template-archive-interviews .description-container .description .decoration-variant-a, .page-template-archive-university .description-container .description .decoration-variant-a, .page-template-archive-services .description-container .description .decoration-variant-a {
+  .page-template-archive-news .description-container .description .decoration-variant-a, .page-template-archive-interviews .description-container .description .decoration-variant-a, .page-template-archive-university .description-container .description .decoration-variant-a, .page-template-archive-services .description-container .description .decoration-variant-a, .page-template-archive-reviews .description-container .description .decoration-variant-a {
     max-width: 70px;
     right: -4%;
     top: -20px;
   }
 }
-.page-template-archive-news .description-container .description .decoration-variant-a svg, .page-template-archive-interviews .description-container .description .decoration-variant-a svg, .page-template-archive-university .description-container .description .decoration-variant-a svg, .page-template-archive-services .description-container .description .decoration-variant-a svg {
+.page-template-archive-news .description-container .description .decoration-variant-a svg, .page-template-archive-interviews .description-container .description .decoration-variant-a svg, .page-template-archive-university .description-container .description .decoration-variant-a svg, .page-template-archive-services .description-container .description .decoration-variant-a svg, .page-template-archive-reviews .description-container .description .decoration-variant-a svg {
   width: 100%;
   height: auto;
   animation: rotate 14s linear infinite;
 }
-.page-template-archive-news .description-container .description .decoration-variant-b, .page-template-archive-interviews .description-container .description .decoration-variant-b, .page-template-archive-university .description-container .description .decoration-variant-b, .page-template-archive-services .description-container .description .decoration-variant-b {
+.page-template-archive-news .description-container .description .decoration-variant-b, .page-template-archive-interviews .description-container .description .decoration-variant-b, .page-template-archive-university .description-container .description .decoration-variant-b, .page-template-archive-services .description-container .description .decoration-variant-b, .page-template-archive-reviews .description-container .description .decoration-variant-b {
   position: absolute;
   left: -10%;
   top: -44%;
   z-index: 4;
 }
 @media (max-width: 1023px) {
-  .page-template-archive-news .description-container .description .decoration-variant-b, .page-template-archive-interviews .description-container .description .decoration-variant-b, .page-template-archive-university .description-container .description .decoration-variant-b, .page-template-archive-services .description-container .description .decoration-variant-b {
+  .page-template-archive-news .description-container .description .decoration-variant-b, .page-template-archive-interviews .description-container .description .decoration-variant-b, .page-template-archive-university .description-container .description .decoration-variant-b, .page-template-archive-services .description-container .description .decoration-variant-b, .page-template-archive-reviews .description-container .description .decoration-variant-b {
     max-width: 130px;
     top: -40%;
   }
 }
 @media (max-width: 767px) {
-  .page-template-archive-news .description-container .description .decoration-variant-b, .page-template-archive-interviews .description-container .description .decoration-variant-b, .page-template-archive-university .description-container .description .decoration-variant-b, .page-template-archive-services .description-container .description .decoration-variant-b {
+  .page-template-archive-news .description-container .description .decoration-variant-b, .page-template-archive-interviews .description-container .description .decoration-variant-b, .page-template-archive-university .description-container .description .decoration-variant-b, .page-template-archive-services .description-container .description .decoration-variant-b, .page-template-archive-reviews .description-container .description .decoration-variant-b {
     max-width: 80px;
     left: -4%;
     top: -40px;
   }
 }
-.page-template-archive-news .description-container .description .decoration-variant-b svg, .page-template-archive-interviews .description-container .description .decoration-variant-b svg, .page-template-archive-university .description-container .description .decoration-variant-b svg, .page-template-archive-services .description-container .description .decoration-variant-b svg {
+.page-template-archive-news .description-container .description .decoration-variant-b svg, .page-template-archive-interviews .description-container .description .decoration-variant-b svg, .page-template-archive-university .description-container .description .decoration-variant-b svg, .page-template-archive-services .description-container .description .decoration-variant-b svg, .page-template-archive-reviews .description-container .description .decoration-variant-b svg {
   width: 100%;
   height: auto;
   animation: rotate 14s linear infinite;
 }
-.page-template-archive-news .description-container .description .decoration-variant-university, .page-template-archive-interviews .description-container .description .decoration-variant-university, .page-template-archive-university .description-container .description .decoration-variant-university, .page-template-archive-services .description-container .description .decoration-variant-university {
+.page-template-archive-news .description-container .description .decoration-variant-university, .page-template-archive-interviews .description-container .description .decoration-variant-university, .page-template-archive-university .description-container .description .decoration-variant-university, .page-template-archive-services .description-container .description .decoration-variant-university, .page-template-archive-reviews .description-container .description .decoration-variant-university {
   position: absolute;
   right: -10%;
   top: -40%;
   z-index: 4;
 }
 @media (max-width: 1023px) {
-  .page-template-archive-news .description-container .description .decoration-variant-university, .page-template-archive-interviews .description-container .description .decoration-variant-university, .page-template-archive-university .description-container .description .decoration-variant-university, .page-template-archive-services .description-container .description .decoration-variant-university {
+  .page-template-archive-news .description-container .description .decoration-variant-university, .page-template-archive-interviews .description-container .description .decoration-variant-university, .page-template-archive-university .description-container .description .decoration-variant-university, .page-template-archive-services .description-container .description .decoration-variant-university, .page-template-archive-reviews .description-container .description .decoration-variant-university {
     max-width: 130px;
     top: -40%;
   }
 }
 @media (max-width: 767px) {
-  .page-template-archive-news .description-container .description .decoration-variant-university, .page-template-archive-interviews .description-container .description .decoration-variant-university, .page-template-archive-university .description-container .description .decoration-variant-university, .page-template-archive-services .description-container .description .decoration-variant-university {
+  .page-template-archive-news .description-container .description .decoration-variant-university, .page-template-archive-interviews .description-container .description .decoration-variant-university, .page-template-archive-university .description-container .description .decoration-variant-university, .page-template-archive-services .description-container .description .decoration-variant-university, .page-template-archive-reviews .description-container .description .decoration-variant-university {
     max-width: 70px;
     right: -6%;
     top: -30px;
   }
 }
-.page-template-archive-news .description-container .description .decoration-variant-university svg, .page-template-archive-interviews .description-container .description .decoration-variant-university svg, .page-template-archive-university .description-container .description .decoration-variant-university svg, .page-template-archive-services .description-container .description .decoration-variant-university svg {
+.page-template-archive-news .description-container .description .decoration-variant-university svg, .page-template-archive-interviews .description-container .description .decoration-variant-university svg, .page-template-archive-university .description-container .description .decoration-variant-university svg, .page-template-archive-services .description-container .description .decoration-variant-university svg, .page-template-archive-reviews .description-container .description .decoration-variant-university svg {
   width: 100%;
   height: auto;
   animation: rotate 14s linear infinite;
 }
-.page-template-archive-news .description-container .description .decoration-variant-services, .page-template-archive-interviews .description-container .description .decoration-variant-services, .page-template-archive-university .description-container .description .decoration-variant-services, .page-template-archive-services .description-container .description .decoration-variant-services {
+.page-template-archive-news .description-container .description .decoration-variant-services, .page-template-archive-interviews .description-container .description .decoration-variant-services, .page-template-archive-university .description-container .description .decoration-variant-services, .page-template-archive-services .description-container .description .decoration-variant-services, .page-template-archive-reviews .description-container .description .decoration-variant-services {
   position: absolute;
   right: -10%;
   top: -40%;
   z-index: 4;
 }
 @media (max-width: 1023px) {
-  .page-template-archive-news .description-container .description .decoration-variant-services, .page-template-archive-interviews .description-container .description .decoration-variant-services, .page-template-archive-university .description-container .description .decoration-variant-services, .page-template-archive-services .description-container .description .decoration-variant-services {
+  .page-template-archive-news .description-container .description .decoration-variant-services, .page-template-archive-interviews .description-container .description .decoration-variant-services, .page-template-archive-university .description-container .description .decoration-variant-services, .page-template-archive-services .description-container .description .decoration-variant-services, .page-template-archive-reviews .description-container .description .decoration-variant-services {
     max-width: 130px;
     top: -40%;
   }
 }
 @media (max-width: 767px) {
-  .page-template-archive-news .description-container .description .decoration-variant-services, .page-template-archive-interviews .description-container .description .decoration-variant-services, .page-template-archive-university .description-container .description .decoration-variant-services, .page-template-archive-services .description-container .description .decoration-variant-services {
+  .page-template-archive-news .description-container .description .decoration-variant-services, .page-template-archive-interviews .description-container .description .decoration-variant-services, .page-template-archive-university .description-container .description .decoration-variant-services, .page-template-archive-services .description-container .description .decoration-variant-services, .page-template-archive-reviews .description-container .description .decoration-variant-services {
     max-width: 70px;
     right: -4%;
     top: -20px;
   }
 }
-.page-template-archive-news .description-container .description .decoration-variant-services svg, .page-template-archive-interviews .description-container .description .decoration-variant-services svg, .page-template-archive-university .description-container .description .decoration-variant-services svg, .page-template-archive-services .description-container .description .decoration-variant-services svg {
+.page-template-archive-news .description-container .description .decoration-variant-services svg, .page-template-archive-interviews .description-container .description .decoration-variant-services svg, .page-template-archive-university .description-container .description .decoration-variant-services svg, .page-template-archive-services .description-container .description .decoration-variant-services svg, .page-template-archive-reviews .description-container .description .decoration-variant-services svg {
   width: 100%;
   height: auto;
   animation: rotate 14s linear infinite;
 }
-.page-template-archive-news .description-container .description p, .page-template-archive-interviews .description-container .description p, .page-template-archive-university .description-container .description p, .page-template-archive-services .description-container .description p {
+.page-template-archive-news .description-container .description p, .page-template-archive-interviews .description-container .description p, .page-template-archive-university .description-container .description p, .page-template-archive-services .description-container .description p, .page-template-archive-reviews .description-container .description p {
   background: black;
   padding: 25px 50px;
   margin: 0;
@@ -183,13 +183,13 @@ body.page-template-media.custom-background {
   box-sizing: border-box;
 }
 @media (max-width: 1023px) {
-  .page-template-archive-news .description-container .description p, .page-template-archive-interviews .description-container .description p, .page-template-archive-university .description-container .description p, .page-template-archive-services .description-container .description p {
+  .page-template-archive-news .description-container .description p, .page-template-archive-interviews .description-container .description p, .page-template-archive-university .description-container .description p, .page-template-archive-services .description-container .description p, .page-template-archive-reviews .description-container .description p {
     padding: 25px;
     font-size: 18px;
   }
 }
 @media (max-width: 767px) {
-  .page-template-archive-news .description-container .description p, .page-template-archive-interviews .description-container .description p, .page-template-archive-university .description-container .description p, .page-template-archive-services .description-container .description p {
+  .page-template-archive-news .description-container .description p, .page-template-archive-interviews .description-container .description p, .page-template-archive-university .description-container .description p, .page-template-archive-services .description-container .description p, .page-template-archive-reviews .description-container .description p {
     padding: 20px;
     font-size: 15px;
   }

@@ -1,14 +1,15 @@
 import '@felte/element/felte-form';
 import {prepareForm} from '@felte/element';
-import {create, test, enforce} from 'vest';
+import {create, enforce, test} from 'vest';
 import {validator} from '@felte/validator-vest';
 import 'vest/enforce/email';
 import {AutoInit} from 'materialize-css'
 
-
 document.addEventListener('DOMContentLoaded', () => {
   AutoInit(document.body);
 });
+
+
 const suite = create('registerFormValidator', (data) => {
   test('Name', 'Enter user name', () => {
     enforce(data.Name).isNotEmpty().condition(value => {
@@ -58,6 +59,15 @@ const suite = create('registerFormValidator', (data) => {
 });
 
 function sendAjaxRequest(url, method, data) {
+
+  const adParams = JSON.parse(localStorage.getItem('AD_params') || '{}');
+  const currentPageUrl = localStorage.getItem('LandingPageUrl');
+  if (currentPageUrl) {
+    data.LandingPageUrl = currentPageUrl;
+  }
+  Object.assign(data, adParams);
+  console.log(data);
+
   return new Promise(function (resolve, reject) {
     var xhr = new XMLHttpRequest();
     xhr.open(method, url, true);
@@ -74,6 +84,7 @@ function sendAjaxRequest(url, method, data) {
           }
           else {
             openModal('Congratulations!' , 'You sign up for an affiliate network Affstream   Confirm your email and let\'s get started.')
+            localStorage.clear();
           }
           resolve(response);
         } else {
@@ -85,11 +96,13 @@ function sendAjaxRequest(url, method, data) {
   });
 }
 
+
+
 prepareForm('register-form', {
   extend: validator({suite}),
   onSubmit: function (values) {
-    console.log(values);
-    sendAjaxRequest('https://stage-cp.affstream.com/api/account/register/affiliate', 'POST', values)
+
+    sendAjaxRequest('https://cp.affstream.com/api/account/register/affiliate', 'POST', values)
       .then(function (response) {
         console.log('Запит успішно відправлено:', response);
       })
@@ -97,9 +110,13 @@ prepareForm('register-form', {
         console.error('Помилка відправки запиту:', error.message);
       });
   }
+
 }).then(function (felteForm) {
+
   console.log(felteForm);
 });
+
+
 
 const advertiserForm = create('advertiserFormValidator', (data) => {
   test('Name', 'Enter name', () => {
@@ -126,7 +143,7 @@ prepareForm('advertiser-form-validator', {
   extend: validator({suite: advertiserForm}),
   onSubmit: (values) => {
     console.log(values);
-    sendAjaxRequest('https://stage-cp.affstream.com/api/account/register/advertiser', 'POST', values)
+    sendAjaxRequest('https://cp.affstream.com/api/account/register/advertiser', 'POST', values)
       .then(function (response) {
         openModal('Congratulations!', 'You sign up for an affiliate network Affstream n/' +
           'Confirm your email and let\'s get started.');

@@ -1,13 +1,10 @@
-const siteUrl = 'stage-cp.affstream.com';
+const siteUrl = 'cp.affstream.com';
 
 // Створення нового об'єкта XMLHttpRequest
 var xhr = new XMLHttpRequest();
-
-// Налаштування запиту
 xhr.open('GET', 'https://'+ siteUrl +'/api/account/me', true);
 xhr.withCredentials = true;
 
-// Обробник події, який буде викликаний при завершенні запиту
 xhr.onload = function () {
   if (xhr.status === 200) {
 

@@ -35,7 +35,9 @@
     max-width: 1200px;
 
   }
-
+  @include breakpoint(mobile){
+    margin-bottom: 30px;
+  }
   .affstream-services-title {
     padding: 0 16px;
     h2 {
@@ -107,7 +109,6 @@
       transition: all 0.3s linear;
       text-decoration: none;
       &:hover{
-
         .single-page-link{
           transform: translateX(10px);
           svg{
@@ -203,7 +204,7 @@
 
       .card-container {
         display: grid;
-        grid-template-columns: 200px 40% auto auto;
+        grid-template-columns: 200px 40% 200px auto;
         grid-column-gap: 40px;
         position: relative;
         background: #FFFFFF;

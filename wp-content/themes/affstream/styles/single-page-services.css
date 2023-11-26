@@ -9,6 +9,7 @@
 @media (max-width: 767px) {
   .this-post .flex-container {
     gap: 20px;
+    margin-bottom: 30px;
   }
 }
 .this-post .flex-container .name-container {
@@ -50,6 +51,35 @@
   height: fit-content;
   padding: 28px 25px;
   box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.25);
+}
+@media (max-width: 767px) {
+  .this-post .flex-container .service-logo-container {
+    padding: 20px 15px;
+    max-width: 50%;
+    width: 100%;
+  }
+}
+@media (max-width: 767px) {
+  .this-post .desktop {
+    display: none;
+  }
+}
+.this-post .mobile {
+  display: none;
+}
+@media (max-width: 767px) {
+  .this-post .mobile {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.this-post .mobile .name-container {
+  flex-direction: row;
+  gap: 50px;
+  width: 100%;
+}
+.this-post .mobile .main-title {
+  margin-bottom: 0;
 }
 
 @media (max-width: 1285px) {

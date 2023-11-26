@@ -1,5 +1,6 @@
 <?php
 /* Template Name: Media */
+
 get_header( 'media' );
 ?>
     <section class="archive-media">

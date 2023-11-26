@@ -19,33 +19,38 @@
   background: #100F0F;
   padding: 45px;
   margin-bottom: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 @media (max-width: 767px) {
   .glossary .alphabet-list {
-    padding: 10px;
+    padding: 16px;
     gap: 18px;
   }
 }
 .glossary .alphabet-list li {
-  color: #FFF;
+  color: #6E6E6E;
   font-size: 26px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
   text-transform: uppercase;
+  font-family: "SF Pro Display", sans-serif;
 }
 .glossary .alphabet-list li:first-child {
   margin-left: 20px;
 }
 @media (max-width: 767px) {
-  .glossary .alphabet-list li a {
-    color: #FFF;
+  .glossary .alphabet-list li, .glossary .alphabet-list li a {
     font-size: 20px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
     text-transform: uppercase;
   }
+}
+.glossary .alphabet-list li a {
+  color: #FFFFFF;
 }
 .glossary .alphabet-list li .active {
   color: #00E291;
@@ -100,12 +105,12 @@
   }
 }
 .glossary #post-list .glossary-card h2 {
+  color: #0C62FD;
   font-size: 30px;
-  font-style: italic;
-  font-weight: 900;
+  font-style: normal;
+  font-weight: 700;
   line-height: normal;
   text-transform: uppercase;
-  color: #0C62FD;
 }
 @media (max-width: 767px) {
   .glossary #post-list .glossary-card h2 {

@@ -1,0 +1,132 @@
+@mixin breakpoint($breakpoint) {
+  @if $breakpoint == mobile {
+    @media (max-width: 767px) {
+      @content;
+    }
+  } @else if $breakpoint == tablet {
+    @media (max-width: 1023px) {
+      @content;
+    }
+  } @else if $breakpoint == large-tablet {
+    @media (min-width: 1024px) and (max-width: 1300px) {
+      @content;
+    }
+  } @else if $breakpoint == desktop {
+    @media (max-width: 1599px) {
+      @content;
+    }
+  } @else if $breakpoint == large-desktop {
+    @media (max-width: 1919px) {
+      @content;
+    }
+  } @else if $breakpoint == extra-large-desktop {
+    @media (min-width: 1920px) {
+      @content;
+    }
+  } @else {
+    @error "Invalid breakpoint provided. Please use 'mobile', 'tablet', 'large-tablet', 'desktop', 'large-desktop', or 'extra-large-desktop'.";
+  }
+}
+
+.intro-media-section {
+  @include breakpoint(mobile) {
+    padding-bottom: 25px;
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 45px;
+    max-width: 1200px;
+    padding: 0 10px;
+    @include breakpoint(desktop) {
+      max-width: 1200px;
+      padding: 0 16px;
+    }
+    @include breakpoint(tablet) {
+      flex-direction: column;
+    }
+    @include breakpoint(mobile) {
+      flex-direction: column;
+    }
+
+    .inner-slider {
+      max-width: 65%;
+      height: auto;
+      position: relative;
+      @include breakpoint(tablet) {
+        max-width: 100%;
+      }
+      @include breakpoint(mobile) {
+        max-width: 100%;
+      }
+
+      .intro-media-slider {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        border-radius: 10px;
+        height: auto;
+
+        .swiper-slide {
+          img {
+            height: auto;
+            border-radius: 15px;
+            overflow: hidden;
+          }
+        }
+
+        .prev, .next {
+          @include breakpoint(mobile) {
+            display: none;
+          }
+        }
+      }
+
+      .swiper-horizontal > .swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
+        bottom: -20px;
+        left: 0;
+        width: 100%;
+      }
+
+      .swiper-pagination-bullet {
+        background-color: #100F0F;
+      }
+    }
+
+  }
+
+  .inner-container {
+    max-width: 35%;
+    width: 100%;
+    @include breakpoint(tablet) {
+      max-width: 88%;
+      margin: 0 auto;
+    }
+    @include breakpoint(mobile) {
+      max-width: 100%;
+      padding: 15px;
+    }
+    img{
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    p {
+      color: #100F0F;
+      font-size: 22px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      margin-bottom: 0;
+      @include breakpoint(desktop) {
+        font-size: 18px;
+      }
+      @include breakpoint(mobile) {
+        font-size: 15px;
+      }
+    }
+  }
+}
+
+

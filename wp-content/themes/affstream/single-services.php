@@ -17,7 +17,7 @@ $review_link  = get_field( 'field_related_post_review' );
         <div class="container">
             <div class="post-container">
                 <div class="this-post">
-                    <div class="flex-container">
+                    <div class="flex-container desktop" >
                         <div class="name-container">
 							<?php
 							$title = get_the_title();
@@ -53,12 +53,57 @@ $review_link  = get_field( 'field_related_post_review' );
                                 ?>
                             </div>
                         </div>
+	                    <?php if ($service_icon):?>
                         <div class="service-logo-container">
-                            <?php if ($service_icon['url']):?>
                             <img src="<?= $service_icon['url'] ?>" alt="<?= $service_icon['alt'] ?>">
-                            <?php endif; ?>
                         </div>
+	                    <?php endif; ?>
                     </div>
+
+                    <div class="flex-container mobile" >
+                        <div class="name-container">
+	                        <?php if ($service_icon):?>
+                                <div class="service-logo-container">
+                                    <img src="<?= $service_icon['url'] ?>" alt="<?= $service_icon['alt'] ?>">
+                                </div>
+	                        <?php endif; ?>
+
+                            <div class="link-container">
+				                <?php
+				                if ($review_link):
+					                ?>
+                                    <a class="link" href="<?= get_permalink($review_link)?>">Review
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="11" viewBox="0 0 10 11"
+                                             fill="none">
+                                            <path d="M2.62331 10.6019L6.35154 8.48278L9.0278 6.98627C9.29383 6.83666 9.51494 6.62055 9.66872 6.35983C9.8225 6.09911 9.90349 5.80305 9.90349 5.50164C9.90349 5.20022 9.8225 4.90416 9.66872 4.64344C9.51494 4.38272 9.29383 4.16661 9.0278 4.017L2.62331 0.400567C1.46155 -0.258846 0 0.561399 0 1.88559L0 9.11769C0 10.4411 1.46155 11.2583 2.62331 10.6019Z"
+                                                  fill="#0C62FD"/>
+                                        </svg>
+                                    </a>
+				                <?php
+				                endif;
+				                if ($guide_link):
+					                ?>
+                                    <a class="link" href="<?= get_permalink( $guide_link) ?>">Guide
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="11" viewBox="0 0 10 11"
+                                             fill="none">
+                                            <path d="M2.62331 10.6019L6.35154 8.48278L9.0278 6.98627C9.29383 6.83666 9.51494 6.62055 9.66872 6.35983C9.8225 6.09911 9.90349 5.80305 9.90349 5.50164C9.90349 5.20022 9.8225 4.90416 9.66872 4.64344C9.51494 4.38272 9.29383 4.16661 9.0278 4.017L2.62331 0.400567C1.46155 -0.258846 0 0.561399 0 1.88559L0 9.11769C0 10.4411 1.46155 11.2583 2.62331 10.6019Z"
+                                                  fill="#0C62FD"/>
+                                        </svg>
+                                    </a>
+				                <?php
+				                endif;
+				                ?>
+                            </div>
+                        </div>
+	                    <?php
+	                    $title = get_the_title();
+	                    if ( $title ): ?>
+                            <h1 class="main-title">
+			                    <?= $title ?>
+                            </h1>
+	                    <?php endif; ?>
+                    </div>
+
 					<?php the_content(); ?>
                 </div>
                 <div class="share-post-container">

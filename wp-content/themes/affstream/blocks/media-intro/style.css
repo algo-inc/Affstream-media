@@ -24,7 +24,7 @@
 }
 @media (max-width: 767px) {
   .intro-media-section .container {
-    flex-direction: column;
+    flex-direction: column-reverse;
   }
 }
 .intro-media-section .container .inner-slider {
@@ -80,7 +80,6 @@
 @media (max-width: 767px) {
   .intro-media-section .inner-container {
     max-width: 100%;
-    padding: 15px;
   }
 }
 .intro-media-section .inner-container img {

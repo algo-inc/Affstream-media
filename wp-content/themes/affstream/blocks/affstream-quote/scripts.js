@@ -1,26 +1,16 @@
-const iframe = document.getElementById('ytiframe');
-const modal = document.getElementById('video-modal');
+const { registerBlockType } = wp.blocks;
+const { createElement } = wp.element;
 
-function showModal(id) {
-  modal.style.display = 'block';
-  iframe.src = 'https://www.youtube.com/embed/' + id;
-}
+registerBlockType( 'my-custom-block', {
+	title: 'My Custom Block',
+	icon: 'smiley',
+	category: 'common',
 
-function closeModal() {
-  modal.style.display = 'none';
-  iframe.src = '';
-}
+	edit() {
+		return createElement( 'p', null, 'Editing My Custom Block...' );
+	},
 
-
-new Swiper('.video-slider', {
-  loop: true,
-  slidesPerView: 1,
-  navigation: {
-    nextEl: '#<?= $mediaSliderNext ?>',
-    prevEl: '#<?= $mediaSliderPrev ?>',
-  },
-  pagination: {
-    el: '#<?= $mediaSliderPagination ?>',
-    type: 'bullets',
-  },
-});
+	save() {
+		return createElement( 'p', null, 'Saved My Custom Block!' );
+	},
+} );
