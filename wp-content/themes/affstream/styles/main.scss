@@ -1535,6 +1535,7 @@ img, video {
     }
   }
 }
+
 .top-mobile-image, .bottom-mobile-image{
   position: absolute;
   left: 50%;
@@ -1584,6 +1585,7 @@ img, video {
   .container{
    max-width: 930px;
   }
+
   h1, h2{
     background: linear-gradient(to right, #0C62FD, #00E291);
     -webkit-background-clip: text;
@@ -1672,6 +1674,8 @@ img, video {
       line-height: normal;
     }
   }
+
+
 .default-template-bg-right, .default-template-bg-left{
   position: absolute;
   top: 0;

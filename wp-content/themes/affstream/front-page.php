@@ -57,7 +57,7 @@ get_header();
 		                if ($video_or_image_mobile['mime_type'] === 'video/mp4') {
 			                ?>
                             <div id="video-container">
-                                <img  width="394px"  height="394px" src="<?= get_template_directory_uri() . '/img/Affstream.webp' ?>" id="placeholder-image" alt="Image Placeholder">
+
                                 <video width="394px" id="video" height="394px" playsinline loop autoplay muted  src="<?php echo esc_url($mobile_url); ?>">
                                     <source src="<?php echo esc_url($mobile_url); ?>" type="video/mp4">
                                     Ваш браузер не підтримує відео.
@@ -98,13 +98,13 @@ get_header();
                 </style>
                 <script>
                   window.addEventListener("load", function () {
-                    var video = document.getElementById("video");
-                    var placeholderImage = document.getElementById("placeholder-image");
+                        var video = document.getElementById("video");
+                        var placeholderImage = document.getElementById("placeholder-image");
 
-                    setTimeout(function () {
-                      video.style.display = "block";
-                      placeholderImage.style.display = "none";
-                    }, 3000);
+                        setTimeout(function () {
+                          video.style.display = "block";
+                          placeholderImage.style.display = "none";
+                        }, 3000);
                   });
                 </script>
             </div>
@@ -351,6 +351,7 @@ get_header();
             </script>
         </section>
 		<?php get_template_part('template-parts/traffic-sources') ?>
+	    <?php get_template_part('template-parts/about-us-home-page') ?>
 		<?php get_template_part( 'template-parts/events' ) ?>
         <?php get_template_part( 'template-parts/blog' ) ?>
         <section class="home-contacts">
