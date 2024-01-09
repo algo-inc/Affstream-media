@@ -3,9 +3,6 @@
 		<?php the_post_thumbnail( 'thumbnail' ); ?>
     </a>
     <div class="inner-content">
-		<?php
-		custom_display_tags(get_the_ID(), 3);
-		?>
         <a href="<?php the_permalink(); ?>">
             <h3><?php the_title(); ?></h3>
         </a>

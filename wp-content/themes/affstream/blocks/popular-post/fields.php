@@ -16,24 +16,6 @@ function register_acf_fields_for_popular_articles() {
 						'width' => '50%', // Задаємо ширину поля відсотками
 					),
 				),
-				array(
-					'key' => 'field_popular_articles_post_type',
-					'label' => 'Типи постів',
-					'name' => 'post_types',
-					'type' => 'select',
-					'choices' => array(
-						'news' => 'News',
-						'university' => 'University',
-						'reviews' => 'Reviews',
-						'interviews' => 'Interviews',
-					),
-					'multiple' => 0,
-					'allow_null' => 0,
-					'instructions' => 'Виберіть тип постів, який ви хочете відображати в блоку',
-					'wrapper' => array(
-						'width' => '50%', // Задаємо ширину поля відсотками
-					),
-				),
 			),
 			'location' => array(
 				array(

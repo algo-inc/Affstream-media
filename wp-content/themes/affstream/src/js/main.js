@@ -5,8 +5,23 @@ import {validator} from '@felte/validator-vest';
 import 'vest/enforce/email';
 import {AutoInit} from 'materialize-css'
 
+const siteUrl = window.siteUrl;
 document.addEventListener('DOMContentLoaded', () => {
   AutoInit(document.body);
+  function checkAriaInvalid() {
+    const selectFields = document.querySelectorAll('.select-field');
+
+    selectFields.forEach(selectField => {
+      const inputElement = selectField.querySelector('input[type="text"]');
+      const selectElement = selectField.querySelector('select');
+
+      if (selectElement.getAttribute('aria-invalid') === 'true') {
+        inputElement.setAttribute('aria-invalid', 'true');
+      }
+    });
+  }
+
+  checkAriaInvalid();
 });
 
 
@@ -41,9 +56,7 @@ const suite = create('registerFormValidator', (data) => {
   test('Messenger', 'Enter contact ', () => {
     enforce(data.Messenger).isNotEmpty();
   });
-  test('Country', 'Enter country', () => {
-    enforce(data.Country).isNotEmpty();
-  });
+
   test('HowDidYouKnow', 'Enter traffic sources', () => {
     enforce(data.HowDidYouKnow).isNotEmpty();
   });
@@ -95,14 +108,10 @@ function sendAjaxRequest(url, method, data) {
     xhr.send(JSON.stringify(data));
   });
 }
-
-
-
 prepareForm('register-form', {
   extend: validator({suite}),
   onSubmit: function (values) {
-
-    sendAjaxRequest('https://cp.affstream.com/api/account/register/affiliate', 'POST', values)
+    sendAjaxRequest('https://' + siteUrl + '/api/account/register/affiliate', 'POST', values)
       .then(function (response) {
         console.log('Запит успішно відправлено:', response);
       })
@@ -143,7 +152,7 @@ prepareForm('advertiser-form-validator', {
   extend: validator({suite: advertiserForm}),
   onSubmit: (values) => {
     console.log(values);
-    sendAjaxRequest('https://cp.affstream.com/api/account/register/advertiser', 'POST', values)
+    sendAjaxRequest('https://' + siteUrl + '/api/account/register/advertiser', 'POST', values)
       .then(function (response) {
         openModal('Congratulations!', 'You sign up for an affiliate network Affstream n/' +
           'Confirm your email and let\'s get started.');

@@ -157,10 +157,6 @@
     slidesPerView: 1,
     spaceBetween: 30,
     lazy: true,
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
     thumbs: {
       swiper: eventsNavigation
     }

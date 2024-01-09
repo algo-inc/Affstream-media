@@ -110,6 +110,8 @@ header .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 20px;
+  transition: all 0.4s linear;
 }
 @media (max-width: 1599px) {
   header .container {
@@ -181,9 +183,15 @@ header .container .buttons-container {
   align-items: center;
   gap: 40px;
 }
+@media (min-width: 1024px) and (max-width: 1300px) {
+  header .container .buttons-container {
+    gap: 20px;
+  }
+}
 @media (max-width: 1023px) {
   header .container .buttons-container {
     display: none;
+    gap: 20px;
   }
 }
 @media (max-width: 767px) {
@@ -290,8 +298,8 @@ header .auth-button {
 }
 @media (min-width: 1024px) and (max-width: 1300px) {
   header .auth-button {
-    padding: 10px 22px;
-    font-size: 20px;
+    padding: 10px 15px;
+    font-size: 17px;
   }
 }
 @media (max-width: 767px) {
@@ -6805,6 +6813,135 @@ img, video {
   }
 }
 .coming-soon .container .link-container .go-home:hover {
+  background: #0C62FD;
+}
+
+.about-us {
+  padding: 0 16px;
+  margin-bottom: 40px;
+}
+@media (max-width: 767px) {
+  .about-us {
+    margin-bottom: 0;
+    padding: 70px 16px 0;
+  }
+}
+.about-us h2 {
+  color: #0C62FD;
+  font-family: "SF Pro Display", sans-serif;
+  font-size: 60px;
+  font-style: italic;
+  font-weight: 900;
+  line-height: normal;
+  text-transform: uppercase;
+  text-align: center;
+}
+@media (max-width: 767px) {
+  .about-us h2 {
+    font-size: 33px;
+  }
+}
+.about-us .container {
+  max-width: 1500px;
+  margin: 0 auto 20px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+@media (max-width: 1599px) {
+  .about-us .container {
+    max-width: 1200px;
+  }
+}
+@media (max-width: 767px) {
+  .about-us .container {
+    margin-bottom: 0;
+  }
+}
+.about-us .container .swiper-about-us {
+  margin-bottom: 20px;
+  max-width: 90%;
+}
+@media (max-width: 767px) {
+  .about-us .container .swiper-about-us {
+    max-width: 100%;
+  }
+}
+.about-us .container .about-card {
+  background: #FFFFFF;
+  border-radius: 30px;
+  color: #0c0c0c;
+  padding: 20px;
+}
+@media (max-width: 767px) {
+  .about-us .container .about-card {
+    height: auto;
+  }
+}
+.about-us .container .about-card .flex-container {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+.about-us .container .about-card .flex-container .user {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  font-family: "SF Pro Display", sans-serif;
+}
+.about-us .container .about-card .flex-container .user img {
+  max-width: 60px;
+  height: auto;
+  width: 100%;
+}
+.about-us .container .about-card .flex-container .user .user-info {
+  display: flex;
+  flex-direction: column;
+}
+.about-us .container .about-card .flex-container .user .name {
+  color: #100F0F;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.about-us .container .about-card .flex-container .user .position {
+  color: #100F0F;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.about-us .container .about-card .flex-container .service {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.about-us .container .about-card .comment-text {
+  margin-bottom: 0;
+  color: #100F0F;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+}
+.about-us .container .swiper-about-button-next, .about-us .container .swiper-about-button-prev {
+  position: relative;
+  cursor: pointer;
+}
+@media (max-width: 767px) {
+  .about-us .container .swiper-about-button-next, .about-us .container .swiper-about-button-prev {
+    display: none;
+  }
+}
+.about-us .swiper-pagination {
+  position: relative;
+}
+.about-us .swiper-pagination .swiper-pagination-bullet {
+  background: #FFFFFF;
+}
+.about-us .swiper-pagination .swiper-pagination-bullet-active {
   background: #0C62FD;
 }
 

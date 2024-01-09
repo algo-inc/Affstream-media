@@ -1,9 +1,9 @@
 <?php /* Template Name: Team */ ?>
+<?= get_template_part('template-parts/template-video-loader')?>
 <?php get_header(); ?>
 <section class="team" id="team-page">
     <div class="team-title">
         <img src="<?php the_field('title_image');?>" alt="">
-
     </div>
     <h2>
         Boutique Affiliate Network

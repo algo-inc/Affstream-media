@@ -32,34 +32,36 @@
   padding-bottom: 70px;
   .popular-articles-title{
     display: flex;
-    max-width: 1300px;
+    max-width: 1200px;
     margin: 0 auto 20px;
-
     @include breakpoint(desktop){
       padding: 0 16px;
       max-width: 1200px;
     }
     h2{
-      background: var(--3, linear-gradient(97deg, #0C62FD 0%, #1035B8 100%));
-      background-clip: text;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin: 0;
+      color: #100F0F;
       font-size: 30px;
       font-style: italic;
       font-weight: 900;
       line-height: normal;
       text-transform: uppercase;
+      margin-bottom: 0;
     }
   }
   .container{
     display: flex;
     gap: 75px;
+    max-width: 1200px;
     @include breakpoint(desktop){
+      max-width: 1200px;
+      gap: 30px;
+      padding: 0 16px;
+    }
+    @media (max-width: 1220px) {
       padding: 0 16px;
     }
     @include breakpoint(tablet){
-      gap: 25px;
+      gap: 20px;
     }
     @include breakpoint(mobile){
       flex-direction: column;

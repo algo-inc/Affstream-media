@@ -11,12 +11,16 @@
 
 ?>
 
+
 <!doctype html>
 <html <?php language_attributes(); ?> >
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="profile" href="https://gmpg.org/xfn/11">
+    <script>
+      window.siteUrl = '<?= REQUESTS_URL ?>'
+    </script>
 	<?php wp_head(); ?>
 </head>
  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XM7DHS7E6M"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-XM7DHS7E6M'); </script>
@@ -28,8 +32,6 @@
 <body <?php body_class(); ?>>
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5MNTRNS5" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <?php wp_body_open(); ?>
-
-
 <div id="page" class="site">
     <header id="masthead" class="site-header">
         <div class="container desktop-menu">
@@ -50,7 +52,7 @@
                 <a href="/registration/"  class="auth-button button-login"><?= pll__('SIGN UP')?></a>
             </div>
             <div class="logout-container" style="display: none">
-                <a href="https://cp.affstream.com/" class="dashboard auth-button button-signin">Go to Dashboard</a>
+                <a href=" <?= 'https://' . '/' ?> " class="dashboard auth-button button-signin">Go to Dashboard</a>
                 <div class="logout-btn main-button" ><?= pll__('Logout');?>
                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="15" viewBox="0 0 14 15" fill="none">
                         <path d="M6.13337 14.2458C7.9962 14.2458 9.50635 12.7357 9.50635 10.8729C9.50635 10.5003 9.20432 10.1983 8.83175 10.1983C8.45918 10.1983 8.15715 10.5003 8.15715 10.8729C8.15715 11.9906 7.25104 12.8967 6.13337 12.8967L3.43498 12.8967C2.31724 12.8967 1.41119 11.9906 1.41119 10.8729L1.41119 4.12689C1.41119 3.00915 2.31724 2.1031 3.43498 2.1031L6.13337 2.1031C7.25104 2.1031 8.15715 3.00915 8.15715 4.12689C8.15715 4.49947 8.45918 4.80149 8.83175 4.80149C9.20432 4.80149 9.50635 4.49947 9.50635 4.12689C9.50635 2.26406 7.9962 0.753905 6.13337 0.753905L3.43498 0.753905C1.57215 0.753905 0.0619946 2.26406 0.0619945 4.12689L0.0619939 10.8729C0.0619937 12.7357 1.57215 14.2458 3.43498 14.2458L6.13337 14.2458Z" fill="#EDEDFF"/>

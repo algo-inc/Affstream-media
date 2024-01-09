@@ -1,11 +1,9 @@
 function saveADParamsToLocalStorage() {
   const PageUrl = window.location.href;
   const savedUrl = localStorage.getItem('LandingPageUrl');
-
   if (!savedUrl) {
     localStorage.setItem('LandingPageUrl', PageUrl);
   }
-
   const params = new URLSearchParams(window.location.search);
   const adParams = {
     UtmSource: params.get('utm_source'),

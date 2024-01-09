@@ -11,7 +11,6 @@ $content = get_post( $page_id );
 <div class="posts-section reviews"  >
 	<div class="title-container">
 		<h2 class="section-title"> <?php the_title() ?></h2>
-		<?php the_excerpt(); ?>
 	</div>
     <div class="category-navigation">
 		<?php

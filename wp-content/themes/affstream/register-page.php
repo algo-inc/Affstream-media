@@ -4,7 +4,6 @@ Template Name: Register
 */
 ?>
 
-
 <?php
 get_header()
 ?>
@@ -42,13 +41,14 @@ get_header()
                     </div>
                     <div class="row">
                         <div class="input-field">
-                            <select  id="contact-method"  name="MessengerType" required  onchange="toggleContactField()">
-                                <option value="" disabled selected><?php echo esc_html( pll__( 'Choose your messenger' ) ); ?></option>
+                            <select  id="contact-method"  class="select" name="MessengerType" required  aria-invalid="true" onchange="toggleContactField()" data-select="false">
+                                <option value="" disabled selected ><?php echo esc_html( pll__( 'Choose your messenger' ) ); ?></option>
                                 <option value="4"><?php echo esc_html( pll__( 'Skype' ) ); ?></option>
                                 <option value="6"><?php echo esc_html( pll__( 'Telegram' ) ); ?></option>
                             </select>
                             <label class="select-label"><?php echo esc_html( pll__( 'MESSENGER (TELEGRAM/SKYPE)' ) ); ?></label>
                         </div>
+
                     </div>
                     <div class="row" id="contact-field">
                         <div class="input-field" >
@@ -58,14 +58,14 @@ get_header()
                     </div>
                 </div>
                 <div class="second-column form-column">
-                    <div class="row">
-                        <div class="input-field ">
-                            <select name="Country" id="country" required">
-						        <?= get_template_part('template-parts/country-list'); ?>
-                            </select>
-                            <label class="select-label"><?php echo esc_html( pll__( 'COUNTRY' ) ); ?></label>
-                        </div>
-                    </div>
+<!--                    <div class="row">-->
+<!--                        <div class="input-field">-->
+<!--                            <select name="Country" id="country" required  data-select="false">-->
+<!--						        --><?php //= get_template_part('template-parts/country-list'); ?>
+<!--                            </select>-->
+<!--                            <label class="select-label">--><?php //echo esc_html( pll__( 'COUNTRY' ) ); ?><!--</label>-->
+<!--                        </div>-->
+<!--                    </div>-->
                     <div class="row">
                         <div class="input-field">
                             <input name="TrafficSources" id="traffic-sources" required type="text"  maxlength="100">
@@ -116,6 +116,7 @@ get_header()
     }
   });
 </script>
+
 <script>
 
   function toggleContactField() {
@@ -132,11 +133,7 @@ get_header()
 
   var contactMethodSelect = document.getElementById('contact-method');
   contactMethodSelect.addEventListener('change', toggleContactField);
-
-
   toggleContactField();
-
-
 </script>
 
 <?php get_footer() ?>

@@ -21,7 +21,7 @@ wp-content/themes/affstream/node_modules
 *.tmp
 *.swp
 
-# Ignore environment-specific configuration files
+# Ignore ironment-specific configuration files
 .env
 .env.*
 config.php

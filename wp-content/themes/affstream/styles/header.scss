@@ -30,6 +30,8 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 20px;
+    transition: all 0.4s linear;
     @include breakpoint(desktop){
       max-width: 1200px;
       margin: 0 auto;
@@ -91,9 +93,12 @@ header {
       justify-content: space-between;
       align-items: center;
       gap: 40px;
-
+      @include breakpoint(large-tablet){
+        gap: 20px;
+      }
       @include breakpoint(tablet) {
         display: none;
+        gap: 20px;
       }
       @include breakpoint(mobile) {
         display: none;
@@ -186,8 +191,8 @@ header {
       text-transform: uppercase;
     }
     @include breakpoint(large-tablet){
-      padding: 10px 22px;
-      font-size: 20px;
+      padding: 10px 15px;
+      font-size: 17px;
     }
     @include breakpoint(mobile) {
       padding: 10px 15px;
@@ -218,8 +223,6 @@ header {
   }
 
 }
-
-
 .mobile-menu-container {
   display: none;
   @include breakpoint(tablet) {

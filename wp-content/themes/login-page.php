@@ -47,47 +47,35 @@
 <script>
   M.AutoInit();
 </script>
-<!-- Додайте цей скрипт в ваш HTML-файл або до секції з налаштуваннями JavaScript вашого WordPress-сайту -->
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    // Знаходимо форму за її id
-    const registrationForm = document.getElementById('registrationForm');
-
-    // Обробник події для подання форми
-    registrationForm.addEventListener('submit', function(event) {
-      event.preventDefault(); // Забороняємо стандартну відправку форми
-
-      // Отримуємо дані з полів форми
-      const email = document.getElementById('email').value;
-      const password = document.getElementById('password').value;
-
-      // Створюємо об'єкт з даними для відправки на сервер
-      const data = {
-        "Email": email,
-        "Password": password
-      };
-
-      // Виконуємо POST-запит на реєстрацію партнера за допомогою API
-      fetch('https://cp.affstream.com/api/account/register/affiliate', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-      })
-        .then(response => response.json())
-        .then(result => {
-          // Ваш код для обробки відповіді API, наприклад, показ повідомлення про успішну реєстрацію
-          console.log(result);
-          alert('Реєстрація успішна!');
-        })
-        .catch(error => {
-          // Ваш код для обробки помилки, наприклад, показ повідомлення про невдалу реєстрацію
-          console.error(error);
-          alert('Помилка реєстрації!');
-        });
-    });
-  });
-</script>
+<!--<script>-->
+<!--  document.addEventListener('DOMContentLoaded', function() {-->
+<!--    const registrationForm = document.getElementById('registrationForm');-->
+<!--    registrationForm.addEventListener('submit', function(event) {-->
+<!--      event.preventDefault();-->
+<!--      const email = document.getElementById('email').value;-->
+<!--      const password = document.getElementById('password').value;-->
+<!--      const data = {-->
+<!--        "Email": email,-->
+<!--        "Password": password-->
+<!--      };-->
+<!--      fetch('https://cp.affstream.com/api/account/register/affiliate', {-->
+<!--        method: 'POST',-->
+<!--        headers: {-->
+<!--          'Content-Type': 'application/json'-->
+<!--        },-->
+<!--        body: JSON.stringify(data)-->
+<!--      })-->
+<!--        .then(response => response.json())-->
+<!--        .then(result => {-->
+<!--          console.log(result);-->
+<!--          alert('Реєстрація успішна!');-->
+<!--        })-->
+<!--        .catch(error => {-->
+<!--          console.error(error);-->
+<!--          alert('Помилка реєстрації!');-->
+<!--        });-->
+<!--    });-->
+<!--  });-->
+<!--</script>-->
 </body>
 </html>

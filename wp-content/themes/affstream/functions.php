@@ -131,8 +131,7 @@ function registration_pages() {
 add_action( 'widgets_init', 'affstream_widgets_init' );
 function affstream_scripts() {
 	if ( registration_pages() || is_page_template( 'for-advartiser-page.php' ) ) {
-		wp_enqueue_style( 'affstream-materialize', get_template_directory_uri() . '/styles/materialize.css', array(),
-			_S_VERSION );
+		wp_enqueue_style( 'affstream-materialize', get_template_directory_uri() . '/styles/materialize.css', array(), _S_VERSION );
 		wp_enqueue_style( 'affstream-register', get_template_directory_uri() . '/styles/registration/registration.css', array(), _S_VERSION );
 
 	}
@@ -189,81 +188,6 @@ function my_enqueue_scripts() {
 }
 
 add_action( 'wp_enqueue_scripts', 'my_enqueue_scripts' );
-
-//require get_template_directory() . '/inc/custom-header.php';
-//require get_template_directory() . '/inc/template-tags.php';
-//require get_template_directory() . '/inc/template-functions.php';
-
-//if ( defined( 'JETPACK__VERSION' ) ) {
-//	require get_template_directory() . '/inc/jetpack.php';
-//}
-//
-
-function add_event_logo_field() {
-	acf_add_local_field_group( array(
-		'key'      => 'group_event_logo',
-		'title'    => 'Event Logo',
-		'fields'   => array(
-			array(
-				'key'           => 'field_event_logo',
-				'label'         => 'Logo',
-				'name'          => 'event_logo',
-				'type'          => 'image',
-				'return_format' => 'url',
-				'preview_size'  => 'thumbnail',
-			),
-			array(
-				'key'   => 'field_event_location',
-				'label' => 'Location',
-				'name'  => 'event_location',
-				'type'  => 'text',
-			),
-			array(
-				'key'            => 'field_event_date',
-				'label'          => 'Date',
-				'name'           => 'event_date',
-				'type'           => 'date_picker',
-				'display_format' => 'F j, Y',
-				'return_format'  => 'F j, Y',
-			),
-			array(
-				'key'   => 'field_event_link',
-				'label' => 'Event Link',
-				'name'  => 'event_link',
-				'type'  => 'url',
-			),
-			array(
-				'key'            => 'field_blog_page_link',
-				'label'          => 'Blog Page Link',
-				'name'           => 'blog_page_link',
-				'type'           => 'page_link',
-				'post_type'      => array( 'post' ), // Вкажіть тут типи постів, на які можна посилатися
-				'allow_null'     => true, // Чи може поле бути порожнім
-				'allow_archives' => false, // Чи можна посилатися на архівні сторінки
-			),
-			array(
-				'key'        => 'field_post_article',
-				'label'      => 'Post Article',
-				'name'       => 'post_articles',
-				'type'       => 'post_object',
-				'post_type'  => array( 'reviews', 'university', 'interviews', 'news' ),
-				'allow_null' => true,
-				'multiple'   => false,
-			),
-		),
-		'location' => array(
-			array(
-				array(
-					'param'    => 'post_type',
-					'operator' => '==',
-					'value'    => 'events',
-				),
-			),
-		),
-	) );
-}
-
-add_action( 'acf/init', 'add_event_logo_field' );
 add_action( 'wp_ajax_load_post_data', 'load_post_data' );
 add_action( 'wp_ajax_nopriv_load_post_data', 'load_post_data' );
 include_once( get_template_directory() . '/blocks/post-slider/index.php' );
@@ -291,7 +215,6 @@ function estimated_reading_time() {
 	$word_count       = str_word_count( strip_tags( $content ) );
 	$words_per_minute = 200;
 	$reading_time     = ceil( $word_count / $words_per_minute );
-
 	return $reading_time;
 }
 

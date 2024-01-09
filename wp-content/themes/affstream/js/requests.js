@@ -1,33 +1,25 @@
-const siteUrl = 'cp.affstream.com';
 
-// Створення нового об'єкта XMLHttpRequest
+const siteUrl = window.siteUrl;
 var xhr = new XMLHttpRequest();
 xhr.open('GET', 'https://'+ siteUrl +'/api/account/me', true);
 xhr.withCredentials = true;
 
 xhr.onload = function () {
   if (xhr.status === 200) {
-
     var response = JSON.parse(xhr.responseText);
     var isAuthenticated = response.isAuthenticated;
-
     if (isAuthenticated) {
       console.log('Користувач авторизований');
     } else {
       console.log('Користувач не авторизований');
     }
   } else {
-    // Обробка помилок
     console.error('Помилка під час запиту:', xhr.statusText);
   }
 };
 
 
 xhr.send();
-
-
-
-
 jQuery.noConflict();
 jQuery(document).ready(function ($) {
   function apiLogin(email, password) {

@@ -1,4 +1,4 @@
-
+<?= get_template_part('template-parts/template-video-loader')?>
 <?php
 get_header();
 ?>
@@ -12,7 +12,6 @@ get_header();
             </linearGradient>
         </defs>
     </svg>
-
     <h1><?php the_title()?></h1>
 
 		<?php the_content();  ?>

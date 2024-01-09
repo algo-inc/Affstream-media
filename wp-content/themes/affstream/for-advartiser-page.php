@@ -3,6 +3,7 @@
 Template Name: For advartiser
 */
 ?>
+<?= get_template_part('template-parts/template-video-loader')?>
 <?php
 get_header();
 ?>
