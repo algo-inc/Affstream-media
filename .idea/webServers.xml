@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="dd805ded-c405-44b4-965b-d21243c29fea" name="Affstream" url="https://stage.affstream.com/">
+        <fileTransfer accessType="SFTP" sshConfigId="5d1150bf-4ce7-4309-97cb-33b6dba85715" sshConfig="Affstream">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
