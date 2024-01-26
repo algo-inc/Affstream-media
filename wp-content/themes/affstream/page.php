@@ -1,4 +1,4 @@
-<?= get_template_part('template-parts/template-video-loader')?>
+<?php //= get_template_part('template-parts/template-video-loader')?>
 <?php
 get_header();
 ?>
@@ -15,8 +15,6 @@ get_header();
     <h1><?php the_title()?></h1>
 
 		<?php the_content();  ?>
-
-
     <svg class="default-template-bg-right " width="358" height="1252" viewBox="0 0 358 1252" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M358.03 3.44098C276.987 -2.41954 114.808 50.318 108.007 150.663C97.9196 299.501 336.185 298.475 333.272 447.095C330.307 598.345 -11.4363 547.179 3.47406 741.081C13.5801 872.505 170.762 863.303 251.5 912C390.922 996.093 269 1156.5 154.5 1249" stroke="url(#paint0_linear_397_1259)" stroke-width="5" stroke-linecap="round"/>
         <defs>

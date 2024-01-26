@@ -1,4 +1,4 @@
-const { registerBlockType } = wp.blocks;
+const {registerBlockType} = wp.blocks;
 
 registerBlockType('your-events-plugin/calendar-block', {
     title: 'Calendar Block',

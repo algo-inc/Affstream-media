@@ -561,7 +561,6 @@ function custom_register_news_post_type(): void
             'taxonomies' => array('affstream-tags')
         ),
     );
-
     register_post_type('news', $args);
 }
 

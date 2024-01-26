@@ -21,19 +21,19 @@ get_header();
             <div class="intro-container">
                 <div class="intro-content">
                     <h1 class="close-mobile">
-						<?php the_title() ?>
+                        <?php the_title() ?>
                     </h1>
 
                     <h1 class="mobile-title close-desktop">
-						<?php
-						the_field('title');
-						?>
+                        <?php
+                        the_field('title');
+                        ?>
                     </h1>
                     <h2 class="close-mobile">
-						<?php the_excerpt(); ?>
+                        <?php the_excerpt(); ?>
                     </h2>
                     <h2 class="mobile-sub-title close-desktop">
-						<?php the_field('sub_title'); ?>
+                        <?php the_field('sub_title'); ?>
                     </h2>
 
                     <a aria-label="registration" href="/registration" class="intro-button">
@@ -45,17 +45,17 @@ get_header();
                     </a>
                 </div>
                 <div class="intro-animation">
-	                <?php
-	                $video_or_image_mobile = get_field('video_or_image_mobile');
-	                $video_or_image = get_field('video_or_image');
+                    <?php
+                    $video_or_image_mobile = get_field('video_or_image_mobile');
+                    $video_or_image = get_field('video_or_image');
 
-	                function is_mobile_device() {
-		                return wp_is_mobile();
-	                }
-	                if (is_mobile_device() && !empty($video_or_image_mobile)) {
-		                $mobile_url = $video_or_image_mobile['url'];
-		                if ($video_or_image_mobile['mime_type'] === 'video/mp4') {
-			                ?>
+                    function is_mobile_device() {
+                        return wp_is_mobile();
+                    }
+                    if (is_mobile_device() && !empty($video_or_image_mobile)) {
+                        $mobile_url = $video_or_image_mobile['url'];
+                        if ($video_or_image_mobile['mime_type'] === 'video/mp4') {
+                            ?>
                             <div id="video-container">
 
                                 <video width="394px" id="video" height="394px" playsinline loop autoplay muted  src="<?php echo esc_url($mobile_url); ?>">
@@ -65,51 +65,51 @@ get_header();
 
                             </div>
 
-			                <?php
-		                } else {
-			                ?>
+                            <?php
+                        } else {
+                            ?>
                             <img src="<?php echo esc_url($mobile_url); ?>" alt="">
-			                <?php
-		                }
-	                } elseif (!empty($video_or_image)) {
-		                $desktop_url = $video_or_image['url'];
-		                if ($video_or_image['mime_type'] === 'video/mp4') {
-			                ?>
+                            <?php
+                        }
+                    } elseif (!empty($video_or_image)) {
+                        $desktop_url = $video_or_image['url'];
+                        if ($video_or_image['mime_type'] === 'video/mp4') {
+                            ?>
                             <video width="460px" height="460px"  playsinline loop autoplay muted src="<?php echo esc_url($desktop_url); ?>">
                                 <source src="<?php echo esc_url($desktop_url); ?>" type="video/mp4">
                                 Ваш браузер не підтримує відео.
                             </video>
-			                <?php
-		                } else {
-			                ?>
+                            <?php
+                        } else {
+                            ?>
                             <img src="<?php echo esc_url($desktop_url); ?>" alt="<?php echo esc_attr($video_or_image['alt']); ?>">
-			                <?php
-		                }
-	                }
-	                ?>
+                            <?php
+                        }
+                    }
+                    ?>
                 </div>
 
             </div>
         </section>
         <section class="advantages">
-			<?php
-			$advantagesSlider           = generateId( 'advantages-swiper' );
-			$advantagesSliderPrev       = generateId( 'advantages-slider-prev' );
-			$advantagesSliderNext       = generateId( 'advantages-slider-next' );
-			$advantagesSliderPagination = generateId( 'advantages-slider-pagination' );
-			?>
+            <?php
+            $advantagesSlider           = generateId( 'advantages-swiper' );
+            $advantagesSliderPrev       = generateId( 'advantages-slider-prev' );
+            $advantagesSliderNext       = generateId( 'advantages-slider-next' );
+            $advantagesSliderPagination = generateId( 'advantages-slider-pagination' );
+            ?>
             <h2 class="advantages-title wow animate__animated  animate__fadeInLeft">Our Advantages</h2>
             <div class="container">
                 <div class="swiper swiper-advantages" id="<?= $advantagesSlider ?>">
                     <div class="swiper-wrapper">
-						<?php
-						$slider = get_field( 'advantages' );
-						if ( $slider ) :
-							foreach ( $slider as $slide ) :
-								include( locate_template( 'template-parts/advantages-slide.php', false, false ) );
-							endforeach;
-						endif;
-						?>
+                        <?php
+                        $slider = get_field( 'advantages' );
+                        if ( $slider ) :
+                            foreach ( $slider as $slide ) :
+                                include( locate_template( 'template-parts/advantages-slide.php', false, false ) );
+                            endforeach;
+                        endif;
+                        ?>
                     </div>
                 </div>
 
@@ -146,43 +146,43 @@ get_header();
             <div class="swiper-pagination " id="<?= $advantagesSliderPagination ?>">
             </div>
             <script>
-              const navigation = new Swiper('.swiper-advantages', {
-                centeredSlides: true,
-                spaceBetween: 30,
-                loop: true,
-                slidesPerView: 3,
-                pagination: {
-                  el: '#<?= $advantagesSliderPagination ?>',
-                  type: 'bullets',
-                },
-                navigation: {
-                  nextEl: '#<?= $advantagesSliderNext ?>',
-                  prevEl: '#<?= $advantagesSliderPrev ?>',
-                },
-                breakpoints: {
-                  0: {
-                    slidesPerView: 1,
-                    spaceBetween: 25,
-                  },
-                  768: {
-                    spaceBetween: 15,
+                const navigation = new Swiper('.swiper-advantages', {
+                    centeredSlides: true,
+                    spaceBetween: 30,
+                    loop: true,
                     slidesPerView: 3,
-                  },
-                  1024: {
-                    slidesPerView: 3,
-                    spaceBetween: 20,
-                  },
-                  1300: {
-                    spaceBetween: 110,
-                  },
-                  1600: {
-                    spaceBetween: 140,
-                  },
-                  1920: {
-                    spaceBetween: 90,
-                  },
-                }
-              });
+                    pagination: {
+                        el: '#<?= $advantagesSliderPagination ?>',
+                        type: 'bullets',
+                    },
+                    navigation: {
+                        nextEl: '#<?= $advantagesSliderNext ?>',
+                        prevEl: '#<?= $advantagesSliderPrev ?>',
+                    },
+                    breakpoints: {
+                        0: {
+                            slidesPerView: 1,
+                            spaceBetween: 25,
+                        },
+                        768: {
+                            spaceBetween: 15,
+                            slidesPerView: 3,
+                        },
+                        1024: {
+                            slidesPerView: 3,
+                            spaceBetween: 20,
+                        },
+                        1300: {
+                            spaceBetween: 110,
+                        },
+                        1600: {
+                            spaceBetween: 140,
+                        },
+                        1920: {
+                            spaceBetween: 90,
+                        },
+                    }
+                });
             </script>
         </section>
         <svg class="decoration-line" width="1920" height="2" viewBox="0 0 1920 2" fill="none"
@@ -197,31 +197,31 @@ get_header();
         </svg>
         <section class="advantages-cards" >
             <div class="container" >
-				<?php
-				$rows = get_field( 'advantages_cards' );
-				if ( $rows ) {
-					foreach ( $rows as $row ) {
-						$image = $row['icon'];
-						$about = $row['about'];
-						?>
+                <?php
+                $rows = get_field( 'advantages_cards' );
+                if ( $rows ) {
+                    foreach ( $rows as $row ) {
+                        $image = $row['icon'];
+                        $about = $row['about'];
+                        ?>
                         <div class="card wow animate__animated  animate__backInUp">
                             <img src="<?= $image['url'] ?>" alt="<?= $image['alt'] ?>">
                             <p>
-								<?= $about ?>
+                                <?= $about ?>
                             </p>
                         </div>
-						<?php
-					}
-				} ?>
+                        <?php
+                    }
+                } ?>
             </div>
         </section>
         <section class="top-brands" >
-			<?php
-			$topBrandsSlider           = generateId( 'top-brands' );
-			$topBrandsSliderPrev       = generateId( 'top-brands-prev' );
-			$topBrandsSliderNext       = generateId( 'top-brands-next' );
-			$topBrandsSliderPagination = generateId( 'top-brands-pagination' );
-			?>
+            <?php
+            $topBrandsSlider           = generateId( 'top-brands' );
+            $topBrandsSliderPrev       = generateId( 'top-brands-prev' );
+            $topBrandsSliderNext       = generateId( 'top-brands-next' );
+            $topBrandsSliderPagination = generateId( 'top-brands-pagination' );
+            ?>
             <div class="container ">
                 <div class="swiper swiper-top-brands" id="<?= $topBrandsSlider ?>">
                     <svg id="top-brands" class="top-brand-title" width="504" height="112" viewBox="0 0 504 112" fill="none"
@@ -242,14 +242,14 @@ get_header();
                         </defs>
                     </svg>
                     <div class="swiper-wrapper">
-						<?php
-						$slider = get_field( 'top_brands' );
-						if ( $slider ) :
-							foreach ( $slider as $slide ) :
-								include( locate_template( 'template-parts/top-brands-slide.php', false, false ) );
-							endforeach;
-						endif;
-						?>
+                        <?php
+                        $slider = get_field( 'top_brands' );
+                        if ( $slider ) :
+                            foreach ( $slider as $slide ) :
+                                include( locate_template( 'template-parts/top-brands-slide.php', false, false ) );
+                            endforeach;
+                        endif;
+                        ?>
                     </div>
                     <div class="swiper-pagination" id="<?= $topBrandsSliderPagination ?>"></div>
                 </div>
@@ -295,59 +295,59 @@ get_header();
                 </div>
             </div>
             <script>
-              document.addEventListener('DOMContentLoaded', function () {
-                var topBrandsNavigation = new Swiper('.swiper-top-brands', {
-                  spaceBetween: 30,
-                  loop: true,
-                  pagination: {
-                    el: '#<?= $topBrandsSliderPagination ?>',
-                    type: 'bullets',
-                  },
-                  navigation: {
-                    nextEl: '#<?= $topBrandsSliderNext ?>',
-                    prevEl: '#<?= $topBrandsSliderPrev ?>',
-                  },
+                document.addEventListener('DOMContentLoaded', function () {
+                    var topBrandsNavigation = new Swiper('.swiper-top-brands', {
+                        spaceBetween: 30,
+                        loop: true,
+                        pagination: {
+                            el: '#<?= $topBrandsSliderPagination ?>',
+                            type: 'bullets',
+                        },
+                        navigation: {
+                            nextEl: '#<?= $topBrandsSliderNext ?>',
+                            prevEl: '#<?= $topBrandsSliderPrev ?>',
+                        },
 
-                  breakpoints: {
-                    480: {
-                      slidesPerView: 1,
-                    },
-                    768: {
-                      slidesPerView: 2,
-                    },
-                    900: {
-                      slidesPerView: 3,
-                      spaceBetween: 30,
-                    },
-                    1350: {
-                      slidesPerView: 4,
-                      spaceBetween: 28,
-                    },
-                    1730: {
-                      slidesPerView: 4,
-                      spaceBetween: 30,
-                    }
-                  }
+                        breakpoints: {
+                            480: {
+                                slidesPerView: 1,
+                            },
+                            768: {
+                                slidesPerView: 2,
+                            },
+                            900: {
+                                slidesPerView: 3,
+                                spaceBetween: 30,
+                            },
+                            1350: {
+                                slidesPerView: 4,
+                                spaceBetween: 28,
+                            },
+                            1730: {
+                                slidesPerView: 4,
+                                spaceBetween: 30,
+                            }
+                        }
+                    });
                 });
-              });
             </script>
         </section>
-		<?php get_template_part('template-parts/traffic-sources') ?>
-	    <?php get_template_part('template-parts/about-us-home-page') ?>
-		<?php get_template_part( 'template-parts/events' ) ?>
+        <?php get_template_part('template-parts/traffic-sources') ?>
+        <?php get_template_part('template-parts/about-us-home-page') ?>
+        <?php get_template_part( 'template-parts/events' ) ?>
         <?php get_template_part( 'template-parts/blog' ) ?>
         <section class="home-contacts">
             <h2 id="contacts" class="wow animate__animated  animate__fadeInLeft ">contact us</h2>
             <div class="container">
 
-				<?php
-				if ( have_rows( 'contacts' ) ):
-					while ( have_rows( 'contacts' ) ) : the_row();?>
-						<?php get_template_part('template-parts/contacts') ?>
-					<?php
-					endwhile;
-				endif;
-				?>
+                <?php
+                if ( have_rows( 'contacts' ) ):
+                    while ( have_rows( 'contacts' ) ) : the_row();?>
+                        <?php get_template_part('template-parts/contacts') ?>
+                    <?php
+                    endwhile;
+                endif;
+                ?>
                 <svg class="top-mobile-image only-mobile" xmlns="http://www.w3.org/2000/svg" width="772" height="734" viewBox="0 0 772 734" fill="none">
                     <path d="M343.775 247.474C366.624 269.172 366.598 304.283 343.717 325.951C320.777 347.674 283.57 347.649 260.663 325.896L19.763 97.1289C-3.08604 75.4307 -3.0602 40.32 19.8213 18.652C42.7609 -3.07111 79.9675 -3.04621 102.875 18.7073L343.775 247.474ZM752.175 636.961C775.024 658.659 774.998 693.77 752.117 715.438C729.177 737.161 691.97 737.136 669.063 715.383L428.163 486.616C405.314 464.918 405.34 429.807 428.221 408.139C451.161 386.416 488.368 386.441 511.275 408.194L752.175 636.961ZM511.003 325.54C488.063 347.263 450.857 347.238 427.95 325.485C405.101 303.786 405.127 268.676 428.008 247.008L669.247 18.5622C692.186 -3.16086 729.393 -3.13596 752.3 18.6175C775.149 40.3158 775.123 75.4264 752.242 97.0944L511.003 325.54ZM102.418 715.42C79.4779 737.143 42.2713 737.118 19.3642 715.365C-3.48491 693.667 -3.45906 658.556 19.4224 636.888L260.661 408.442C283.601 386.719 320.808 386.744 343.715 408.498C366.564 430.196 366.538 465.307 343.656 486.975L102.418 715.42Z" stroke="url(#paint0_radial_2130_6450)" stroke-width="3.86608"/>
                     <defs>
@@ -390,4 +390,5 @@ get_header();
     </main>
 <?php
 get_footer();
+
 

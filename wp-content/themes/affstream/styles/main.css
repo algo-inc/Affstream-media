@@ -6449,6 +6449,9 @@ img, video {
   padding: 160px 10px 140px;
   box-sizing: border-box;
   position: relative;
+
+
+
 }
 @media (max-width: 1599px) {
   .default-template {

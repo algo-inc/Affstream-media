@@ -9,6 +9,7 @@ wp-content/plugins/*
 wp-content/ai1wm-backups/
 wp-content/uploads/
 wp-content/themes/affstream/node_modules/
+**/node_modules/
 # Ignore backup files
 *.bak
 *.backup
