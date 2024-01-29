@@ -1,0 +1,644 @@
+@import "breakpoints";
+.intro {
+  @include breakpoint(desktop) {
+    margin-bottom: 70px;
+  }
+  @include breakpoint(tablet) {
+    margin-top: 82px;
+    height: auto;
+  }
+  @include breakpoint(tablet) {
+    margin-bottom: 100px;
+  }
+
+  .intro-container {
+    max-width: 1600px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    min-height: 800px;
+    @include breakpoint(large-desktop) {
+      max-width: 1420px;
+    }
+    @include breakpoint(desktop) {
+      min-height: 600px;
+      max-width: 1200px;
+    }
+    @include breakpoint(large-tablet) {
+      padding: 0 16px;
+    }
+    @include breakpoint(tablet) {
+      flex-direction: column-reverse;
+      margin: 0 20px 70px;
+
+    }
+    @include breakpoint(mobile) {
+      flex-direction: column-reverse;
+      margin: 0;
+      min-height: 470px;
+      padding: 0 10px;
+    }
+
+    .intro-content {
+      max-width: 65%;
+      @include breakpoint(desktop) {
+        max-width: 60%;
+      }
+      @include breakpoint(tablet) {
+        max-width: 100%;
+      }
+      @include breakpoint(mobile) {
+        max-width: 100%;
+        width: 100%;
+      }
+
+      .banner-title{
+        color: #00E291;
+        font-family: "SF Pro Display" sans-serif;
+        font-size: 60px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        text-transform: uppercase;
+        margin-bottom: 40px;
+        @include breakpoint(desktop) {
+          font-weight: 900;
+          line-height: 143.336%;
+        }
+        @include breakpoint(mobile) {
+          font-size: 31px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+          margin-bottom: 20px;
+        }
+      }
+
+      .banner-subtitle {
+        font-size: 35px;
+        font-style: italic;
+        font-weight: 900;
+        line-height: 143.336%;
+        text-transform: uppercase;
+        display: flex;
+        max-width: 80%;
+        flex-direction: column;
+        margin-bottom: 0;
+        @include breakpoint(desktop) {
+          font-size: 32px;
+          line-height: normal;
+          margin-bottom: 30px;
+          max-width: 100%;
+        }
+        @include breakpoint(tablet) {
+          font-size: 20px;
+        }
+        @include breakpoint(mobile){
+          margin-bottom: 22px;
+          gap: 10px;
+        }
+      }
+
+      .intro-button {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: #FFF;
+        leading-trim: both;
+        text-edge: cap;
+        font-family: "SF Pro Display";
+        font-size: 29px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 91.182%; /* 26.443px */
+        text-transform: uppercase;
+        padding-inline-start: 49px;
+        padding-inline-end: 24px;
+        height: 86px;
+        width:fit-content;
+        transition: 0.3s linear;
+        box-sizing: border-box;
+        margin-top: 70px;
+        border-radius: 93.894px;
+        background: #0C62FD;
+        gap: 20px;
+
+        svg {
+          transform: translateX(-5px);
+          transition: 0.3s linear;
+
+          path {
+            fill: #EDEDFF;
+          }
+
+        }
+
+        &:hover {
+          background: #0C62FD;
+          svg {
+            transform: translateX(5px);
+          }
+        }
+
+        @include breakpoint(desktop) {
+          max-width: 200px;
+          height: 70px;
+          font-size: 29px;
+          padding-inline-start: 28px;
+          padding-inline-end: 20px;
+          svg {
+            width: 20px;
+          }
+        }
+        @include breakpoint(mobile) {
+          height: 56px;
+          font-size: 23px;
+          padding: 24px;
+          line-height: normal;
+          white-space: nowrap;
+          max-width: 170px;
+          margin-top: 0;
+          svg {
+            width: 15px;
+            margin-left: 10px;
+          }
+        }
+      }
+    }
+
+    .intro-animation {
+      width: 100%;
+      height: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: -1;
+      max-width: 35%;
+      @include breakpoint(desktop) {
+        max-width: 40%;
+      }
+      @include breakpoint(tablet) {
+        position: relative;
+        max-width: 100%;
+      }
+
+    }
+  }
+}
+
+
+
+.advantages {
+  position: relative;
+  margin-bottom: 60px;
+  @include breakpoint(desktop) {
+    margin-bottom: 22px;
+    padding: 0 16px;
+  }
+  @include breakpoint(mobile) {
+    margin-bottom: 60px;
+    flex-direction: column;
+  }
+  display: flex;
+  flex-direction: column;
+  .advantages-title {
+    color: #FFF;
+    font-family: "SF Pro Display" sans-serif;
+    font-size: 55px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+    margin-bottom: 0;
+    @include breakpoint(desktop) {
+      font-size: 55.718px;
+      font-style: italic;
+      font-weight: 900;
+      line-height: normal;
+    }
+    @include breakpoint(large-tablet) {
+      margin-bottom: 0;
+      max-width: 1420px;
+    }
+    @include breakpoint(mobile) {
+      font-size: 43px;
+      line-height: normal;
+      padding: 0 10px;
+      margin: 0;
+      text-align: center;
+    }
+
+  }
+  .top-container{
+    display: flex;
+    max-width: 1600px;
+    margin: 0 auto;
+    align-items: center;
+    gap: 48px;
+    width: 100%;
+    @include breakpoint(large-desktop) {
+      max-width: 1420px;
+    }
+    @include breakpoint(desktop) {
+      padding: 0;
+      max-width: 1200px;
+    }
+  }
+  .navigation {
+    width: fit-content;
+    display: flex;
+    gap: 40px;
+    box-sizing: border-box;
+    @include breakpoint(desktop) {
+      max-width: 1210px;
+    }
+    @media (max-width: 1450px) {
+      max-width: 1200px;
+      padding: 0;
+    }
+    .arrow-prev, .arrow-next {
+      position: relative;
+      transition: all 0.3s linear;
+      cursor: pointer;
+      @media(max-width: 1200px) {
+        display: none;
+      }
+
+      &:hover {
+        transform: scale(1.1);
+      }
+
+      svg {
+        @include breakpoint(desktop) {
+          width: 43px;
+        }
+      }
+    }
+    .arrow-prev {
+      @media (max-width: 1500px) {
+        left: 0;
+      }
+    }
+
+    .arrow-next {
+      @media (max-width: 1500px) {
+        right: 0;
+      }
+    }
+  }
+
+  .container {
+    max-width: 1600px;
+    position: relative;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    @include breakpoint(large-desktop) {
+      max-width: 1420px;
+    }
+    @include breakpoint(desktop) {
+      max-width: 1200px;
+    }
+    @include breakpoint(tablet) {
+      margin-bottom: 0;
+      padding: 0;
+    }
+  }
+
+  .swiper-advantages {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 0;
+    @include breakpoint(desktop) {
+      padding: 0;
+      max-width: 1200px;
+    }
+    @include breakpoint(large-tablet) {
+
+    }
+    @media (max-width: 1200px) {
+      max-width: 100%;
+    }
+    @include breakpoint(tablet) {
+    }
+    @include breakpoint(mobile) {
+    }
+
+    .swiper-slide {
+      margin-left: auto;
+      margin-right: auto;
+      transition: 0.4s linear;
+      display: flex;
+      align-items: center;
+      @include breakpoint(mobile) {
+      }
+
+      &.swiper-slide-active {
+
+        @include breakpoint(tablet) {
+          padding: 0;
+        }
+      }
+
+      .advantages-card {
+        height: auto;
+        z-index: 20;
+        width: 100%;
+        display: flex;
+        border: transparent;
+        gap: 25px;
+        border-radius: 70px;
+        -webkit-border-radius: 70px;
+        -moz-border-radius: 70px;
+        position: relative;
+        box-sizing: border-box;
+        align-items: start;
+        @include breakpoint(desktop) {
+          border-radius: 54px;
+        }
+        @include breakpoint(tablet) {
+          padding: 20px;
+          border-radius: 50px;
+        }
+
+        .icon-container {
+          z-index: 22;
+          max-width: 80px;
+          width: 100%;
+          height: auto;
+          background:#2F2C2C;
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          @include breakpoint(desktop) {
+            height: 80px;
+            max-width: 80px;
+          }
+          @include breakpoint(tablet) {
+          }
+        }
+
+        .description {
+          z-index: 22;
+          text-align: center;
+          @include breakpoint(desktop) {
+          }
+          @include breakpoint(tablet) {
+            padding: 0 15px;
+          }
+
+          h3 {
+            font-style: normal;
+            font-weight: 700;
+            font-size: 30px;
+            line-height: 36px;
+            text-align: start;
+            text-transform: uppercase;
+            margin-top: 0;
+            @include breakpoint(desktop) {
+              font-size: 24px;
+              line-height: normal;
+              margin: 0;
+            }
+            @include breakpoint(tablet) {
+              line-height: normal;
+              font-size: 24px;
+            }
+            @include breakpoint(mobile) {
+              font-size: 26px;
+              margin-top: 17px;
+              margin-bottom: 17px;
+            }
+            span{
+              color: #00E291;
+            }
+          }
+
+          .open-active-slide {
+            transition: 0.3s linear;
+            color: #FFF;
+            text-align: start;
+            font-family: "SF Pro Display";
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            margin: 0;
+            animation: fade-in 0.8s ease-in-out forwards;
+            @include breakpoint(desktop) {
+              font-size: 16px;
+              line-height: normal;
+              padding-top: 15px;
+            }
+            @include breakpoint(tablet) {
+              font-size: 18px;
+            }
+            @include breakpoint(mobile) {
+              padding-top: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .swiper-pagination {
+    bottom: 0 !important;
+  }
+
+  .swiper-pagination-bullet {
+    background-color: #00E291;
+    opacity: 1;
+
+    &.swiper-pagination-bullet-active {
+      background-color: #EDEDFF;
+    }
+  }
+}
+
+.advantages-cards {
+  max-width: 1650px;
+  margin: 60px auto 0;
+  overflow: hidden;
+  @include breakpoint(large-desktop) {
+    max-width: 1420px;
+
+  }
+  @include breakpoint(desktop) {
+    max-width: 1200px;
+    padding: 0 16px;
+  }
+  @include breakpoint(mobile) {
+    margin: 40px auto 85px;
+  }
+  .container {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 70px;
+    align-items: center;
+    width: 100%;
+    transition: all 0.3s linear;
+
+    @include breakpoint(desktop){
+      justify-content: space-between;
+      gap: 40px;
+    }
+    @include breakpoint(tablet){
+      flex-direction: column;
+      align-items: flex-start;
+      background-image: url("../icon/payment-models/peyment-models-mobile.png");
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    @include breakpoint(mobile){
+      background-position: 100%;
+    }
+
+    h2{
+      color: #FFF;
+      font-family: "SF Pro Display";
+      font-size: 55px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      text-transform: uppercase;
+      @include breakpoint(mobile){
+        font-size: 36px;
+        margin-bottom: 0px;
+      }
+    }
+    .payment-models-container{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-repeat: no-repeat;
+      background-position:left center;
+      @include breakpoint(large-desktop) {
+
+      }
+      @include breakpoint(tablet){
+        gap: 30px;
+      }
+
+    }
+    .card_0{
+      transform: translate(0px, 0px );
+      margin-right: auto;
+      gap: 70px;
+      .content{
+        width: 335px;
+      }
+    }
+    .card_1{
+      position: relative;
+      margin-right:auto;
+      justify-content: space-between;
+      gap: 70px!important;
+      @include breakpoint(large-tablet){
+        gap: 30px!important;
+      }
+      .content{
+        width: 370px;
+      }
+    }
+    .card_2{
+      transform: translate( 0px, 0px );
+      margin-right: auto;
+      gap: 100px!important;
+    }
+    .card {
+      display: flex;
+      position: relative;
+      min-width: 400px;
+      transition: all 0.3s linear;
+      img{
+        max-width: 100%;
+      }
+      @include breakpoint(large-desktop) {
+       min-width: auto;
+      }
+      @include breakpoint(mobile) {
+        max-width: 100%;
+        width: 100%;
+      }
+
+      img {
+        width: auto;
+        margin: 0 auto;
+
+        @include breakpoint(desktop) {
+        }
+        @include breakpoint(tablet){
+          display: none;
+        }
+        @include breakpoint(mobile) {
+          height: 46px;
+        }
+      }
+      h3{
+        background: #0C62FD;
+        border-radius: 500px;
+        color: #FFF;
+        transition: all 0.3s linear;
+        white-space: nowrap;
+        leading-trim: both;
+        text-edge: cap;
+        font-family: "SF Pro Display";
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 110%; /* 44px */
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        padding: 15px 20px;
+        width: fit-content;
+        @include breakpoint(large-desktop) {
+          max-width: 1420px;
+          font-size: 32px;
+        }
+        @include breakpoint(large-tablet){
+          font-size: 25px;
+        }
+        @include breakpoint(mobile){
+          margin-bottom: 20px;
+          padding: 5px 10px;
+
+        }
+      }
+      p {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 25px;
+        max-width: 98%;
+        color: #EDEDFF;
+        margin-bottom: 0;
+        @include breakpoint(desktop) {
+          color: #EDEDFF;
+          font-size: 25px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: normal;
+        }
+        @include breakpoint(large-tablet) {
+          font-size: 22px;
+        }
+        @include breakpoint(tablet) {
+          font-size: 22px;
+          margin-top: 20px;
+        }
+        @include breakpoint(mobile) {
+          font-size: 18px;
+          line-height: normal;
+          max-width: 70%;
+        }
+      }
+    }
+  }
+}
+
+

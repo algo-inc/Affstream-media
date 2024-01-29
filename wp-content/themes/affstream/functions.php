@@ -135,6 +135,9 @@ function affstream_scripts() {
 		wp_enqueue_style( 'affstream-register', get_template_directory_uri() . '/styles/registration/registration.css', array(), _S_VERSION );
 
 	}
+    if (is_front_page()){
+        wp_enqueue_style( 'affstream-front-page', get_template_directory_uri() . '/styles/front-page.css', null, _S_VERSION );
+    }
 
 	wp_enqueue_style( 'affstream-main', get_template_directory_uri() . '/styles/main.css', null, _S_VERSION );
 	wp_enqueue_style( 'affstream-swiper-style', 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css',
@@ -199,7 +202,6 @@ include_once( get_template_directory() . '/blocks/posts-by-category/index.php' )
 include_once( get_template_directory() . '/blocks/popular-post/index.php' );
 include_once( get_template_directory() . '/blocks/affstream-services/index.php' );
 //include_once( get_template_directory() . '/blocks/affstream-quote/index.php' );
-
 
 function get_custom_categories( $post_id, $tax_name ) {
 	$categories = wp_get_post_terms( 1356, 'reviews-category' );

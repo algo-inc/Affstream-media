@@ -20,22 +20,18 @@ get_header();
         <section class="intro">
             <div class="intro-container">
                 <div class="intro-content">
-                    <h1 class="close-mobile">
-						<?php the_title() ?>
+                    <h1 class="banner-title">
+                        <?php the_title() ?>
                     </h1>
-
-                    <h1 class="mobile-title close-desktop">
-						<?php
-						the_field('title');
-						?>
-                    </h1>
-                    <h2 class="close-mobile">
-						<?php the_excerpt(); ?>
+                    <?php $subtitle = get_the_excerpt(); ?>
+                    <h2 class="banner-subtitle">
+                        <?= $subtitle ?>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="309" height="24" viewBox="0 0 309 24"
+                             fill="none">
+                            <path d="M1 7.05512C81.575 4.60064 162.551 2.40905 243.737 1.3667C263.439 1.11375 320 1.3667 305.885 5.7125C291.77 10.0583 46.6168 18.7059 45.3091 21.603C44.0015 24.5 269.5 21.603 284.655 22.0005"
+                                  stroke="#E0F01E" stroke-linecap="round"/>
+                        </svg>
                     </h2>
-                    <h2 class="mobile-sub-title close-desktop">
-						<?php the_field('sub_title'); ?>
-                    </h2>
-
                     <a aria-label="registration" href="/registration" class="intro-button">
                         sign up
                         <svg width="26" height="27" viewBox="0 0 26 27" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -45,186 +41,165 @@ get_header();
                     </a>
                 </div>
                 <div class="intro-animation">
-	                <?php
-	                $video_or_image_mobile = get_field('video_or_image_mobile');
-	                $video_or_image = get_field('video_or_image');
+                    <?php
+                    $video_url = get_field('banner_video');
+                    $video_poster = get_field('poster_video');
+                    ?>
+                    <div id="video-container">
+                        <video width="460px" height="460px" playsinline loop muted poster="<?= $video_poster['url']?>">
+                            <source src="<?= $video_url ?>" type="video/mp4">
+                        </video>
+                    </div>
 
-	                function is_mobile_device() {
-		                return wp_is_mobile();
-	                }
-	                if (is_mobile_device() && !empty($video_or_image_mobile)) {
-		                $mobile_url = $video_or_image_mobile['url'];
-		                if ($video_or_image_mobile['mime_type'] === 'video/mp4') {
-			                ?>
-                            <div id="video-container">
-
-                                <video width="394px" id="video" height="394px" playsinline loop autoplay muted  src="<?php echo esc_url($mobile_url); ?>">
-                                    <source src="<?php echo esc_url($mobile_url); ?>" type="video/mp4">
-                                    Ваш браузер не підтримує відео.
-                                </video
-
-                            </div>
-
-			                <?php
-		                } else {
-			                ?>
-                            <img src="<?php echo esc_url($mobile_url); ?>" alt="">
-			                <?php
-		                }
-	                } elseif (!empty($video_or_image)) {
-		                $desktop_url = $video_or_image['url'];
-		                if ($video_or_image['mime_type'] === 'video/mp4') {
-			                ?>
-                            <video width="460px" height="460px"  playsinline loop autoplay muted src="<?php echo esc_url($desktop_url); ?>">
-                                <source src="<?php echo esc_url($desktop_url); ?>" type="video/mp4">
-                                Ваш браузер не підтримує відео.
-                            </video>
-			                <?php
-		                } else {
-			                ?>
-                            <img src="<?php echo esc_url($desktop_url); ?>" alt="<?php echo esc_attr($video_or_image['alt']); ?>">
-			                <?php
-		                }
-	                }
-	                ?>
+                    <script>
+                        document.addEventListener('DOMContentLoaded', function () {
+                            var videoContainer = document.getElementById('video-container');
+                            var video = document.querySelector('video');
+                            video.addEventListener('loadeddata', function () {
+                                video.play();
+                            });
+                        });
+                    </script>
                 </div>
-
             </div>
         </section>
         <section class="advantages">
-			<?php
-			$advantagesSlider           = generateId( 'advantages-swiper' );
-			$advantagesSliderPrev       = generateId( 'advantages-slider-prev' );
-			$advantagesSliderNext       = generateId( 'advantages-slider-next' );
-			$advantagesSliderPagination = generateId( 'advantages-slider-pagination' );
-			?>
-            <h2 class="advantages-title wow animate__animated  animate__fadeInLeft">Our Advantages</h2>
+            <?php
+            $advantagesSlider = generateId('advantages-swiper');
+            $advantagesSliderPrev = generateId('advantages-slider-prev');
+            $advantagesSliderNext = generateId('advantages-slider-next');
+            $advantagesSliderPagination = generateId('advantages-slider-pagination');
+
+            ?>
+            <div class="top-container">
+                <h2 class="advantages-title wow animate__animated  animate__fadeInLeft"> Our Advantages</h2>
+                <div class="navigation">
+                    <div class="arrow-next swiper-navigation-desktop" id="<?= $advantagesSliderPrev ?>">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="51" viewBox="0 0 50 51" fill="none">
+                            <circle cx="25" cy="25.8965" r="23.75" transform="rotate(90 25 25.8965)" stroke="#00E291" stroke-width="2.5"/>
+                            <path d="M36.3984 27.1465C37.0888 27.1465 37.6484 26.5868 37.6484 25.8965C37.6484 25.2061 37.0888 24.6465 36.3984 24.6465L36.3984 27.1465ZM12.7208 25.0126C12.2326 25.5008 12.2326 26.2922 12.7208 26.7804L20.6757 34.7353C21.1639 35.2235 21.9553 35.2235 22.4435 34.7353C22.9316 34.2472 22.9316 33.4557 22.4435 32.9676L15.3724 25.8965L22.4435 18.8254C22.9317 18.3373 22.9317 17.5458 22.4435 17.0576C21.9553 16.5695 21.1639 16.5695 20.6757 17.0576L12.7208 25.0126ZM36.3984 24.6465L13.6047 24.6465L13.6047 27.1465L36.3984 27.1465L36.3984 24.6465Z" fill="#00E291"/>
+                        </svg>
+                    </div>
+                    <div class="arrow-prev swiper-navigation-desktop" id="<?= $advantagesSliderNext ?>">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="51" viewBox="0 0 50 51" fill="none">
+                            <circle cx="25" cy="25.8965" r="23.75" transform="rotate(-90 25 25.8965)" stroke="#00E291" stroke-width="2.5"/>
+                            <path d="M13.6016 24.6465C12.9112 24.6465 12.3516 25.2061 12.3516 25.8965C12.3516 26.5868 12.9112 27.1465 13.6016 27.1465L13.6016 24.6465ZM37.2792 26.7804C37.7674 26.2922 37.7674 25.5008 37.2792 25.0126L29.3243 17.0577C28.8361 16.5695 28.0447 16.5695 27.5565 17.0577C27.0684 17.5458 27.0684 18.3373 27.5565 18.8254L34.6276 25.8965L27.5565 32.9676C27.0683 33.4557 27.0683 34.2472 27.5565 34.7353C28.0447 35.2235 28.8361 35.2235 29.3243 34.7353L37.2792 26.7804ZM13.6016 27.1465L36.3953 27.1465L36.3953 24.6465L13.6016 24.6465L13.6016 27.1465Z" fill="#00E291"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
             <div class="container">
                 <div class="swiper swiper-advantages" id="<?= $advantagesSlider ?>">
                     <div class="swiper-wrapper">
-						<?php
-						$slider = get_field( 'advantages' );
-						if ( $slider ) :
-							foreach ( $slider as $slide ) :
-								include( locate_template( 'template-parts/advantages-slide.php', false, false ) );
-							endforeach;
-						endif;
-						?>
+                        <?php
+                        $slider = get_field('advantages');
+                        if ($slider) :
+                            foreach ($slider as $slide) :
+                                include(locate_template('template-parts/advantages-slide.php', false, false));
+                            endforeach;
+                        endif;
+                        ?>
                     </div>
                 </div>
 
             </div>
-            <div class="navigation">
-                <div class="arrow-next swiper-navigation-desktop" id="<?= $advantagesSliderPrev ?>">
-                    <svg width="57" height="60" viewBox="0 0 57 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M42.0782 1.3014L20.8738 13.2232L5.65245 21.6421C4.13936 22.4838 2.88181 23.6996 2.00717 25.1663C1.13253 26.633 0.671878 28.2986 0.671878 29.9943C0.671877 31.69 1.13253 33.3555 2.00717 34.8222C2.88181 36.289 4.13936 37.5047 5.65244 38.3464L42.0782 58.6915C48.6858 62.4011 56.9984 57.7867 56.9984 50.3372L56.9984 9.6514C56.9984 2.2062 48.6858 -2.39104 42.0782 1.3014Z"
-                              fill="url(#paint0_linear_101_714)"/>
-                        <defs>
-                            <linearGradient id="paint0_linear_101_714" x1="0.67188" y1="-4.92422e-06" x2="60.5523"
-                                            y2="56.2143" gradientUnits="userSpaceOnUse">
-                                <stop stop-color="#00E291"/>
-                                <stop offset="1" stop-color="#E0F01E"/>
-                            </linearGradient>
-                        </defs>
-                    </svg>
-                </div>
-                <div class="arrow-prev swiper-navigation-desktop" id="<?= $advantagesSliderNext ?>">
-                    <svg width="58" height="60" viewBox="0 0 58 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M15.9186 58.6986L37.1231 46.7768L52.3444 38.3579C53.8575 37.5162 55.115 36.3004 55.9897 34.8337C56.8643 33.367 57.325 31.7014 57.325 30.0057C57.325 28.31 56.8643 26.6445 55.9897 25.1778C55.115 23.711 53.8575 22.4953 52.3444 21.6536L15.9186 1.30853C9.31102 -2.40114 0.998413 2.21333 0.998413 9.66284L0.998413 50.3486C0.998413 57.7938 9.31102 62.391 15.9186 58.6986Z"
-                              fill="url(#paint0_linear_101_715)"/>
-                        <defs>
-                            <linearGradient id="paint0_linear_101_715" x1="57.325" y1="60" x2="-2.5555" y2="3.78569"
-                                            gradientUnits="userSpaceOnUse">
-                                <stop stop-color="#00E291"/>
-                                <stop offset="1" stop-color="#E0F01E"/>
-                            </linearGradient>
-                        </defs>
-                    </svg>
 
-                </div>
-            </div>
             <div class="swiper-pagination " id="<?= $advantagesSliderPagination ?>">
             </div>
             <script>
-              const navigation = new Swiper('.swiper-advantages', {
-                centeredSlides: true,
-                spaceBetween: 30,
-                loop: true,
-                slidesPerView: 3,
-                pagination: {
-                  el: '#<?= $advantagesSliderPagination ?>',
-                  type: 'bullets',
-                },
-                navigation: {
-                  nextEl: '#<?= $advantagesSliderNext ?>',
-                  prevEl: '#<?= $advantagesSliderPrev ?>',
-                },
-                breakpoints: {
-                  0: {
-                    slidesPerView: 1,
-                    spaceBetween: 25,
-                  },
-                  768: {
-                    spaceBetween: 15,
-                    slidesPerView: 3,
-                  },
-                  1024: {
-                    slidesPerView: 3,
-                    spaceBetween: 20,
-                  },
-                  1300: {
-                    spaceBetween: 110,
-                  },
-                  1600: {
-                    spaceBetween: 140,
-                  },
-                  1920: {
-                    spaceBetween: 90,
-                  },
-                }
-              });
+                const navigation = new Swiper('.swiper-advantages', {
+                    spaceBetween: 30,
+                    slidesPerView: 2,
+                    pagination: {
+                        el: '#<?= $advantagesSliderPagination ?>',
+                        type: 'bullets',
+                    },
+                    navigation: {
+                        nextEl: '#<?= $advantagesSliderNext ?>',
+                        prevEl: '#<?= $advantagesSliderPrev ?>',
+                    },
+                    breakpoints: {
+                        0: {
+                            slidesPerView: 1,
+                            spaceBetween: 25,
+                        },
+                        768: {
+                            spaceBetween: 15,
+                            slidesPerView: 3,
+                        },
+                        1024: {
+                            slidesPerView:2,
+                            spaceBetween: 20,
+                        },
+                        1300: {
+                            spaceBetween: 110,
+                        },
+                        1600: {
+                            spaceBetween: 140,
+                        },
+                        1920: {
+                            spaceBetween: 90,
+                        },
+                    }
+                });
             </script>
         </section>
         <svg class="decoration-line" width="1920" height="2" viewBox="0 0 1920 2" fill="none"
              xmlns="http://www.w3.org/2000/svg">
             <line y1="1" x2="1920" y2="1" stroke="url(#paint0_radial_101_673)" stroke-width="2"/>
             <defs>
-                <radialGradient id="paint0_radial_101_673" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(959.996 -10.5166) rotate(180) scale(738.996 1.41887e+06)">
+                <radialGradient id="paint0_radial_101_673" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+                                gradientTransform="translate(959.996 -10.5166) rotate(180) scale(738.996 1.41887e+06)">
                     <stop stop-color="#00E291"/>
                     <stop offset="1" stop-color="#EDEDFF" stop-opacity="0"/>
                 </radialGradient>
             </defs>
         </svg>
-        <section class="advantages-cards" >
-            <div class="container" >
-				<?php
-				$rows = get_field( 'advantages_cards' );
-				if ( $rows ) {
-					foreach ( $rows as $row ) {
-						$image = $row['icon'];
-						$about = $row['about'];
-						?>
-                        <div class="card wow animate__animated  animate__backInUp">
-                            <img src="<?= $image['url'] ?>" alt="<?= $image['alt'] ?>">
-                            <p>
-								<?= $about ?>
-                            </p>
-                        </div>
-						<?php
-					}
-				} ?>
+        <section class="advantages-cards">
+            <div class="container">
+                <h2>
+                    <?php the_field('payment_models') ?>
+                </h2>
+                <div class="payment-models-container">
+                    <?php
+                    $rows = get_field('advantages_cards');
+                    $count = count($rows);
+                    if ($rows) {
+                        for ($i = 0; $i < $count; $i++) {
+                            $name = $rows[$i]['icon'];
+                            $about = $rows[$i]['about'];
+                            ?>
+
+                            <div class="card <?= 'card_' . $i ?>">
+                                <img src="<?= get_template_directory_uri() . '/icon/payment-models/decoration-arrow-' . $i .'.svg'?>">
+                                <div class="content">
+                                    <h3 class="payment-model-name">
+                                        <?= $name ?>
+                                    </h3>
+                                    <p>
+                                        <?= $about ?>
+                                    </p>
+                                </div>
+
+                            </div>
+                            <?php
+                        }
+                    } ?>
+                </div>
             </div>
         </section>
-        <section class="top-brands" >
-			<?php
-			$topBrandsSlider           = generateId( 'top-brands' );
-			$topBrandsSliderPrev       = generateId( 'top-brands-prev' );
-			$topBrandsSliderNext       = generateId( 'top-brands-next' );
-			$topBrandsSliderPagination = generateId( 'top-brands-pagination' );
-			?>
+        <section class="top-brands">
+            <?php
+            $topBrandsSlider = generateId('top-brands');
+            $topBrandsSliderPrev = generateId('top-brands-prev');
+            $topBrandsSliderNext = generateId('top-brands-next');
+            $topBrandsSliderPagination = generateId('top-brands-pagination');
+            ?>
             <div class="container ">
                 <div class="swiper swiper-top-brands" id="<?= $topBrandsSlider ?>">
-                    <svg id="top-brands" class="top-brand-title" width="504" height="112" viewBox="0 0 504 112" fill="none"
+                    <svg id="top-brands" class="top-brand-title" width="504" height="112" viewBox="0 0 504 112"
+                         fill="none"
                          xmlns="http://www.w3.org/2000/svg">
                         <path d="M47.7412 81H33.249L41.2812 43.1631H27.5752L30.0361 31.6787H71.9404L69.4795 43.1631H55.7734L47.7412 81ZM95.7979 42.377C89.167 42.377 83.5273 50.2725 83.5273 59.9795C83.5273 66.2344 86.7744 70.3018 91.7646 70.3018C98.3955 70.3018 104.069 62.4404 104.069 52.665C104.069 46.376 100.788 42.377 95.7979 42.377ZM91.3203 81.8545C77.2383 81.8545 68.8301 72.8311 68.8301 60.8682C68.8301 42.7871 80.998 30.8242 96.1396 30.8242C110.598 30.8242 118.767 39.8818 118.767 51.8105C118.767 69.96 106.428 81.8545 91.3203 81.8545ZM129.841 31.6787H148.537C160.192 31.6787 166.721 37.8311 166.721 47.0254C166.721 59.6035 157.902 67.5332 143.752 67.5332H136.745L133.874 81H119.416L129.841 31.6787ZM142.009 42.6162L138.967 56.8008H143.854C148.913 56.8008 152.194 53.1436 152.194 48.3242C152.194 44.4277 149.938 42.6162 145.803 42.6162H142.009ZM206.848 81H179.846L190.339 31.6787H213.205C222.98 31.6787 227.868 36.293 227.868 42.1719C227.868 48.8027 223.049 53.7246 216.247 54.9893L216.213 55.2627C221.408 56.459 225.373 60.1504 225.373 65.2773C225.373 74.4375 217.58 81 206.848 81ZM202.541 40.668L200.422 50.6826H206.574C210.71 50.6826 213.444 48.1875 213.444 44.8037C213.444 42.377 211.667 40.668 208.146 40.668H202.541ZM196.115 71.0537H203.156C207.976 71.0537 210.949 68.4219 210.949 64.3545C210.949 61.5176 208.864 59.6719 204.865 59.6719H198.508L196.115 71.0537ZM247.385 54.5449H253.845C258.698 54.5449 261.74 51.6396 261.74 47.6064C261.74 44.1201 259.553 42.377 255.554 42.377H250.017L247.385 54.5449ZM237.78 31.6787H259.963C270.354 31.6787 276.267 37.9678 276.267 46.4102C276.267 53.3828 272.199 60.1504 264.68 63.0898L270.148 81H255.041L250.393 64.457H245.3L241.779 81H227.287L237.78 31.6787ZM305.148 43.7783L296.706 60.9707H306.208L305.456 43.7783H305.148ZM307.097 81L306.652 71.1904H291.682L286.862 81H271.584L298.723 31.6787H316.906L321.965 81H307.097ZM339.841 81H325.998L336.491 31.6787H347.429L360.861 58.749H361.135L366.843 31.6787H380.686L370.192 81H359.255L345.822 53.9297H345.549L339.841 81ZM388.103 31.6787H408.61C420.026 31.6787 428.195 38.6172 428.195 50.5117C428.195 68.251 417.805 81 402.185 81H377.609L388.103 31.6787ZM400.271 43.1289L394.699 69.5156H400.1C407.824 69.5156 413.293 63.0898 413.293 52.3574C413.293 46.8545 410.285 43.1289 405.158 43.1289H400.271ZM429.562 66.4736H443.269C443.679 69.1738 446.926 71.1221 450.993 71.1221C455.197 71.1221 457.829 69.4473 457.829 66.9863C457.829 65.1748 456.906 64.1152 452.258 62.6797L447.097 61.1074C438.859 58.6123 434.484 54.1689 434.484 47.4355C434.484 37.3867 443.166 30.8242 455.129 30.8242C467.844 30.8242 475.603 36.6348 475.671 46.4102H462.443C462.341 43.4707 459.572 41.5225 455.471 41.5225C451.677 41.5225 449.216 43.2314 449.216 45.5557C449.216 47.5381 450.583 48.9053 454.548 50.0674L459.948 51.6396C468.801 54.2031 472.629 57.8945 472.629 65.0039C472.629 75.3945 463.742 81.8545 450.72 81.8545C437.424 81.8545 429.597 76.2148 429.562 66.4736Z"
                               fill="#100F0F"/>
@@ -242,14 +217,14 @@ get_header();
                         </defs>
                     </svg>
                     <div class="swiper-wrapper">
-						<?php
-						$slider = get_field( 'top_brands' );
-						if ( $slider ) :
-							foreach ( $slider as $slide ) :
-								include( locate_template( 'template-parts/top-brands-slide.php', false, false ) );
-							endforeach;
-						endif;
-						?>
+                        <?php
+                        $slider = get_field('top_brands');
+                        if ($slider) :
+                            foreach ($slider as $slide) :
+                                include(locate_template('template-parts/top-brands-slide.php', false, false));
+                            endforeach;
+                        endif;
+                        ?>
                     </div>
                     <div class="swiper-pagination" id="<?= $topBrandsSliderPagination ?>"></div>
                 </div>
@@ -295,91 +270,103 @@ get_header();
                 </div>
             </div>
             <script>
-              document.addEventListener('DOMContentLoaded', function () {
-                var topBrandsNavigation = new Swiper('.swiper-top-brands', {
-                  spaceBetween: 30,
-                  loop: true,
-                  pagination: {
-                    el: '#<?= $topBrandsSliderPagination ?>',
-                    type: 'bullets',
-                  },
-                  navigation: {
-                    nextEl: '#<?= $topBrandsSliderNext ?>',
-                    prevEl: '#<?= $topBrandsSliderPrev ?>',
-                  },
+                document.addEventListener('DOMContentLoaded', function () {
+                    var topBrandsNavigation = new Swiper('.swiper-top-brands', {
+                        spaceBetween: 30,
+                        loop: true,
+                        pagination: {
+                            el: '#<?= $topBrandsSliderPagination ?>',
+                            type: 'bullets',
+                        },
+                        navigation: {
+                            nextEl: '#<?= $topBrandsSliderNext ?>',
+                            prevEl: '#<?= $topBrandsSliderPrev ?>',
+                        },
 
-                  breakpoints: {
-                    480: {
-                      slidesPerView: 1,
-                    },
-                    768: {
-                      slidesPerView: 2,
-                    },
-                    900: {
-                      slidesPerView: 3,
-                      spaceBetween: 30,
-                    },
-                    1350: {
-                      slidesPerView: 4,
-                      spaceBetween: 28,
-                    },
-                    1730: {
-                      slidesPerView: 4,
-                      spaceBetween: 30,
-                    }
-                  }
+                        breakpoints: {
+                            480: {
+                                slidesPerView: 1,
+                            },
+                            768: {
+                                slidesPerView: 2,
+                            },
+                            900: {
+                                slidesPerView: 3,
+                                spaceBetween: 30,
+                            },
+                            1350: {
+                                slidesPerView: 4,
+                                spaceBetween: 28,
+                            },
+                            1730: {
+                                slidesPerView: 4,
+                                spaceBetween: 30,
+                            }
+                        }
+                    });
                 });
-              });
             </script>
         </section>
-		<?php get_template_part('template-parts/traffic-sources') ?>
-	    <?php get_template_part('template-parts/about-us-home-page') ?>
-		<?php get_template_part( 'template-parts/events' ) ?>
-        <?php get_template_part( 'template-parts/blog' ) ?>
+        <?php get_template_part('template-parts/traffic-sources') ?>
+        <?php get_template_part('template-parts/about-us-home-page') ?>
+        <?php get_template_part('template-parts/events') ?>
+        <?php get_template_part('template-parts/blog') ?>
         <section class="home-contacts">
             <h2 id="contacts" class="wow animate__animated  animate__fadeInLeft ">contact us</h2>
             <div class="container">
 
-				<?php
-				if ( have_rows( 'contacts' ) ):
-					while ( have_rows( 'contacts' ) ) : the_row();?>
-						<?php get_template_part('template-parts/contacts') ?>
-					<?php
-					endwhile;
-				endif;
-				?>
-                <svg class="top-mobile-image only-mobile" xmlns="http://www.w3.org/2000/svg" width="772" height="734" viewBox="0 0 772 734" fill="none">
-                    <path d="M343.775 247.474C366.624 269.172 366.598 304.283 343.717 325.951C320.777 347.674 283.57 347.649 260.663 325.896L19.763 97.1289C-3.08604 75.4307 -3.0602 40.32 19.8213 18.652C42.7609 -3.07111 79.9675 -3.04621 102.875 18.7073L343.775 247.474ZM752.175 636.961C775.024 658.659 774.998 693.77 752.117 715.438C729.177 737.161 691.97 737.136 669.063 715.383L428.163 486.616C405.314 464.918 405.34 429.807 428.221 408.139C451.161 386.416 488.368 386.441 511.275 408.194L752.175 636.961ZM511.003 325.54C488.063 347.263 450.857 347.238 427.95 325.485C405.101 303.786 405.127 268.676 428.008 247.008L669.247 18.5622C692.186 -3.16086 729.393 -3.13596 752.3 18.6175C775.149 40.3158 775.123 75.4264 752.242 97.0944L511.003 325.54ZM102.418 715.42C79.4779 737.143 42.2713 737.118 19.3642 715.365C-3.48491 693.667 -3.45906 658.556 19.4224 636.888L260.661 408.442C283.601 386.719 320.808 386.744 343.715 408.498C366.564 430.196 366.538 465.307 343.656 486.975L102.418 715.42Z" stroke="url(#paint0_radial_2130_6450)" stroke-width="3.86608"/>
+                <?php
+                if (have_rows('contacts')):
+                    while (have_rows('contacts')) : the_row(); ?>
+                        <?php get_template_part('template-parts/contacts') ?>
+                    <?php
+                    endwhile;
+                endif;
+                ?>
+                <svg class="top-mobile-image only-mobile" xmlns="http://www.w3.org/2000/svg" width="772" height="734"
+                     viewBox="0 0 772 734" fill="none">
+                    <path d="M343.775 247.474C366.624 269.172 366.598 304.283 343.717 325.951C320.777 347.674 283.57 347.649 260.663 325.896L19.763 97.1289C-3.08604 75.4307 -3.0602 40.32 19.8213 18.652C42.7609 -3.07111 79.9675 -3.04621 102.875 18.7073L343.775 247.474ZM752.175 636.961C775.024 658.659 774.998 693.77 752.117 715.438C729.177 737.161 691.97 737.136 669.063 715.383L428.163 486.616C405.314 464.918 405.34 429.807 428.221 408.139C451.161 386.416 488.368 386.441 511.275 408.194L752.175 636.961ZM511.003 325.54C488.063 347.263 450.857 347.238 427.95 325.485C405.101 303.786 405.127 268.676 428.008 247.008L669.247 18.5622C692.186 -3.16086 729.393 -3.13596 752.3 18.6175C775.149 40.3158 775.123 75.4264 752.242 97.0944L511.003 325.54ZM102.418 715.42C79.4779 737.143 42.2713 737.118 19.3642 715.365C-3.48491 693.667 -3.45906 658.556 19.4224 636.888L260.661 408.442C283.601 386.719 320.808 386.744 343.715 408.498C366.564 430.196 366.538 465.307 343.656 486.975L102.418 715.42Z"
+                          stroke="url(#paint0_radial_2130_6450)" stroke-width="3.86608"/>
                     <defs>
-                        <radialGradient id="paint0_radial_2130_6450" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(385.834 367.491) scale(388.195 368.138)">
+                        <radialGradient id="paint0_radial_2130_6450" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+                                        gradientTransform="translate(385.834 367.491) scale(388.195 368.138)">
                             <stop stop-color="#EDEDFF"/>
                             <stop offset="1" stop-color="#00E291"/>
                         </radialGradient>
                     </defs>
                 </svg>
-                <svg class="bottom-mobile-image only-mobile" xmlns="http://www.w3.org/2000/svg" width="772" height="734" viewBox="0 0 772 734" fill="none">
-                    <path d="M343.464 247.474C366.313 269.172 366.287 304.283 343.405 325.951C320.466 347.674 283.259 347.649 260.352 325.896L19.4518 97.1289C-3.39732 75.4307 -3.37147 40.32 19.51 18.652C42.4496 -3.07111 79.6562 -3.04621 102.563 18.7073L343.464 247.474ZM751.864 636.961C774.713 658.659 774.687 693.77 751.805 715.438C728.866 737.161 691.659 737.136 668.752 715.383L427.852 486.616C405.003 464.918 405.029 429.807 427.91 408.139C450.85 386.416 488.056 386.441 510.963 408.194L751.864 636.961ZM510.692 325.54C487.752 347.263 450.546 347.238 427.639 325.485C404.789 303.786 404.815 268.676 427.697 247.008L668.936 18.5622C691.875 -3.16086 729.082 -3.13596 751.989 18.6175C774.838 40.3158 774.812 75.4264 751.931 97.0944L510.692 325.54ZM102.106 715.42C79.1666 737.143 41.9601 737.118 19.0529 715.365C-3.79619 693.667 -3.77034 658.556 19.1111 636.888L260.35 408.442C283.29 386.719 320.496 386.744 343.403 408.498C366.252 430.196 366.227 465.307 343.345 486.975L102.106 715.42Z" stroke="url(#paint0_radial_2126_6471)" stroke-width="3.86608"/>
+                <svg class="bottom-mobile-image only-mobile" xmlns="http://www.w3.org/2000/svg" width="772" height="734"
+                     viewBox="0 0 772 734" fill="none">
+                    <path d="M343.464 247.474C366.313 269.172 366.287 304.283 343.405 325.951C320.466 347.674 283.259 347.649 260.352 325.896L19.4518 97.1289C-3.39732 75.4307 -3.37147 40.32 19.51 18.652C42.4496 -3.07111 79.6562 -3.04621 102.563 18.7073L343.464 247.474ZM751.864 636.961C774.713 658.659 774.687 693.77 751.805 715.438C728.866 737.161 691.659 737.136 668.752 715.383L427.852 486.616C405.003 464.918 405.029 429.807 427.91 408.139C450.85 386.416 488.056 386.441 510.963 408.194L751.864 636.961ZM510.692 325.54C487.752 347.263 450.546 347.238 427.639 325.485C404.789 303.786 404.815 268.676 427.697 247.008L668.936 18.5622C691.875 -3.16086 729.082 -3.13596 751.989 18.6175C774.838 40.3158 774.812 75.4264 751.931 97.0944L510.692 325.54ZM102.106 715.42C79.1666 737.143 41.9601 737.118 19.0529 715.365C-3.79619 693.667 -3.77034 658.556 19.1111 636.888L260.35 408.442C283.29 386.719 320.496 386.744 343.403 408.498C366.252 430.196 366.227 465.307 343.345 486.975L102.106 715.42Z"
+                          stroke="url(#paint0_radial_2126_6471)" stroke-width="3.86608"/>
                     <defs>
-                        <radialGradient id="paint0_radial_2126_6471" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(385.523 367.491) scale(388.195 368.138)">
+                        <radialGradient id="paint0_radial_2126_6471" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+                                        gradientTransform="translate(385.523 367.491) scale(388.195 368.138)">
                             <stop stop-color="#EDEDFF"/>
                             <stop offset="1" stop-color="#E0F01E"/>
                         </radialGradient>
                     </defs>
                 </svg>
 
-                <svg class="custom-anim-right animate__animated  animate__backInRight animate__slower wow"  width="350" height="350" viewBox="0 0 350 350" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M338.896 45.085L230.555 153.426C220.699 163.282 204.718 163.282 194.862 153.426C185.006 143.57 185.006 127.589 194.862 117.733L303.203 9.39221C313.059 -0.464072 329.04 -0.46407 338.896 9.39221C348.752 19.2485 348.752 35.2287 338.896 45.085ZM154.274 231.396L45.9332 339.737C36.0769 349.593 20.0967 349.593 10.2404 339.737C0.384139 329.881 0.384141 313.901 10.2404 304.044L118.581 195.703C128.438 185.847 144.418 185.847 154.274 195.703C164.13 205.56 164.13 221.54 154.274 231.396ZM304.056 338.884L195.715 230.543C185.859 220.686 185.859 204.706 195.715 194.85C205.572 184.994 221.552 184.994 231.408 194.85L339.749 303.191C349.605 313.047 349.605 329.027 339.749 338.884C329.893 348.74 313.913 348.74 304.056 338.884ZM117.733 154.285L9.39221 45.9443C-0.464073 36.088 -0.46407 20.1078 9.39222 10.2515C19.2485 0.395216 35.2287 0.395219 45.085 10.2515L153.426 118.592C163.282 128.449 163.282 144.429 153.426 154.285C143.57 164.141 127.589 164.141 117.733 154.285Z" stroke="url(#paint0_radial_101_211)" stroke-width="4"/>
+                <svg class="custom-anim-right animate__animated  animate__backInRight animate__slower wow" width="350"
+                     height="350" viewBox="0 0 350 350" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M338.896 45.085L230.555 153.426C220.699 163.282 204.718 163.282 194.862 153.426C185.006 143.57 185.006 127.589 194.862 117.733L303.203 9.39221C313.059 -0.464072 329.04 -0.46407 338.896 9.39221C348.752 19.2485 348.752 35.2287 338.896 45.085ZM154.274 231.396L45.9332 339.737C36.0769 349.593 20.0967 349.593 10.2404 339.737C0.384139 329.881 0.384141 313.901 10.2404 304.044L118.581 195.703C128.438 185.847 144.418 185.847 154.274 195.703C164.13 205.56 164.13 221.54 154.274 231.396ZM304.056 338.884L195.715 230.543C185.859 220.686 185.859 204.706 195.715 194.85C205.572 184.994 221.552 184.994 231.408 194.85L339.749 303.191C349.605 313.047 349.605 329.027 339.749 338.884C329.893 348.74 313.913 348.74 304.056 338.884ZM117.733 154.285L9.39221 45.9443C-0.464073 36.088 -0.46407 20.1078 9.39222 10.2515C19.2485 0.395216 35.2287 0.395219 45.085 10.2515L153.426 118.592C163.282 128.449 163.282 144.429 153.426 154.285C143.57 164.141 127.589 164.141 117.733 154.285Z"
+                          stroke="url(#paint0_radial_101_211)" stroke-width="4"/>
                     <defs>
-                        <radialGradient id="paint0_radial_101_211" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(174.571 174.565) rotate(90) scale(174.565 174.571)">
+                        <radialGradient id="paint0_radial_101_211" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+                                        gradientTransform="translate(174.571 174.565) rotate(90) scale(174.565 174.571)">
                             <stop stop-color="#EDEDFF"/>
                             <stop offset="1" stop-color="#00E291"/>
                         </radialGradient>
                     </defs>
                 </svg>
-                <svg class="wow custom-anim-left animate__animated animate__backInLeft animate__slower" width="350" height="349" viewBox="0 0 350 349" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M230.607 153.362C220.744 163.212 204.764 163.2 194.915 153.337C185.065 143.474 185.077 127.494 194.94 117.644L303.357 9.37968C313.22 -0.469676 329.2 -0.458452 339.049 9.40476C348.899 19.268 348.888 35.2482 339.024 45.0975L230.607 153.362ZM45.8549 339.544C35.9917 349.393 20.0115 349.382 10.1621 339.519C0.312743 329.655 0.323973 313.675 10.1872 303.826L118.604 195.561C128.467 185.712 144.448 185.723 154.297 195.586C164.146 205.449 164.135 221.43 154.272 231.279L45.8549 339.544ZM195.714 230.455C185.864 220.591 185.876 204.611 195.739 194.762C205.602 184.912 221.582 184.924 231.432 194.787L339.696 303.204C349.546 313.067 349.535 329.047 339.671 338.897C329.808 348.746 313.828 348.735 303.979 338.872L195.714 230.455ZM9.5203 45.7253C-0.329055 35.8621 -0.317824 19.8819 9.54538 10.0325C19.4086 0.18318 35.3888 0.194411 45.2382 10.0576L153.503 118.475C163.352 128.338 163.341 144.318 153.478 154.167C143.615 164.017 127.634 164.005 117.785 154.142L9.5203 45.7253Z" stroke="url(#paint0_radial_101_210)" stroke-width="4"/>
+                <svg class="wow custom-anim-left animate__animated animate__backInLeft animate__slower" width="350"
+                     height="349" viewBox="0 0 350 349" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M230.607 153.362C220.744 163.212 204.764 163.2 194.915 153.337C185.065 143.474 185.077 127.494 194.94 117.644L303.357 9.37968C313.22 -0.469676 329.2 -0.458452 339.049 9.40476C348.899 19.268 348.888 35.2482 339.024 45.0975L230.607 153.362ZM45.8549 339.544C35.9917 349.393 20.0115 349.382 10.1621 339.519C0.312743 329.655 0.323973 313.675 10.1872 303.826L118.604 195.561C128.467 185.712 144.448 185.723 154.297 195.586C164.146 205.449 164.135 221.43 154.272 231.279L45.8549 339.544ZM195.714 230.455C185.864 220.591 185.876 204.611 195.739 194.762C205.602 184.912 221.582 184.924 231.432 194.787L339.696 303.204C349.546 313.067 349.535 329.047 339.671 338.897C329.808 348.746 313.828 348.735 303.979 338.872L195.714 230.455ZM9.5203 45.7253C-0.329055 35.8621 -0.317824 19.8819 9.54538 10.0325C19.4086 0.18318 35.3888 0.194411 45.2382 10.0576L153.503 118.475C163.352 128.338 163.341 144.318 153.478 154.167C143.615 164.017 127.634 164.005 117.785 154.142L9.5203 45.7253Z"
+                          stroke="url(#paint0_radial_101_210)" stroke-width="4"/>
                     <defs>
-                        <radialGradient id="paint0_radial_101_210" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(174.608 174.462) rotate(90) scale(174.462 174.468)">
+                        <radialGradient id="paint0_radial_101_210" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+                                        gradientTransform="translate(174.608 174.462) rotate(90) scale(174.462 174.468)">
                             <stop stop-color="#EDEDFF"/>
                             <stop offset="1" stop-color="#E0F01E"/>
                         </radialGradient>

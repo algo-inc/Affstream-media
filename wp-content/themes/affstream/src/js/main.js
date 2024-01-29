@@ -5,6 +5,7 @@ import {validator} from '@felte/validator-vest';
 import 'vest/enforce/email';
 import {AutoInit} from 'materialize-css'
 
+
 const siteUrl = window.siteUrl;
 document.addEventListener('DOMContentLoaded', () => {
   AutoInit(document.body);

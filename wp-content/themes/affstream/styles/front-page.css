@@ -1,0 +1,714 @@
+@media (max-width: 1599px) {
+  .intro {
+    margin-bottom: 70px;
+  }
+}
+@media (max-width: 1023px) {
+  .intro {
+    margin-top: 82px;
+    height: auto;
+  }
+}
+@media (max-width: 1023px) {
+  .intro {
+    margin-bottom: 100px;
+  }
+}
+.intro .intro-container {
+  max-width: 1600px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  min-height: 800px;
+}
+@media (max-width: 1919px) {
+  .intro .intro-container {
+    max-width: 1420px;
+  }
+}
+@media (max-width: 1599px) {
+  .intro .intro-container {
+    min-height: 600px;
+    max-width: 1200px;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1300px) {
+  .intro .intro-container {
+    padding: 0 16px;
+  }
+}
+@media (max-width: 1023px) {
+  .intro .intro-container {
+    flex-direction: column-reverse;
+    margin: 0 20px 70px;
+  }
+}
+@media (max-width: 767px) {
+  .intro .intro-container {
+    flex-direction: column-reverse;
+    margin: 0;
+    min-height: 470px;
+    padding: 0 10px;
+  }
+}
+.intro .intro-container .intro-content {
+  max-width: 65%;
+}
+@media (max-width: 1599px) {
+  .intro .intro-container .intro-content {
+    max-width: 60%;
+  }
+}
+@media (max-width: 1023px) {
+  .intro .intro-container .intro-content {
+    max-width: 100%;
+  }
+}
+@media (max-width: 767px) {
+  .intro .intro-container .intro-content {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+.intro .intro-container .intro-content .banner-title {
+  color: #00E291;
+  font-family: "SF Pro Display" sans-serif;
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+}
+@media (max-width: 1599px) {
+  .intro .intro-container .intro-content .banner-title {
+    font-weight: 900;
+    line-height: 143.336%;
+  }
+}
+@media (max-width: 767px) {
+  .intro .intro-container .intro-content .banner-title {
+    font-size: 31px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 20px;
+  }
+}
+.intro .intro-container .intro-content .banner-subtitle {
+  font-size: 35px;
+  font-style: italic;
+  font-weight: 900;
+  line-height: 143.336%;
+  text-transform: uppercase;
+  display: flex;
+  max-width: 80%;
+  flex-direction: column;
+  margin-bottom: 0;
+}
+@media (max-width: 1599px) {
+  .intro .intro-container .intro-content .banner-subtitle {
+    font-size: 32px;
+    line-height: normal;
+    margin-bottom: 30px;
+    max-width: 100%;
+  }
+}
+@media (max-width: 1023px) {
+  .intro .intro-container .intro-content .banner-subtitle {
+    font-size: 20px;
+  }
+}
+@media (max-width: 767px) {
+  .intro .intro-container .intro-content .banner-subtitle {
+    margin-bottom: 22px;
+    gap: 10px;
+  }
+}
+.intro .intro-container .intro-content .intro-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #FFF;
+  leading-trim: both;
+  text-edge: cap;
+  font-family: "SF Pro Display";
+  font-size: 29px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 91.182%; /* 26.443px */
+  text-transform: uppercase;
+  padding-inline-start: 49px;
+  padding-inline-end: 24px;
+  height: 86px;
+  width: fit-content;
+  transition: 0.3s linear;
+  box-sizing: border-box;
+  margin-top: 70px;
+  border-radius: 93.894px;
+  background: #0C62FD;
+  gap: 20px;
+}
+.intro .intro-container .intro-content .intro-button svg {
+  transform: translateX(-5px);
+  transition: 0.3s linear;
+}
+.intro .intro-container .intro-content .intro-button svg path {
+  fill: #EDEDFF;
+}
+.intro .intro-container .intro-content .intro-button:hover {
+  background: #0C62FD;
+}
+.intro .intro-container .intro-content .intro-button:hover svg {
+  transform: translateX(5px);
+}
+@media (max-width: 1599px) {
+  .intro .intro-container .intro-content .intro-button {
+    max-width: 200px;
+    height: 70px;
+    font-size: 29px;
+    padding-inline-start: 28px;
+    padding-inline-end: 20px;
+  }
+  .intro .intro-container .intro-content .intro-button svg {
+    width: 20px;
+  }
+}
+@media (max-width: 767px) {
+  .intro .intro-container .intro-content .intro-button {
+    height: 56px;
+    font-size: 23px;
+    padding: 24px;
+    line-height: normal;
+    white-space: nowrap;
+    max-width: 170px;
+    margin-top: 0;
+  }
+  .intro .intro-container .intro-content .intro-button svg {
+    width: 15px;
+    margin-left: 10px;
+  }
+}
+.intro .intro-container .intro-animation {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: -1;
+  max-width: 35%;
+}
+@media (max-width: 1599px) {
+  .intro .intro-container .intro-animation {
+    max-width: 40%;
+  }
+}
+@media (max-width: 1023px) {
+  .intro .intro-container .intro-animation {
+    position: relative;
+    max-width: 100%;
+  }
+}
+
+.advantages {
+  position: relative;
+  margin-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+}
+@media (max-width: 1599px) {
+  .advantages {
+    margin-bottom: 22px;
+    padding: 0 16px;
+  }
+}
+@media (max-width: 767px) {
+  .advantages {
+    margin-bottom: 60px;
+    flex-direction: column;
+  }
+}
+.advantages .advantages-title {
+  color: #FFF;
+  font-family: "SF Pro Display" sans-serif;
+  font-size: 55px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: uppercase;
+  margin-bottom: 0;
+}
+@media (max-width: 1599px) {
+  .advantages .advantages-title {
+    font-size: 55.718px;
+    font-style: italic;
+    font-weight: 900;
+    line-height: normal;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1300px) {
+  .advantages .advantages-title {
+    margin-bottom: 0;
+    max-width: 1420px;
+  }
+}
+@media (max-width: 767px) {
+  .advantages .advantages-title {
+    font-size: 43px;
+    line-height: normal;
+    padding: 0 10px;
+    margin: 0;
+    text-align: center;
+  }
+}
+.advantages .top-container {
+  display: flex;
+  max-width: 1600px;
+  margin: 0 auto;
+  align-items: center;
+  gap: 48px;
+  width: 100%;
+}
+@media (max-width: 1919px) {
+  .advantages .top-container {
+    max-width: 1420px;
+  }
+}
+@media (max-width: 1599px) {
+  .advantages .top-container {
+    padding: 0;
+    max-width: 1200px;
+  }
+}
+.advantages .navigation {
+  width: fit-content;
+  display: flex;
+  gap: 40px;
+  box-sizing: border-box;
+}
+@media (max-width: 1599px) {
+  .advantages .navigation {
+    max-width: 1210px;
+  }
+}
+@media (max-width: 1450px) {
+  .advantages .navigation {
+    max-width: 1200px;
+    padding: 0;
+  }
+}
+.advantages .navigation .arrow-prev, .advantages .navigation .arrow-next {
+  position: relative;
+  transition: all 0.3s linear;
+  cursor: pointer;
+}
+@media (max-width: 1200px) {
+  .advantages .navigation .arrow-prev, .advantages .navigation .arrow-next {
+    display: none;
+  }
+}
+.advantages .navigation .arrow-prev:hover, .advantages .navigation .arrow-next:hover {
+  transform: scale(1.1);
+}
+@media (max-width: 1599px) {
+  .advantages .navigation .arrow-prev svg, .advantages .navigation .arrow-next svg {
+    width: 43px;
+  }
+}
+@media (max-width: 1500px) {
+  .advantages .navigation .arrow-prev {
+    left: 0;
+  }
+}
+@media (max-width: 1500px) {
+  .advantages .navigation .arrow-next {
+    right: 0;
+  }
+}
+.advantages .container {
+  max-width: 1600px;
+  position: relative;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+}
+@media (max-width: 1919px) {
+  .advantages .container {
+    max-width: 1420px;
+  }
+}
+@media (max-width: 1599px) {
+  .advantages .container {
+    max-width: 1200px;
+  }
+}
+@media (max-width: 1023px) {
+  .advantages .container {
+    margin-bottom: 0;
+    padding: 0;
+  }
+}
+.advantages .swiper-advantages {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 0;
+}
+@media (max-width: 1599px) {
+  .advantages .swiper-advantages {
+    padding: 0;
+    max-width: 1200px;
+  }
+}
+@media (max-width: 1200px) {
+  .advantages .swiper-advantages {
+    max-width: 100%;
+  }
+}
+.advantages .swiper-advantages .swiper-slide {
+  margin-left: auto;
+  margin-right: auto;
+  transition: 0.4s linear;
+  display: flex;
+  align-items: center;
+}
+@media (max-width: 1023px) {
+  .advantages .swiper-advantages .swiper-slide.swiper-slide-active {
+    padding: 0;
+  }
+}
+.advantages .swiper-advantages .swiper-slide .advantages-card {
+  height: auto;
+  z-index: 20;
+  width: 100%;
+  display: flex;
+  border: transparent;
+  gap: 25px;
+  border-radius: 70px;
+  -webkit-border-radius: 70px;
+  -moz-border-radius: 70px;
+  position: relative;
+  box-sizing: border-box;
+  align-items: start;
+}
+@media (max-width: 1599px) {
+  .advantages .swiper-advantages .swiper-slide .advantages-card {
+    border-radius: 54px;
+  }
+}
+@media (max-width: 1023px) {
+  .advantages .swiper-advantages .swiper-slide .advantages-card {
+    padding: 20px;
+    border-radius: 50px;
+  }
+}
+.advantages .swiper-advantages .swiper-slide .advantages-card .icon-container {
+  z-index: 22;
+  max-width: 80px;
+  width: 100%;
+  height: auto;
+  background: #2F2C2C;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 1599px) {
+  .advantages .swiper-advantages .swiper-slide .advantages-card .icon-container {
+    height: 80px;
+    max-width: 80px;
+  }
+}
+.advantages .swiper-advantages .swiper-slide .advantages-card .description {
+  z-index: 22;
+  text-align: center;
+}
+@media (max-width: 1023px) {
+  .advantages .swiper-advantages .swiper-slide .advantages-card .description {
+    padding: 0 15px;
+  }
+}
+.advantages .swiper-advantages .swiper-slide .advantages-card .description h3 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 36px;
+  text-align: start;
+  text-transform: uppercase;
+  margin-top: 0;
+}
+@media (max-width: 1599px) {
+  .advantages .swiper-advantages .swiper-slide .advantages-card .description h3 {
+    font-size: 24px;
+    line-height: normal;
+    margin: 0;
+  }
+}
+@media (max-width: 1023px) {
+  .advantages .swiper-advantages .swiper-slide .advantages-card .description h3 {
+    line-height: normal;
+    font-size: 24px;
+  }
+}
+@media (max-width: 767px) {
+  .advantages .swiper-advantages .swiper-slide .advantages-card .description h3 {
+    font-size: 26px;
+    margin-top: 17px;
+    margin-bottom: 17px;
+  }
+}
+.advantages .swiper-advantages .swiper-slide .advantages-card .description h3 span {
+  color: #00E291;
+}
+.advantages .swiper-advantages .swiper-slide .advantages-card .description .open-active-slide {
+  transition: 0.3s linear;
+  color: #FFF;
+  text-align: start;
+  font-family: "SF Pro Display";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0;
+  animation: fade-in 0.8s ease-in-out forwards;
+}
+@media (max-width: 1599px) {
+  .advantages .swiper-advantages .swiper-slide .advantages-card .description .open-active-slide {
+    font-size: 16px;
+    line-height: normal;
+    padding-top: 15px;
+  }
+}
+@media (max-width: 1023px) {
+  .advantages .swiper-advantages .swiper-slide .advantages-card .description .open-active-slide {
+    font-size: 18px;
+  }
+}
+@media (max-width: 767px) {
+  .advantages .swiper-advantages .swiper-slide .advantages-card .description .open-active-slide {
+    padding-top: 0;
+  }
+}
+.advantages .swiper-pagination {
+  bottom: 0 !important;
+}
+.advantages .swiper-pagination-bullet {
+  background-color: #00E291;
+  opacity: 1;
+}
+.advantages .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background-color: #EDEDFF;
+}
+
+.advantages-cards {
+  max-width: 1650px;
+  margin: 60px auto 0;
+  overflow: hidden;
+}
+@media (max-width: 1919px) {
+  .advantages-cards {
+    max-width: 1420px;
+  }
+}
+@media (max-width: 1599px) {
+  .advantages-cards {
+    max-width: 1200px;
+    padding: 0 16px;
+  }
+}
+@media (max-width: 767px) {
+  .advantages-cards {
+    margin: 40px auto 85px;
+  }
+}
+.advantages-cards .container {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap: 70px;
+  align-items: center;
+  width: 100%;
+  transition: all 0.3s linear;
+}
+@media (max-width: 1599px) {
+  .advantages-cards .container {
+    justify-content: space-between;
+    gap: 40px;
+  }
+}
+@media (max-width: 1023px) {
+  .advantages-cards .container {
+    flex-direction: column;
+    align-items: flex-start;
+    background-image: url("../icon/payment-models/peyment-models-mobile.png");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+@media (max-width: 767px) {
+  .advantages-cards .container {
+    background-position: 100%;
+  }
+}
+.advantages-cards .container h2 {
+  color: #FFF;
+  font-family: "SF Pro Display";
+  font-size: 55px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: uppercase;
+}
+@media (max-width: 767px) {
+  .advantages-cards .container h2 {
+    font-size: 36px;
+    margin-bottom: 0px;
+  }
+}
+.advantages-cards .container .payment-models-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-position: left center;
+}
+@media (max-width: 1023px) {
+  .advantages-cards .container .payment-models-container {
+    gap: 30px;
+  }
+}
+.advantages-cards .container .card_0 {
+  transform: translate(0px, 0px);
+  margin-right: auto;
+  gap: 70px;
+}
+.advantages-cards .container .card_0 .content {
+  width: 335px;
+}
+.advantages-cards .container .card_1 {
+  position: relative;
+  margin-right: auto;
+  justify-content: space-between;
+  gap: 70px !important;
+}
+@media (min-width: 1024px) and (max-width: 1300px) {
+  .advantages-cards .container .card_1 {
+    gap: 30px !important;
+  }
+}
+.advantages-cards .container .card_1 .content {
+  width: 370px;
+}
+.advantages-cards .container .card_2 {
+  transform: translate(0px, 0px);
+  margin-right: auto;
+  gap: 100px !important;
+}
+.advantages-cards .container .card {
+  display: flex;
+  position: relative;
+  min-width: 400px;
+  transition: all 0.3s linear;
+}
+.advantages-cards .container .card img {
+  max-width: 100%;
+}
+@media (max-width: 1919px) {
+  .advantages-cards .container .card {
+    min-width: auto;
+  }
+}
+@media (max-width: 767px) {
+  .advantages-cards .container .card {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+.advantages-cards .container .card img {
+  width: auto;
+  margin: 0 auto;
+}
+@media (max-width: 1023px) {
+  .advantages-cards .container .card img {
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  .advantages-cards .container .card img {
+    height: 46px;
+  }
+}
+.advantages-cards .container .card h3 {
+  background: #0C62FD;
+  border-radius: 500px;
+  color: #FFF;
+  transition: all 0.3s linear;
+  white-space: nowrap;
+  leading-trim: both;
+  text-edge: cap;
+  font-family: "SF Pro Display";
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 110%; /* 44px */
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  padding: 15px 20px;
+  width: fit-content;
+}
+@media (max-width: 1919px) {
+  .advantages-cards .container .card h3 {
+    max-width: 1420px;
+    font-size: 32px;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1300px) {
+  .advantages-cards .container .card h3 {
+    font-size: 25px;
+  }
+}
+@media (max-width: 767px) {
+  .advantages-cards .container .card h3 {
+    margin-bottom: 20px;
+    padding: 5px 10px;
+  }
+}
+.advantages-cards .container .card p {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 25px;
+  max-width: 98%;
+  color: #EDEDFF;
+  margin-bottom: 0;
+}
+@media (max-width: 1599px) {
+  .advantages-cards .container .card p {
+    color: #EDEDFF;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1300px) {
+  .advantages-cards .container .card p {
+    font-size: 22px;
+  }
+}
+@media (max-width: 1023px) {
+  .advantages-cards .container .card p {
+    font-size: 22px;
+    margin-top: 20px;
+  }
+}
+@media (max-width: 767px) {
+  .advantages-cards .container .card p {
+    font-size: 18px;
+    line-height: normal;
+    max-width: 70%;
+  }
+}
+
+/*# sourceMappingURL=front-page.css.map */
