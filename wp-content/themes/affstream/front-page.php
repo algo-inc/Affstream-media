@@ -102,15 +102,16 @@ get_header();
                         ?>
                     </div>
                 </div>
-
             </div>
-
             <div class="swiper-pagination " id="<?= $advantagesSliderPagination ?>">
             </div>
             <script>
                 const navigation = new Swiper('.swiper-advantages', {
                     spaceBetween: 30,
                     slidesPerView: 2,
+                    simulateTouch: false,
+                    speed: 600,
+                    effect: 'slide',
                     pagination: {
                         el: '#<?= $advantagesSliderPagination ?>',
                         type: 'bullets',
@@ -123,14 +124,16 @@ get_header();
                         0: {
                             slidesPerView: 1,
                             spaceBetween: 25,
+                            speed: 400,
                         },
                         768: {
                             spaceBetween: 15,
-                            slidesPerView: 3,
+                            slidesPerView: 2,
                         },
                         1024: {
                             slidesPerView:2,
                             spaceBetween: 20,
+                            speed: 800,
                         },
                         1300: {
                             spaceBetween: 110,
@@ -309,7 +312,6 @@ get_header();
         </section>
         <?php get_template_part('template-parts/traffic-sources') ?>
         <?php get_template_part('template-parts/about-us-home-page') ?>
-        <?php get_template_part('template-parts/events') ?>
         <?php get_template_part('template-parts/blog') ?>
         <section class="home-contacts">
             <h2 id="contacts" class="wow animate__animated  animate__fadeInLeft ">contact us</h2>

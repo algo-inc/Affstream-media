@@ -192,13 +192,16 @@
 .advantages {
   position: relative;
   margin-bottom: 60px;
+  gap: 40px;
   @include breakpoint(desktop) {
     margin-bottom: 22px;
     padding: 0 16px;
+    gap: 30px;
   }
   @include breakpoint(mobile) {
     margin-bottom: 60px;
     flex-direction: column;
+    gap: 25px;
   }
   display: flex;
   flex-direction: column;
@@ -212,8 +215,6 @@
     text-transform: uppercase;
     margin-bottom: 0;
     @include breakpoint(desktop) {
-      font-size: 55.718px;
-      font-style: italic;
       font-weight: 900;
       line-height: normal;
     }
@@ -222,11 +223,12 @@
       max-width: 1420px;
     }
     @include breakpoint(mobile) {
-      font-size: 43px;
+      font-size: 36px;
       line-height: normal;
-      padding: 0 10px;
       margin: 0;
       text-align: center;
+      padding: 0;
+
     }
 
   }
@@ -311,7 +313,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 50px 0;
     @include breakpoint(desktop) {
       padding: 0;
       max-width: 1200px;
@@ -336,12 +337,6 @@
       @include breakpoint(mobile) {
       }
 
-      &.swiper-slide-active {
-
-        @include breakpoint(tablet) {
-          padding: 0;
-        }
-      }
 
       .advantages-card {
         height: auto;
@@ -355,18 +350,20 @@
         -moz-border-radius: 70px;
         position: relative;
         box-sizing: border-box;
-        align-items: start;
+        align-items: center;
+        padding-bottom: 20px;
+
         @include breakpoint(desktop) {
           border-radius: 54px;
         }
         @include breakpoint(tablet) {
-          padding: 20px;
           border-radius: 50px;
         }
 
         .icon-container {
           z-index: 22;
-          max-width: 80px;
+          max-width: fit-content;
+          min-width: 80px;
           width: 100%;
           height: auto;
           background:#2F2C2C;
@@ -374,11 +371,15 @@
           display: flex;
           justify-content: center;
           align-items: center;
+          padding: 10px;
           @include breakpoint(desktop) {
             height: 80px;
             max-width: 80px;
           }
           @include breakpoint(tablet) {
+          }
+          img{
+            max-width: 45px;
           }
         }
 
@@ -399,6 +400,7 @@
             text-align: start;
             text-transform: uppercase;
             margin-top: 0;
+
             @include breakpoint(desktop) {
               font-size: 24px;
               line-height: normal;
@@ -410,7 +412,6 @@
             }
             @include breakpoint(mobile) {
               font-size: 26px;
-              margin-top: 17px;
               margin-bottom: 17px;
             }
             span{
@@ -447,7 +448,9 @@
   }
 
   .swiper-pagination {
-    bottom: 0 !important;
+    @include breakpoint(mobile){
+      bottom: -15px !important;
+    }
   }
 
   .swiper-pagination-bullet {
@@ -639,6 +642,105 @@
       }
     }
   }
+}
+
+
+
+.traffic-sources {
+  margin-bottom: 200px;
+  overflow: hidden;
+
+  @include breakpoint(desktop) {
+    margin-bottom: 50px;
+  }
+  @include breakpoint(large-tablet) {
+    margin-bottom: 70px;
+  }
+  @include breakpoint(mobile) {
+    margin-bottom: 0;
+  }
+  .container{
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    @include breakpoint(large-desktop) {
+      max-width: 1420px;
+    }
+    @include breakpoint(desktop) {
+      padding: 0 16px;
+      max-width: 1200px;
+    }
+    @include breakpoint(mobile){
+      flex-direction: column;
+      justify-content: start;
+      align-items: start;
+    }
+  }
+  .title-container{
+    display: flex;
+    align-items: center;
+    margin-bottom: 90px;
+    gap: 42px;
+    @include breakpoint(desktop) {
+      margin-bottom: 70px;
+    }
+
+    h2 {
+      color: #FFF;
+      font-family: "SF Pro Display";
+      font-size: 70px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      text-transform: uppercase;
+      margin: 0;
+      @include breakpoint(desktop){
+        font-size: 58px;
+      }
+      @include breakpoint(tablet){
+        font-size: 48px;
+      }
+      @include breakpoint(mobile) {
+        color: #FFF;
+        font-size: 36px;
+      }
+    }
+    .title-icon{
+      transition: all 300ms linear ;
+      @include breakpoint(mobile){
+        transform: rotate(90deg);
+      }
+      circle{
+        stroke: #2F2C2C;
+        @include breakpoint(mobile){
+          stroke: #00E291;
+        }
+      }
+      path{
+        fill: #2F2C2C;
+        @include breakpoint(mobile){
+          fill: #00E291;
+        }
+      }
+    }
+  }
+  .animate-container{
+    .close-desktop{
+
+    }
+    img{
+      max-width: 100%;
+      width: 100%;
+    }
+    margin-left: auto;
+    @include breakpoint(mobile){
+      margin-right: auto;
+      margin-left: 0;
+    }
+  }
+
 }
 
 

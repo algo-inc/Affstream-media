@@ -214,6 +214,7 @@
 .advantages {
   position: relative;
   margin-bottom: 60px;
+  gap: 40px;
   display: flex;
   flex-direction: column;
 }
@@ -221,12 +222,14 @@
   .advantages {
     margin-bottom: 22px;
     padding: 0 16px;
+    gap: 30px;
   }
 }
 @media (max-width: 767px) {
   .advantages {
     margin-bottom: 60px;
     flex-direction: column;
+    gap: 25px;
   }
 }
 .advantages .advantages-title {
@@ -241,8 +244,6 @@
 }
 @media (max-width: 1599px) {
   .advantages .advantages-title {
-    font-size: 55.718px;
-    font-style: italic;
     font-weight: 900;
     line-height: normal;
   }
@@ -255,11 +256,11 @@
 }
 @media (max-width: 767px) {
   .advantages .advantages-title {
-    font-size: 43px;
+    font-size: 36px;
     line-height: normal;
-    padding: 0 10px;
     margin: 0;
     text-align: center;
+    padding: 0;
   }
 }
 .advantages .top-container {
@@ -354,7 +355,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 50px 0;
 }
 @media (max-width: 1599px) {
   .advantages .swiper-advantages {
@@ -374,11 +374,6 @@
   display: flex;
   align-items: center;
 }
-@media (max-width: 1023px) {
-  .advantages .swiper-advantages .swiper-slide.swiper-slide-active {
-    padding: 0;
-  }
-}
 .advantages .swiper-advantages .swiper-slide .advantages-card {
   height: auto;
   z-index: 20;
@@ -391,7 +386,8 @@
   -moz-border-radius: 70px;
   position: relative;
   box-sizing: border-box;
-  align-items: start;
+  align-items: center;
+  padding-bottom: 20px;
 }
 @media (max-width: 1599px) {
   .advantages .swiper-advantages .swiper-slide .advantages-card {
@@ -400,13 +396,13 @@
 }
 @media (max-width: 1023px) {
   .advantages .swiper-advantages .swiper-slide .advantages-card {
-    padding: 20px;
     border-radius: 50px;
   }
 }
 .advantages .swiper-advantages .swiper-slide .advantages-card .icon-container {
   z-index: 22;
-  max-width: 80px;
+  max-width: fit-content;
+  min-width: 80px;
   width: 100%;
   height: auto;
   background: #2F2C2C;
@@ -414,12 +410,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 10px;
 }
 @media (max-width: 1599px) {
   .advantages .swiper-advantages .swiper-slide .advantages-card .icon-container {
     height: 80px;
     max-width: 80px;
   }
+}
+.advantages .swiper-advantages .swiper-slide .advantages-card .icon-container img {
+  max-width: 45px;
 }
 .advantages .swiper-advantages .swiper-slide .advantages-card .description {
   z-index: 22;
@@ -455,7 +455,6 @@
 @media (max-width: 767px) {
   .advantages .swiper-advantages .swiper-slide .advantages-card .description h3 {
     font-size: 26px;
-    margin-top: 17px;
     margin-bottom: 17px;
   }
 }
@@ -491,8 +490,10 @@
     padding-top: 0;
   }
 }
-.advantages .swiper-pagination {
-  bottom: 0 !important;
+@media (max-width: 767px) {
+  .advantages .swiper-pagination {
+    bottom: -15px !important;
+  }
 }
 .advantages .swiper-pagination-bullet {
   background-color: #00E291;
@@ -708,6 +709,125 @@
     font-size: 18px;
     line-height: normal;
     max-width: 70%;
+  }
+}
+
+.traffic-sources {
+  margin-bottom: 200px;
+  overflow: hidden;
+}
+@media (max-width: 1599px) {
+  .traffic-sources {
+    margin-bottom: 50px;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1300px) {
+  .traffic-sources {
+    margin-bottom: 70px;
+  }
+}
+@media (max-width: 767px) {
+  .traffic-sources {
+    margin-bottom: 0;
+  }
+}
+.traffic-sources .container {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+}
+@media (max-width: 1919px) {
+  .traffic-sources .container {
+    max-width: 1420px;
+  }
+}
+@media (max-width: 1599px) {
+  .traffic-sources .container {
+    padding: 0 16px;
+    max-width: 1200px;
+  }
+}
+@media (max-width: 767px) {
+  .traffic-sources .container {
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+  }
+}
+.traffic-sources .title-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 90px;
+  gap: 42px;
+}
+@media (max-width: 1599px) {
+  .traffic-sources .title-container {
+    margin-bottom: 70px;
+  }
+}
+.traffic-sources .title-container h2 {
+  color: #FFF;
+  font-family: "SF Pro Display";
+  font-size: 70px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: uppercase;
+  margin: 0;
+}
+@media (max-width: 1599px) {
+  .traffic-sources .title-container h2 {
+    font-size: 58px;
+  }
+}
+@media (max-width: 1023px) {
+  .traffic-sources .title-container h2 {
+    font-size: 48px;
+  }
+}
+@media (max-width: 767px) {
+  .traffic-sources .title-container h2 {
+    color: #FFF;
+    font-size: 36px;
+  }
+}
+.traffic-sources .title-container .title-icon {
+  transition: all 300ms linear;
+}
+@media (max-width: 767px) {
+  .traffic-sources .title-container .title-icon {
+    transform: rotate(90deg);
+  }
+}
+.traffic-sources .title-container .title-icon circle {
+  stroke: #2F2C2C;
+}
+@media (max-width: 767px) {
+  .traffic-sources .title-container .title-icon circle {
+    stroke: #00E291;
+  }
+}
+.traffic-sources .title-container .title-icon path {
+  fill: #2F2C2C;
+}
+@media (max-width: 767px) {
+  .traffic-sources .title-container .title-icon path {
+    fill: #00E291;
+  }
+}
+.traffic-sources .animate-container {
+  margin-left: auto;
+}
+.traffic-sources .animate-container img {
+  max-width: 100%;
+  width: 100%;
+}
+@media (max-width: 767px) {
+  .traffic-sources .animate-container {
+    margin-right: auto;
+    margin-left: 0;
   }
 }
 

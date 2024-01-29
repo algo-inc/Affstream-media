@@ -1,7 +1,7 @@
 <div class="swiper-slide">
     <div class="advantages-card">
         <div class="icon-container">
-            <img src="<?php echo $slide['icon']; ?>" width="80px" height="80px" alt="<?php echo $slide['title']; ?>">
+            <img src="<?php echo $slide['icon']; ?>" width="60px" height="60px" alt="<?php echo $slide['title']; ?>">
         </div>
         <div class="description">
             <h3><?php echo $slide['title']; ?></h3>

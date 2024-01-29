@@ -607,71 +607,7 @@ img, video {
   }
 }
 
-.traffic-sources {
-  margin-bottom: 200px;
-  overflow: hidden;
-  @include breakpoint(desktop) {
-    margin-bottom: 50px;
-  }
-  @include breakpoint(large-tablet) {
-    margin-bottom: 70px;
-  }
-  @include breakpoint(mobile) {
-    margin-bottom: 0;
-  }
 
-  h2 {
-    text-align: center;
-    margin-bottom: 90px;
-    @include breakpoint(desktop) {
-      margin-bottom: 70px;
-    }
-    @include breakpoint(mobile) {
-      color: #EDEDFF;
-      text-align: center;
-      font-size: 53px;
-      font-style: italic;
-      font-weight: 900;
-      line-height: normal;
-      text-transform: uppercase;
-      margin-bottom: 50px;
-    }
-  }
-
-  .line {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    svg {
-      margin: 0 10px 70px;
-      @include breakpoint(large-desktop) {
-        margin: 0 10px 70px;
-      }
-      @include breakpoint(desktop) {
-        margin: 0 22px 35px;
-      }
-      @include breakpoint(large-tablet) {
-        margin: 0 20px 25px;
-
-      }
-      @include breakpoint(tablet) {
-        margin: 0 10px 40px;
-      }
-      @include breakpoint(mobile) {
-        margin: 0 0 35px;
-      }
-
-      &:first-child {
-        margin-left: 0;
-      }
-
-      &:last-child {
-        margin-right: 0;
-      }
-    }
-  }
-}
 
 
 .home-contacts {
