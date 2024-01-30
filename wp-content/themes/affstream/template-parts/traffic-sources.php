@@ -1,4 +1,5 @@
-<section class="traffic-sources">
+<section class="traffic-sources" >
+    <img class="decoration-bg" src="<?= get_template_directory_uri() . '/icon/background-home.png' ?>" alt="">
     <div class="container">
         <div class="title-container">
             <h2 class="wow animate__animated  animate__fadeInLeft"> traffic </br> sources</h2>
@@ -8,8 +9,8 @@
             </svg>
         </div>
         <div class="animate-container ">
-            <img class="close-mobile" src="<?= get_template_directory_uri() . '/icon/Traffic-sourse.png'?>" alt="Traffic sources">
-            <img class="close-desktop" src="<?= get_template_directory_uri() . '/icon/Traffic-sourse-mobile.png'?>" alt="Traffic sources">
+            <img class="close-mobile" loading="lazy" src="<?= get_template_directory_uri() . '/icon/Traffic-sourse.png'?>" alt="Traffic sources">
+            <img class="close-desktop" loading="lazy" src="<?= get_template_directory_uri() . '/icon/Traffic-sourse-mobile.png'?>" alt="Traffic sources">
         </div>
     </div>
 </section>

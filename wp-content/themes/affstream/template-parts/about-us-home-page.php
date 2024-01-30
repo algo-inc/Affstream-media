@@ -70,7 +70,26 @@ if ($blockTitle):
         </div>
     </div>
     <div class="swiper-pagination" id="<?= $aboutUsPagination ?>">
+
 </section>
+    <div class="partners">
+        <div class="container">
+            <div class="partners-logo marquee" id="marquee">
+                <?php
+                $partnersLogos = get_field('partners_logos');
+                foreach ($partnersLogos as $partnerLogo){
+                    ?>
+                    <div class="logo-container ">
+                        <img src="<?= $partnerLogo['logo']['url'] ?>" alt="<?= $partnerLogo['logo']['alt']?>">
+                    </div>
+                    <?php
+                }
+                ?>
+            </div>
+        </div>
+
+
+    </div>
 <?php
 endif;
 ?>
@@ -98,5 +117,29 @@ endif;
       },
     });
   });
+</script>
+<script>
+
+    function Marquee(selector, speed) {
+        const parentSelector = document.querySelector(selector);
+        const clone = parentSelector.innerHTML;
+        const firstElement = parentSelector.children[0];
+        let i = 0;
+        parentSelector.insertAdjacentHTML('beforeend', clone);
+        parentSelector.insertAdjacentHTML('beforeend', clone);
+
+        setInterval(function () {
+            firstElement.style.marginLeft = `-${i}px`;
+            if (i > parentSelector.clientWidth) {
+                i = 0;
+            }
+            i = i + speed;
+        }, 0);
+    }
+
+    //after window is completed load
+    //1 class selector for marquee
+    //2 marquee speed 0.2
+    window.addEventListener('load', Marquee('.marquee', 0.2))
 </script>
 

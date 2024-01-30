@@ -101,7 +101,7 @@
 		                                    echo $except;
 		                                    ?>
                                         </p>
-                                        <a class="see-more" aria-label="<?= $title ?>" href="<?php the_permalink(); ?>">See more</a>
+                                        <a class="see-more" aria-label="<?= $title ?>"  href="<?php the_permalink(); ?>">See more</a>
                                     </div>
                                 </div>
                             </div>
